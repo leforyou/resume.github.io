@@ -1,0 +1,1704 @@
+@charset "utf-8";
+@import 'variable.scss';
+@import 'mixin.scss';
+/*注意： @import url('common.css');这种是写是属于css的，在scss中编译过程将找不到文件*/
+
+.padding-lr50{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+/**头部 start**/
+.header{
+    $h:1rem;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    right: 0rem;
+    z-index: 99999;
+    .wrap-nav{
+        .nav-box{
+            .nav-head{
+                position: fixed;
+                top: 0rem;
+                left: 0rem;
+                right: 0rem;
+                z-index: 99999;
+                height: $h;
+                background-color: rgba(0,0,0,0.7);
+                .nahe-box{
+                    padding: 0rem 0.5rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 100%;
+                    .ico-menu{
+                        display: block;
+                        background-image: url(../img/ico-menu.png);
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: 100% 0rem;
+                        width: 0.7rem;
+                        height: 0.7rem;
+                        transform: translateX(-0.1rem);
+                        cursor: pointer;
+                        &.active{
+                            background-image: url(../img/ico-menu-close.png);
+                        }
+                    }
+                    .ico-logo{
+                        display: block;
+                        background-image: url(../img/logo-head-white.png);
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: 3rem;
+                        height: 0.5rem;
+                    }
+                    .ico-people{
+                        display: block;
+                        background-image: url(../img/head-people.png);
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: 100% 0rem;
+                        width: 0.7rem;
+                        height: 0.7rem;
+                        transform: translateX(0.1rem);
+                        cursor: pointer;
+                    }
+                }
+            }
+            .menu{
+                position: fixed;
+                top: $h;
+                left: 50%;
+                bottom: 0;
+                z-index: 999999;
+                transform: translateX(-50%);
+                padding-right: 2.5rem;
+                transition: all 0.3s;
+                opacity: 0;
+                visibility: hidden;
+                &.active{
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .menu-box{
+                    height: 100%;
+                    overflow: auto;
+                    background-color: rgba(0,0,0,0.7);
+                    >ul{
+                        line-height: 1;
+                        >li{
+                            &.active{
+                                .ico-more{
+                                    background-image: url(../img/ico-nav-reducs.png) !important;
+                                }
+                                .second-level{
+                                    display: block;
+                                    .sub-title{
+                                        display: block;
+                                        padding: 0.35rem 0.95rem;
+                                    }
+                                }
+                            }
+                            .big-title{
+                                display: block;
+                                padding: 0.35rem 0.6rem;
+                                position: relative;
+                                color: #fff;
+                                &.ico-more{
+                                    background-image: url(../img/ico-nav-plus.png);
+                                    background-size: 0.3rem;
+                                    background-repeat: no-repeat;
+                                    background-position:calc(100% - 0.6rem) center;
+                                }
+                            }
+                            .second-level{
+                                display: none;
+                                a{
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/**头部 end**/
+
+
+
+/**底部 start**/
+.footer{
+    .footer-box{
+        border-top: 0.04rem solid $mainColor;
+        background-color: #333;
+        .contact{
+            display: flex;
+            padding: 0.4rem 0.3rem;
+            .left{
+                min-width: 2.95rem;
+                display: flex;
+                flex-direction: column;
+                padding-left: 0.6rem;
+                border-right: 0.01rem solid #808080;
+                img{
+                    width: 1.26rem;
+                    margin-bottom: 0.1rem;
+                }
+                .cn{
+                    width: 1.26rem;
+                    text-align: center;
+                }
+            }
+            .right{
+                width: 100%;
+                padding-left: 1rem;
+                .tel-head{
+                    margin-bottom: 0.01rem;
+                }
+                .tel-num{
+                    line-height: 1;
+                    padding: 0.1rem;
+                    display: block;
+                    margin-bottom: 0.2rem;
+                    padding-left: 0.32rem;
+                    background-image: url(../img/footer-phone.png);
+                    background-repeat: no-repeat;
+                    background-size: 0.25rem 0.25rem;
+                    background-position: 0rem center;
+                }
+                .time{
+                    
+                }
+            }
+        }
+        .f-info{
+            line-height: 1;
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            background-color: #444;
+            >*{
+                margin-bottom: 0.15rem;
+            }
+            ul{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin: 0rem -0.3rem 0.1rem;
+                li{
+                    border-left: 0.01rem solid #808080;
+                    margin-bottom: 0.15rem;
+                    &:nth-child(1){
+                        border-left: none;
+                    }
+                    a{
+                        display: block;
+                        padding: 0.02rem 0.25rem;
+                    }
+                }
+            }
+        }
+    }
+}
+/**底部 end**/
+
+
+
+/**首页视频 start**/
+.wrap-video{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    background-color: rgba(0,0,0,0.6);
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    &.active{
+        opacity: 1;
+        visibility: visible;
+        display: block;
+        .video-box{
+            video{
+                display: block;
+            }
+        }
+    }
+    .video-box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: calc(100% - 0.6rem);
+        background-color: #333;
+        .close{
+            background-image: url(../img/video-close.png);
+            @include bgCover();
+            @include wh(0.5rem);
+            position: absolute;
+            top: -0.7rem;
+            right: 0rem;
+            cursor: pointer;
+        }
+        video{
+            cursor: pointer;
+            vertical-align: middle;
+            display: none;
+        }
+        .desc{
+            padding: 0.3rem;
+            color: #fff;
+        }
+    }
+}
+/**首页视频 end**/
+
+
+
+
+/** start**/
+.wrap-banner{
+    .banner-box{
+        img{
+            width: 100%;
+        }
+    }
+}
+/** end**/
+
+
+
+/**1·1-首页 start**/
+.home{
+    .wrap-slide{
+        padding-top: 144.266%;
+        overflow: hidden;
+        position: relative;
+        z-index: 10;
+        .slide-box{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            .swiper-container{
+                height: 100%;
+                .swiper-wrapper{
+                    height: 100%;
+                    .swiper-slide{
+                        height: 100%;
+                        .img-box{
+                            height: 100%;
+                            display: block;
+                            @include bgCover();
+                        }
+                    }
+                }
+                .swiper-pagination{
+                    .swiper-pagination-bullet{
+                        opacity: 1;
+                        width: 0.16rem;
+                        height: 0.16rem;
+                        background: transparent;
+                        border: 0.01rem solid #fff;
+                        border-radius: 100%;
+                    }
+                    .swiper-pagination-bullet-active{
+                        background-color: $mainColor;
+                        border: 0.01rem solid $mainColor;
+                    }
+                }
+            }
+        }
+    }
+    .about{
+        .box{
+            background-image: url(../img/home-about-bg.jpg);
+            @include bgCover();
+            padding-left: 0.9rem;
+            padding-right: 0.9rem;
+            .big-title{
+                padding: 0.9rem 0rem 0.6rem;
+            }
+            .c-desc{
+                line-height: 1.8;
+                margin-bottom: 0.6rem;
+            }
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding-bottom: 0.5rem;
+                li{
+                    width: calc(50% - 0.12rem);
+                    background-color: #fff;
+                    margin-bottom: 0.25rem;
+                    a{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0.5rem 0rem;
+                        img{
+                            width: 0.8rem;
+                            margin-bottom: 0.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .wealth{
+        .box{
+            background-color: #fff;
+            padding-bottom: 0.6rem;
+            .big-title{
+                padding: 0.9rem 0rem 0.6rem;
+            }
+        }
+    }
+    .dynamic{
+        .box{
+            background-image: url(../img/home-dynamic-bg.jpg);
+            padding-bottom: 0.01rem;
+            @include bgCover();
+            .big-title{
+                padding: 0.9rem 0rem 0.6rem;
+            }
+            ul{
+                li{
+                    a{
+                        display: block;
+                        position: relative;
+                        .img-box{
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .desc{
+                            padding: 0.1rem 0.5rem;
+                            position: absolute;
+                            bottom: 0rem;
+                            left: 0rem;
+                            right: 0rem;
+                            background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.6));
+                        }
+                    }
+                }
+            }
+            .more{
+                line-height: 0.6rem;
+                width: 2.2rem;
+                text-align: center;
+                display: block;
+                margin: 0.8rem auto;
+            }
+        }
+    }
+    .case{
+        background-color: #fff;
+        padding-bottom: 0.8rem;
+        .box{
+            .big-title{
+                padding: 0.9rem 0rem 0.6rem;
+            }
+            .swiper-container{
+                box-shadow: 0rem 0rem 0.15rem rgba(0,0,0,0.1);
+                .swiper-wrapper{
+                    .swiper-slide{
+                        background-color: #fff;
+                        
+                        .img-box{
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .info{
+                            padding:0.3rem 0.6rem;
+                            .sub-title{
+                                margin-bottom: 0.05rem;
+                            }
+                            .desc{
+                                line-height: 1.8;
+                            }
+                            .more{
+                                width: 2.2rem;
+                                line-height: 0.6rem;
+                                text-align: center;
+                                margin: 0.8rem 0rem 0.3rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .swiper-pagination{
+                position: static;
+                text-align: center;
+                width: 100%;
+                .swiper-pagination-bullet.swiper-pagination-bullet-active{
+                    background-color: $subColor;
+                }
+                .swiper-pagination-bullet{
+                        opacity: 1;
+                        margin: 0rem 0.15rem;
+                        background-color: transparent;
+                        border: 0.01rem solid $subColor;
+                        @include wh(0.2rem);
+                }
+            }
+        }
+    }
+    @at-root .cooperation-partner{
+        background-color: #ddd;
+        .box{
+            padding: 0rem 0.5rem 1.2rem;
+            .big-title{
+                padding: 0.9rem 0rem 0.6rem;
+            }
+            .swiper-container{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        width: 1.85rem;
+                        height: 0.95rem;
+                        background-size: 100%;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+    }
+}
+/**1·1-首页 end**/
+
+
+
+/**1·2-首页-产品列表 start**/
+.product-list{
+    .content{
+        .padding-lr{
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            padding-bottom: 0.8rem;
+            .head-title{
+                padding: 0.9rem 0rem 0.6rem;
+                line-height: 1;
+                font-weight: 100;
+            }
+            .c-desc{
+                line-height: 1.8;
+            }
+            .list{
+                .list-title{
+                    font-weight: 100;
+                    padding: 0.6rem 0rem 0.3rem;
+                }
+                ul{
+                    margin-bottom: -0.3rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    overflow: hidden;
+                    justify-content: space-between;
+                    li{
+                        width: calc(50% - 0.15rem);
+                        height: 2.48rem;
+                        background-color: #eeeced;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        padding: 0.15rem;
+                        margin-bottom: 0.3rem;
+                        .sub-title{
+                            margin-bottom: 0.2rem;
+                        }
+                        .more{
+                            color: #fb9e00;
+                            border: 0.01rem solid #fb9e00;
+                            border-radius: 0.36rem;
+                            padding: 0.08rem 0.45rem;
+                            line-height: 1;
+                        }
+                        .income{
+                            margin-top: 0.2rem;
+                            color: #fb9e00;
+                        }
+                    }
+                }
+            }
+            .list1{
+                ul{
+                    li{
+                        position: relative;
+                        overflow: hidden;
+                        &:before{
+                            content: '';
+                            display: block;
+                            border-color: #fb9e00 transparent transparent transparent;
+                            border-width: 1.2rem;
+                            border-style: solid;
+                            position: absolute;
+                            top: 0px;
+                            right: 0px;
+                            transform: translateX(50%); 
+                        }
+                        &:after{
+                            content: '募集中';
+                            display: block;
+                            font-size: 0.2rem;
+                            color: #fff;
+                            z-index: 999;
+                            position: absolute;
+                            top: 10px;
+                            right: 3px;
+                        }
+                    }
+                }
+            }
+            .list2{
+                ul{
+                    li{
+                        height: 2.48rem;
+                    }
+                }
+            }
+        }
+    }
+}
+/**1·2-首页-产品列表 end**/
+
+
+
+/**1·3-首页-产品列表-募集详情 start**/
+.product-list-details{
+    .content{
+        .padding-lr{
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            .big-title{
+                color: #632b16;
+                padding: 0.6rem 0rem;
+            }
+            .desc{
+                padding-bottom: 0.6rem;
+                line-height: 2;
+            }
+        }
+    }
+    @at-root.sales-process{
+        background-color: #f8f8f8;
+        .padding-lr{
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            .big-title{
+                color: #632b16;
+                padding: 0.6rem 0rem 0.5rem;
+            }
+            ul{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding-bottom: 0.6rem;
+                li{
+                    padding: 0.2rem 0.1rem;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    width: 50%;
+                    &:nth-child(2n+2):before{
+                        display: none !important;
+                    }
+                    
+                    &:before{
+                        content: '';
+                        display: block;
+                        width: 0.5rem;
+                        height: 0.5rem;
+                        position: absolute;
+                        top: 0.65rem;
+                        right: -0.25rem;
+                        transform: translateY(-50%);
+                        background-image: url(../img/sales-process-arrow.png);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    }
+                    .img-box{
+                        position: relative;
+                        width: 1.3rem;
+                        height: 1.3rem;
+                        border: 0.02rem solid #666;
+                        border-radius: 100%;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .sub-title{
+                        margin: 12px 0px 5px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+/**1·3-首页-产品列表-募集详情 end**/
+
+
+
+
+/**1·4-首页-产品列表-过往产品详情 start**/
+.product-list-past{
+    .content1{
+        background-color: #fff;
+        .padding-lr{
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 0.2rem solid #ddd;
+            .big-title{
+                padding: 0.6rem 0rem;
+            }
+            .desc{
+                line-height: 1.8;
+            }
+        }
+    }
+    .content2{
+        background-color: #fff;
+        .padding-lr{
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            .year{
+                padding-top: 0.8rem;
+                padding-bottom: 0.8rem;
+                ul{
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    margin: -0.1rem;
+                    li{
+                        background-color: #f5f3f3;
+                        cursor: pointer;
+                        line-height: 0.6rem;
+                        padding: 0rem 0.32rem;
+                        border-radius: 0.1rem;
+                        margin: 0.1rem;
+                        &.active{
+                            color: #fff;
+                            background-color: #00bbff;
+                        }
+                    }
+                }
+            }
+            .time{
+                border-bottom: 0.01rem solid #eee;
+                padding-bottom: 0.3rem;
+            }
+            .choose{
+                padding: 0.3rem 0rem;
+                .list{
+                    display: flex;
+                    margin-bottom: 0.2rem;
+                    .sub-title{
+                        line-height: 0.6rem;
+                    }
+                    .select{
+                        margin-right: -0.2rem;
+                        display: flex;
+                        flex-wrap: wrap;
+                        select{
+                            width: 2.1rem;
+                            height: 0.6rem;
+                            line-height: 0.6rem;
+                            padding: 0rem 0.1rem;
+                            margin-right: 0.2rem;
+                            border: 0.01rem solid #d0d0d0;
+                            border-radius: 0.1rem;
+                            background-image: url(../img/select-arrow.png);
+                            background-size: 0.2rem;
+                            background-position: calc(100% - 0.08rem) center;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sales-process{
+        background-color: #f8f8f8;
+    }
+}
+/**1·4-首页-产品列表-过往产品详情 end**/
+
+
+
+/**1·5-财富管理 start**/
+.wealth-management{
+    .content{
+        .padding-lr{
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            .head-title{
+                padding: 0.6rem 0rem;
+            }
+            >ul{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding-bottom: 0.6rem;
+                >li{
+                    margin-bottom: 0.3rem;
+                    a{
+                        display: block;
+                        position: relative;
+                        overflow: hidden;
+                        .img-box{
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .info{
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            right: 0px;
+                            bottom: 0px;
+                            padding: 0.4rem;
+                            .sub-title{
+                                font-weight: bold;
+                                margin-bottom: 0.2rem;
+                            }
+                            .desc{
+                                &:before{
+                                    content: "";
+                                    display: block;
+                                    position: absolute;
+                                    top: 0.05rem;
+                                    bottom: 0.05rem;
+                                    left: 0px;
+                                    width: 0.05rem;
+                                    background-color: #fb9e00;
+                                }
+                                line-height: 1.8;
+                                position: relative;
+                                padding-left: 15px;
+                            }
+                        }
+                        .expect{
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/**1·5-财富管理 end**/
+
+
+
+/**1·6-财富管理-登录注册提醒 start**/
+
+/**1·6-财富管理-登录注册提醒 end**/
+
+
+
+/**2·1-关于基岩 start**/
+.about{
+    .introduction{
+        padding-bottom: 0.7rem;
+        background-color: #fff;
+        .big-title{
+            padding: 0.6rem 0rem 0.5rem;
+        }
+        .desc{
+            line-height: 1.8;
+        }
+    }
+    .capital{
+        padding-right: 0.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        background-image: url(../img/about-capital-bg.jpg);
+        @include bgCover();
+        .box{
+            background-color: rgba(255,255,255,0.9);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            padding-left: 0.5rem;
+            padding-right: 0.9rem;
+            .big-title{
+                margin-bottom: 0.35rem;
+            }
+            .desc{
+                line-height: 1.8;
+            }
+        }
+    }
+    .system{
+        padding-bottom: 0.7rem;
+        background-color: #fff;
+        background-image: url(../img/about-system-bg.png);
+        background-position: center 0rem;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        .big-title{
+            padding: 0.6rem 0rem 0.5rem;
+        }
+        .desc{
+            line-height: 1.8;
+        }
+    }
+    .business{
+        padding-bottom: 0.7rem;
+        background-color: #f3f2ee;
+        .big-title{
+            padding: 0.6rem 0rem 0.5rem;
+        }
+        .desc{
+            line-height: 1.8;
+        }
+        ul{
+            margin-top: 0.6rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: -0.1rem;
+            li{
+                margin-bottom: 0.1rem;
+                &.w1{
+                    width: calc(50% - 0.05rem);
+                }
+                &.w2{
+                    width: 100%;
+                }
+                a{
+                    display: block;
+                    position: relative;
+                    .img-box{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .sub-title{
+                        padding: 0.1rem;
+                        position: absolute;
+                        top: 0rem;
+                        bottom: 0rem;
+                        left: 0rem;
+                        right: 0rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: #fff;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    .characteristic{
+        .box{
+            .big-title{
+                padding: 0.6rem 0rem 0.5rem;
+            }
+            ul{
+                background-color: #f6f6f6;
+                li{
+                    a{
+                        .top{
+                            padding: 0.8rem 0.5rem;
+                            .sub-title{
+                                font-weight: bold;
+                                margin-bottom: 0.3rem;
+                            }
+                            .desc{
+                                line-height: 1.8;
+                            }
+                        }
+                        .bottom{
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .honor{
+        padding-bottom: 0.7rem;
+        .big-title{
+            padding: 0.6rem 0rem 0.5rem;
+        }
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0rem -0.12rem -0.4rem;
+            li{
+                width: calc(33.33% - 0.24rem);
+                margin:0rem 0.12rem 0.4rem;
+                a{
+                    display: block;
+                    .img-box{
+                        height: 2.6rem;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .desc{
+                        text-align: center;
+                        line-height: 1.8;
+                        margin-top: 0.2rem;
+                    }
+                }
+            }
+        }
+    }
+    .cooperation-partner{
+        .box{
+            padding: 0rem 0.5rem 0.8rem;
+            .big-title{
+                padding: 0.6rem 0rem 0.5rem;
+            }
+        }
+    }
+}
+/**2·1-关于基岩 end**/
+
+
+
+/**2·2-关于基岩-成功案例 start**/
+.success-example{
+    .case{
+        .big-title{
+            padding: 0.6rem 0rem 0.5rem;
+        }
+        ul{
+            li{
+                padding-left: 0.2rem;
+                padding-right: 0.2rem;
+                border-bottom: 0.01rem solid #c6c6c6;
+                margin-bottom: 0.5rem;
+                &:nth-last-child(1){
+                    margin-bottom: 0rem;
+                }
+                .img-box{
+                    padding-top: 58.46%;
+                    @include bgCover();
+                }
+                .info{
+                    padding:0rem 0.2rem;
+                    .sub-title{
+                        margin: 0.5rem 0rem 0.4rem;
+                    }
+                    .desc{
+                        line-height: 1.8;
+                    }
+                    .more{
+                        display: block;
+                        margin: 0.5rem auto;
+                        width: 2rem;
+                        line-height: 0.56rem;
+                        text-align: center;
+                        color: $mainColor;
+                        border: 0.01rem solid $mainColor;
+                        border-radius: 0.56rem;
+                    }
+                }
+            }
+        }
+    }
+}
+/**2·2-关于基岩-成功案例 end**/
+
+
+
+
+/**3·1-基岩学院-视频专题 start**/
+.video-topic{
+    .topic{
+        padding-bottom: 0.6rem;
+        .big-title{
+            padding: 0.6rem 0rem 0.5rem;
+        }
+        .section{
+            .s-head{
+                display: flex;
+                flex-wrap: wrap;
+                .sub-title{
+                    font-weight: bold;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    width: 25%;
+                    padding: 0.1rem 0rem;
+                    &:after{
+                        content: '';
+                        display: block;
+                        /*border-width: 0.1rem;
+                        border-style: solid;
+                        border-color: #999 transparent transparent transparent;
+                        transform: translateY(50%);
+                        margin-left: 0.05rem;*/
+                        
+                        @include wh(0.16rem);
+                        margin-left: 0.08rem;
+                        background-image: url(../img/sub-title-arrow.png);
+                        background-size: 0.16rem;
+                        background-position: 100% center;
+                        background-repeat: no-repeat;
+                    }/**/
+                }
+            }
+            .s-content{
+                margin: 0rem -0.2rem;
+                .details{
+                    &.active{
+                        display: flex;
+                    }
+                    display: none;
+                    .s-list{
+                        margin: 0rem 0.2rem;
+                        padding: 0.1rem 0rem;
+                        position: relative;
+                        &:after{
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            right: -0.2rem;
+                            top: 0.15rem;
+                            bottom: 0.15rem;
+                            border-right: 0.01rem solid #d4d4d4;
+                        }
+                        &:nth-last-child(1):after{
+                            border-right:none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .new-economy{
+        .box{
+            .head{
+                margin: 0.3rem -0.1rem 0rem;
+                display: flex;
+                justify-content: space-between;
+                .left{
+                    display: flex;
+                    flex-direction: column;
+                    width: calc(66.66% - 0.2rem);
+                    margin: 0rem 0.1rem 0.2rem;
+                    .img-box{
+                        height: 100%;
+                        @include bgCover();
+                    }
+                    .info{
+                        padding: 0.1rem 0rem;
+                    }
+                }
+                .right{
+                    width: calc(33.33% - 0.2rem);
+                    margin: 0rem 0.1rem 0rem;
+                    ul{
+                        li{
+                            margin-bottom: 0.2rem;
+                            a{
+                                display: block;
+                                .img-box{
+                                    padding-top: 60.78%;
+                                    @include bgCover();
+                                }
+                                .info{
+                                    padding: 0.1rem 0rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .vtopic-ul{
+                padding: 0rem;
+                margin-bottom: 0.3rem;
+            }
+        }
+    }
+    .other{
+        .box{
+            
+        }
+    }
+    .big-title1{
+        line-height: 1.3;
+        padding-left: 0.28rem;
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0rem;
+            bottom: 0rem;
+            left: 0rem;
+            width: 0.05rem;
+            background-color: $mainColor;
+            box-shadow: 0.03rem 0rem 0rem #cecdcd;
+        }
+    }
+    .vtopic-ul{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0rem -0.1rem;
+        padding: 0.3rem 0rem;
+        li{
+            width: calc(33.33% - 0.2rem);
+            margin: 0rem 0.1rem 0.2rem;
+            a{
+                display: block;
+                .img-box{
+                    padding-top: 60.78%;
+                    @include bgCover();
+                }
+                .info{
+                    padding: 0.1rem 0rem;
+                }
+            }
+        }
+    }
+}
+/**3·1-基岩学院-视频专题 end**/
+
+
+
+/**3·2-基岩学院-视频专题-详情 start**/
+
+/**3·2-基岩学院-视频专题-详情 end**/
+
+
+
+/**3·3-基岩学院-基岩观点 start**/
+.college-viewpoint{
+    background-color: #fff;
+    @at-root .college-common{
+        .box{
+            .big-title{
+                padding: 0.6rem 0rem 0.5rem;
+            }
+            .nav-box{
+                overflow: hidden;
+                font-size: 0rem;
+                margin-bottom: 0.6rem;
+                ul{
+                    display: inline-block;
+                    white-space: nowrap;
+                    font-size: 0rem;
+                    li{
+                        font-size: 0rem;
+                        display: inline-block;
+                        border-radius: 0.3rem;
+                        border: 0.01rem solid #d8d8d8;
+                        background-color: #fff;
+                        text-align: center;
+                        margin-right: 0.2rem;
+                        &:nth-last-child(1){
+                            margin-right: 0.2rem;
+                        }
+                        &.active{
+                            border: 0.01rem solid $mainColor;
+                            background-color: $mainColor;
+                            &,*,a{
+                                color: #fff;
+                            }
+                        }
+                       a{
+                           font-size: 0.32rem;
+                           display: block;
+                           min-width: 1.6rem;
+                           padding:0rem 0.15rem;
+                           line-height: 0.58rem;
+                       } 
+                    }
+                }
+            }
+        }
+    }
+    @at-root .wrap-news{
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0rem -0.25rem -0.2rem;
+            li{
+                width: calc(50% - 0.5rem);
+                margin: 0rem 0.25rem 0.2rem;
+                a{
+                    display: block;
+                    .img-box{
+                        padding-top: 71.66%;
+                        @include bgCover();
+                    }
+                    .info{
+                        .sub-title{
+                            margin: 0.1rem 0rem;
+                            line-height: 1.6;
+                            min-height: 1.08rem;
+                            max-height: 1.08rem;
+                        }
+                        .time{
+                            padding: 0.2rem 0rem;
+                            border-top: 0.01rem solid #d4d4d4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/**3·3-基岩学院-基岩观点 end**/
+
+
+
+/**3·4-基岩学院-基岩研究 start**/
+.college-study{
+    background-color: #fff;
+    @at-root .informations{
+        ul{
+            li{
+                padding: 0.3rem 0rem;
+                border-bottom: 0.01rem solid #d4d4d4;
+                a{
+                    display: flex;
+                    .left{
+                        width: 48%;
+                        .img-box{
+                            padding-top: 79.78%;
+                            @include bgCover();
+                        }
+                    }
+                    .right{
+                        width: 52%;
+                        padding-left: 0.3rem;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        .sub-title{
+                            margin-top: 0.1rem;
+                            min-height: 0.88rem;
+                        }
+                        .more{
+                            margin-bottom: 0.15rem;
+                            width: 1.6rem;
+                            line-height: 0.5rem;
+                            text-align: center;
+                            border: 0.01rem solid $mainColor;
+                            border-radius: 0.5rem;
+                            color: $mainColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/**3·4-基岩学院-基岩研究 end**/
+
+
+
+/**3·5-基岩学院-基岩研究详情 start**/
+.college-study-details{
+    .content{
+        .big-title{
+            padding: 0.5rem 0rem 0.4rem;
+        }
+        .time{
+            margin-bottom: 0.4rem;
+        }
+        .prev-next{
+            padding: 0.4rem 0rem;
+            a{
+                display: block;
+                line-height: 1.8;
+                padding: 0.1rem 0rem;
+            }
+        }
+    }
+}
+/**3·5-基岩学院-基岩研究详情 end**/
+
+
+
+
+/**4·1-会员尊享-会员手册 start**/
+.memeber-manual{
+    background-color: #fff;
+    .introduction{
+        .box{
+            overflow: hidden;
+            .big-title{
+                padding: 0.5rem 0rem 0.4rem;
+            }
+            .desc{
+                line-height: 1.8;
+            }
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0.7rem 0rem;
+                margin: 0rem -0.3rem;
+                li{
+                    width: 33.33%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    &:nth-child(2n+2){
+                        border-left: 0.01rem solid #ddd;
+                        border-right: 0.01rem solid #ddd;
+                    }
+                    .img-box{
+                        width: 0.8rem;
+                        height: 0.8rem;
+                        font-size: 0;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .sub-title{
+                        color: $mainColor;
+                        margin-top: 0.1rem;
+                    }
+                }
+            }
+        }
+    }
+    .power{
+        .box{
+            overflow: hidden;
+            .big-title{
+                padding: 0.5rem 0rem 0.4rem;
+            }
+            ul{
+                li{
+                    a{
+                        display: block;
+                        .img-box{
+                            padding-top: 52%;
+                            @include bgCover();
+                        }
+                        .info{
+                            padding: 0.85rem 0.5rem;
+                            .sub-title{
+                                font-weight: bold;
+                                margin-bottom: 0.4rem;
+                            }
+                            .desc{
+                                line-height: 1.8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/**4·1-会员尊享-会员手册 end**/
+
+
+
+/**4·2-会员尊享-会员活动 start**/
+.member-active{
+    background-color: #fff;
+    .college-common{
+        padding-bottom: 0.6rem;
+        border-bottom: 0.01rem solid #d4d4d4;
+    }
+    .informations{
+        ul{
+            li{
+                border-bottom: 0.01rem solid transparent;
+                a{
+                    overflow: hidden;
+                    border-top-left-radius: 0.1rem;
+                    border-bottom-left-radius: 0.1rem;
+                }
+            }
+        }
+    }
+}
+/**4·2-会员尊享-会员活动 end**/
+
+
+
+/**5·1-基岩动态-媒体报道 start**/
+.media-coverage{
+    background-color: #fff;
+    .college-common{
+        .box{
+            .news{
+                margin-bottom: 0.6rem;
+                display: flex;
+                border: 0.01rem solid #dcdddd;
+                border-radius: 0.1rem;
+                overflow: hidden;
+                .left{
+                    width: 50%;
+                    padding: 0.3rem;
+                    .sub-title{
+                        line-height: 1.6;
+                    }
+                    .more{
+                        margin-top: 0.2rem;
+                        display: block;
+                        width: 1.6rem;
+                        line-height: 0.58rem;
+                        text-align: center;
+                        color: $mainColor;
+                        border-radius: 0.58rem;
+                        border: 0.01rem solid $mainColor;
+                    }
+                }
+                .right{
+                    width: 50%;
+                    .img-box{
+                        height: 100%;
+                        @include bgCover();
+                    }
+                }
+            }
+        }
+    }
+    .informations{
+        ul{
+            li{
+                border-bottom: 0.01rem solid transparent;
+                a{
+                    overflow: hidden;
+                    border-top-left-radius: 0.1rem;
+                    border-bottom-left-radius: 0.1rem;
+                }
+            }
+        }
+    }
+}
+/**5·1-基岩动态-媒体报道 end**/
+
+
+
+/**5·2-基岩动态-基岩资讯 start**/
+.dynamic-information{
+    background-color: #fff;
+}
+/**5·2-基岩动态-基岩资讯 end**/
+
+
+
+/**5·3-基岩动态-基岩公告 start**/
+.notice{
+    .content{
+        .big-title{
+            padding: 0.5rem 0rem 0.4rem;
+        }
+        ul{
+            li{
+                border-bottom: 0.01rem solid #ddd;
+                padding: 0.3rem 0rem;
+                a{
+                    display: flex;
+                    .left{
+                        padding: 0.3rem 0rem;
+                        min-width: 1.6rem;
+                        min-height: 1.6rem;
+                        text-align: center;
+                        border: 0.01rem solid #ccc;
+                        .num1{
+                            font-weight: bold;
+                        }
+                        .num2{
+                            margin-top: 0.05rem;
+                        }
+                    }
+                    .right{
+                        padding-left: 0.24rem;
+                        width: calc(100% - 1.6rem);
+                        .sub-title{
+                            margin-bottom: 0.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/**5·3-基岩动态-基岩公告 end**/
+
+
+
+
+/**6-联系我们 start**/
+.contact-us{
+    background-color: #fff;
+    .info-introduce{
+        .box{
+            .big-title{
+                padding: 0.5rem 0rem 0.4rem;
+            }
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                li{
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .sub-title{
+                        @include wh(1.9rem);
+                        border-radius: 100%;
+                        background-color: #f4f4f4;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-weight: bold;
+                    }
+                    .more{
+                        padding: 0.3rem 0rem 0.4rem;
+                        line-height: 1.8;
+                        *{
+                            color: #8e8a8a;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .address{
+        padding-bottom: 0.6rem;
+        .box{
+            ul{
+                li{
+                    *{
+                        color: #2b2b2b;
+                    }
+                    .img-box{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .info{
+                        margin-top: 0.3rem;
+                        display: flex;
+                        .left{
+                            min-width: 1.1rem;
+                        }
+                        .right{
+                            width: 100%;
+                            line-height: 1.8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/**6-联系我们 end**/
+
+
+
+/** start**/
+
+/** end**/
+
+
+
+/** start**/
+
+/** end**/
+
+
+
+/**注册弹窗 start**/
+.login-layer{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    background-color: rgba(0,0,0,0.7);
+    .login-box{
+        position: absolute;
+        top: 0.5rem;
+        bottom: 0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 1rem);
+        border: 0.04rem solid #5f3427;
+        background-color: #fff;
+        overflow: auto;
+        .head{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f5f2;
+            border-bottom: 0.01rem solid #5f3427;
+            padding: 10px 0px;
+            img{
+                width: auto;
+                height: 0.8rem;
+            }
+        }
+        .content{
+            padding: 0.5rem;
+            .sub-title{
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .list{
+                line-height: 1.6;
+                margin-bottom: 10px;
+            }
+            .desc{
+                border: 0.01rem solid #432115;
+                box-sizing: border-box;
+                background-color: #f9f5f2;
+                .top{
+                    background-color: #ece0d7;
+                    padding: 14px 10px;
+                    color: #7a584d;
+                }
+                .bottom{
+                    padding: 0.6rem 0.7rem;
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    *{
+                        line-height: 0.8rem;
+                        width: 100%;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                    .sure{
+                        background-color: #432115;
+                        color: #fff;
+                        margin-bottom: 0.3rem;
+                    }
+                    .cancel{
+                        background-color: #fff;
+                        color: #432115;
+                        border: 1px solid #7b584e;
+                    }
+                }
+            }
+        }
+    }
+}
+/**注册弹窗 end**/

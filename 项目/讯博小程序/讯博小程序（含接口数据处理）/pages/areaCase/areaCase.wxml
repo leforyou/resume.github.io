@@ -1,0 +1,23 @@
+<import src='../template/cardList/cardList.wxml' />
+
+<view class='wrap'>
+
+    <view class="newscase-head no-card-list-marbtm">
+        <view class='newscase-box'>
+            <image class='newscase-bgpic' src='{{imgUrl}}news-bg.jpg' mode="aspectFill"></image>
+            <view class='newscase-title main-color'>专区案例</view>
+            <view class='newscase-urls'>
+                <view class='newscase-url active'>化妆品专区</view>
+            </view>
+        </view>
+        <template is="cardList" data="{{cardList,url,isCard,cardWay,opzq}}" />
+    </view>
+
+    <view class="load-more">
+        <view class="lm main-bg {{isMore==true?'active':''}}" bindtap="loadMore">加载更多</view>
+        <view class="no {{isMore==false?'active':''}}">没有了</view>
+    </view>
+
+    <footer-content><!--自定义组件-底部内容信息--></footer-content>
+    <nav-tab><!--自定义组件-底部导航--></nav-tab>
+</view>

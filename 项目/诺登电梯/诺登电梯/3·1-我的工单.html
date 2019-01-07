@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>我的工单</title>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/reset.css" rel="stylesheet">
+		<link href="css/style-hua.css" rel="stylesheet">	
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<!-- rem布局适配高清方案 -->
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(true,100, 1);</script>
+		<script src="js/jquery-1.12.4.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/common.js"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap MY-work-list-center main-width bg-f8">
+			
+			<div class="MWLC-nav">
+				<div class="box bg-fff">
+					<ul class="main-width">
+						<li class="MWLC-list active"><span class="fz26 fc-666">全部</span></li>
+						<li class="MWLC-list"><span class="fz26 fc-666">待受理(1)</span></li>
+						<li class="MWLC-list"><span class="fz26 fc-666">处理中(1)</span></li>
+						<li class="MWLC-list"><span class="fz26 fc-666">待确认(1)</span></li>
+						<li class="MWLC-list"><span class="fz26 fc-666">已完成(4)</span></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="MWLC-info">
+				<ul>
+					<li class="MWLC-info-list bg-fff margin-top">
+						<div class="head main-padding-lr">
+							<p class="fz26 fc-999">报修单号：</p>
+							<p class="fz26">20250852</p>
+							<p class="fz26 state main-padding-lr main-color">待受理</p>
+						</div>
+						<a href="" class="desc border-top border-btm main-padding-lr">
+							<div class="d-box">
+								<i class="img-box border" style="background-image: url(images/problem-desc2.jpg);"></i>
+								<ul>
+									<li>
+										<span class="left fz28 fc-999">设备：</span>
+										<span class="right fz28 ellipsis1">智能化</span>
+									</li>
+									<li>
+										<span class="left fz28 fc-999">故障：</span>
+										<span class="right fz28 ellipsis1">压缩机</span>
+									</li>
+								</ul>
+								<p class="time flex-center">
+									<span class="fz24 fc-999">2018-06-12&nbsp;12:30</span>
+									<i class="icon iconfont icon-gengduo fz21 fc-999"><!--更多--></i>
+								</p>
+							</div>
+						</a>
+						<div class="foot flex-between main-padding-lr">
+							<p class="fz26">业主：陈华健</p>
+							<p class="fz26">
+								<i class="icon iconfont icon-dianhua fz26"><!--电话--></i>
+								<span>15986231521</span>
+							</p>
+						</div>
+					</li>
+					
+					<li class="MWLC-info-list bg-fff margin-top">
+						<div class="head main-padding-lr">
+							<p class="fz26 fc-999">报修单号：</p>
+							<p class="fz26">20250852</p>
+							<p class="fz26 state main-padding-lr main-color">处理中</p>
+						</div>
+						<a href="" class="desc border-top border-btm main-padding-lr">
+							<div class="d-box">
+								<i class="img-box border" style="background-image: url(images/problem-desc2.jpg);"></i>
+								<ul>
+									<li>
+										<span class="left fz28 fc-999">设备：</span>
+										<span class="right fz28 ellipsis1">智能化</span>
+									</li>
+									<li>
+										<span class="left fz28 fc-999">故障：</span>
+										<span class="right fz28 ellipsis1">压缩机</span>
+									</li>
+								</ul>
+								<p class="time flex-center">
+									<span class="fz24 fc-999">2018-06-12&nbsp;12:30</span>
+									<i class="icon iconfont icon-gengduo fz21 fc-999"><!--更多--></i>
+								</p>
+							</div>
+						</a>
+						<div class="foot flex-between main-padding-lr">
+							<p class="fz26">业主：陈华健</p>
+							<p class="fz26">
+								<i class="icon iconfont icon-dianhua fz26"><!--电话--></i>
+								<span>15986231521</span>
+							</p>
+						</div>
+					</li>
+					
+					<li class="MWLC-info-list bg-fff margin-top">
+						<div class="head main-padding-lr">
+							<p class="fz26 fc-999">报修单号：</p>
+							<p class="fz26">20250852</p>
+							<p class="fz26 state main-padding-lr main-color">等待配件</p>
+						</div>
+						<a href="" class="desc border-top border-btm main-padding-lr">
+							<div class="d-box">
+								<i class="img-box border" style="background-image: url(images/problem-desc2.jpg);"></i>
+								<ul>
+									<li>
+										<span class="left fz28 fc-999">设备：</span>
+										<span class="right fz28 ellipsis1">智能化</span>
+									</li>
+									<li>
+										<span class="left fz28 fc-999">故障：</span>
+										<span class="right fz28 ellipsis1">压缩机</span>
+									</li>
+								</ul>
+								<p class="time flex-center">
+									<span class="fz24 fc-999">2018-06-12&nbsp;12:30</span>
+									<i class="icon iconfont icon-gengduo fz21 fc-999"><!--更多--></i>
+								</p>
+							</div>
+						</a>
+						<div class="foot flex-between main-padding-lr">
+							<p class="fz26">业主：陈华健</p>
+							<p class="fz26">
+								<i class="icon iconfont icon-dianhua fz26"><!--电话--></i>
+								<span>15986231521</span>
+							</p>
+						</div>
+					</li>
+					
+					<li class="MWLC-info-list bg-fff margin-top">
+						<div class="head main-padding-lr">
+							<p class="fz26 fc-999">报修单号：</p>
+							<p class="fz26">20250852</p>
+							<p class="fz26 state main-padding-lr main-color">待确认</p>
+						</div>
+						<a href="" class="desc border-top border-btm main-padding-lr">
+							<div class="d-box">
+								<i class="img-box border" style="background-image: url(images/problem-desc2.jpg);"></i>
+								<ul>
+									<li>
+										<span class="left fz28 fc-999">设备：</span>
+										<span class="right fz28 ellipsis1">智能化</span>
+									</li>
+									<li>
+										<span class="left fz28 fc-999">故障：</span>
+										<span class="right fz28 ellipsis1">压缩机</span>
+									</li>
+								</ul>
+								<p class="time flex-center">
+									<span class="fz24 fc-999">2018-06-12&nbsp;12:30</span>
+									<i class="icon iconfont icon-gengduo fz21 fc-999"><!--更多--></i>
+								</p>
+							</div>
+						</a>
+						<div class="foot flex-between main-padding-lr">
+							<p class="fz26">业主：陈华健</p>
+							<p class="fz26">
+								<i class="icon iconfont icon-dianhua fz26"><!--电话--></i>
+								<span>15986231521</span>
+							</p>
+						</div>
+					</li>
+					
+					<li class="MWLC-info-list bg-fff margin-top">
+						<div class="head main-padding-lr">
+							<p class="fz26 fc-999">报修单号：</p>
+							<p class="fz26">20250852</p>
+							<p class="fz26 state main-padding-lr">已完成</p>
+						</div>
+						<a href="" class="desc border-top border-btm main-padding-lr">
+							<div class="d-box">
+								<i class="img-box border" style="background-image: url(images/problem-desc2.jpg);"></i>
+								<ul>
+									<li>
+										<span class="left fz28 fc-999">设备：</span>
+										<span class="right fz28 ellipsis1">智能化</span>
+									</li>
+									<li>
+										<span class="left fz28 fc-999">故障：</span>
+										<span class="right fz28 ellipsis1">压缩机</span>
+									</li>
+								</ul>
+								<p class="time flex-center">
+									<span class="fz24 fc-999">2018-06-12&nbsp;12:30</span>
+									<i class="icon iconfont icon-gengduo fz21 fc-999"><!--更多--></i>
+								</p>
+							</div>
+						</a>
+						<div class="foot flex-between main-padding-lr">
+							<p class="fz26">业主：陈华健</p>
+							<p class="fz26">
+								<i class="icon iconfont icon-dianhua fz26"><!--电话--></i>
+								<span>15986231521</span>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="company-service">
+				<p class="tel text-center fz24">
+					<span class="fc-666">服务热线</span>
+					<b class="fc-666">400-8114-915</b>
+				</p>
+				<p class="company-name fz22 fc-bbb text-center">© 2018 广东诺登机电工程有限公司  版权所有 </p>
+			</div>
+		</div>
+		<script>
+			$(function() {
+				//轮播图
+		      	$(".wrap-foot-btn .btn").click(function(){
+		      		$(".wrap-mask-accept").addClass('active');
+		      	});
+		      	$(".wrap-mask-accept , .wrap-mask-accept .icon-shutdown , .wrap-mask-accept .btn").click(function(){
+		      		$(".wrap-mask-accept").removeClass('active');
+		      	});
+		      	$(".wrap-mask-accept .box").click(function(){
+		      		event.stopPropagation();
+		      	});
+		    });
+		</script>
+	</body>
+
+</html>

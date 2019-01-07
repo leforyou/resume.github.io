@@ -1,0 +1,23 @@
+.serve-type{
+    padding:0 30rpx 90rpx;
+    background-color: #fff;
+}
+.serve-title{
+    text-align: center;
+    padding: 68rpx 0;
+    font-size: 50rpx;
+}
+.serve-ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.serve-list{
+    width: 50%;
+    text-align: center;
+    background-color: #e5f4fd;
+    line-height: 110rpx;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    color: #222;
+}

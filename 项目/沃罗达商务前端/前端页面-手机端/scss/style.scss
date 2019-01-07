@@ -1,0 +1,1082 @@
+@charset "utf-8";
+@import 'variable.scss';
+@import 'mixin.scss';
+/*注意： @import url('common.css');这种是写是属于css的，在scss中编译过程将找不到文件*/
+
+/*菜单start*/
+$height:1.2rem;
+.padding-top-nav{
+    padding-top: $height;
+}
+.menu{
+    .m-head{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 999999;
+        .mh-box{
+            height: $height;
+            display: flex;
+            align-items: center;
+            box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+            position: relative;
+            padding-right: 1.2rem;
+            .logo-box{
+                display: flex;
+                align-items: center;
+                .logo{
+                    width: 2.1rem;
+                    margin-right: 0.2rem;
+                    vertical-align: middle;
+                }
+            }
+            .ico-menu{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 1.2rem;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                i{
+                    $val:0.06rem;
+                    position: relative;
+                    height: $val;
+                    width: 0.41rem;
+                    background-color: #fff;
+                    display: block;
+                    margin-top: 0.05rem;
+                    margin-bottom: 0.05rem;
+                    margin-left: $val;
+                    &:before{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: -$val * 2;
+                        @include wh($val);
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .mn-nav{
+        &.active{
+            opacity: 1;
+            visibility: visible;
+            .mn-box .mn-close,.mn-box>ul{
+                transform: translateX(0%) !important;
+            }
+        }
+        z-index:99999999999;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.5);
+        visibility: hidden;
+        opacity: 0;
+        transition: all .3s;
+        .mn-box{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            overflow: hidden;
+            .mn-close{
+                display: block;
+                background: url(../img/close-menu.png) no-repeat center;
+                background-size: 0.6rem;
+                width: 2rem;
+                height: 1.2rem;
+                background-color: #005aa8;
+                position: absolute;
+                top: 0;
+                left: 0;
+                cursor: pointer;
+                transition: all 0.4s ease-out;
+                transform: translateX(1000%);
+            }
+            &>ul{
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 2rem;
+                bottom: 0;
+                background-color: #fff;
+                transition: all 0.3s;
+                transform: translateX(100%);
+                li.mn-one-level{
+                    &>a{
+                        font-size: 0.3rem;
+                        padding-left: .2rem;
+                        display: block;
+                        height: 1rem;
+                        line-height: 1rem;
+                        border-bottom: 0.01rem solid #ddd;
+                    }
+                    .mn-two-level-box{
+                        display: none;
+                        font-size: 0.28rem;
+                        border-bottom: 0.01rem solid #ddd;
+                        a{
+                            display: block;
+                            height: .8rem;
+                            line-height: .8rem;
+                            width: 100%;
+                            padding-left: .5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*菜单end*/
+
+/*底部start*/
+.foot{
+    ul{
+        display: flex;
+        align-items: center;
+        li{
+            &:nth-last-child(1){
+                border-right: none;
+            }
+            flex-grow: 1;
+            border-right: 0.01rem solid rgba(255,255,255,0.4);
+            a{
+                width: 100%;
+                height: 1.26rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    @include wh(0.5rem);
+                    margin-right: 0.2rem;
+                }
+            }
+        }
+    }
+}
+/*底部end*/
+
+/*公共的标题start*/
+.wld-title{
+    .box{
+        $val:0.25rem;
+        height: 1.06rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: $val;
+        .title{
+            &:before{
+                content: '';
+                display: block;
+                position: absolute;
+                left: -$val;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 0.05rem;
+                height: 0.22rem;
+                background-color: $mainColor;
+            }
+            position: relative;
+        }
+    }
+}
+/*公共的标题end*/
+
+/*banner图start*/
+.wld-banner{
+    img{
+        width: 100%;
+        vertical-align: bottom;
+    }
+}
+/*banner图end*/
+
+/*首页start*/
+.home{
+    .wrap-slide{
+        padding-top: 56%;
+        position: relative;
+        .slide-box{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .swiper-container,.swiper-slide{
+            height: 100%;
+        }
+        .swiper-slide *{
+            height: 100%;
+            width: 100%;
+            display: block;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;;
+        }
+        .swiper-pagination-bullet{
+            border: 0.02rem solid #fff;
+            opacity: 1;
+            background-color: transparent;
+        }
+        .swiper-pagination-bullet-active{
+            background-color: #fff;
+        }
+    }
+    @at-root .HM-head-title{
+        .cn{
+            margin-top: 0.5rem;
+        }
+        .en{
+            margin: 0.2rem 0rem 0.3rem;
+        }
+    }
+    @at-root.home-line{
+        $color:#2c85ce;
+        margin: 0 25%;
+        height: 1px;
+        background-color: $color;
+        span{
+            &:before,&:after{
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                border: 1px solid $color;
+                border-radius: 100%;
+                display: block;
+            }
+            &:before{
+                @include wh(16px);
+                margin-top: -8px;
+                margin-left: -8px;
+            }
+            &:after{
+                @include wh(8px);
+                margin-top: -4px;
+                margin-left: -4px;
+            }
+            display: block;
+            width: 35px;
+            margin: 0 auto;
+            position: relative;
+            background-color: #fff;
+            height: 1px;
+        }
+    }
+    .exhibition-service{
+        .content{
+            ul{
+                display: flex;
+                justify-content: space-between;
+                margin: 0.5rem 0.1rem;
+                li{
+                    &.active{
+                        a{
+                            background-color: #2c8dde;
+                            border: 0.01rem solid #2c8dde;
+                            .img1{
+                                display: none;
+                            }
+                            .img2{
+                                display: block;
+                            }
+                            p{
+                                color: #fff;
+                            }
+                        }
+                    }
+                    flex-grow: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    a{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        @include wh(1.52rem);
+                        border-radius: 100%;
+                        border: 0.01rem solid #ccc;
+                        img{
+                            @include wh(0.4rem);
+                            margin-bottom: 0.05rem;
+                        }
+                        .img1{
+                            display: block;
+                        }
+                        .img2{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .visa{
+                background: url(../img/home-visa.jpg) no-repeat center;
+                background-size: cover;
+                height: 4.5rem;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                .title{
+                    margin-top: 0.4rem;
+                }
+                .introduce{
+                    &:after{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0.3rem;
+                        right: 0.3rem;
+                        background-color: #333;
+                        height: 0.02rem;
+                    }
+                    padding: 0.2rem 0rem;
+                    position: relative;
+                }
+                .info{
+                    width: 70%;
+                    line-height: 2;
+                    margin-top: 0.2rem;
+                }
+                .more{
+                    margin-top: 0.3rem;
+                    padding: 0.12rem 0.5rem;
+                    border: 0.01rem solid #666;
+                }
+            }
+        }
+    }
+    .travel-service{
+        .content{
+            padding-top: 0.4rem;
+            padding-bottom: 0.7rem;
+            ul{
+                li{
+                    &:nth-last-child(1){
+                        margin-bottom: 0;
+                    }
+                    margin-bottom: 0.3rem;
+                    padding-top: 46.47%;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 0.2rem;
+                    a{
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        img{
+                            width: 100%;
+                        }
+                        .info{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: rgba(0,0,0,0.2);
+                            background-image: url(../img/travel-rect.png);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: 3.8rem 1.5rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            .cn{
+                                margin-right: 0.3rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    .partner{
+        overflow: hidden;
+        .content{
+            padding: 0.4rem 0rem 0.1rem;
+            ul{
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                li{
+                    position: relative;
+                    margin-top: 0rem;
+                    margin-bottom: 0.4rem;
+                    margin-left: 0.2rem;
+                    margin-right: 0.2rem;
+                    &:after{
+                        content: '';
+                        display: block;
+                        position:absolute;
+                        top: 50%;
+                        right: -0.2rem;
+                        transform: translateY(-50%);
+                        width: 0.02rem;
+                        height: 0.23rem;
+                        background-color: #666;
+                    }
+                    &:nth-last-child(1):after{
+                        width: 0;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+/*首页end*/
+
+/*合作伙伴start*/
+.partner{
+    .consulate{
+        $val:0.3rem;
+        ul{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 0.3rem;
+            margin-bottom: 0.3rem;
+            margin-right: -$val;
+            li{
+                &.active{
+                    &,*{
+                        color: $mainColor;
+                    }
+                    a{
+                        border: 0.01rem solid $mainColor;
+                    }
+                }
+                width: calc(50% - 0.3rem);
+                margin-right: $val;
+                margin-bottom: 0.3rem;
+                display: flex;
+                a{
+                    width: 100%;
+                    border: 0.01rem solid #ddd;
+                    padding: 0.36rem 0.2rem;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+/*合作伙伴end*/
+
+
+/*新闻列表 start*/
+.news{
+    .wrap-news-list{
+        @at-root.wld-all{
+            width: 2.3rem;
+            height: 0.58rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0.3rem;
+        }
+        >ul{
+            >li{
+                a{
+                    padding: 0.4rem 0rem;
+                    border-bottom: 0.01rem dotted #ddd;
+                    display: flex;
+                    .img-box{
+                        &,i{
+                            min-width: 2.6rem;
+                            width: 2.6rem;
+                            height: 1.8rem;
+                            display: block;
+                        }
+                        i{
+                            background-position: center;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                    .right{
+                        width: 100%;
+                        margin-left: 0.3rem;
+                        margin-top: 0.1rem;
+                        margin-bottom: 0.1rem;
+                        position: relative;
+                        .time{
+                            margin-top: 0.2rem;
+                        }
+                        .desc{
+                            position: absolute;
+                            bottom: 0;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .pagination-wrap{
+            margin: 0.5rem 0rem;
+        }
+    }
+}
+/*新闻列表 end*/
+
+/*新闻详情 start*/
+.news-details{
+    .news-content{
+        @at-root.details-title{
+            margin-top: 0.3rem;
+        }
+        @at-root.details-info{
+            margin: 0.2rem 0rem 0.4rem;
+        }
+        .desc{
+            img{
+                width: 100%;
+            }
+        }
+        @at-root.go-back{
+            width: 1.78rem;
+            height: 0.48rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0.5rem auto;
+            
+        }
+        @at-root.prev-next{
+            height: 1.5rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            *{
+                margin: 0.05rem 0rem;
+            }
+        }
+    }
+}
+/*新闻详情 end*/
+
+/*人才招聘 start*/
+.jobs{
+    .job-sort{
+        .head-title{
+            margin: 0.4rem 0rem 0.3rem;
+            display: flex;
+            .w1{
+                width: 28%;
+            }
+            .w2{
+                width: 22%;
+            }
+            .w3{
+                width: 50%;
+            }
+        }
+        ul{
+            margin-bottom: 0.4rem;
+            li{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 0.1rem;
+                .head-title{
+                    height: 0.8rem;
+                    background-color: #e9ecef;
+                    align-items: center;
+                    position: relative;
+                    margin: 0;
+                    .ico{
+                        background-color: #dee4e9;
+                        background-image: url(../img/job-more.svg);
+                        background-size: 60%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        width: 0.76rem;
+                        cursor: pointer;
+                    }
+                }
+                .content{
+                    background-color: #f1f4f7;
+                    border-top: 0.01rem solid #fff;
+                    line-height: 2;
+                    padding-top: 0.3rem;
+                    padding-bottom: 0.3rem;
+                    display: none;
+                    *{
+                        color: #666;
+                    }
+                    .contact{
+                        text-indent: 20px;
+                        margin: 0.4rem 0;
+                    }
+                }
+            }
+        }
+    }
+}
+/*人才招聘 end*/
+
+/*关于我们 start*/
+.about-me{
+    .introduce{
+        background-image: url(../img/about-me-bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        overflow: hidden;
+        .head{
+            padding: 0.5rem 0rem;
+            .en{
+                margin-bottom: 0.25rem;
+            }
+        }
+        .content{
+            line-height: 2;
+            margin-bottom: 1rem;
+        }
+    }
+    .contact{
+        .head{
+            padding: 0.5rem 0rem;
+            .en{
+                margin-bottom: 0.25rem;
+            }
+        }
+        .more{
+            line-height: 2.2;
+            margin-bottom: 0.3rem;
+        }
+    }
+    .map{
+        padding-top: 70%;
+        position: relative;
+        .box{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            >*{
+                height: 100%;
+            }
+        }
+    }
+}
+/*关于我们 end*/
+
+/*服务范围 start*/
+.service{
+    @at-root.service-head-nav{
+        .box{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0.3rem;
+            a{
+                &.active{
+                    background-color: $mainColor;
+                }
+                &:nth-last-child(1){
+                    margin-right: 0;
+                }
+                align-self: center;
+                width: calc(33.33% - 0.15rem);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 0.15rem;
+                margin-bottom: 0.3rem;
+                background-color: #d2d2d2;
+                height: 0.6rem;
+                
+            }
+        }
+    }
+    @at-root.serser-title{
+        margin-top: 0.45rem;
+        margin-bottom: 0.3rem;
+        &,&>*{
+            position: relative;
+            display: inline-block;
+        }
+        &:before,&:after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            @include wh(0.12rem);
+            background-color: #d2d2d2;
+            transform: translateY(-50%);
+        }
+        &:before{
+            left: 0px;
+        }
+        &:after{
+            right: 0px;
+        }
+        &>*{
+            padding-left:0.45rem;
+            padding-right: 0.45rem;
+        }
+        &>*:before,&>*:after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            @include wh(0.08rem);
+            background-color: $subColor;
+            transform: translateY(-50%);
+        }
+        &>*:before{
+            left: 0.16rem;
+        }
+        &>*:after{
+            right: 0.16rem;
+        }
+            
+    }
+    .content{
+        .exhibitions-img-box{
+            position: relative;
+            margin-bottom: 0.2rem;
+            img{
+                width: 100%;
+                vertical-align: bottom;
+            }
+            p{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(255,255,255,0.5);
+                text-align: center;
+                line-height: 0.6rem;
+            }
+        }
+    }
+}
+/*服务范围 end*/
+
+/*服务范围列表 start*/
+.service-list{
+    .content{
+        .exhibitions{
+            li{
+                padding-top: 0.4rem;
+                padding-bottom: 0.4rem;
+                a{
+                    display: flex;
+                    .img-box{
+                        margin-right: 0.3rem;
+                       *{
+                           display: block;
+                           min-width: 1.9rem;
+                           width: 1.9rem;
+                           height: 1.5rem;
+                           background-position: center;
+                           background-size: cover;
+                           background-repeat: no-repeat;
+                           border: 0.01rem solid #ddd;
+                       }
+                    }
+                    .info{
+                        line-height: 1.8;
+                        width: 100%;
+                        >*{
+                            width: 100%;
+                            white-space: normal;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*服务范围列表 end*/
+
+/*服务范围详情 start*/
+.service-details{
+    .content{
+        .title{
+            margin-bottom: 0.2rem;
+        }
+    }
+}
+/*服务范围详情 end*/
+
+/*服务范围-签证办理业务 start*/
+.visa-business{
+    @at-root.slide-list{
+        .service-swiper{
+            padding-top: 39.848%;
+            overflow: hidden;
+            position: relative;
+            .swiper-container{
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+            }
+            .swiper-wrapper{
+                position: relative;
+            }
+            .swiper-slide{
+                position: relative;
+                img{
+                    width: 100%;
+                    vertical-align: bottom;
+                }
+                p{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: rgba(0,0,0,0.5);
+                    line-height: 0.6rem;
+                    padding: 0 0.2rem;
+                }
+            }
+            .swiper-pagination{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 0.6rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .swiper-pagination-bullet {
+                width: 0.16rem;
+                height: 0.16rem;
+                display: inline-block;
+                border-radius: 100%;
+                background: #fff;
+                opacity: .3;
+            }
+            .swiper-pagination-bullet-active {
+                opacity: 1;
+                background: #fff;
+            }
+        }
+        .service-mold{
+            height: 2.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .swiper-container{
+                width: 100%;
+                .swiper-wrapper{
+                    .swiper-slide{
+                        a{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            i{
+                                @include wh(0.8rem);
+                                display: block;
+                                background-color: #f7f7f7;  
+                                background-position: center;
+                                background-size: 100%;
+                                background-repeat: no-repeat;
+                                border-radius: 100%;
+                                margin-bottom: 0.15rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*服务范围-签证办理业务 end*/
+
+/*服务范围-旅游-俄罗斯 start*/
+.tourism{
+    
+}
+/*服务范围-旅游-俄罗斯 end*/
+
+/*服务范围-旅游-马尔代夫 start*/
+.scenic-spot{
+    .content{
+        
+    }
+}
+/*服务范围-旅游-马尔代夫 end*/
+
+
+/*服务案例-会展服务案例 start*/
+.case{
+    .content{
+        $val:0.25rem;
+        >ul{
+            display: flex;
+            flex-wrap: wrap;
+            li{
+                width: calc(50% - 0.25rem);
+                margin-right: $val;
+                a{
+                    display: block;
+                    .img-box{
+                        padding-top: 55.405%;
+                        overflow: hidden;
+                        position: relative;
+                        *{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .info{
+                        padding: 0 0.15rem;
+                        .title{
+                            margin: 0.25rem 0;
+                        }
+                        .desc{
+                            line-height: 1.8;
+                            margin-bottom: 0.68rem;
+                        }
+                    }
+                }
+            }
+        }
+        .pagination-wrap{
+            margin-bottom: 0.68rem;
+        }
+    }
+}
+/*服务案例-会展服务案例 end*/
+
+
+/*服务案例-会展服务案例详情 start*/
+.case-details{
+    .content{
+        .desc{
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+/*服务案例-会展服务案例详情 end*/
+
+/* start*/
+
+/* end*/
+
+
+/*表格 start*/
+.table-houseboat{
+    background-color: transparent;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-spacing:0;
+    border-collapse: collapse !important;/*比较重要的属性,利用谷歌浏览器调试工具从boostrap table框架插件中学到的*/
+    width: 100%;
+}
+.table-houseboat caption{
+    padding: 0.3rem 0 0.22rem;
+    text-align: left;
+}
+.table-houseboat td,.table-houseboat th{
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.table-houseboat tbody tr td{
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    width: 160px;
+    text-align: center;
+    line-height: 3;
+    vertical-align: middle;
+    color: #666;
+}
+/*表格 end*/
+
+
+/*分页按钮 start*/
+.pagination-wrap{
+    $wh:0.52rem;
+    $marginRight:0.1rem;
+    $BgColor:#eee;
+    $BgColorActive:#0074b1;
+    $FcColor:#666;
+    $FcColorActive:#fff;
+    $fz1:0.22rem;
+    text-align: center;
+    @at-root .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $fz1;
+        .active{
+            background-color: $BgColorActive;
+            a{
+                color: $FcColorActive;
+            }
+        }
+        li{
+            width: $wh;
+            height: $wh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: $marginRight;
+            background-color: $BgColor;
+            color: $FcColor;
+            a{
+                width: $wh;
+                height: $wh;
+                color: $FcColor;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .ellipsis{
+            background-color: transparent;
+            width: auto;
+            padding: 0 5px;
+        }
+        .prev,.next{
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .prev{
+            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IuWbvuWxgl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjMwcHgiIGhlaWdodD0iMzBweCIgdmlld0JveD0iMCAwIDMwIDMwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMCAzMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjOTk5OTk5IiBkPSJNMTkuNjQ4LDIyLjc4MWwtNy44MjMtNy43NDFsNy43NzItNy44NTZjMC4zNDYtMC4zNDUsMC4zNDQtMC45MDYtMC4wMDItMS4yNTJsMCwwDQoJYy0wLjM0Ny0wLjM0Ny0wLjkwNy0wLjM0OC0xLjI1MiwwLjA4NmwtOC4yOTIsOC4yOTJjLTAuMTEyLDAuMTI1LTAuMjQsMC4yNzMtMC4yNjIsMC4zNTNjLTAuMTMxLDAuMzI2LTAuMDY1LDAuNzI2LDAuMTk3LDEuMDU0DQoJbDguNDA4LDguNDA4YzAuMzQ4LDAuMjU5LDAuOTEsMC4yNiwxLjI1OC0wLjA4NkMxOS45OTgsMjMuNjkyLDE5Ljk5NywyMy4xMjksMTkuNjQ4LDIyLjc4MXoiLz4NCjwvc3ZnPg0K);
+        }
+        .next{
+            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IuWbvuWxgl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjMwcHgiIGhlaWdodD0iMzBweCIgdmlld0JveD0iMCAwIDMwIDMwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMCAzMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjOTk5OTk5IiBkPSJNOS45ODcsNy4yMWw3LjgyMyw3Ljc0MWwtNy43NzIsNy44NTZjLTAuMzQ2LDAuMzQ1LTAuMzQ0LDAuOTA1LDAuMDAyLDEuMjUybDAsMA0KCWMwLjM0NywwLjM0NywwLjkwNywwLjM0OCwxLjI1Mi0wLjA4Nmw4LjI5Mi04LjI5MmMwLjExMi0wLjEyNSwwLjI0LTAuMjczLDAuMjYyLTAuMzUzYzAuMTMxLTAuMzI2LDAuMDY1LTAuNzI2LTAuMTk2LTEuMDU0DQoJbC04LjQwOC04LjQwOGMtMC4zNDgtMC4yNTktMC45MS0wLjI2LTEuMjU4LDAuMDg2QzkuNjM4LDYuMjk5LDkuNjM5LDYuODYyLDkuOTg3LDcuMjF6Ii8+DQo8L3N2Zz4NCg==);
+        }
+    }
+}
+/*分页按钮 end*/

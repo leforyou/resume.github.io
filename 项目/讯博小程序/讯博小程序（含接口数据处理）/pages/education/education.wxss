@@ -1,0 +1,139 @@
+.why-do {
+    position: relative;
+}
+
+.why-do .bg {
+    width: 100%;
+    height: 1246rpx;
+}
+
+.why-do .title,
+.why-do .desc {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.why-do .title {
+    width: 750rpx;
+    height: 212rpx;
+    top: 240rpx;
+}
+
+.why-do .desc {
+    width: 750rpx;
+    height: 231rpx;
+    top: 670rpx;
+}
+
+.what-is {
+    position: relative;
+}
+
+.what-is .bg {
+    width: 100%;
+    height: 1282rpx;
+}
+
+.what-is .title,
+.what-is .desc {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.what-is .title {
+    width: 750rpx;
+    height: 35rpx;
+    top: 90rpx;
+}
+
+.what-is .desc {
+    width: 750rpx;
+    height: 982rpx;
+    top: 195rpx;
+}
+
+.we-do {
+    position: relative;
+}
+
+.we-do .bg {
+    width: 100%;
+    height: 1433rpx;
+}
+
+.we-do .title,
+.we-do .desc {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.we-do .title {
+    width: 750rpx;
+    height: 35rpx;
+    top: 90rpx;
+}
+
+.we-do .desc {
+    width: 750rpx;
+    height: 1181rpx;
+    top: 195rpx;
+}
+
+.how-long {
+    position: relative;
+}
+
+.how-long .bg {
+    width: 100%;
+    height: 1334rpx;
+}
+
+.how-long .title,
+.how-long .desc {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.how-long .title {
+    width: 750rpx;
+    height: 159rpx;
+    top: 70rpx;
+}
+
+.how-long .desc {
+    width: 750rpx;
+    height: 941rpx;
+    top: 306rpx;
+}
+
+.you-need {
+    position: relative;
+}
+
+.you-need .bg {
+    width: 100%;
+    height: 1334rpx;
+}
+
+.you-need .title,
+.you-need .desc {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.you-need .title {
+    width: 750rpx;
+    height: 35rpx;
+    top: 85rpx;
+}
+
+.you-need .desc {
+    width: 750rpx;
+    height: 962rpx;
+    top: 197rpx;
+}

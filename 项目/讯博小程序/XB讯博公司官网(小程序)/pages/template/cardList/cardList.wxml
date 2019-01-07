@@ -1,0 +1,20 @@
+<template name="cardList">
+    <navigator url='../projectCaseDetail/projectCaseDetail' hover-class='none'>
+        <view class='card-list'>
+            <image class="card-pic" mode="aspectFill" src="../../static/w02.jpg"></image>
+            <view class="card-title">2016全国大学生工业设计大赛</view>
+            <view class="card-date">2016-07-28</view>
+            <view class='card-content ellipsis2'>2016 全国大学生工业设计大赛由广州美术学院主办，本网站旨在提供一个平台，供全国大学生提交作品、评选（网评、学生工业设计大赛由广州美术学院主办，本网站旨在提供一个平台，供全国大学生提交作品、评选（网评</view>
+        </view>
+    </navigator>
+
+    <navigator url='../projectCaseDetail/projectCaseDetail' hover-class='none'>
+        <view class='card-list'>
+            <image class="card-pic" mode="aspectFill" src="../../static/w02.jpg"></image>
+            <view class="card-title">2016全国大学生工业设计大赛</view>
+            <view class="card-date">2016-07-28</view>
+            <view class='card-content ellipsis2'>2016 全国大学生工业设计大赛由广州美术学院主办，本网站旨在提供一个平台，供全国大学生提交作品、评选（网评、学生工业设计大赛由广州美术学院主办，本网站旨在提供一个平台，供全国大学生提交作品、评选（网评</view>
+        </view>
+    </navigator>
+    
+</template>

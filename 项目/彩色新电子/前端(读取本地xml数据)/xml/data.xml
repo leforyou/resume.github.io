@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<note>
+  <enterprise>
+  	<title>企业简介</title>
+  	<desc>
+  		彩色新电子技术有限公司公司成立2014年组建团队于中大科技园，2016年迁入琶洲北岛创意园，公司内部核心技术骨干10名，外聘技术顾问5名，目前现有员
+  		工32名。专注于数码喷绘控制系统的研发，已应用于喷印行业的有广告喷绘、纺织喷印、陶瓷喷印。
+  	</desc>
+  </enterprise>
+  
+  <productApplication>
+  	<title>产品的应用领域</title>
+  	<productArr>
+  		<list>
+  			<subTitle>产品111</subTitle>
+  			<img>img/product-app1.jpg</img>
+  			<desc>
+  				产品111：彩色新电子技术有限公司公司成立2014年组建团队于中大科技园，2016年迁入琶洲北岛创意园，公司内部核心技术骨干10名，外聘技术顾问5名，目前现有员
+  				工32名。专注于数码喷绘控制系统的研发，已应用于喷印行业的有广告喷绘、纺织喷印、陶瓷喷印。
+  			</desc>
+  		</list>
+  		<list>
+  			<subTitle>产品222</subTitle>
+  			<img>img/product-app2.jpg</img>
+  			<desc>
+  				产品222：彩色新电子技术有限公司公司成立2014年组建团队于中大科技园，2016年迁入琶洲北岛创意园，公司内部核心技术骨干10名，外聘技术顾问5名，目前现有员
+  				工32名。专注于数码喷绘控制系统的研发，已应用于喷印行业的有广告喷绘、纺织喷印、陶瓷喷印。
+  			</desc>
+  		</list>
+  		<list>
+  			<subTitle>产品333</subTitle>
+  			<img>img/product-app3.jpg</img>
+  			<desc>
+  				产品333：彩色新电子技术有限公司公司成立2014年组建团队于中大科技园，2016年迁入琶洲北岛创意园，公司内部核心技术骨干10名，外聘技术顾问5名，目前现有员
+  				工32名。专注于数码喷绘控制系统的研发，已应用于喷印行业的有广告喷绘、纺织喷印、陶瓷喷印。
+  			</desc>
+  		</list>
+  		<list>
+  			<subTitle>产品444</subTitle>
+  			<img>img/product-app4.jpg</img>
+  			<desc>
+  				产品444：彩色新电子技术有限公司公司成立2014年组建团队于中大科技园，2016年迁入琶洲北岛创意园，公司内部核心技术骨干10名，外聘技术顾问5名，目前现有员
+  				工32名。专注于数码喷绘控制系统的研发，已应用于喷印行业的有广告喷绘、纺织喷印、陶瓷喷印。
+  			</desc>
+  		</list>
+  		<list>
+  			<subTitle>产品555</subTitle>
+  			<img>img/product-app5.jpg</img>
+  			<desc>
+  				产品555：彩色新电子技术有限公司公司成立2014年组建团队于中大科技园，2016年迁入琶洲北岛创意园，公司内部核心技术骨干10名，外聘技术顾问5名，目前现有员
+  				工32名。专注于数码喷绘控制系统的研发，已应用于喷印行业的有广告喷绘、纺织喷印、陶瓷喷印。
+  			</desc>
+  		</list>
+  		<list>
+  			<subTitle>产品666</subTitle>
+  			<img>img/product-app6.jpg</img>
+  			<desc>
+  				产品666：彩色新电子技术有限公司公司成立2014年组建团队于中大科技园，2016年迁入琶洲北岛创意园，公司内部核心技术骨干10名，外聘技术顾问5名，目前现有员
+  				工32名。专注于数码喷绘控制系统的研发，已应用于喷印行业的有广告喷绘、纺织喷印、陶瓷喷印。
+  			</desc>
+  		</list>
+  	</productArr>
+  </productApplication>
+  
+  <contactUs>
+  	<title>联系我们</title>
+  	<address>广州市海珠区新港东路51号北岛创意园A区A4室</address>
+  	<postcode>510308</postcode>
+  	<phone1>020-8962 9550</phone1>
+  	<phone2>020-8962 9550</phone2>
+  	<email>wuzhihua@colourstek.com</email>
+  	<website>www.colourstek.com</website>
+  </contactUs>
+  
+  <copyright>
+  	<title>底部信息-网站版权</title>
+  	<desc>Copyright © 2018 广州彩色新电子技术有限公司 版权所有 保留一切权利 粤ICP备16091089号-1</desc>
+  </copyright>
+</note>

@@ -1,0 +1,27 @@
+.card-list {
+    border: 1rpx solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    color: #555;
+    background: #fff;
+    margin:40rpx 20rpx;
+    line-height: 1.6;
+}
+.card-pic{
+    width: 100%;
+    height: 360rpx;
+}
+.card-title {
+    color: #333;
+    font-size: 36rpx;
+}
+.card-date {
+    color: #999;
+    font-size: 28rpx;
+    padding: 3px 0;
+}
+.card-content{
+    color: #555;
+    font-size:28rpx;
+}
+

@@ -1,0 +1,57 @@
+<wxs src="./wxmp.wxs" module="tools" />
+<view class="home">
+    <view class="bg" style="height:20rpx;"></view>
+    <view class="fill-info fz30 border-btm text-center">填写资料</view>
+    <view class="info-ul padding-lr fz30">
+        <view class="li">
+            <view class="title not-null">产品名称：</view>
+            <input class="bg" type="text" placeholder="请输入产品名称" value="{{productName}}" bindinput="modelData" data-key="productName"/>
+        </view>
+        <view class="li">
+            <view class="title not-null">产品编码：</view>
+            <input class="bg" type="text" placeholder="请输入产品编码" value="{{productCode}}" bindinput="modelData" data-key="productCode"/>
+        </view>
+        <view class="li position-relative">
+            <view class="title not-null">购买日期：</view>
+            <input class="bg" type="text" placeholder="请输入购买日期" value="{{buyDate}}" bindinput="modelData" data-key="buyDate"/>
+            <picker class="position-absolute" mode="date" value="{{buyDate}}" start="2018-01-01" end="2050-12-30" bindchange="bindDateChange">
+                <view class="position-absolute"></view>
+            </picker>
+        </view>
+        <view class="li">
+            <view class="title not-null">顾客姓名：</view>
+            <input class="bg" type="text" placeholder="请输入顾客姓名" value="{{userName}}" bindinput="modelData" data-key="userName"/>
+        </view>
+        <view class="li">
+            <view class="title not-null">联系电话：</view>
+            <input class="bg" type="text" placeholder="请输入联系电话" value="{{phone}}" bindinput="modelData" data-key="phone"/>
+        </view>
+        <view class="li">
+            <view class="title not-null">联系地址：</view>
+            <input class="bg" type="text" placeholder="请输入联系地址" value="{{address}}" bindinput="modelData" data-key="address"/>
+        </view>
+    </view>
+
+
+    <view class="service-charge fz30 border-btm text-center">服务费</view>
+    <view class="service-ul fz30">
+        <radio-group bindchange="radioChange">
+            <view class="li {{item.liNum==index?'active':''}}" wx:for="{{productList}}" wx:key="{{index}}">
+                <view class="head padding-lr border-btm">
+                    <view class="left">{{item.Title}}</view>
+                    <view class="right" bindtap="updown" data-num="{{index}}"></view>
+                </view>
+                <view class="content padding-lr bg">
+                    <view class="content-li" wx:for="{{item.YearList}}" wx:for-item="yearList" wx:for-index="yearIndex" wx:if="{{yearList.price!=0}}" wx:key="yearIndex">
+                        <view class="year">{{tools.toPlus(yearIndex)}}年</view>
+                        <view class="money">{{yearList.price}}元</view>
+                        <radio value="{{item.ID}},{{tools.toPlus(yearIndex)}},{{yearList.price}}" checked="{{yearList.checked}}"/>
+                    </view>
+                </view>
+            </view>
+        </radio-group>
+    </view>
+    <view class="wrap-btn padding-lr">
+        <view class="btn text-center fz36 fc-fff" bindtap="submit">马上提交</view>
+    </view>
+</view>

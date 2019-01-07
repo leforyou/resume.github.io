@@ -1,0 +1,78 @@
+<!--更多菜单弹窗start-->
+<!---<view class="index-header" style="display:none;">
+    <navigator class='head-home' url='../index/index' open-type='reLaunch' hover-class='none'>
+        <image class='logo' src='../../static/logo.svg'></image>
+    </navigator>
+    <view class='nav-point' bindtap='navTab'>
+        <image class='more' src='../../static/menu.svg'></image>
+    </view>
+</view>-->
+<view class='wrap-nav {{isActive?"active":""}}' bindtap='navTab'>
+    <view class='nav-box'>
+        <navigator url='../index/index' open-type='switchTab' class='logo-box' hover-class='none'>
+            <image src='../../static/logo.png' mode='widthFix'></image>
+        </navigator>
+        <view class='navs'>
+            <navigator open-type='reLaunch' class='nav-list btm-line' url='../webDevelop/webDevelop'>
+                网站建设
+            </navigator>
+            <navigator open-type='reLaunch' class='nav-list btm-line' url='../systemDevelop/systemDevelop'>
+                系统开发
+            </navigator>
+            <navigator open-type='reLaunch' class='nav-list btm-line' url='../weixinDevelop/weixinDevelop'>
+                微信开发
+            </navigator>
+            <navigator open-type='reLaunch' class='nav-list btm-line' url='../mpDevelop/mpDevelop'>
+                小程序开发
+            </navigator>
+            <navigator open-type='reLaunch' class='nav-list btm-line' url='../projectCase/projectCase'>
+                项目案例
+            </navigator>
+            <navigator open-type='reLaunch' class='nav-list btm-line' url='../solution/solution'>
+                解决方案
+            </navigator>
+            <navigator open-type='reLaunch' class='nav-list btm-line' url='../news/news'>
+                新闻动态
+            </navigator>
+            <navigator open-type='reLaunch' class='nav-list btm-line' url='../aboutMe/aboutMe'>
+                关于讯博
+            </navigator>
+            <navigator open-type='reLaunch' class='nav-list btm-line' url='../areaCase/areaCase'>
+                专区案例
+            </navigator>
+        </view>
+    </view>
+</view>
+<!--更多菜单弹窗end-->
+
+<!--底部导航菜单start-->
+<view class="tab-bar">
+    <view class="box">
+      <view class='nav'>
+        <view class='list'>
+          <image class="img1" src='/static/nav-home1.png'></image>
+          <image class="img2" src='/static/nav-home2.png'></image>
+          <view class='title'>首页</view>
+          <navigator url="../index/index" class="position-absolute" hover-class="none" open-type="reLaunch"></navigator>
+        </view>
+        <view class='list' bindtap='_myPrivateMethod'>
+          <image class="img1" src='/static/nav-service1.png'></image>
+          <image class="img2" src='/static/nav-service2.png'></image>
+          <view class='title'>服务</view>
+        </view>
+        <view class='list'>
+          <image class="img1" src='/static/nav-scheme1.png'></image>
+          <image class="img2" src='/static/nav-scheme2.png'></image>
+          <view class='title'>方案</view>
+          <navigator url="../solution/solution" class="position-absolute" hover-class="none" open-type="reLaunch"></navigator>
+        </view>
+        <view class='list'>
+          <image class="img1" src='/static/nav-customer1.png'></image>
+          <image class="img2" src='/static/nav-customer2.png'></image>
+          <view class='title'>咨询</view>
+          <button class="btn-reset position-absolute" open-type="contact"></button>
+        </view>
+      </view>
+    </view>
+</view>
+<!--底部导航菜单end-->

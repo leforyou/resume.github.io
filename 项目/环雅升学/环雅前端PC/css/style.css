@@ -1,0 +1,1944 @@
+@charset "UTF-8";
+/*
+* @Author: cs5
+* @Date:   2018-04-12 13:30:23
+* @Last Modified by:   cs5
+* @Last Modified time: 2018-04-12 16:30:11
+*/
+/*
+ * scss变量设置
+ */
+/*  */
+/*主色*/
+/* 最大宽度 */
+/*
+* @Author: cs5
+* @Date:   2018-04-12 13:30:23
+* @Last Modified by:   cs5
+* @Last Modified time: 2018-04-12 16:30:11
+*/
+/*
+ * scss函数设置
+ */
+/*  */
+/*高度与行高设置*/
+/*宽度与高度设置*/
+/*字体设置*/
+/*背景图片设置*/
+/*注意： @import url('common.css');这种是写是属于css的，在scss中编译过程将找不到文件*/
+/*头部 start*/
+.wrap-head {
+  height: 150px;
+  position: relative;
+  z-index: 9999;
+}
+
+.wrap-head .head-box {
+  height: 150px;
+  background-color: #7d0770;
+  background: -webkit-linear-gradient(#7d0770, #89147d, #99268d, #a8359c, #af3ba2, #a8359c, #99268d, #89147d, #7d0770);
+  background: -o-linear-gradient(#7d0770, #89147d, #99268d, #a8359c, #af3ba2, #a8359c, #99268d, #89147d, #7d0770);
+  background: -moz-linear-gradient(#7d0770, #89147d, #99268d, #a8359c, #af3ba2, #a8359c, #99268d, #89147d, #7d0770);
+  background: linear-gradient(#7d0770, #89147d, #99268d, #a8359c, #af3ba2, #a8359c, #99268d, #89147d, #7d0770);
+  box-sizing: border-box;
+  border-bottom: 5px solid #47016d;
+}
+
+.wrap-head .head-box .content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.wrap-head .head-box .content .logo {
+  width: 284px;
+  min-width: 284px;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.wrap-head .head-box .content .logo:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 0px;
+  width: 2px;
+  height: 54px;
+  background-color: #fff;
+}
+
+.wrap-head .head-box .content .logo img {
+  width: 230px;
+  vertical-align: middle;
+  margin-top: 0px;
+}
+
+.wrap-head .head-box .content .one-level {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.wrap-head .head-box .content .one-level .one-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 8px;
+  height: 100%;
+}
+
+.wrap-head .head-box .content .one-level .one-list:hover .title {
+  border-bottom: 3px solid #fff;
+}
+
+.wrap-head .head-box .content .one-level .one-list:hover .two-level {
+  opacity: 1;
+  visibility: visible;
+}
+
+.wrap-head .head-box .content .one-level .one-list .title {
+  line-height: 1;
+  display: block;
+  padding: 20px 5px;
+  box-sizing: border-box;
+  border-bottom: 3px solid transparent;
+}
+
+.wrap-head .head-box .content .one-level .one-list .two-level {
+  display: flex;
+  white-space: nowrap;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100px;
+  padding: 0 15px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 10px white;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.wrap-head .head-box .content .one-level .one-list .two-level:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+.wrap-head .head-box .content .one-level .one-list .two-level .two-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.wrap-head .head-box .content .one-level .one-list .two-level .two-list a:hover {
+  color: #910782;
+  text-decoration: underline;
+}
+
+.common-head {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  border-bottom: 3px solid #043656;
+}
+
+.common-head .box {
+  position: relative;
+  height: 100%;
+}
+
+.common-head .box ul {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+}
+
+.common-head .box ul li {
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-left: 1px solid rgba(4, 54, 86, 0.5);
+  border-top: 1px solid rgba(4, 54, 86, 0.5);
+}
+
+.common-head .box ul li.active, .common-head .box ul li:hover {
+  background-color: rgba(145, 7, 130, 0.7);
+}
+
+.common-head .box ul li.active *, .common-head .box ul li:hover * {
+  color: #fff;
+}
+
+.common-head .box ul li:nth-last-child(1) {
+  border-right: 1px solid rgba(4, 54, 86, 0.5);
+}
+
+.common-head .box ul li a {
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  color: #333;
+}
+
+/*头部 end*/
+/*底部 start*/
+.wrap-foot {
+  position: relative;
+  min-height: 216px;
+  padding-top: 15px;
+  background-color: #910782;
+  background: -webkit-linear-gradient(left, #910782, #ae3ba2, #910782);
+  background: -o-linear-gradient(right, #910782, #ae3ba2, #910782);
+  background: -moz-linear-gradient(right, #910782, #ae3ba2, #910782);
+  background: linear-gradient(right, #910782, #ae3ba2, #910782);
+}
+
+.wrap-foot:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 15px;
+  background: -webkit-linear-gradient(#45006c, #77217a);
+  background: -o-linear-gradient(#45006c, #77217a);
+  background: -moz-linear-gradient(#45006c, #77217a);
+  background: linear-gradient(#45006c, #77217a);
+}
+
+.wrap-foot .foot-box {
+  min-height: 201px;
+  position: relative;
+  padding-left: 210px;
+  padding-top: 45px;
+  display: flex;
+}
+
+.wrap-foot .foot-box .f-logo {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+
+.wrap-foot .foot-box .f-logo img {
+  vertical-align: middle;
+}
+
+.wrap-foot .foot-box .friendship {
+  display: flex;
+  width: 430px;
+  min-width: 430px;
+}
+
+.wrap-foot .foot-box .friendship .title {
+  white-space: nowrap;
+  padding-right: 10px;
+}
+
+.wrap-foot .foot-box .friendship ul li {
+  width: 33.33%;
+  padding-right: 10px;
+  height: 60px;
+  float: left;
+}
+
+.wrap-foot .foot-box .friendship ul li a {
+  display: block;
+}
+
+.wrap-foot .foot-box .friendship ul li a:hover {
+  text-decoration: underline;
+}
+
+.wrap-foot .foot-box .contact {
+  line-height: 2;
+  padding-left: 30px;
+  position: relative;
+}
+
+.wrap-foot .foot-box .contact:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 86px;
+  background-color: #fff;
+}
+
+.wrap-foot .foot-box .contact .copyright {
+  margin-top: 35px;
+}
+
+.wrap-foot .foot-box .qr-code {
+  position: absolute;
+  top: 25px;
+  right: 45px;
+}
+
+.wrap-foot .foot-box .qr-code img {
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
+/*底部 end*/
+/*1首页 start*/
+.home .wrap-slide {
+  height: 650px;
+  position: relative;
+}
+
+.home .wrap-slide .swiper-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.home .wrap-slide .swiper-container .swiper-wrapper {
+  height: 100%;
+}
+
+.home .wrap-slide .swiper-container .swiper-wrapper .swiper-slide {
+  height: 100%;
+}
+
+.home .wrap-slide .swiper-container .swiper-wrapper .swiper-slide .img-box {
+  display: block;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home .wrap-slide .swiper-container .swiper-pagination .swiper-pagination-bullet {
+  height: 6px;
+  width: 94px;
+  background-color: #f3f3f3;
+  margin: 0px 8px;
+  border-radius: 0;
+  opacity: 1;
+}
+
+.home .wrap-slide .swiper-container .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #fff100;
+}
+
+.home .characteristic {
+  background-color: #f2f0f0;
+}
+
+.home .characteristic .bar {
+  background-color: #8d0780;
+  background: -webkit-linear-gradient(#8d0780, transparent);
+  background: -o-linear-gradient(#8d0780, transparent);
+  background: -moz-linear-gradient(#8d0780, transparent);
+  background: linear-gradient(#8d0780, transparent);
+  height: 8px;
+}
+
+.home .characteristic .content {
+  padding: 40px 0px;
+}
+
+.home .characteristic .content ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home .characteristic .content ul li {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  min-height: 124px;
+  border-right: 1px solid #bbb;
+}
+
+.home .characteristic .content ul li:nth-last-child(1) {
+  border-right: none;
+}
+
+.home .characteristic .content ul li .num {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.home .characteristic .content ul li .title {
+  position: relative;
+  z-index: 9;
+  font-weight: 700;
+}
+
+.home .characteristic .content ul li .desc {
+  position: relative;
+  z-index: 9;
+}
+
+.home .choose .title {
+  padding: 80px 0px;
+}
+
+.home .choose .title * {
+  display: inline;
+}
+
+.home .choose ul {
+  display: flex;
+  padding-bottom: 100px;
+}
+
+.home .choose ul li {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home .choose ul li:hover img {
+  transform: scale(1.1);
+}
+
+.home .choose ul li img {
+  vertical-align: middle;
+  width: 250px;
+  transition: all 0.3s;
+}
+
+.home .choose ul li p {
+  margin-top: 50px;
+}
+
+.home .enterprise-video .content {
+  padding: 0px 110px;
+}
+
+.home .enterprise-video .content .box {
+  height: 450px;
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.home .enterprise-video .content .box .title {
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.home .enterprise-video .content .box .ico-btn {
+  display: block;
+  width: 130px;
+  height: 130px;
+  border: 2px solid #f3ff00;
+  position: relative;
+  border-radius: 100%;
+}
+
+.home .enterprise-video .content .box .ico-btn:before {
+  content: '';
+  display: block;
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  background-color: #f3ff00;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.home .recommend .content .head {
+  background-image: url(../img/recommend-head-bg.png);
+  background-repeat: no-repeat;
+  background-size: 750px 260px;
+  background-position: center 100%;
+  min-height: 284px;
+  padding: 80px 0px 0px;
+}
+
+.home .recommend .content .head .title {
+  width: 870px;
+  padding: 22px;
+  margin: 0 auto 22px;
+  border-bottom: 2px solid #910782;
+}
+
+.home .recommend .content ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.home .recommend .content ul li {
+  padding-bottom: 6px;
+  width: 50%;
+}
+
+.home .recommend .content ul li:nth-child(2n+1) {
+  padding-right: 3px;
+}
+
+.home .recommend .content ul li:nth-child(2n+1) .lc-box {
+  right: 0;
+  background-image: url(../img/recommend-list-left.png);
+}
+
+.home .recommend .content ul li:nth-child(2n+1) .lc-box p {
+  right: 0;
+}
+
+.home .recommend .content ul li:nth-child(2n+2) {
+  padding-left: 3px;
+}
+
+.home .recommend .content ul li:nth-child(2n+2) .lc-box {
+  left: 0;
+  background-image: url(../img/recommend-list-right.png);
+}
+
+.home .recommend .content ul li:nth-child(2n+2) .lc-box p {
+  left: 0;
+}
+
+.home .recommend .content ul li a {
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.home .recommend .content ul li a:hover img {
+  transform: scale(1.1);
+}
+
+.home .recommend .content ul li a img {
+  vertical-align: middle;
+  width: 100%;
+  transition: all 0.6s;
+}
+
+.home .recommend .content ul li a .lc-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 345px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home .recommend .content ul li a .lc-box p {
+  font-weight: bold;
+  padding: 12px 0px;
+  border-bottom: 6px solid #fff;
+  display: inline-block;
+  margin: 0px 26px;
+  position: absolute;
+  bottom: 66px;
+}
+
+.home .evaluate .content .head {
+  padding: 50px 0px 30px;
+}
+
+.home .evaluate .content .box ul {
+  padding: 30px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home .evaluate .content .box ul li {
+  width: 33.33%;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.home .evaluate .content .box ul li.submit em {
+  line-height: 40px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 200px;
+}
+
+.home .evaluate .content .box ul li.submit .tip {
+  margin-top: 15px;
+  position: absolute;
+  left: 40px;
+}
+
+.home .evaluate .content .box ul li input {
+  width: 200px;
+  line-height: 1;
+  height: 40px;
+  padding: 7px 7px;
+  background-color: #fff;
+}
+
+.home .evaluate .content .box ul li span {
+  width: 120px;
+  text-align: right;
+}
+
+.home .evaluate .content .foot {
+  padding: 60px 0px 50px;
+}
+
+.home .evaluate .content .foot .btn {
+  background-color: #920983;
+  background: -webkit-linear-gradient(#d970ce, #920983);
+  background: -o-linear-gradient(#d970ce, #920983);
+  background: -moz-linear-gradient(#d970ce, #920983);
+  background: linear-gradient(#d970ce, #920983);
+  line-height: 70px;
+  width: 248px;
+  margin: 0 auto;
+  text-align: center;
+  border: 4px solid #dba9ff;
+  border-radius: 70px;
+}
+
+.home .team {
+  background-color: #e5e5e5;
+}
+
+.home .team .content .head {
+  padding: 60px 0px 40px;
+}
+
+.home .team .content .our-team {
+  border-top: 2px solid #910782;
+  width: 880px;
+  margin: 0 auto;
+  padding: 30px 0px 0px;
+}
+
+.home .team .content .our-team li {
+  width: 270px;
+  margin-right: 35px;
+  float: left;
+}
+
+.home .team .content .our-team li:nth-child(3n+3) {
+  margin-right: 0px;
+}
+
+.home .team .content .our-team li a {
+  display: block;
+  padding-bottom: 40px;
+}
+
+.home .team .content .our-team li a .img-box {
+  width: 270px;
+  height: 270px;
+  overflow: hidden;
+}
+
+.home .team .content .our-team li a .img-box img {
+  vertical-align: middle;
+  transition: all 0.6s;
+}
+
+.home .team .content .our-team li a .img-box img:hover {
+  transform: scale(1.1);
+}
+
+.home .team .content .our-team li a .en-name {
+  padding: 30px 0px 16px;
+}
+
+.home .team .content .our-team li a .cn-name {
+  line-height: 1.8;
+}
+
+.home .success-case {
+  background: url(../img/success-case-bg.png);
+  background-size: auto;
+}
+
+.home .success-case .content .head {
+  padding: 45px 0px 20px;
+  width: 870px;
+  margin: 0 auto;
+  border-bottom: 2px solid #910782;
+}
+
+.home .success-case .content .country {
+  width: 1150px;
+  margin: 0 auto;
+  padding: 36px 0px 30px;
+}
+
+.home .success-case .content .country ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.home .success-case .content .country ul li {
+  width: 554px;
+  margin-bottom: 23px;
+  transition: all 0.6s;
+}
+
+.home .success-case .content .country ul li:nth-child(2n+1):hover {
+  transform: translate(30px);
+}
+
+.home .success-case .content .country ul li:nth-child(2n+2):hover {
+  transform: translate(-30px);
+}
+
+.home .success-case .content .country ul li a {
+  display: block;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home .success-case .content .country ul li a .img-box {
+  width: 360px;
+  height: 100%;
+  position: relative;
+}
+
+.home .success-case .content .country ul li a .img-box img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.home .success-case .content .country ul li a .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 194px;
+  background: url(../img/success-case-list-right.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.home .success-case .content .study {
+  padding-bottom: 25px;
+}
+
+.home .success-case .content .study a {
+  display: block;
+}
+
+.home .success-case .content .study a img {
+  vertical-align: middle;
+  width: 100%;
+}
+
+/*1首页 end*/
+/*01 GA 关于我们-01公司介绍 start*/
+.about-me-introduce {
+  background-color: #e0e0e0;
+}
+
+.about-me-introduce .box {
+  background-color: #fff;
+  padding-bottom: 75px;
+}
+
+.about-me-introduce .box .head {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  padding-left: 430px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.about-me-introduce .box .head .sub-title {
+  display: flex;
+}
+
+.about-me-introduce .box .head .sub-title .en {
+  color: #999;
+}
+
+.about-me-introduce .box .head .sub-title .cn {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+.about-me-introduce .box .introduce {
+  position: relative;
+}
+
+.about-me-introduce .box .introduce .img-box {
+  position: absolute;
+  top: -36px;
+  left: 72px;
+  width: 300px;
+  height: 450px;
+  overflow: hidden;
+}
+
+.about-me-introduce .box .introduce .img-box img {
+  vertical-align: middle;
+  width: 100%;
+  transition: all 0.8s;
+}
+
+.about-me-introduce .box .introduce .img-box img:hover {
+  transform: scale(1.1);
+}
+
+.about-me-introduce .box .introduce .desc-box {
+  margin-left: 350px;
+  width: 732px;
+  border: 1px solid #c9c9c9;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 78px;
+  padding-right: 73px;
+  color: #666;
+  line-height: 2.2;
+}
+
+.about-me-introduce .box .culture .culture-title {
+  margin-bottom: 60px;
+  line-height: 1;
+  padding-top: 80px;
+  position: relative;
+}
+
+.about-me-introduce .box .culture .culture-title:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 43px;
+  left: 50%;
+  width: 50px;
+  margin-left: -25px;
+  height: 4px;
+  background-color: #000;
+}
+
+.about-me-introduce .box .culture .culture-title .cn {
+  margin-top: 10px;
+}
+
+.about-me-introduce .box .culture ul li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-me-introduce .box .culture ul li:nth-child(2n+1) {
+  flex-direction: row;
+}
+
+.about-me-introduce .box .culture ul li:nth-child(2n+1) .cul-right .ico-img {
+  background-image: url(../img/ico-culture1.jpg);
+  left: 24px;
+}
+
+.about-me-introduce .box .culture ul li:nth-child(2n+2) {
+  flex-direction: row-reverse;
+}
+
+.about-me-introduce .box .culture ul li:nth-child(2n+2) .cul-right {
+  text-align: right;
+}
+
+.about-me-introduce .box .culture ul li:nth-child(2n+2) .cul-right .ico-img {
+  right: 24px;
+  background-image: url(../img/ico-culture2.jpg);
+}
+
+.about-me-introduce .box .culture ul li .cul-left, .about-me-introduce .box .culture ul li .cul-right {
+  width: 50%;
+}
+
+.about-me-introduce .box .culture ul li .cul-left {
+  overflow: hidden;
+}
+
+.about-me-introduce .box .culture ul li .cul-left img {
+  vertical-align: middle;
+  transition: all 0.8s;
+}
+
+.about-me-introduce .box .culture ul li .cul-left img:hover {
+  transform: scale(1.15);
+}
+
+.about-me-introduce .box .culture ul li .cul-right {
+  position: relative;
+  padding-left: 75px;
+  padding-right: 75px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+.about-me-introduce .box .culture ul li .cul-right .ico-img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: block;
+  width: 28px;
+  height: 44px;
+  position: absolute;
+  top: 35px;
+}
+
+.about-me-introduce .box .culture ul li .cul-right .title {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.about-me-introduce .box .culture ul li .cul-right .desc {
+  margin-top: 30px;
+  line-height: 2;
+}
+
+/*01 GA 关于我们-01公司介绍 end*/
+/*01 GA 关于我们-03员工风采 start*/
+.about-me-staff {
+  background-color: #e0e0e0;
+}
+
+.about-me-staff .box {
+  background-color: #fff;
+}
+
+.about-me-staff .box .head-title {
+  padding: 60px 0px 57px;
+}
+
+.about-me-staff .box .head-title .en {
+  line-height: 0.9;
+  margin-bottom: 18px;
+}
+
+.about-me-staff .box .staff {
+  padding-bottom: 100px;
+}
+
+.about-me-staff .box .staff ul {
+  padding: 0px 80px;
+}
+
+.about-me-staff .box .staff ul li .img-box img {
+  vertical-align: middle;
+  width: 100%;
+}
+
+.about-me-staff .box .staff ul li .desc {
+  padding: 35px 0px;
+}
+
+/*01 GA 关于我们-03员工风采 end*/
+/*02 GA 业务范围 start*/
+.two-column-layout {
+  background-color: #e0e0e0;
+}
+
+.two-column-layout .box {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.two-column-layout .box .left {
+  width: 200px;
+  min-width: 200px;
+  background-color: #e7d1e5;
+}
+
+.two-column-layout .box .left ul {
+  padding: 222px 0px;
+}
+
+.two-column-layout .box .left ul li {
+  margin-bottom: 3px;
+  background-color: #f1eaf0;
+  text-align: center;
+  color: #555;
+}
+
+.two-column-layout .box .left ul li.active, .two-column-layout .box .left ul li:hover {
+  background-color: #ab43a0;
+  color: #fff;
+}
+
+.two-column-layout .box .left ul li.active *, .two-column-layout .box .left ul li:hover * {
+  color: #fff;
+}
+
+.two-column-layout .box .left ul li * {
+  color: #555;
+}
+
+.two-column-layout .box .left ul li a {
+  display: block;
+  padding: 15px 10px;
+}
+
+.two-column-layout .box .right {
+  width: 100%;
+  padding-top: 60px;
+}
+
+.two-column-layout .box .right img {
+  vertical-align: middle;
+}
+
+.two-column-layout .box .right .content .r-head {
+  margin-bottom: 70px;
+  font-weight: bold;
+}
+
+.two-column-layout .box .right .content .r-head .en {
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 12px;
+}
+
+.two-column-layout .box .right .content .r-head .en:after {
+  content: '';
+  display: block;
+  width: 76px;
+  height: 3px;
+  background-color: #515151;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.business-scope .box .right {
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-bottom: 100px;
+}
+
+/*02 GA 业务范围 end*/
+/* start*/
+.school-recommend .box .right .content .head-img {
+  padding: 0px 5px;
+}
+
+.school-recommend .box .right .content .head-img img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.school-recommend .box .right .content .school-info {
+  padding-right: 80px;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.school-recommend .box .right .content .school-info:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 22px;
+  right: 22px;
+  border-bottom: 1px solid #666;
+}
+
+.school-recommend .box .right .content .school-info .scin-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.school-recommend .box .right .content .school-info .scin-box .si-desc {
+  width: 100%;
+}
+
+.school-recommend .box .right .content .school-info .scin-box .si-desc .si-box {
+  background-image: url(../img/school-recommend-desc-bg.png);
+  background-size: 8px;
+  margin-top: 50px;
+  padding: 20px 35px;
+}
+
+.school-recommend .box .right .content .school-info .scin-box .si-desc .si-box .EN {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #666;
+}
+
+.school-recommend .box .right .content .school-info .scin-box .si-desc .si-box ul {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.school-recommend .box .right .content .school-info .scin-box .si-desc .si-box ul li {
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 80px;
+  line-height: 2;
+}
+
+.school-recommend .box .right .content .school-info .scin-box .si-desc .si-box ul li em {
+  font-weight: normal;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.school-recommend .box .right .content .school-info .scin-box .scenery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  min-width: 500px;
+}
+
+.school-recommend .box .right .content .school-info .scin-box .scenery > li {
+  width: 246px;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  height: 200px;
+}
+
+.school-recommend .box .right .content .school-info .scin-box .scenery > li img {
+  vertical-align: middle;
+  width: 100%;
+}
+
+.school-recommend .box .right .content .school-info .introduction-major {
+  line-height: 2;
+  padding: 20px 0px 20px 22px;
+}
+
+/* end*/
+/*04 GA 成功案例 start*/
+.success-case .box .right {
+  padding-left: 22px;
+  padding-right: 80px;
+}
+
+.success-case .box .right .sc-more ul li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #666;
+}
+
+.success-case .box .right .sc-more ul li:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.success-case .box .right .sc-more ul li .sc-left {
+  min-width: 413px;
+  width: 413px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 45px;
+}
+
+.success-case .box .right .sc-more ul li .sc-left .img-box {
+  border: 4px solid #c490bf;
+}
+
+.success-case .box .right .sc-more ul li .sc-left .img-box img {
+  vertical-align: middle;
+  width: 100%;
+}
+
+.success-case .box .right .sc-more ul li .sc-right {
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  line-height: 2;
+}
+
+/*04 GA 成功案例 end*/
+/*05 GA 留学资讯详情页 start*/
+.study-info-details {
+  background-color: #e0e0e0;
+}
+
+.study-info-details .box {
+  background-color: #fff;
+  padding-top: 60px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 20px;
+}
+
+.study-info-details .box .head {
+  padding-bottom: 40px;
+}
+
+.study-info-details .box .head .title {
+  margin-bottom: 15px;
+}
+
+.study-info-details .box .head .other {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.study-info-details .box .content {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.share-back {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 70px;
+}
+
+.study-info-details .box .hot-news ul {
+  padding-top: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.study-info-details .box .hot-news ul li {
+  width: 310px;
+  margin-right: 35px;
+}
+
+.study-info-details .box .hot-news ul li a {
+  display: block;
+}
+
+.study-info-details .box .hot-news ul li a .img-box img {
+  vertical-align: middle;
+}
+
+.study-info-details .box .hot-news ul li a .title {
+  margin-top: 13px;
+  padding: 0 4px;
+}
+
+.study-info-details .box .hot-news ul li a .date {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 23px;
+  line-height: 1;
+}
+
+.study-info-details .box .hot-news ul li a .date.ico-date {
+  position: relative;
+}
+
+.study-info-details .box .hot-news ul li a .date.ico-date:before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url(../img/ico-date.png);
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-size: 14px;
+}
+
+/*05 GA 留学资讯详情页 end*/
+/*06 GA 特色项目 start*/
+.common-region {
+  background-color: #E0E0E0;
+}
+
+.common-region .box {
+  background-color: #fff;
+}
+
+.common-region .box .head {
+  padding-top: 60px;
+  padding-bottom: 36px;
+  font-weight: bold;
+}
+
+.common-region .box .head .en {
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 12px;
+}
+
+.common-region .box .head .en:after {
+  content: '';
+  display: block;
+  width: 76px;
+  height: 3px;
+  background-color: #515151;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.special-project .box .sp-content ul {
+  padding-bottom: 55px;
+}
+
+.special-project .box .sp-content ul li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.special-project .box .sp-content ul li:nth-child(2n+1) .desc {
+  right: 80px;
+}
+
+.special-project .box .sp-content ul li:nth-child(2n+2) .desc {
+  left: 80px;
+}
+
+.special-project .box .sp-content ul li .img-box img {
+  vertical-align: middle;
+}
+
+.special-project .box .sp-content ul li .desc {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.special-project .box .sp-content ul li .desc .desc-box {
+  width: 422px;
+  height: 315px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(147, 7, 130, 0.7);
+  transition: all 0.4s;
+}
+
+.special-project .box .sp-content ul li .desc .desc-box:hover {
+  background-color: rgba(147, 7, 130, 0);
+}
+
+.special-project .box .sp-content ul li .desc .desc-box:hover .en, .special-project .box .sp-content ul li .desc .desc-box:hover .cn {
+  opacity: 0;
+}
+
+.special-project .box .sp-content ul li .desc .desc-box .en {
+  transition: all 0.4s;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.special-project .box .sp-content ul li .desc .desc-box .en:after {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 4px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.special-project .box .sp-content ul li .desc .desc-box .cn {
+  transition: all 0.4s;
+  margin: 15px 0px 30px;
+  padding: 0px 20px;
+  position: relative;
+}
+
+.special-project .box .sp-content ul li .desc .desc-box .cn:before, .special-project .box .sp-content ul li .desc .desc-box .cn:after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+}
+
+.special-project .box .sp-content ul li .desc .desc-box .cn:before {
+  left: 0;
+}
+
+.special-project .box .sp-content ul li .desc .desc-box .cn:after {
+  right: 0;
+}
+
+.special-project .box .sp-content ul li .desc .desc-box .more {
+  border: 1px solid #fff;
+  width: 140px;
+  line-height: 30px;
+  text-align: center;
+}
+
+/*06 GA 特色项目 end*/
+/*06 GA 特色项目详情页 start*/
+.special-project-details .box .details-box {
+  padding-top: 40px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.special-project-details .box .details-box img {
+  vertical-align: middle;
+}
+
+.special-project-details .box .share-back {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.special-project-details .box .sp-content ul li {
+  overflow: hidden;
+}
+
+.special-project-details .box .sp-content ul li:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.special-project-details .box .sp-content ul li:hover:before {
+  opacity: 1;
+}
+
+.special-project-details .box .sp-content ul li:hover .desc .desc-box .en, .special-project-details .box .sp-content ul li:hover .desc .desc-box .cn {
+  transform: translateY(0px) !important;
+  opacity: 1;
+}
+
+.special-project-details .box .sp-content ul li .desc .desc-box {
+  position: relative;
+  z-index: 100;
+  background-color: transparent;
+}
+
+.special-project-details .box .sp-content ul li .desc .desc-box:hover .en, .special-project-details .box .sp-content ul li .desc .desc-box:hover .cn {
+  opacity: 1;
+}
+
+.special-project-details .box .sp-content ul li .desc .desc-box .en, .special-project-details .box .sp-content ul li .desc .desc-box .cn {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.special-project-details .box .sp-content ul li .desc .desc-box .en {
+  transition: all 0.4s;
+}
+
+.special-project-details .box .sp-content ul li .desc .desc-box .cn {
+  transition: all 0.4s 0.1s;
+}
+
+.special-project-details .box .sp-content ul li .desc .desc-box .more {
+  opacity: 0;
+}
+
+/*06 GA 特色项目详情页 end*/
+/*07 GA 联系我们-01联系我们 start*/
+.contact-us .box .head .en:after {
+  background-color: #b3dff5;
+}
+
+.contact-us .box .wrap-map {
+  height: 400px;
+  border: 1px solid #ccc;
+}
+
+.contact-us .box .wrap-map img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.contact-us .box .way {
+  padding-top: 38px;
+}
+
+.contact-us .box .way * {
+  margin-bottom: 20px;
+}
+
+.contact-us .box .msg {
+  margin-bottom: 40px;
+}
+
+.contact-us .box ul {
+  width: 588px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 100px;
+}
+
+.contact-us .box ul li {
+  margin-bottom: 28px;
+}
+
+.contact-us .box ul li.w10 {
+  width: 100%;
+}
+
+.contact-us .box ul li.w5 {
+  width: 280px;
+}
+
+.contact-us .box ul li.f-btn {
+  text-align: right;
+}
+
+.contact-us .box ul li.f-btn .btn {
+  width: 140px;
+  line-height: 40px;
+  text-align: center;
+  display: inline-block;
+  background-color: #910782;
+}
+
+.contact-us .box ul li.f-btn .btn:hover {
+  background-color: #bd04a9;
+}
+
+.contact-us .box ul li input::-webkit-input-placeholder, .contact-us .box ul li textarea::-webkit-input-placeholder {
+  color: #a6a6a6;
+}
+
+.contact-us .box ul li input:focus, .contact-us .box ul li textarea:focus {
+  border: 1px solid #910782;
+}
+
+.contact-us .box ul li input, .contact-us .box ul li textarea {
+  padding: 14px 24px;
+  width: 100%;
+  border: 1px solid #999;
+}
+
+/*07 GA 联系我们-01联系我们 end*/
+/*07 GA 联系我们-02相关下载 start*/
+.contact-download .box .wrap-download {
+  width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 160px;
+}
+
+.contact-download .box .wrap-download ul li {
+  margin-bottom: 9px;
+  display: flex;
+  line-height: 44px;
+  background-color: #e5e5e5;
+}
+
+.contact-download .box .wrap-download ul li .name {
+  padding-left: 50px;
+  width: 100%;
+}
+
+.contact-download .box .wrap-download ul li .date {
+  padding: 0 25px;
+  white-space: nowrap;
+}
+
+.contact-download .box .wrap-download ul li .download {
+  background-color: #b3b3b3;
+  color: #fff;
+  width: 165px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.contact-download .box .wrap-download ul li .download:hover {
+  background-color: #910782;
+}
+
+/*07 GA 联系我们-02相关下载 end*/
+/*07 GA 联系我们-03友情链接 start*/
+.contact-friendship .box .friendship {
+  position: relative;
+  width: 1000px;
+  margin: 20px auto 0px;
+  padding-bottom: 100px;
+  padding-top: 10px;
+}
+
+.contact-friendship .box .friendship:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 50%;
+  width: 1px;
+  background-color: #c490bf;
+}
+
+.contact-friendship .box .friendship ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-friendship .box .friendship ul li {
+  width: 50%;
+}
+
+.contact-friendship .box .friendship ul li:nth-child(2n+1) {
+  padding-left: 176px;
+}
+
+.contact-friendship .box .friendship ul li:nth-child(2n+2) {
+  padding-left: 192px;
+}
+
+.contact-friendship .box .friendship ul li a {
+  padding: 10px 0;
+}
+
+.contact-friendship .box .friendship ul li a:hover {
+  color: #910782;
+}
+
+/*07 GA 联系我们-03友情链接 end*/
+/*01 GA 关于我们-02顾问团队 start*/
+.about-team .box .head {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  padding: 60px 0px;
+}
+
+.about-team .box .head .title {
+  position: absolute;
+  top: 155px;
+  left: 151px;
+  line-height: 1;
+}
+
+.about-team .box .head .title:before {
+  content: '';
+  display: block;
+  width: 238px;
+  height: 238px;
+  background-color: #c490bf;
+  position: absolute;
+  top: 49px;
+  left: -93px;
+  z-index: 5;
+}
+
+.about-team .box .head .title .one-en {
+  position: relative;
+  z-index: 10;
+}
+
+.about-team .box .head .title .tow {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.about-team .box .head .title .tow .cn {
+  padding-top: 5px;
+  padding-left: 8px;
+}
+
+.about-team .box .head .img-box {
+  position: relative;
+  z-index: 6;
+  width: 750px;
+  height: 620px;
+}
+
+.about-team .box .team {
+  padding-left: 80px;
+  padding-right: 120px;
+}
+
+.about-team .box .team ul li {
+  display: flex;
+  padding-bottom: 110px;
+}
+
+.about-team .box .team ul li .left {
+  text-align: center;
+  width: 270px;
+}
+
+.about-team .box .team ul li .left .img-box {
+  width: 270px;
+  height: 270px;
+  overflow: hidden;
+}
+
+.about-team .box .team ul li .left .img-box img {
+  width: 100%;
+  transition: all 0.6s;
+}
+
+.about-team .box .team ul li .left .img-box img:hover {
+  transform: scale(1.1);
+}
+
+.about-team .box .team ul li .left .en {
+  padding: 20px 0px 10px;
+}
+
+.about-team .box .team ul li .right {
+  margin-left: 50px;
+  width: 646px;
+}
+
+.about-team .box .team ul li .right .desc {
+  border-bottom: 1px solid #92918f;
+  padding-top: 18px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  line-height: 2.5;
+}
+
+.about-team .box .team ul li .right .desc .feeling {
+  margin-top: 20px;
+}
+
+.about-team .box .team ul li .right .qualifications {
+  padding-top: 57px;
+  display: flex;
+}
+
+.about-team .box .team ul li .right .qualifications .word {
+  width: 113px;
+  min-width: 113px;
+  padding-top: 10px;
+}
+
+.about-team .box .team ul li .right .qualifications .div-ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-team .box .team ul li .right .qualifications .div-ul .div-li {
+  width: 67px;
+  height: 67px;
+  max-height: 67px;
+  overflow: hidden;
+  border: 1px solid #92918f;
+  margin-right: 22px;
+  cursor: url(../img/zoom_in.png), url(../img/zoom_in.cur), auto;
+}
+
+.about-team .box .team ul li .right .qualifications .div-ul .div-li img {
+  vertical-align: middle;
+  width: 67px;
+  height: 67px;
+}
+
+.about-team .wrap-layer-certificate {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999999999;
+  padding: 30px;
+  cursor: url(../img/zoom_out.png), url(../img/zoom_out.cur), auto;
+  transition: all 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.about-team .wrap-layer-certificate.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.about-team .wrap-layer-certificate.active .layer-box {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.about-team .wrap-layer-certificate .layer-box {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transform: translateY(-300px);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+/*01 GA 关于我们-02顾问团队 end*/
+/*05 GA 留学资讯 start*/
+.study-info .box .content {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.study-info .box .content ul li {
+  margin-bottom: 60px;
+}
+
+.study-info .box .content ul li a {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 38px;
+  border: 2px solid #888;
+}
+
+.study-info .box .content ul li a:hover {
+  box-shadow: 0px 0px 10px rgba(145, 7, 130, 0.5);
+  border: 2px solid #910782;
+}
+
+.study-info .box .content ul li a:hover:before {
+  background-image: url(../img/ico-plus-active.png);
+}
+
+.study-info .box .content ul li a:hover .date {
+  color: #910782 !important;
+}
+
+.study-info .box .content ul li a:hover .date:before {
+  background-image: url(../img/ico-time-active.png) !important;
+}
+
+.study-info .box .content ul li a:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 455px;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background-image: url(../img/ico-plus.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.study-info .box .content ul li a .left {
+  width: 386px;
+  line-height: 2;
+}
+
+.study-info .box .content ul li a .left .desc {
+  margin-top: 5px;
+}
+
+.study-info .box .content ul li a .right {
+  min-width: 320px;
+  width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 70px;
+}
+
+.study-info .box .content ul li a .right .date {
+  color: #888;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.study-info .box .content ul li a .right .date:before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  background-image: url(../img/ico-time.png);
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+}
+
+.study-info .box .more {
+  padding-top: 10px;
+  padding-bottom: 100px;
+}
+
+.study-info .box .more .btn {
+  width: 280px;
+  line-height: 56px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.study-info .box .more .btn:hover {
+  opacity: 0.9;
+}
+
+/*05 GA 留学资讯 end*/
+/* start*/
+/* end*/
+/*百度分享 start*/
+.share {
+  display: flex;
+  align-items: center;
+}
+
+.share a {
+  width: 24px;
+  height: 24px;
+}
+
+.share-item-qzone {
+  background: url(../img/ico-baidu-share-qzone.png) no-repeat center !important;
+}
+
+.share-item-weixin {
+  background: url(../img/ico-baidu-share-weixin.png) no-repeat center !important;
+}
+
+.share-item-tsina {
+  background: url(../img/ico-baidu-share-tsina.png) no-repeat center !important;
+}
+
+.share-item-more {
+  background: url(../img/ico-baidu-share-more.png) no-repeat center !important;
+}
+
+/*百度分享 end*/

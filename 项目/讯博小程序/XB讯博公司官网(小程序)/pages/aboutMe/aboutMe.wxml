@@ -1,0 +1,40 @@
+<import src='../template/footer/footer.wxml' />
+<import src='../template/head/head.wxml' />
+<import src='../template/newsList/newsList.wxml' />
+
+<view class='wrap'>
+    <template is="head" data="{{app}}" />
+
+    <view class='about-head'>
+        <image src='../../static/about-des.jpg' mode='widthFix'></image>
+    </view>
+
+    <view class='develop'>
+        <view class='develop-box'>
+            <view class='develop-list' wx:for='{{develop}}' wx:key="{{index}}">
+                <view class='develop-time main-bg'>{{item.time}}</view>
+                <view class='develop-content ellipsis1'>{{item.content}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class='label'>
+        <image src='../../static/about-label.jpg' mode='widthFix'></image>
+        <view class='label-email main-color'>1834389197@qq.com</view>
+    </view>
+
+    <view class="newscase-head">
+        <view class='newscase-box'>
+            <image class='newscase-bgpic' src='../../static/news-bg.jpg' mode="aspectFill"></image>
+            <view class='newscase-title main-color'>新闻动态</view>
+            <view class='newscase-urls'>
+                <navigator url='' class='newscase-url' hover-class='none'>讯博动态</navigator>
+                <navigator url='' class='newscase-url' hover-class='none'>全球视野</navigator>
+                <navigator url='' class='newscase-url' hover-class='none'>讯博人生</navigator>
+            </view>
+        </view>
+        <template is="newsList" data="" />
+    </view>
+
+    <template is="footer" data="{{app}}" />
+</view>

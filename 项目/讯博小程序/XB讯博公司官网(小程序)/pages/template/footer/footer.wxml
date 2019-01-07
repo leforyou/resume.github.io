@@ -1,0 +1,23 @@
+<template name="footer">
+    <view class="footer" bindtap=''>
+        <view class="f-phone">
+            <image src="../../static/ico-tel.png" alt=""></image>
+            <text bindtap='callPhone' data-tel='{{app.tel1}}'>{{app.tel1}}</text>
+            <text bindtap='callPhone' data-tel='{{app.tel2}}'>{{app.tel2}}</text>
+        </view>
+        <view class="f-contact">
+            <view bindtap='openLocation'>地址：{{app.companyAdress}}</view>
+            <view class='phone-box'>
+                <view class='span'>电话：</view>
+                <text bindtap='callPhone' data-tel='{{app.tel1}}'>{{app.tel1}}</text>
+                <text bindtap='callPhone' data-tel='{{app.tel3}}'>{{app.tel3}}</text>
+                <text bindtap='callPhone' data-tel='{{app.tel2}}'>{{app.tel2}}</text>
+            </view>
+            <view class='mail-box'>
+                <view class='span'>邮箱：</view>
+                <text bindtap='copyMail' data-mail='{{app.mail}}'>{{app.mail}}</text>
+            </view>
+        </view>
+        <view class="copyright">{{app.copyright}}</view>
+    </view>
+</template>

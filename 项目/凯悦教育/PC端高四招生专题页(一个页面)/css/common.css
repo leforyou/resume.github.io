@@ -1,0 +1,632 @@
+@charset "UTF-8";
+/*调用css样式*/
+@import url("swiper.min.css");
+/*调用scss样式、函数、变量*/
+/*
+* @Author: cs5
+* @Date:   2018-04-12 13:30:23
+* @Last Modified by:   cs5
+* @Last Modified time: 2018-04-12 16:30:11
+*/
+/*
+ * scss变量设置
+ */
+/*  */
+/*主色*/
+/* 最大宽度 */
+/*
+* @Author: cs5
+* @Date:   2018-04-12 13:30:23
+* @Last Modified by:   cs5
+* @Last Modified time: 2018-04-12 16:30:11
+*/
+/*
+ * scss函数设置
+ */
+/*  */
+/*高度与行高设置*/
+/*宽度与高度设置*/
+/*字体设置*/
+/*背景图片设置*/
+/*背景图片设置*/
+html, body {
+  height: 100%;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  outline: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.main-width {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-color {
+  color: #dd127b !important;
+}
+
+.sub-color {
+  color: #cd006a !important;
+}
+
+.main-bg {
+  background-color: #dd127b !important;
+}
+
+.sub-bg {
+  background-color: #cd006a !important;
+}
+
+.no-select, .btn {
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.float-left {
+  float: left !important;
+}
+
+.float-right {
+  float: right !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+/**10像素到40像素的字体,用法:fz20 **/
+.fz10 {
+  font-size: 10px;
+}
+
+.fz11 {
+  font-size: 11px;
+}
+
+.fz12 {
+  font-size: 12px;
+}
+
+.fz13 {
+  font-size: 13px;
+}
+
+.fz14 {
+  font-size: 14px;
+}
+
+.fz15 {
+  font-size: 15px;
+}
+
+.fz16 {
+  font-size: 16px;
+}
+
+.fz17 {
+  font-size: 17px;
+}
+
+.fz18 {
+  font-size: 18px;
+}
+
+.fz19 {
+  font-size: 19px;
+}
+
+.fz20 {
+  font-size: 20px;
+}
+
+.fz21 {
+  font-size: 21px;
+}
+
+.fz22 {
+  font-size: 22px;
+}
+
+.fz23 {
+  font-size: 23px;
+}
+
+.fz24 {
+  font-size: 24px;
+}
+
+.fz25 {
+  font-size: 25px;
+}
+
+.fz26 {
+  font-size: 26px;
+}
+
+.fz27 {
+  font-size: 27px;
+}
+
+.fz28 {
+  font-size: 28px;
+}
+
+.fz29 {
+  font-size: 29px;
+}
+
+.fz30 {
+  font-size: 30px;
+}
+
+.fz31 {
+  font-size: 31px;
+}
+
+.fz32 {
+  font-size: 32px;
+}
+
+.fz33 {
+  font-size: 33px;
+}
+
+.fz34 {
+  font-size: 34px;
+}
+
+.fz35 {
+  font-size: 35px;
+}
+
+.fz36 {
+  font-size: 36px;
+}
+
+.fz37 {
+  font-size: 37px;
+}
+
+.fz38 {
+  font-size: 38px;
+}
+
+.fz39 {
+  font-size: 39px;
+}
+
+.fz40 {
+  font-size: 40px;
+}
+
+.fz41 {
+  font-size: 41px;
+}
+
+.fz42 {
+  font-size: 42px;
+}
+
+.fz43 {
+  font-size: 43px;
+}
+
+.fz44 {
+  font-size: 44px;
+}
+
+.fz45 {
+  font-size: 45px;
+}
+
+.fz46 {
+  font-size: 46px;
+}
+
+.fz47 {
+  font-size: 47px;
+}
+
+.fz48 {
+  font-size: 48px;
+}
+
+.fz49 {
+  font-size: 49px;
+}
+
+.fz50 {
+  font-size: 50px;
+}
+
+.fz51 {
+  font-size: 51px;
+}
+
+.fz52 {
+  font-size: 52px;
+}
+
+.fz53 {
+  font-size: 53px;
+}
+
+.fz54 {
+  font-size: 54px;
+}
+
+.fz55 {
+  font-size: 55px;
+}
+
+.fz56 {
+  font-size: 56px;
+}
+
+.fz57 {
+  font-size: 57px;
+}
+
+.fz58 {
+  font-size: 58px;
+}
+
+.fz59 {
+  font-size: 59px;
+}
+
+.fz60 {
+  font-size: 60px;
+}
+
+.fz61 {
+  font-size: 61px;
+}
+
+.fz62 {
+  font-size: 62px;
+}
+
+.fz63 {
+  font-size: 63px;
+}
+
+.fz64 {
+  font-size: 64px;
+}
+
+.fz65 {
+  font-size: 65px;
+}
+
+.fz66 {
+  font-size: 66px;
+}
+
+.fz67 {
+  font-size: 67px;
+}
+
+.fz68 {
+  font-size: 68px;
+}
+
+.fz69 {
+  font-size: 69px;
+}
+
+.fz70 {
+  font-size: 70px;
+}
+
+.fz71 {
+  font-size: 71px;
+}
+
+.fz72 {
+  font-size: 72px;
+}
+
+.fz73 {
+  font-size: 73px;
+}
+
+.fz74 {
+  font-size: 74px;
+}
+
+.fz75 {
+  font-size: 75px;
+}
+
+.fz76 {
+  font-size: 76px;
+}
+
+.fz77 {
+  font-size: 77px;
+}
+
+.fz78 {
+  font-size: 78px;
+}
+
+.fz79 {
+  font-size: 79px;
+}
+
+.fz80 {
+  font-size: 80px;
+}
+
+.fz81 {
+  font-size: 81px;
+}
+
+.fz82 {
+  font-size: 82px;
+}
+
+.fz83 {
+  font-size: 83px;
+}
+
+.fz84 {
+  font-size: 84px;
+}
+
+.fz85 {
+  font-size: 85px;
+}
+
+.fz86 {
+  font-size: 86px;
+}
+
+.fz87 {
+  font-size: 87px;
+}
+
+.fz88 {
+  font-size: 88px;
+}
+
+.fz89 {
+  font-size: 89px;
+}
+
+.fz90 {
+  font-size: 90px;
+}
+
+.fz91 {
+  font-size: 91px;
+}
+
+.fz92 {
+  font-size: 92px;
+}
+
+.fz93 {
+  font-size: 93px;
+}
+
+.fz94 {
+  font-size: 94px;
+}
+
+.fz95 {
+  font-size: 95px;
+}
+
+.fz96 {
+  font-size: 96px;
+}
+
+.fz97 {
+  font-size: 97px;
+}
+
+.fz98 {
+  font-size: 98px;
+}
+
+.fz99 {
+  font-size: 99px;
+}
+
+.fz100 {
+  font-size: 100px;
+}
+
+.fc-fff {
+  color: #fff;
+}
+
+.fc-999 {
+  color: #999;
+}
+
+.fc-222 {
+  color: #222;
+}
+
+.bg-222 {
+  background-color: #222;
+}
+
+.bg-fff {
+  background-color: #fff;
+}
+
+.no-weight {
+  font-weight: normal;
+}
+
+.ellipsis1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ellipsis2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.ellipsis3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.ellipsis4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.input-radio1, .input-radio2, .input-radio3, .input-checkbox1, .input-checkbox2, .input-checkbox3 {
+  display: inline-block;
+}
+
+.input-radio1 *, .input-radio2 *, .input-radio3 *, .input-checkbox1 *, .input-checkbox2 *, .input-checkbox3 * {
+  cursor: pointer;
+}
+
+.input-radio1 label, .input-radio2 label, .input-radio3 label, .input-checkbox1 label, .input-checkbox2 label, .input-checkbox3 label {
+  padding-left: 30px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.input-radio1 input[type="radio"] + label::before, .input-checkbox1 input[type="checkbox"] + label::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.input-radio1 input[type="radio"]:checked + label::before, .input-checkbox1 input[type="checkbox"]:checked + label::before {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTI1NDAzMjE1Mzk4IiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjIwNzYiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTYzLjIyMjkyNyA1MTJjMCAwIDIzMS43Njc1OTggMTg5LjU4NDg2OSAyNTQuNzkwOTY0IDM1MC44MjMxMzQgMCAwIDMwMy45MDY1OTEtNDk3LjQ5MTU2NSA2NDEuNTgxMjY0LTU0Mi4wMDMzMzggMCAwLTEwMi44MzcxNTYtNzQuOTQzODc2LTY5LjA3MDA5OC0xOTMuMzk1NjYyIDAgMC0xODcuMjU1ODI1IDE4LjY4NDU0OC01NDAuMjc5MDY3IDU2Ni42MzczODhMMTg0Ljc5Mzc1IDQxMy4yMTIwNjYgNjMuMjIyOTI3IDUxMnoiIHAtaWQ9IjIwNzciIGZpbGw9IiMwMDAwMDAiPjwvcGF0aD48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  border: 1px solid #000;
+}
+
+.input-radio2 input[type="radio"] + label::before, .input-checkbox2 input[type="checkbox"] + label::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.input-radio2 input[type="radio"]:checked + label::before, .input-checkbox2 input[type="checkbox"]:checked + label::before {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTI1NDAzMjE1Mzk4IiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjIwNzYiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTYzLjIyMjkyNyA1MTJjMCAwIDIzMS43Njc1OTggMTg5LjU4NDg2OSAyNTQuNzkwOTY0IDM1MC44MjMxMzQgMCAwIDMwMy45MDY1OTEtNDk3LjQ5MTU2NSA2NDEuNTgxMjY0LTU0Mi4wMDMzMzggMCAwLTEwMi44MzcxNTYtNzQuOTQzODc2LTY5LjA3MDA5OC0xOTMuMzk1NjYyIDAgMC0xODcuMjU1ODI1IDE4LjY4NDU0OC01NDAuMjc5MDY3IDU2Ni42MzczODhMMTg0Ljc5Mzc1IDQxMy4yMTIwNjYgNjMuMjIyOTI3IDUxMnoiIHAtaWQ9IjIwNzciIGZpbGw9IiMwMDAwMDAiPjwvcGF0aD48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  border: 1px solid #000;
+}
+
+.input-radio3 input[type="radio"] + label::before, .input-checkbox3 input[type="checkbox"] + label::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 100%;
+  position: absolute;
+  top: auto;
+  left: 0;
+}
+
+.input-radio3 input[type="radio"]:checked + label::before, .input-checkbox3 input[type="checkbox"]:checked + label::before {
+  border: 1px solid #000;
+}
+
+.input-radio3 input[type="radio"]:checked + label::after, .input-checkbox3 input[type="checkbox"]:checked + label::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: #000;
+  position: absolute;
+  top: auto;
+  left: 0;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+.input-checkbox2 input[type="checkbox"], .input-checkbox1 input[type="checkbox"], .input-checkbox3 input[type="checkbox"],
+.input-radio1 input[type="radio"], .input-radio2 input[type="radio"], .input-radio3 input[type="radio"] {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+.nice-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+  background-color: transparent;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+.nice-scroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+/*定义滑块 内阴影+圆角*/
+.nice-scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}

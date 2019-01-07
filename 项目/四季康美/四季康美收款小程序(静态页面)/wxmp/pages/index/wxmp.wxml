@@ -1,0 +1,90 @@
+<wxs src="./wxmp.wxs" module="tools" />
+<view class="home">
+    <view class="bg" style="height:20rpx;"></view>
+    <view class="fill-info fz30 border-btm text-center">填写资料</view>
+    <view class="info-ul padding-lr fz30">
+        <view class="li">
+            <view class="title not-null">产品名称：</view>
+            <input class="bg" type="text" placeholder="请输入产品名称" bindinput="modelData" data-key="productName"/>
+        </view>
+        <view class="li">
+            <view class="title not-null">产品编码：</view>
+            <input class="bg" type="text" placeholder="请输入产品编码" bindinput="modelData" data-key="productCode"/>
+        </view>
+        <view class="li position-relative">
+            <view class="title not-null">购买日期：</view>
+            <input class="bg" type="text" placeholder="请输入购买日期" value="{{buyDate}}" bindinput="modelData" data-key="buyDate"/>
+            <picker class="position-absolute" mode="date" value="{{buyDate}}" start="2018-01-01" end="2050-12-30" bindchange="bindDateChange">
+                <view class="position-absolute"></view>
+            </picker>
+        </view>
+        <view class="li">
+            <view class="title not-null">顾客姓名：</view>
+            <input class="bg" type="text" placeholder="请输入顾客姓名" bindinput="modelData" data-key="userName"/>
+        </view>
+        <view class="li">
+            <view class="title not-null">联系电话：</view>
+            <input class="bg" type="text" placeholder="请输入联系电话" maxlength="11" bindinput="modelData" data-key="phone"/>
+        </view>
+        <view class="li">
+            <view class="title not-null">联系地址：</view>
+            <input class="bg" type="text" placeholder="请输入联系地址" bindinput="modelData" data-key="address"/>
+        </view>
+    </view>
+
+
+    <view class="service-charge fz30 border-btm text-center">服务费</view>
+    <view class="service-ul fz30">
+        <radio-group bindchange="radioChange">
+            <view class="li {{liNum1==1?'active':''}}">
+                <view class="head padding-lr border-btm">
+                    <view class="left">光子单人床</view>
+                    <view class="right" bindtap="updown" data-num="1"></view>
+                </view>
+                <view class="content padding-lr bg">
+                    <view class="content-li {{1==1?'active':''}}">
+                        <view class="year">1年</view>
+                        <view class="money">{{tools.tofixed(299)}}元</view>
+                        <radio value="299元"/>
+                    </view>
+                    <view class="content-li">
+                        <view class="year">2年</view>
+                        <view class="money">688元</view>
+                        <radio value="688元"/>
+                    </view>
+                    <view class="content-li">
+                        <view class="year">3年</view>
+                        <view class="money">889元</view>
+                        <radio value="688元"/>
+                    </view>
+                </view>
+            </view>
+            <view class="li {{liNum2==2?'active':''}}">
+                <view class="head padding-lr border-btm">
+                    <view class="left">光子腰带</view>
+                    <view class="right" bindtap="updown" data-num="2"></view>
+                </view>
+                <view class="content padding-lr bg">
+                    <view class="content-li {{1==1?'active':''}}">
+                        <view class="year">1年</view>
+                        <view class="money">299元</view>
+                        <radio value="688元"/>
+                    </view>
+                    <view class="content-li">
+                        <view class="year">2年</view>
+                        <view class="money">688元</view>
+                        <radio value="688元"/>
+                    </view>
+                    <view class="content-li">
+                        <view class="year">3年</view>
+                        <view class="money">889元</view>
+                        <radio value="688元"/>
+                    </view>
+                </view>
+            </view>
+        </radio-group>
+    </view>
+    <view class="wrap-btn padding-lr">
+        <view class="btn text-center fz36 fc-fff" bindtap="submit">马上提交</view>
+    </view>
+</view>

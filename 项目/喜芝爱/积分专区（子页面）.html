@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>积分专区</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/api.css" rel="stylesheet">
+<link href="css/common.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!-- rem布局适配高清方案 -->
+<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);</script>
+<!-- rem布局适配高清方案 -->
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/common.js"></script>
+</head>
+<body>
+	<div class="main-width integral-child pad-top-nav pad-btm padding-nav-btm">
+		<div class="menu-bar main-bg">
+			<div class="menu-left">
+				<i class="ico-back"></i>
+			</div>
+			<div class="menu-ceter">
+				<img src="img/ico-integral-nav-logo.png" style="width:0.41rem;height: 0.41rem;"/>
+				<h1 class="fz26" style="color: #fff;margin-left:0.1rem;">积分兑换</h1>
+			</div>
+			<div class="menu-right">
+				<a href="购物车.html" class="fz20 flex-end">
+					<img src="img/ico-menu-car.png"/>
+					<p>(<span class="fz20">2</span>)</p>
+				</a>
+			</div>
+		</div>
+		
+		
+		<div class="content">
+			<ul>
+				<li class="padding-lr">
+					<div class="img-box">
+						<img src="img/product-cake.jpg"/>
+					</div>
+					<div class="info">
+						<h1 class="fz26 titel ellipsis2">双层芝士蛋糕</h1>
+						<div class="zhi-fen">
+							<b class="fz20 main-color">
+								<span class="fz20 main-color">1000</span>
+								<span class="fz20 main-color">/</span>
+								<span class="fz20 main-color">积分</span>
+							</b>
+							<p class="fz20">我的积分 ：<span class="fz20 main-color">10</span></p>
+						</div>
+						<div class="num-box">
+							<p class="chose-num fz20">选择数量</p>
+							<div class="number-add-reduce no-select">
+								<span class="nar-reduce fz26">-</span>
+								<span class="nar-number fz26">9</span>
+								<span class="nar-add fz26">+</span>
+							</div>
+						</div>
+						<div class="btn fz20 main-bg">去兑换</div>
+					</div>
+				</li>
+			</ul>
+			<div class="tip grey-bar padding-lr">
+				<p class="fz20">· 保鲜条件：0-4℃储藏当天食用</p>
+				<p class="fz20">· 配送时间：每天早上09:30—晚上20:00</p>
+			</div>
+		</div>
+		
+		<div class="not-have2 fz20"><span class="fz20">没有更多了</span></div>
+		
+		<div class="go-top">
+			<img src="img/go-top.png"/>
+		</div>
+		
+		<div class="nav-btm main-bg">
+			<ul class="nav-box">
+				<li>
+					<a href="首页.html">
+						<img src="img/ico-nav-home.png"/>
+						<p class="fz20">首页</p>
+					</a>
+				</li>
+				<li>
+					<a href="分类（总）.html">
+						<img src="img/ico-nav-sort.png"/>
+						<p class="fz20">分类</p>
+					</a>
+				</li>
+				<li>
+					<a href="积分专区.html">
+						<img src="img/ico-nav-integal.png"/>
+						<p class="fz20">积分专区</p>
+					</a>
+				</li>
+				<li>
+					<a href="个人中心.html">
+						<img src="img/ico-nav-person.png"/>
+						<p class="fz20">个人中心</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+  <script>
+     $(function(){
+     	$li = $(".sort-nav ul li");
+     	$li.click(function(){
+     		var index = $(this).index();
+     		$li.removeClass('sortActive');
+     		$li.eq(index).addClass('sortActive');
+     	});
+     });
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+/**富文本插件样式**/
+
+
+/**公共样式**/
+
+@import '/static/css/main.wxss';
+@import '/static/css/common.wxss';
+@import '/static/css/fontSize.wxss';
+
+/**模板样式**/
+
+
+/**重置小程序默认样式**/
+view{
+    color: #333;
+}
+
+image {
+    vertical-align: middle;
+}
+
+.btn-reset {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-size: 20rpx;
+}
+
+.btn-reset::after {
+    border: none;
+}

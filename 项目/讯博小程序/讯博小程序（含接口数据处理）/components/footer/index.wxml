@@ -1,0 +1,24 @@
+<view class="footer" bindtap=''>
+    <view class="f-phone">
+        <image src="../../static/ico-tel.png" alt=""></image>
+        <text bindtap='_callPhone' data-tel='{{tel1}}'>{{tel1}}</text>
+        <text bindtap='_callPhone' data-tel='{{tel2}}'>{{tel2}}</text>
+    </view>
+    <view class="f-contact">
+        <view bindtap='_openLocation'>
+            地址：
+            <text>{{companyAdress}}</text>
+        </view>
+        <view class='phone-box'>
+            电话：
+            <text bindtap='_callPhone' data-tel='{{tel1}}'>{{tel1}}</text>
+            <text bindtap='_callPhone' data-tel='{{tel3}}'>{{tel3}}</text>
+            <text bindtap='_callPhone' data-tel='{{tel2}}'>{{tel2}}</text>
+        </view>
+        <view class='mail-box'>
+            邮箱：
+            <text bindtap='_copyMail' data-mail='{{mail}}'>{{mail}}</text>
+        </view>
+    </view>
+    <view class="copyright">{{copyright}}</view>
+</view>

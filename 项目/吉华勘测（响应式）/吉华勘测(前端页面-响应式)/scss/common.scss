@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+/*调用css样式*/
+@import url('swiper.min.css');
+
+/*调用scss样式、函数、变量*/
+@import 'variable.scss';
+@import 'mixin.scss';
+
+html,body{
+	height: 100%;
+}
+select{
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    outline: none;
+}
+img{
+    vertical-align: top;
+    max-width: 100%;
+}
+.main-width{
+	max-width: $mainWidth;
+	margin: 0 auto;
+}
+.main-color{
+	color:$mainColor !important;
+}
+.sub-color{
+    color: $subColor !important;
+}
+.main-bg{
+	background-color: $mainColor !important;
+}
+.sub-bg{
+    background-color: $subColor !important;
+}
+.fc-666{
+    color: #666;
+}
+.fc-ccc{
+    color: #ccc;
+}
+.fc-999{
+    color: #999;
+}
+.fc-fff{
+    color: #fff;
+}
+.bg-fff{
+    background-color: #fff !important;
+}
+.no-select,.btn{
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+.btn{
+    cursor: pointer;
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+.hide{
+    display: none !important;
+}
+.show{
+    display: block !important;
+}
+.no-weight{
+    font-weight: normal;
+}
+.ellipsis1{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+.ellipsis2{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.ellipsis3{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.ellipsis4{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.ellipsis5{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+.ellipsis6{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+.ellipsis7{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+}
+.ellipsis8{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+}
+
+
+
+
+.nice-scroll::-webkit-scrollbar { 
+    width: 8px; 
+    height: 5px; 
+    background-color: transparent; 
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+.nice-scroll::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/*定义滑块 内阴影+圆角*/
+.nice-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px; 
+    background-color: rgba(0, 0, 0, 0.3); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3); 
+}
+
+
+
+
+
+
+
+
+
+/*分页样式 start*/
+.wrap-page{
+    font-size: 0;
+    text-align: center;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+.wrap-page .page-box{
+    display: inline-block;
+    font-size: 0;
+}
+.wrap-page .page-box ul{
+    display: inline-block !important;
+}
+.wrap-page .page-box ul:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.wrap-page .page-box ul li{
+    float: left;
+    width: auto !important;
+    line-height: 40px;
+    height: 40px;
+    min-width: 40px;
+    padding: 0px 5px;
+    box-sizing: border-box;
+    text-align: center;
+    margin:0px 2px;
+    background-color: #eee;
+    cursor: pointer;
+    font-size: 12px;
+    color: #666;
+}
+.wrap-page .page-box ul li.active,.wrap-page .page-box ul li.page-list:hover{
+    background-color: #b04b87;/**背景色（主色）--在此修改**/
+}
+.wrap-page .page-box ul li.active,
+.wrap-page .page-box ul li.active *,
+.wrap-page .page-box ul li.page-list:hover,
+.wrap-page .page-box ul li.page-list:hover *{
+    color: #fff !important;
+}
+.wrap-page .page-box ul li.page-prev{
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTM1OTQ4NjIxMTMzIiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjIwNjgiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTY5OS40IDk4LjJjMTAuOCAwIDIxLjcgNC4xIDI5LjkgMTIuNCAxNi41IDE2LjUgMTYuNSA0My40IDAgNTkuOUwzODYuNSA1MTMuMiA3MjkuMyA4NTZjMTYuNSAxNi41IDE2LjUgNDMuNCAwIDU5LjlzLTQzLjQgMTYuNS01OS45IDBMMjk2LjcgNTQzLjJjLTcuOS03LjktMTIuNC0xOC43LTEyLjQtMjkuOXM0LjUtMjIgMTIuNC0yOS45bDM3Mi43LTM3Mi43YzguMy04LjQgMTkuMS0xMi41IDMwLTEyLjV6IiBwLWlkPSIyMDY5IiBkYXRhLXNwbS1hbmNob3ItaWQ9ImEzMTN4Ljc3ODEwNjkuMC5pNiIgY2xhc3M9InNlbGVjdGVkIiBmaWxsPSIjOTk5OTk5Ij48L3BhdGg+PC9zdmc+);
+}
+.wrap-page .page-box ul li.page-next{
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IuWbvuWxgl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjYwcHgiIGhlaWdodD0iNjBweCIgdmlld0JveD0iMCAwIDYwIDYwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2MCA2MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBmaWxsPSIjOTk5OTk5IiBkPSJNMTkuMTM1LDU0LjM5MWMtMC42MzMsMC0xLjI3MS0wLjI0LTEuNzUyLTAuNzI3Yy0wLjk2Ny0wLjk2Ny0wLjk2Ny0yLjU0MywwLTMuNTFsMjAuMDg1LTIwLjA4TDE3LjM4Myw5Ljk4OQ0KCWMtMC45NjctMC45NjctMC45NjctMi41NDMsMC0zLjUxczIuNTQzLTAuOTY3LDMuNTEsMEw0Mi43MywyOC4zMTdjMC40NjMsMC40NjMsMC43MjcsMS4wOTYsMC43MjcsMS43NTINCgljMCwwLjY1Ni0wLjI2NCwxLjI4OS0wLjcyNywxLjc1MUwyMC44OTMsNTMuNjU4QzIwLjQwNyw1NC4xNSwxOS43NzQsNTQuMzkxLDE5LjEzNSw1NC4zOTF6Ii8+DQo8L3N2Zz4NCg==);
+}
+.wrap-page .page-box ul li.page-prev,.wrap-page .page-box ul li.page-next{
+    background-size: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.wrap-page .page-box ul li.page-more{
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTM1OTUyNTQzMDQyIiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjM2MzkiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTE4OC4yIDUwNy4ybS05MS41IDBhOTEuNSA5MS41IDAgMSAwIDE4MyAwIDkxLjUgOTEuNSAwIDEgMC0xODMgMFoiIHAtaWQ9IjM2NDAiIGZpbGw9IiM5OTk5OTkiPjwvcGF0aD48cGF0aCBkPSJNNTE2LjIgNTA3LjJtLTkxLjUgMGE5MS41IDkxLjUgMCAxIDAgMTgzIDAgOTEuNSA5MS41IDAgMSAwLTE4MyAwWiIgcC1pZD0iMzY0MSIgZmlsbD0iIzk5OTk5OSI+PC9wYXRoPjxwYXRoIGQ9Ik04MzYuNSA1MDcuMm0tOTEuNSAwYTkxLjUgOTEuNSAwIDEgMCAxODMgMCA5MS41IDkxLjUgMCAxIDAtMTgzIDBaIiBwLWlkPSIzNjQyIiBmaWxsPSIjOTk5OTk5Ij48L3BhdGg+PC9zdmc+);
+    background-color: transparent;
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.wrap-page .page-box ul li a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.wrap-page .page-box ul li a,.wrap-page .page-box ul li a *{
+    color: #666;
+}
+
+@media screen and (min-width:0px) and (max-width:767px){
+    .wrap-page{
+        padding: 0px 5px;
+    }
+    .wrap-page .page-box ul li{
+        line-height: 30px;
+        height: 30px;
+        min-width: 30px;
+        padding: 0px 4px;
+        box-sizing: border-box;
+        text-align: center;
+        margin:0px 1px;
+        background-color: #eee;
+        cursor: pointer;
+        font-size: 12px;
+        color: #666;
+    }
+}
+/*分页样式 end*/
+
+
+

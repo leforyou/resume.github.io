@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "nav-tab": "/components/nav-tab/index",
+        "footer-content": "/components/footer/index"
+    }
+}

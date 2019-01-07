@@ -1,0 +1,159 @@
+@import "/wxParse/wxParse.wxss";
+@import '/common/css/common.wxss';
+@import '/pages/template/cardList/cardList.wxss';
+@import '/pages/template/newsList/newsList.wxss';
+@import '/pages/template/serveType/serveType.wxss';
+image {
+    vertical-align: middle;
+}
+
+.main-bg {
+    background: #008fee;
+}
+
+.main-color {
+    color: #008fee;
+}
+
+.ellipsis1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ellipsis2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.ellipsis3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.ellipsis4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.btm-line,
+.top-line {
+    position: relative;
+}
+
+.btm-line::after,
+.top-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #ccc;
+    height: 1px;
+    transform: scaleY(0.5);
+}
+
+.btm-line::after {
+    bottom: 0;
+}
+
+.top-line::after {
+    top: 0;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.span {
+    display: inline-block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-indent {
+    text-indent: 1.3em;
+}
+
+.btn-reset {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-size: 20rpx;
+}
+
+.btn-reset::after {
+    border: none;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.pingjun {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.fz14 {
+    font-size: 28rpx;
+}
+
+.fz12 {
+    font-size: 24rpx;
+}
+
+.mt20 {
+    margin-top: 40rpx;
+}
+
+.mb20 {
+    margin-bottom: 40rpx;
+}
+
+.mb10 {
+    margin-bottom: 20rpx;
+}
+
+.txc {
+    text-align: center;
+}
+
+.blue {
+    color: #008fee;
+}
+
+.fff {
+    color: #fff;
+}
+
+.hui {
+    color: #666;
+}
+
+.five {
+    color: #555;
+}

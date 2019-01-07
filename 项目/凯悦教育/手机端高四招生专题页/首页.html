@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="css/api.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<!-- rem布局适配高清方案 -->
+		<script>
+			! function(e) {
+				function t(a) {
+					if(i[a]) return i[a].exports;
+					var n = i[a] = {
+						exports: {},
+						id: a,
+						loaded: !1
+					};
+					return e[a].call(n.exports, n, n.exports, t), n.loaded = !0, n.exports
+				}
+				var i = {};
+				return t.m = e, t.c = i, t.p = "", t(0)
+			}([function(e, t) {
+				"use strict";
+				Object.defineProperty(t, "__esModule", {
+					value: !0
+				});
+				var i = window;
+				t["default"] = i.flex = function(normal, e, t) {
+					var a = e || 100,
+						n = t || 1,
+						r = i.document,
+						o = navigator.userAgent,
+						d = o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),
+						l = o.match(/U3\/((\d+|\.){5,})/i),
+						c = l && parseInt(l[1].split(".").join(""), 10) >= 80,
+						p = navigator.appVersion.match(/(iphone|ipad|ipod)/gi),
+						s = i.devicePixelRatio || 1;
+					p || d && d[1] > 534 || c || (s = 1);
+					var u = normal ? 1 : 1 / s,
+						m = r.querySelector('meta[name="viewport"]');
+					m || (m = r.createElement("meta"), m.setAttribute("name", "viewport"), r.head.appendChild(m)), m.setAttribute("content", "width=device-width,user-scalable=no,initial-scale=" + u + ",maximum-scale=" + u + ",minimum-scale=" + u), r.documentElement.style.fontSize = normal ? "50px" : a / 2 * s * n + "px"
+				}, e.exports = t["default"]
+			}]);
+			flex(true, 100, 1);
+		</script>
+		<!-- rem布局适配高清方案 -->
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/bscroll.min.js"></script>
+	</head>
+
+	<body>
+		<div class="home main-width">
+			<div class="wrap-banner">
+				<div class="banner-box">
+					<!--banner图片-->
+				</div>
+			</div>
+
+			<div class="dream bg-fff">
+				<div class="padding-lr">
+					<div class="all-title">
+						<img src="img/title-dream.png" />
+					</div>
+					<ul>
+						<li>
+							<div class="info">
+								<p class="num fz36 main-color">01</p>
+								<p class="desc fz28">入学测试<br/>定制目标院校</p>
+							</div>
+							<div class="img-box">
+								<img src="img/dream-list1.png" />
+							</div>
+						</li>
+						<li>
+							<div class="info">
+								<p class="num fz36 main-color">02</p>
+								<p class="desc fz28">名师跟踪<br/>小班教学</p>
+							</div>
+							<div class="img-box">
+								<img src="img/dream-list2.png" />
+							</div>
+						</li>
+						<li>
+							<div class="info">
+								<p class="num fz36 main-color">03</p>
+								<p class="desc fz28">专职班主任<br/>专业心里辅导</p>
+							</div>
+							<div class="img-box">
+								<img src="img/dream-list3.png" />
+							</div>
+						</li>
+						<li>
+							<div class="info">
+								<p class="num fz36 main-color">04</p>
+								<p class="desc fz28">封闭全寄宿式<br/>一站式</p>
+							</div>
+							<div class="img-box">
+								<img src="img/dream-list4.png" />
+							</div>
+						</li>
+						<li>
+							<div class="info">
+								<p class="num fz36 main-color">5</p>
+								<p class="desc fz28">办理学籍管理<br/>高考报名手续</p>
+							</div>
+							<div class="img-box">
+								<img src="img/dream-list5.png" />
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="news">
+				<div class="padding-lr">
+					<div class="all-title">
+						<img src="img/title-dream.png" />
+					</div>
+					<div class="wrap-slide">
+						<div class="slide-box">
+							<!-- Swiper -->
+							<div class="swiper-container swiper-news">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a class="bg-fff" href="javascirpt:">
+											<div class="img-box">
+												<img src="img/news-list1.jpg"/>
+											</div>
+											<div class="info">
+												<p class="title fz36 ellipsis1 main-color">高考复读超级学霸特训班结营仪式 高考复读超级学霸特训班结营仪式</p>
+												<p class="desc fz28 ellipsis3">室外三十摄氏度，室内也是一派沸腾。高考复读超级学霸特训班结课仪式在欢乐轻松的氛围下拉开了序幕。</p>
+												<p class="time fz28 fc-999">2018-08-09</p>
+											</div>
+										</a>
+									</div>
+									
+									<div class="swiper-slide">
+										<a class="bg-fff" href="javascirpt:">
+											<div class="img-box">
+												<img src="img/news-list1.jpg"/>
+											</div>
+											<div class="info">
+												<p class="title fz36 ellipsis1 main-color">高考复读超级学霸特训班结营仪式 高考复读超级学霸特训班结营仪式</p>
+												<p class="desc fz28 ellipsis3">室外三十摄氏度，室内也是一派沸腾。高考复读超级学霸特训班结课仪式在欢乐轻松的氛围下拉开了序幕。室外三十摄氏度，室内也是一派沸腾。高考复读超级学霸特训班结课仪式在欢乐轻松的氛围下拉开了序幕。室外三十摄氏度，室内也是一派沸腾。高考复读超级学霸特训班结课仪式在欢乐轻松的氛围下拉开了序幕。</p>
+												<p class="time fz28 fc-999">2018-08-09</p>
+											</div>
+										</a>
+									</div>
+									
+									<div class="swiper-slide">
+										<a class="bg-fff" href="javascirpt:">
+											<div class="img-box">
+												<img src="img/news-list1.jpg"/>
+											</div>
+											<div class="info">
+												<p class="title fz36 ellipsis1 main-color">高考复读超级学霸特训班结营仪式 高考复读超级学霸特训班结营仪式</p>
+												<p class="desc fz28 ellipsis3">室外三十摄氏度，室内也是一派沸腾。高考复读超级学霸特训班结课仪式在欢乐轻松的氛围下拉开了序幕。室外三十摄氏度，室内也是一派沸腾。高考复读超级学霸特训班结课仪式在欢乐轻松的氛围下拉开了序幕。室外三十摄氏度，室内也是一派沸腾。高考复读超级学霸特训班结课仪式在欢乐轻松的氛围下拉开了序幕。</p>
+												<p class="time fz28 fc-999">2018-08-09</p>
+											</div>
+										</a>
+									</div>
+								</div>
+								<!-- Add Arrows -->
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+							</div>
+						</div>
+					</div>
+					<div class="wrap-btn">
+						<a href="javascript:" class="btn fc-fff fz32 main-bg">查看更多</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="school">
+				<div class="box bg-fff">
+					<div class="all-title">
+						<img src="img/title-school.png" />
+					</div>
+					<div class="content padding-lr">
+						<p class="head text-center fz36">// &nbsp; 正规民办学校 &nbsp;  //</p>
+						<p class="desc fz28 padding-lr">凯悦教育是一所专办高考升学辅导学校，是油教育局颁发许可证的广东知名教育培训机构，经验丰富，要求严格，成绩显著，深受历届高考毕业生欢迎，我们拥有专业师资队伍，教学风格和教学态度都深受学生和家长的认可，我校专办高考升学班，突出重点，高强度，实际效果好；管理严格、细致、校风好，学习氛围积极，培养一大批学子考入中山大学，华南理工大学、华南农业大学等全国著名院校，本科升学率一直保持在95%以上，重点率80%。</p>
+						<img src="img/school-student.jpg"/>
+					</div>
+				</div>
+			</div>
+			
+			<div class="team bg-fff">
+				<div class="box">
+					<div class="all-title padding-lr">
+						<img src="img/title-team.png" />
+					</div>
+					<div class="content">
+						<div class="desc fz28">
+							<i><!--错位-底色块--></i>
+							<p>优秀教师们有着多年对高考备考经验，随着政策进行各科重点，难点，考点深入分析，而后名师将多年高考研究的经验应用于试卷解读中，在每一次考试结束后，对考试卷从试题难度、知识点、试题区分度、答案方向、命题思路等做出全面解析，同时对高考进行预测，让学生能够真正熟悉高考，短时间内快速提高成绩，帮助学生实现大学梦。</p>
+						</div>
+						<div class="people text-center">
+							<img src="img/team-people.png"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="campus padding-lr">
+				<div class="box">
+					<div class="all-title padding-lr">
+						<img src="img/title-campus.png" />
+					</div>
+					<div class="slide-box">
+						<div class="caroursel poster-main">
+							<ul class="poster-list">
+								<li class="poster-item">
+									<img src="img/campus-list1.jpg" width="100%" height="100%">
+								</li>
+								<li class="poster-item">
+									<img src="img/campus-list2.jpg" width="100%" height="100%">
+								</li>
+								<li class="poster-item">
+									<img src="img/campus-list3.jpg" width="100%" height="100%">
+								</li>
+							</ul>
+							<div class="poster-btn poster-prev-btn"></div>
+							<div class="poster-btn poster-next-btn"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="subject-time padding-lr bg-fff">
+				<div class="box">
+					<div class="all-title padding-lr">
+						<img src="img/title-subject-time.png" />
+					</div>
+					<div class="sub-title fz36 main-color text-center">开设科目</div>
+					<table class="table">
+						<tbody class="fz28">
+							<tr>
+								<td>文科</td>
+								<td>语文</td>
+								<td>数学</td>
+								<td>英语</td>
+								<td>文综</td>
+							</tr>
+							<tr>
+								<td>理科</td>
+								<td>语文</td>
+								<td>数学</td>
+								<td>英语</td>
+								<td>理综</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="sub-title fz36 main-color text-center">开课时间</div>
+					<ul class="opening-time fz32 text-center">
+						<li class="main-color">2018年8月22日-2019年6月6日</li>
+						<li class="main-color">7月15日前报名，赠送一周免费特训课</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="charge padding-lr">
+				<div class="box">
+					<div class="all-title padding-lr">
+						<img src="img/title-charge.png" />
+					</div>
+					<div class="explain">
+						<ul class="fz32">
+							<li>
+								<p>学费：<b class="main-color">26000</b>元/学期</p>
+							</li>
+							<li>
+								<p>杂费：<b class="main-color">3800</b>元/学期</p>
+							</li>
+							<li>
+								<p>住宿费：<b class="main-color">700</b>元/月（四人间）</p>
+							</li>
+							<li>
+								<p>7月15日前报名优惠<b class="main-color">5000</b>元/年</p>
+								<p>名额从速）</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="sign-up padding-lr bg-fff">
+				<div class="box">
+					<div class="all-title padding-lr">
+						<img src="img/title-sign-up.png" />
+					</div>
+					<ul class="fz28">
+						<li><input class="fc-666" type="text" placeholder="姓名" /></li>
+						<li><input class="fc-666" type="text" placeholder="原学校" /></li>
+						<li><input class="fc-666" type="text" placeholder="科目" /></li>
+						<li><input class="fc-666" type="text" placeholder="联系电话" /></li>
+					</ul>
+					<div class="wrap-btn">
+						<p class="btn fz32 text-center main-bg fc-fff">提交申请</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="contact-way">
+				<div class="section1">
+					<img class="bar" src="img/contact-bar.png"/>
+					<div class="info">
+						<p class="title fz50 fc-fff text-center">凯悦教育</p>
+						<ul class="fz28">
+							<li>
+								<span>天河校区</span>
+								<i>：</i>
+								广州市天河区东莞庄路280号
+							</li>
+							<li>
+								<span class="letter-spacing1">公交车</span>
+								<i>：</i>
+								<div>
+									<p>400路    东莞庄路站下</p>
+									<p>B11路    到华南理工大学北门站下</p>
+									<p>346路    到长福路总站下</p>
+								</div>
+							</li>
+							<li>
+								<span class="letter-spacing2">地铁</span>
+								<i>：</i>
+								3号线五山站A出口
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="section2">
+					<ul>
+						<li>
+							<a href="tel:020-87052121">
+								<img src="img/ico-contact-phone1.png"/>
+								<div class="info">
+									<p class="fz24 fc-fff">学校总机</p>
+									<p class="fz24 fc-fff">020-87052121</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="tel:13580305917">
+								<img src="img/ico-contact-phone2.png"/>
+								<div class="info">
+									<p class="fz24 fc-fff">关老师</p>
+									<p class="fz24 fc-fff">13580305917</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="tel:13928991119">
+								<img src="img/ico-contact-phone2.png"/>
+								<div class="info">
+									<p class="fz24 fc-fff">王老师</p>
+									<p class="fz24 fc-fff">13928991119</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer">
+				<div class="padding-lr">
+					<div class="go-top">
+						<!--返回顶部-->
+					</div>
+					<div class="f-logo">
+						<img src="img/footer-logo.png" />
+					</div>
+					<div class="friendship" id="friendship">
+						<ul class="fz24">
+							<li>
+								<a class="fc-999" href="javascript:">友情链接：</a>
+							</li>
+							<li>
+								<a class="fc-999" href="javascript:">广东招考网</a>
+							</li>
+							<li>
+								<a class="fc-999" href="javascript:">广州招考网</a>
+							</li>
+							<li>
+								<a class="fc-999" href="javascript:">广东考试网</a>
+							</li>
+
+							<li>
+								<a class="fc-999" href="javascript:">广东考试网</a>
+							</li>
+							<li>
+								<a class="fc-999" href="javascript:">广东考试网</a>
+							</li>
+							<li>
+								<a class="fc-999" href="javascript:">广东考试网</a>
+							</li>
+						</ul>
+					</div>
+					<div class="info text-center">
+						<p class="fz22 fc-999">Copyright © 2018 广州市天河区凯悦教育培训中心 </p>
+						<p class="fz22 fc-999">备案号：粤ICP备08886666号</p>
+					</div>
+				</div>
+			</div>
+			<div class="customer-service">
+				<!--客服-->
+				<img src="img/customer-service.png" />
+			</div>
+		</div>
+		<script>
+			$(function() {
+				//底部-友情链接
+				var scroll = new BScroll(document.getElementById('friendship'), {
+					startX: 0,
+					startY: 0,
+					scrollX: true,
+					click: true, //是否启用click事件
+					preventDefault: false //是否阻止默认事件,触屏手机允许区域左右滑动的同时页面也能上下滚动
+				});
+			});
+			$(function() {
+				//新闻轮播图
+				var swiper = new Swiper('.swiper-news', {
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+				});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="css/carousel.css"/>
+		<script src="js/jquery.carousel.js" type="text/javascript" charset="utf-8">/*!旋转木马切换效果*/</script>
+		<script>
+			 /*!旋转木马切换效果*/
+			var dataObj = {
+			  "width":345,         //旋转木马的宽度
+			  "height":155,         //旋转木马的高度
+			  "posterWidth":252,    //当前显示的图片的宽度
+			  "posterHeight":154,   //当前显示的图片的高度
+			  "scale":0.8,          //缩放值
+			  "algin":"middle",     //对齐方式
+			  "speed":"1000",       //动画速度
+			  "isAutoplay":"true",  //自动播放
+			  "dealy":"3000"        //延迟时间
+			}
+			dataObj = JSON.stringify(dataObj);
+			$(".caroursel").attr('data-setting',dataObj);
+		    Caroursel.init($('.caroursel')) 
+		  </script>
+	</body>
+
+</html>

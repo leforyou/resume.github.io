@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="css/api.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<!-- rem布局适配高清方案 -->
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(true,100, 1);</script>
+		<!-- rem布局适配高清方案 -->
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/common.js"></script>
+	</head>
+
+	<body>
+		<div class="write-questionnaire main-width">
+			
+			<div class="contain padding-lr">
+				<div class="box">
+					<div class="satisfaction">
+						<ul>
+							<li>
+								<div class="head fz30">
+									<span class="num">1.</span>
+									<div class="desc">输出质量（含证书报告质量、软件及硬件产品的稳定性、可用性、安全性）</div>
+								</div>
+								<div class="score">
+									<div class="score-head">
+										<span class="fz26">非常不满意</span>
+										<span class="fz26">非常满意</span>
+									</div>
+								</div>
+								<div class="wrap">
+									<div class="rate-section">
+										<div class="rate-barL"></div>
+										<div class="rate-barR"></div>
+										<div class="rate-button-wrapper">
+											<div class="rate-button"></div>
+											<div class="rate-tooltip">0</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="head fz30">
+									<span class="num">2.</span>
+									<div class="desc">公正性和诚实性（限检测及检验类）</div>
+								</div>
+								<div class="score">
+									<div class="score-head">
+										<span class="fz26">非常不满意</span>
+										<span class="fz26">非常满意</span>
+									</div>
+								</div>
+								<div class="wrap">
+									<div class="rate-section">
+										<div class="rate-barL"></div>
+										<div class="rate-barR"></div>
+										<div class="rate-button-wrapper">
+											<div class="rate-button"></div>
+											<div class="rate-tooltip">0</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="head fz30">
+									<span class="num">3.</span>
+									<div class="desc">输出质量（含证书报告质量、软件及硬件产品的稳定性、可用性、安全性）</div>
+								</div>
+								<div class="score">
+									<div class="score-head">
+										<span class="fz26">非常不满意</span>
+										<span class="fz26">非常满意</span>
+									</div>
+								</div>
+								<div class="wrap">
+									<div class="rate-section">
+										<div class="rate-barL"></div>
+										<div class="rate-barR"></div>
+										<div class="rate-button-wrapper">
+											<div class="rate-button"></div>
+											<div class="rate-tooltip">0</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="head fz30">
+									<span class="num">4.</span>
+									<div class="desc">公正性和诚实性（限检测及检验类）</div>
+								</div>
+								<div class="score">
+									<div class="score-head">
+										<span class="fz26">非常不满意</span>
+										<span class="fz26">非常满意</span>
+									</div>
+								</div>
+								<div class="wrap">
+									<div class="rate-section">
+										<div class="rate-barL"></div>
+										<div class="rate-barR"></div>
+										<div class="rate-button-wrapper">
+											<div class="rate-button"></div>
+											<div class="rate-tooltip">0</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="head fz30">
+									<span class="num">5.</span>
+									<div class="desc">输出质量（含证书报告质量、软件及硬件产品的稳定性、可用性、安全性）</div>
+								</div>
+								<div class="score">
+									<div class="score-head">
+										<span class="fz26">非常不满意</span>
+										<span class="fz26">非常满意</span>
+									</div>
+								</div>
+								<div class="wrap">
+									<div class="rate-section">
+										<div class="rate-barL"></div>
+										<div class="rate-barR"></div>
+										<div class="rate-button-wrapper">
+											<div class="rate-button"></div>
+											<div class="rate-tooltip">0</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="head fz30">
+									<span class="num">6.</span>
+									<div class="desc">公正性和诚实性（限检测及检验类）</div>
+								</div>
+								<div class="score">
+									<div class="score-head">
+										<span class="fz26">非常不满意</span>
+										<span class="fz26">非常满意</span>
+									</div>
+								</div>
+								<div class="wrap">
+									<div class="rate-section">
+										<div class="rate-barL"></div>
+										<div class="rate-barR"></div>
+										<div class="rate-button-wrapper">
+											<div class="rate-button"></div>
+											<div class="rate-tooltip">0</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="head fz30">
+									<span class="num">7.</span>
+									<div class="desc">输出质量（含证书报告质量、软件及硬件产品的稳定性、可用性、安全性）</div>
+								</div>
+								<div class="score">
+									<div class="score-head">
+										<span class="fz26">非常不满意</span>
+										<span class="fz26">非常满意</span>
+									</div>
+								</div>
+								<div class="wrap">
+									<div class="rate-section">
+										<div class="rate-barL"></div>
+										<div class="rate-barR"></div>
+										<div class="rate-button-wrapper">
+											<div class="rate-button"></div>
+											<div class="rate-tooltip">0</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="head fz30">
+									<span class="num">8.</span>
+									<div class="desc">公正性和诚实性（限检测及检验类）</div>
+								</div>
+								<div class="score">
+									<div class="score-head">
+										<span class="fz26">非常不满意</span>
+										<span class="fz26">非常满意</span>
+									</div>
+								</div>
+								<div class="wrap">
+									<div class="rate-section">
+										<div class="rate-barL"></div>
+										<div class="rate-barR"></div>
+										<div class="rate-button-wrapper">
+											<div class="rate-button"></div>
+											<div class="rate-tooltip">0</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							
+							<li>
+								<div class="head fz30">
+									<span class="num">9.</span>
+									<div class="desc">建议 / 反馈</div>
+								</div>
+								<div class="proposal fz30">
+									<textarea rows="7" placeholder="为了能更好地为您提供服务，请填写以下信息以便于我们更好改进。非常感谢您的支持！"></textarea>
+								</div>
+								<div class="objective fz30">
+									本次调查为了XXXX
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="common-foot">
+				<div class="contain fz24">
+					<div class="box main-width padding-lr">
+						<div class="wrap-line">
+							<i class="line" style="width: 0%;"></i>
+						</div>
+						<div class="operation">
+							<a class="left prev" href="javascript:">上一题</a>
+							<a class="middle" href="javascript:">
+								<span id="num1">6</span>
+								<span style="margin: 0px 3px;">/</span>
+								<span id="num2">9</span>
+							</a>
+							<a class="right next" href="javascript:">下一题</a>
+							<a class="right submit" style="display: none;" href="javascript:">提交问卷</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(function() {
+				var num = 2;//显示2题
+				var len = $(".satisfaction ul li").size();//总题数
+				$(".satisfaction ul li").eq(num-2).show();
+				$(".satisfaction ul li").eq(num-1).show();
+				
+				$(".operation #num1").html(num);
+				$(".operation #num2").html(len);
+				
+				$(".operation .prev").css({'color':'#b2b2b2'});
+				$(".common-foot .line").css({'width':(num*100/len)+'%'});
+				
+				$(".operation .prev").click(function(){
+					//上一题
+					num -= 2;
+					$(".operation .right").hide();
+					$(".operation .next").show();
+					
+					if(num==2){
+						$(".operation .prev").css({'color':'#b2b2b2'});
+					}
+					if(num < 2){
+						num = 2;
+					}else{
+						$(".operation #num1").html(num);
+						$(".satisfaction ul li").hide();
+						$(".satisfaction ul li").eq(num-2).show();
+						$(".satisfaction ul li").eq(num-1).show();
+					}
+					$(".common-foot .line").css({'width':(num*100/len)+'%'});
+				});
+				$(".operation .next").click(function(){
+					//下一题
+					num += 2;
+					$(".operation .prev").css({'color':'#fe1e1e'});
+					if(num<len){
+						$(".operation #num1").html(num);
+						$(".satisfaction ul li").hide();
+						$(".satisfaction ul li").eq(num-2).show();
+						$(".satisfaction ul li").eq(num-1).show();
+						$(".common-foot .line").css({'width':(num*100/len)+'%'});
+					}else{
+						$(".operation #num1").html(len);
+						$(".satisfaction ul li").hide();
+						$(".satisfaction ul li").eq(len-1).show();
+						
+						$(".operation .right").hide();
+						$(".operation .submit").show();
+						$(".common-foot .line").css({'width':'100%'});
+					}
+				});
+				
+				$(".operation .submit").click(function(){
+					alert('你要提交问卷了！！！！！')
+				});
+			});
+		</script>
+	</body>
+
+</html>

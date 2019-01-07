@@ -1,0 +1,11 @@
+<template name="newsList">
+    <view class="wrap-news">
+        <navigator url='../newsDetail/newsDetail?id={{item.id}}&isNews={{isNews}}&newsWay={{newsWay}}' class='news-url' hover-class='none' wx:for="{{newsList}}" wx:key="index">
+            <view class='news-list'>
+                <view class='news-date ellipsis1'>{{item.time}}</view>
+                <view class='news-title ellipsis1'>{{item.title}}</view>
+                <view class='news-content ellipsis3'>{{item.intro}}</view>
+            </view>
+        </navigator>
+    </view>
+</template>

@@ -1,0 +1,771 @@
+@charset "utf-8";
+@import 'variable.scss';
+@import 'mixin.scss';
+/*注意： @import url('common.css');这种是写是属于css的，在scss中编译过程将找不到文件*/
+
+html,body{
+    height: 100%;
+}
+
+/**提交弹窗 start**/
+.submit-layer{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:rgba(0,0,0,0.5);
+    z-index: 9999999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+    .close{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .box{
+        background-color: #fff;
+        width: 6rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 0.16rem;
+        padding: 0.6rem;
+        .head{
+            line-height: 1.6;
+        }
+        .foot{
+            margin-top: 0.5rem;
+            display: flex;
+            justify-content: flex-end;
+            .list{
+                cursor: pointer;
+                &.cancel{
+                    margin-right: 0.5rem;
+                }
+                &.sure{
+                    color: #fe1e1e;
+                }
+            }
+        }
+    }
+}
+/**提交弹窗 end**/
+    
+    
+
+/** start**/
+.header{
+    $h:0.9rem;
+    height: $h;
+    .contain{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 999999;
+        height: $h;
+        background-color: #fe1e1e;
+        .box{
+            height: 100%;
+            position: relative;
+            .back{
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                @include wh($h);
+                background-image: url(../img/header-back.png);
+                background-size: 0.4rem;
+                background-position: 0.1rem center;
+                background-repeat: no-repeat;
+            }
+            .big-title{
+                color: #fff;
+                font-size: 0.28rem;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+/** end**/
+
+
+/** start**/
+
+/** end**/
+    
+    
+
+/** start**/
+
+/** end**/
+
+/**01 启动页 start**/
+.start-page{
+    min-height: 100%;
+    background-color: #fff;
+    .bg-img{
+        padding-top: 0.88rem;
+        padding-bottom: 0.4rem;
+        img{
+            width: 100%;
+        }
+    }
+    .questionnaire{
+        padding: 0rem 1rem;
+        .list{
+            display: block;
+            line-height: 0.96rem;
+            border-radius: 0.96rem;
+            &.write{
+                background-color: #db170e;
+            }
+            &.check{
+                margin-top: 0.5rem;
+                background-color: #fff;
+                box-shadow: 0rem 0.05rem 0.4rem rgba(0,0,0,0.1);
+            }
+        }
+    }
+    .copyright{
+        line-height: 1.8;
+        padding: 0.7rem 0rem 0.7rem;
+    }
+}
+/**01 启动页 end**/
+
+
+
+/**02.1 填写问卷-信息填写 start**/
+.info-filling{
+    min-height: 100%;
+    background-color: #fafafa;
+    .sure{
+        .box{
+            .big-title{
+                padding: 0.5rem 0rem 0.3rem;
+                line-height: 1;
+            }
+            .info{
+                padding: 0rem 0.3rem;
+                background-color: #fff;
+                border-radius: 0.2rem;
+                box-shadow: 0rem 0rem 0.2rem rgba(0,0,0,0.05);
+                ul{
+                    li{
+                        padding: 0.3rem 0rem;
+                        border-bottom: 0.01rem solid #e6e6e6;
+                        &:nth-last-child(1){
+                            border-bottom: none;
+                        }
+                        .sub-title{
+                            margin-bottom: 0.1rem;
+                        }
+                        .desc{
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .write{
+        padding-bottom: 1rem;
+        .box{
+            .big-title{
+                padding: 0.5rem 0rem 0.3rem;
+                line-height: 1;
+            }
+            .info{
+                padding: 0rem 0.3rem;
+                background-color: #fff;
+                border-radius: 0.2rem;
+                box-shadow: 0rem 0rem 0.2rem rgba(0,0,0,0.05);
+                ul{
+                    li{
+                        padding: 0.3rem 0rem;
+                        border-bottom: 0.01rem solid #e6e6e6;
+                        &:nth-last-child(1){
+                            border-bottom: none;
+                        }
+                        .sub-title{
+                            margin-bottom: 0.1rem;
+                        }
+                        input{
+                            display: block;
+                            width: 100%;
+                            line-height: 1;
+                            &::-webkit-input-placeholder{
+                                color: #ccc;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .submit{
+        $h:1.1rem;
+        height: $h;
+        .contain{
+            position: fixed;
+            bottom: 0rem;
+            left: 0;
+            right: 0;
+            box-shadow: 0rem 0rem 0.2rem rgba(0,0,0,0.05);
+            background-color: #fff;
+            .box{
+                height: $h;
+                display: flex;
+                .list{
+                    flex-grow: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &.error{
+                        background-color: #fff;
+                        color: #666;
+                    }
+                    &.right{
+                        background-color: #f52a1f;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+/**02.1 填写问卷-信息填写 end**/
+    
+    
+
+/**02.2 填写问卷-满意度 start**/
+.write-questionnaire{
+    background-color: #fafafa;
+    min-height: 100%;
+    .contain{
+        .box{
+            .satisfaction{
+                .swiper-container{
+                    .swiper-wrapper{
+                        .swiper-slide{
+                            padding-bottom: 0.01rem;
+                            padding-left: 0.4rem;
+                            padding-right: 0.4rem;
+                            .section{
+                                margin-bottom: 2.4rem;
+                                .head{
+                                    display: flex;
+                                    padding: 0.5rem 0rem 0.7rem;
+                                    line-height: 1.8;
+                                    .num{
+                                        white-space: nowrap;
+                                    }
+                                    .desc{
+                                        
+                                    }
+                                }
+                                .score{
+                                    .score-head{
+                                        display: flex;
+                                        justify-content: space-between;
+                                        *{
+                                            color: #b2b2b2;
+                                        }
+                                    }
+                                }
+                                .wrap{
+                                    padding-top: 0.2rem;
+                                    padding-left: 0.05rem;
+                                    padding-right: 0.05rem;
+                                }
+                                .proposal{
+                                    box-shadow: 0rem 0rem 0.2rem rgba(0,0,0,0.05);
+                                    background-color: #fff;
+                                    border-radius: 0.16rem;
+                                    padding: 0.3rem;
+                                    margin-bottom: 0.6rem;
+                                    textarea{
+                                        line-height: 1.8;
+                                        width: 100%;
+                                        max-width: 100%;
+                                        min-width: 100%;
+                                        &::-webkit-input-placeholder{
+                                            color: #999;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                ul{
+                    padding-bottom: 0.01rem;
+                    li{
+                        margin-bottom: 2.4rem;
+                        display: none;
+                        .head{
+                            display: flex;
+                            padding: 0.5rem 0rem 0.7rem;
+                            line-height: 1.8;
+                            .num{
+                                white-space: nowrap;
+                            }
+                            .desc{
+                                
+                            }
+                        }
+                        .score{
+                            .score-head{
+                                display: flex;
+                                justify-content: space-between;
+                                *{
+                                    color: #b2b2b2;
+                                }
+                            }
+                        }
+                        .wrap{
+                            padding-top: 0.2rem;
+                            padding-left: 0.05rem;
+                            padding-right: 0.05rem;
+                        }
+                        .proposal{
+                            box-shadow: 0rem 0rem 0.2rem rgba(0,0,0,0.05);
+                            background-color: #fff;
+                            border-radius: 0.16rem;
+                            padding: 0.3rem;
+                            margin-bottom: 0.6rem;
+                            textarea{
+                                line-height: 1.8;
+                                width: 100%;
+                                max-width: 100%;
+                                min-width: 100%;
+                                &::-webkit-input-placeholder{
+                                    color: #999;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/**02.2 填写问卷-满意度 end**/
+
+
+/**03 提交问卷 start**/
+.subit-questionnaire{
+    background-color: #fafafa;
+    min-height: 100%;
+    .contain{
+        .box{
+            padding-top: 0.01rem;
+            .big-title{
+                margin-bottom: 0.25rem;
+                margin-top:0.45rem;
+            }
+            .proposal{
+                box-shadow: 0rem 0rem 0.2rem rgba(0,0,0,0.05);
+                background-color: #fff;
+                border-radius: 0.16rem;
+                padding: 0.3rem;
+                margin-bottom: 0.6rem;
+                textarea{
+                    line-height: 1.8;
+                    width: 100%;
+                    max-width: 100%;
+                    min-width: 100%;
+                    &::-webkit-input-placeholder{
+                        color: #999;
+                    }
+                }
+            }
+        }
+    }
+}
+/**03 提交问卷 end**/
+    
+    
+
+/**04 提交成功 start**/
+.submission-success{
+    min-height: 100%;
+    background-color: #d2120a;
+    background-image: url(../img/submission-success-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    .img-box{
+        padding: 1.1rem 0rem 0.4rem;
+        img{
+            width: 2.6rem;
+        }
+    }
+    .tip{
+        line-height: 1.6;
+    }
+    .operation{
+        padding: 2rem 1rem 1rem;
+        .box{
+            a{
+                display: block;
+                line-height: 1rem;
+                border-radius: 1rem;
+            }
+            .sure{
+                background-color: #fff;
+                color: #ab0801;
+                margin-bottom: 0.5rem;
+            }
+            .result{
+                border: 0.02rem solid #fff;
+                color: #fff;
+            }
+        }
+    }
+}
+/**04 提交成功 end**/
+
+
+/**04.2 信息有误 start**/
+.submission-error{
+    min-height: 100%;
+    background-color: #bbb;
+    background-image: url(../img/submission-error-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    .img-box{
+        padding: 1.1rem 0rem 0.4rem;
+        img{
+            width: 2.6rem;
+        }
+    }
+    .tip{
+        line-height: 1.6;
+    }
+    .operation{
+        padding: 2rem 1rem 1rem;
+        .box{
+            a{
+                display: block;
+                line-height: 1rem;
+                border-radius: 1rem;
+            }
+            .sure{
+                background-color: #fff;
+                color: #ab0801;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}
+/**04.2 信息有误 end**/
+    
+    
+
+/**05 历史问卷 列表 start**/
+.history-list{
+    min-height: 100%;
+    background-color: #fafafa;
+    .contain{
+        ul{
+            padding-top: 0.3rem;
+            padding-bottom: 0.01rem;
+            li{
+                background-color: #fff;
+                box-shadow: 0rem 0rem 0.2rem rgba(0,0,0,0.05);
+                margin-bottom: 0.3rem;
+                border-radius: 0.12rem;
+                a{
+                    padding-top: 0.2rem;
+                    padding-bottom: 0.2rem;
+                    padding-left: 0.2rem;
+                    padding-right: 1.3rem;
+                    display: block;
+                    position: relative;
+                    &:after{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        right: 0.28rem;
+                        transform: translateY(-50%);
+                        width: 0.7rem;
+                        height: 0.09rem;
+                        background-image: url(../img/more-history.png);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: 0.7rem 0.09rem;
+                    }
+                    .big-title{
+                        margin-bottom: 0.1rem;
+                    }
+                    .time{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+/**05 历史问卷 列表 end**/
+
+
+/**06 问卷结果 start**/
+.questionnaire-results{
+    .contain{
+        padding-top: 0.4rem;
+        padding-bottom: 0.6rem;
+        .box{
+            background-color: #fff;
+            border-radius: 0.2rem;
+            box-shadow: 0rem 0rem 0.2rem rgba(0,0,0,0.05);
+            .info{
+                padding: 0rem 0.3rem;
+                border-bottom: 0.02rem solid #e6e6e6;
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    li{
+                        width: 100%;
+                        padding: 0.3rem 0rem;
+                        border-bottom: 0.01rem solid #e6e6e6;
+                        &.no-border-bottom{
+                            border-bottom: none;
+                        }
+                        &.w-half{
+                            max-width: 50%;
+                            width: 50%;
+                            padding-right: 0.2rem;
+                        }
+                        &.w-full{
+                            width: 100%;
+                        }
+                        .sub-title{
+                            margin-bottom: 0.1rem;
+                            word-wrap:break-word;
+                        }
+                        .desc{
+                            word-wrap:break-word;
+                        }
+                    }
+                }
+            }
+            .result{
+                padding: 0rem 0.3rem;
+                ul{
+                    li{
+                        width: 100%;
+                        padding: 0.3rem 0rem;
+                        border-bottom: 0.01rem solid #e6e6e6;
+                        &:nth-last-child(1){
+                            border-bottom: none;
+                        }
+                        .sub-title{
+                            margin-bottom: 0.1rem;
+                            word-wrap:break-word;
+                        }
+                        .desc{
+                            word-wrap:break-word;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/**06 问卷结果 end**/
+    
+    
+
+/** start**/
+.common-foot{
+    $h:1.14rem;
+    height: $h;
+    .contain{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background-color: #fafafa;
+        .box{
+            position: relative;
+            .wrap-line{
+                height: 0.1rem;
+                border-radius: 0.1rem;
+                background-color: #f0eded;
+                overflow: hidden;
+                .line{
+                    display: block;
+                    height: 100%;
+                    border-radius: 0.1rem;
+                    background-color: #fe1e1e;
+                    transition: all 0.3s;
+                }
+            }
+            .operation{
+                display: flex;
+                position: relative;
+                z-index: 8;
+                a{
+                    line-height: 1;
+                    padding: 0.4rem 0rem;
+                    color: #fe1e1e;
+                    width: 33.33%;
+                    &.left{
+                        &:before{
+                            content: '< ';
+                            display: inline;
+                        }
+                    }
+                    &.right{
+                        text-align: right;
+                        &:after{
+                            content: ' >';
+                            display: inline;
+                        }
+                    }
+                    &.middle{
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        &,span{
+                            color: #b2b2b2;
+                        }
+                    }
+                }
+            }
+            .can-do{
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 3999;
+            }
+        }
+    }
+}
+/** end**/
+    
+    
+/**滑块 start**/ 
+.rate-section {
+    width: 100%;
+    height: 0.18rem;
+    margin: 16px 0;
+    background: #e4e7ed;
+    background: linear-gradient(to right, #ff8726 , #fe211e);
+    border-radius: 0.09rem;
+    position: relative;
+    cursor: pointer;
+    vertical-align: middle;
+    -webkit-touch-callout: none;
+}
+/*左边*/
+.rate-section .rate-barL {
+    height: 100%;
+    background-color: transparent;
+    border-top-left-radius: 0.09rem;
+    border-bottom-left-radius: 0.09rem;
+    position: absolute;
+    left: 0%;
+    width: 0%;
+}
+/*右边*/
+.rate-section .rate-barR {
+    height: 100%;
+    background-color: #f0eded;
+    border-top-right-radius: 0.1rem;
+    border-bottom-right-radius: 0.1rem;
+    position: absolute;
+    right: 0%;
+    width: 100%;
+}
+/*圆形块*/
+.rate-section .rate-button-wrapper {
+    height: 0.56rem;
+    width: 0.56rem;
+    position: absolute;
+    z-index: 1000;
+    top: -0.22rem;
+    transform: translateX(-50%);
+    background-color: transparent;
+    user-select: none;
+}
+
+.rate-section .rate-button {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    background-image: url(../img/ico-marker.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0rem 0rem 0.2rem rgba(0,0,0,0.2);
+    border-radius: 50%;
+    user-select: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.2s;
+}
+/*数字提示*/
+.rate-section .rate-tooltip {
+    background: #303133;
+    color: #fff;
+    position: absolute;
+    top: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 2000;
+    font-size: 12px;
+    line-height: 1.2;
+    min-width: 10px;
+    text-align: center;
+    transition: all 0.2s;
+    visibility: hidden;
+    opacity: 0;
+}
+.rate-section.rate-active .rate-tooltip{
+    visibility: visible;
+    opacity: 1;
+}
+
+.rate-section .rate-tooltip:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-top-color: #303133;
+    border-width: 6px;
+    border-style: solid;
+}
+
+/** 滑块 start**/

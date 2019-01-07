@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>我的收藏</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/api.css" rel="stylesheet">
+<link href="css/common.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!-- rem布局适配高清方案 -->
+<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);</script>
+<!-- rem布局适配高清方案 -->
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/common.js"></script>
+</head>
+<body>
+	<div class="main-width my-collection pad-top-nav pad-btm padding-nav-btm">
+		<div class="menu-bar main-bg">
+			<div class="menu-left">
+				<i class="ico-back"></i>
+			</div>
+			<div class="menu-ceter">
+				<i class="ico-logo"></i>
+			</div>
+			<div class="menu-right">
+				<a href="购物车.html" class="fz20 center">
+					<img src="img/ico-menu-collection.png"/>
+					<p class="center fz20">我的收藏</p>
+				</a>
+			</div>
+		</div>
+		
+		
+		<div class="content">
+			<ul>
+				<li class="padding-lr">
+					<div class="img-box">
+						<img src="img/product-cake.jpg"/>
+					</div>
+					<div class="info">
+						<div class="title">
+							<h1 class="fz26 ellipsis1">双层芝士蛋糕</h1>
+							<p class="fz20 ellipsis1">Double  cheesecake</p>
+						</div>
+						
+						<div class="money">
+							<span class="fz26 main-color">¥198.00</span>
+						</div>
+						<div class="num-box">
+							<a class="fz20" href="javascript:">了解更多>></a>
+						</div>
+						<div class="btn fz20">
+							<img src="img/ico-delete.png"/>
+							<span class="fz20">删除</span>
+						</div>
+					</div>
+				</li>
+				<li class="padding-lr">
+					<div class="img-box">
+						<img src="img/product-cake.jpg"/>
+					</div>
+					<div class="info">
+						<div class="title">
+							<h1 class="fz26 ellipsis1">双层芝士蛋糕</h1>
+							<p class="fz20 ellipsis1">Double  cheesecake</p>
+						</div>
+						
+						<div class="money">
+							<span class="fz26 main-color">¥198.00</span>
+						</div>
+						<div class="num-box">
+							<a class="fz20" href="javascript:">了解更多>></a>
+						</div>
+						<div class="btn fz20">
+							<img src="img/ico-delete.png"/>
+							<span class="fz20">删除</span>
+						</div>
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+		
+		
+		
+		
+	</div>
+	
+
+  <script>
+     $(function(){
+     	$li = $(".sort-nav ul li");
+     	$li.click(function(){
+     		var index = $(this).index();
+     		$li.removeClass('sortActive');
+     		$li.eq(index).addClass('sortActive');
+     	});
+     });
+  </script>
+</body>
+</html>

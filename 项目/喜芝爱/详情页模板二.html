@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>商品详情</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/api.css" rel="stylesheet">
+<link href="css/common.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!-- rem布局适配高清方案 -->
+<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);</script>
+<!-- rem布局适配高清方案 -->
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/bscroll.min.js" ></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/common.js"></script>
+</head>
+<body>
+	<div class="main-width product-details pad-top-nav pad-btm padding-nav-btm">
+		<div class="menu-bar main-bg">
+			<div class="menu-left">
+				<i class="ico-menu"></i>
+				<div class="menu-box hide">
+					<div class="list">
+						<a href="首页.html">
+							<img src="img/ico-menu-home.png"/>
+							<span class="fz20 main-color">首页</span>
+						</a>
+					</div>
+					<div class="list">
+						<a href="分类（总）.html">
+							<img src="img/ico-menu-sort.png"/>
+							<span class="fz20 main-color">分类</span>
+						</a>
+					</div>
+					<div class="list">
+						<a href="积分专区.html">
+							<img src="img/ico-menu-integal.png"/>
+							<span class="fz20 main-color">积分专区</span>
+						</a>
+					</div>
+					<div class="list">
+						<a href="个人中心.html">
+							<img src="img/ico-menu-person.png"/>
+							<span class="fz20 main-color">个人中心</span>
+						</a>
+					</div>
+					<div class="list">
+						<a href="企业试吃(字体调整).html">
+							<img src="img/ico-menu-person.png"/>
+							<span class="fz20 main-color">企业试吃</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="menu-ceter"><i class="ico-logo"></i></div>
+			<div class="menu-right">
+				<a href="购物车.html" class="fz20 flex-end">
+					<img src="img/ico-menu-car.png"/>
+					<p>(<span class="fz20">2</span>)</p>
+				</a>
+			</div>
+		</div>
+		
+		<div class="head">
+			<ul>
+				<li class="fz26 active">商品</li>
+				<li class="fz26">详情</li>
+				<li class="fz26">评价</li>
+			</ul>
+		</div>
+		
+		<div class="cake-list cake-product">
+			
+			<div class="picture-show">
+				<div class="wrap-bscroll" id="bscroll">
+					<ul>
+						<li><p style='background-image:url(img/product-cake.jpg);'></p></li>
+						<li class="active"><p style="background-image:url(img/product-cart.jpg);"></p></li>
+						<li><p style="background-image:url(img/product-cake.jpg);"></p></li>
+					</ul>
+				</div>
+				<div class="big-img">
+					<img src="img/product-cart.jpg"/>
+				</div>
+			</div>
+			<div class="info padding-lr40">
+				<div class="info-head">
+					<h1 class="fz30">草莓蛋糕</h1>
+					<div class="right">
+						<b class="fz26 main-color">¥198</b>
+						<img src="img/person-center-collect.png"/>
+						<span class="fz20 main-color">(0)</span>
+					</div>
+				</div>
+				<div class="desc fz20">
+					有一种雪叫做北海道的雪，日本进口的牛初乳和法国乳脂奶油以手工顺时针打发，质地纯白轻柔，还原了北海道雪的细滑轻盈，加上新鲜应季的丹东草莓，酸甜可口，点缀了清新的味道。
+				</div>
+				<div class="chose">
+					<div class="left fz20">
+						已选择:<span>1</span>磅
+					</div>
+					<img src="img/ico-product-details-arrow.png"/>
+				</div>
+				<div class="num">
+					<ul>
+						<li>
+							<img src="img/ico-product-details-size.png"/>
+							<p class="fz20">13*13 cm</p>
+						</li>
+						<li>
+							<img src="img/ico-product-details-person.png"/>
+							<p class="fz20">2 - 4人</p>
+						</li>
+						<li>
+							<img src="img/ico-product-details-tableware.png"/>
+							<p class="fz20">5套餐具</p>
+						</li>
+						<li>
+							<img src="img/ico-product-details-time.png"/>
+							<p class="fz20">提前5小时预订</p>
+						</li>
+					</ul>
+				</div>
+				<div class="parameter">
+					<ol>
+						<li class="fz20">口味：蜂蜜奶油芝士味</li>
+						<li class="fz20">甜度：</li>
+						<li class="fz20">是否含酒：0%</li>
+						<li class="fz20">单位：磅</li>
+						<li class="fz20">
+							主要原材料：<br />
+							浓缩咖啡、马斯卡普尼芝士、淡奶油（法国）幼砂糖（韩国）、蛋糕粉、巴氏消毒鸡蛋
+						</li>
+						<li class="fz20">适合节日：适合所有节日</li>
+					</ol>
+				</div>
+				<div class="wran">
+					<ol>
+						<li class="fz20">保鲜条件：0-4℃储藏当天食用</li>
+						<li class="fz20">配送时间：每天早上09:30—晚上20:00</li>
+					</ol>
+				</div>
+			</div>
+			
+			<div class="product-evaluate">
+				<div class="head padding-lr28">
+					<div class="left fz20">评价（15）</div>
+					<div class="left fz20">好评度&nbsp;&nbsp;<span class="fz20 main-color">99%</span></div>
+				</div>
+				<div class="list">
+					<div class="person padding-lr28">
+						<div class="img-box">
+							<img src="img/person-center-pic.png"/>
+						</div>
+						<p class="user-name fz20">喜芝爱</p>
+					</div>
+					<div class="desc fz20 padding-lr28">
+						很好吃，又不腻，包装好，迟到还特地打电话过来道歉，很负责！下次还会再来。
+					</div>
+					<div class="show-pic padding-lr28">
+						<ul>
+							<li><p style="background-image: url(img/product-cake.jpg);"></p></li>
+							<li><p style="background-image: url(img/product-cart.jpg);"></p></li>
+							<li><p style="background-image: url(img/product-cake.jpg);"></p></li>
+							<li><p style="background-image: url(img/product-cart.jpg);"></p></li>
+						</ul>
+					</div>
+					<div class="explain padding-lr28">
+						<div class="left fz20">
+							<span>草莓蛋糕</span>&nbsp;&nbsp;
+							<span>2磅</span>
+						</div>
+						<div class="right fz20">
+							<span>2018/01/23</span>&nbsp;&nbsp;
+							<span>15:59:12</span>
+						</div>
+					</div>
+				</div>
+				<div class="check-all padding-lr40">
+					<a class="main-color fz26" href="javascript:">查看全部评价</a>
+				</div>
+			</div>
+			<div class="foot">
+				<ul class="fz30">
+					<li>
+						<img src="img/ico-custom-service.png"/>
+						<span class="main-color">客服</span>
+					</li>
+					<li class="main-bg">加入购物车</li>
+					<li class="main-color">立即购买</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="cake-list cake-details hide">
+			<div class="desc-img clearfix">
+				<img src="img/product-desc.jpg"/>
+			</div>
+		</div>
+		
+		<div class="cake-list cake-evaluate hide">
+			<div class="product-evaluate">
+				<div class="head padding-lr28">
+					<div class="left fz20">评价（15）</div>
+					<div class="left fz20">好评度&nbsp;&nbsp;<span class="fz20 main-color">99%</span></div>
+				</div>
+				<div class="list">
+					<div class="person padding-lr28">
+						<div class="img-box">
+							<img src="img/person-center-pic.png"/>
+						</div>
+						<p class="user-name fz20">喜芝爱</p>
+					</div>
+					<div class="desc fz20 padding-lr28">
+						很好吃，又不腻，包装好，迟到还特地打电话过来道歉，很负责！下次还会再来。
+					</div>
+					<div class="show-pic padding-lr28">
+						<ul>
+							<li><p style="background-image: url(img/product-cake.jpg);"></p></li>
+							<li><p style="background-image: url(img/product-cart.jpg);"></p></li>
+							<li><p style="background-image: url(img/product-cake.jpg);"></p></li>
+							<li><p style="background-image: url(img/product-cart.jpg);"></p></li>
+						</ul>
+					</div>
+					<div class="explain border-btm padding-lr28">
+						<div class="left fz20">
+							<span>草莓蛋糕</span>&nbsp;&nbsp;
+							<span>2磅</span>
+						</div>
+						<div class="right fz20">
+							<span>2018/01/23</span>&nbsp;&nbsp;
+							<span>15:59:12</span>
+						</div>
+					</div>
+				</div>
+				<div class="list">
+					<div class="person padding-lr28">
+						<div class="img-box">
+							<img src="img/person-center-pic.png"/>
+						</div>
+						<p class="user-name fz20">喜芝爱</p>
+					</div>
+					<div class="desc fz20 padding-lr28">
+						很好吃，又不腻，包装好，迟到还特地打电话过来道歉，很负责！下次还会再来。
+					</div>
+					<div class="show-pic padding-lr28">
+						<ul>
+							<li><p style="background-image: url(img/product-cake.jpg);"></p></li>
+							<li><p style="background-image: url(img/product-cart.jpg);"></p></li>
+							<li><p style="background-image: url(img/product-cake.jpg);"></p></li>
+							<li><p style="background-image: url(img/product-cart.jpg);"></p></li>
+						</ul>
+					</div>
+					<div class="explain border-btm padding-lr28">
+						<div class="left fz20">
+							<span>草莓蛋糕</span>&nbsp;&nbsp;
+							<span>2磅</span>
+						</div>
+						<div class="right fz20">
+							<span>2018/01/23</span>&nbsp;&nbsp;
+							<span>15:59:12</span>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="evaluate-btm">
+				<p class="fz20">已经到底啦！只能帮你到这里了！</p>
+			</div>
+		</div>
+		
+		<div class="add-to-cart">
+			<div class="cart main-width padding-nav-btm">
+				<img class="close main-bg" src="img/ico-close-cart.png"/>
+				<div class="cart-box">
+					<div class="left">
+						<i style="background-image: url(img/product-cake.jpg);"></i>
+					</div>
+					<div class="right">
+						<ul>
+							<li>
+								<span class="fz23 main-color">¥198.00</span>
+							</li>
+							<li>
+								<img src="img/ico-product-details-size.png"/>
+								<span class="fz20">13*13cm</span>
+							</li>
+							<li>
+								<img src="img/ico-product-details-person.png"/>
+								<span class="fz20">2-4人</span>
+							</li>
+							<li>
+								<img src="img/ico-product-details-tableware.png"/>
+								<span class="fz20">5餐具</span>
+							</li>
+							<li>
+								<img src="img/ico-product-details-time.png"/>
+								<span class="fz20">提前5小时预订</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="cart-pound">
+					<ul>
+						<li class="fz26 active">1磅</li>
+						<li class="fz26">2磅</li>
+						<li class="fz26">3磅</li>
+						<li class="fz26">4磅</li>
+						<li class="fz26">5磅</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+			
+	</div>
+	
+  
+
+  <script>
+     $(function(){
+     	//头部选项卡
+     	var $li = $(".product-details .head ul li");
+     	var $cakeList = $(".cake-list");
+     	$li.click(function(){
+     		$li.removeClass('active');
+     		$(this).addClass('active');
+     		
+     		var index = $(this).index();
+     		$cakeList.addClass('hide').removeClass('show');
+     		$cakeList.eq(index).addClass('show').removeClass('hide');
+     	});
+     	//商品切换
+     	$(".picture-show ul li").click(function(){
+     		$(".picture-show ul li").removeClass('active');
+     		$(this).addClass('active');
+     		var imgsrc = $(this).find('p')[0].style.backgroundImage;
+     		imgsrc = imgsrc.split("\"")[1];
+     		$(".big-img img").attr('src',imgsrc);
+     	});
+     	//选择磅数
+     	$(".chose").click(function(){
+     		//显示遮罩层
+     		$(".add-to-cart ").addClass('active');
+     	});
+     	$(".add-to-cart .close,.add-to-cart").click(function(){
+     		//关闭遮罩层
+     		$(".add-to-cart ").removeClass('active');
+     	});
+     	$(".add-to-cart *").click(function(){
+     		//阻止冒泡
+     		event.stopPropagation();
+     	});
+     	$(".add-to-cart .cart-pound ul li").click(function(){
+     		//选择磅数
+     		$(".add-to-cart .cart-pound ul li").removeClass('active');
+     		$(this).addClass('active');
+     	});
+     });
+     
+     /*$(function(){
+     	var bscroll = document.getElementById('bscroll');
+		var scroll = new BScroll(bscroll, {
+			startX: 0,
+			startY: 0,
+			scrollY:true,
+			preventDefault:false,
+			click:true  //是否启用click事件
+		});
+     });*/
+  </script>
+</body>
+</html>

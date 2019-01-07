@@ -1,0 +1,14 @@
+var tofixed = function (num) {
+    return num.toFixed(2);
+}
+var toYear = function(str){
+    //str = Year1/Year2
+    var reg = getRegExp("[^0-9]", "g");
+    return str.replace(reg, '');
+}
+var toPlus = function(num){
+    //数组下标是从0开始，年份从1开始
+    return num = num + 1;
+}
+    
+module.exports = {tofixed: tofixed,toYear:toYear,toPlus:toPlus};

@@ -1,0 +1,230 @@
+@charset "utf-8";
+
+/*调用css样式*/
+@import url('swiper.min.css');
+
+/*调用scss样式、函数、变量*/
+@import 'variable.scss';
+@import 'mixin.scss';
+
+html,body{
+	height: 100%;
+}
+select{
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    outline: none;
+}
+img{
+    vertical-align: middle;
+}
+.main-width{
+	max-width: $maxWidth;
+	margin: 0 auto;
+}
+.main-color{
+	color:$mainColor !important;
+}
+.sub-color{
+    color: $subColor !important;
+}
+.main-bg{
+	background-color: $mainColor !important;
+}
+.sub-bg{
+    background-color: $subColor !important;
+}
+
+.no-select,.btn{
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+.btn{
+    cursor: pointer;
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+.float-left{
+    float: left !important;
+}
+.float-right{
+    float: right !important;
+}
+.hide{
+    display: none !important;
+}
+.show{
+    display: block !important;
+}
+/**10像素到40像素的字体,用法:fz20 **/
+@for $i from 10 through 100 {
+  .fz#{$i} { font-size: $i+px; }
+}
+.fc-fff{
+    color: #fff;
+}
+.fc-999{
+    color: #999;
+}
+.fc-222{
+    color: #222;
+}
+
+.bg-222{
+    background-color: #222;
+}
+.bg-fff{
+    background-color: #fff;
+}
+.no-weight{
+    font-weight: normal;
+}
+.ellipsis1{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+.ellipsis2{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.ellipsis3{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.ellipsis4{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+
+
+.input-radio1,.input-radio2,.input-radio3,.input-checkbox1,.input-checkbox2,.input-checkbox3{
+    display: inline-block;
+}
+.input-radio1 *,.input-radio2 *,.input-radio3 *,.input-checkbox1 *,.input-checkbox2 *,.input-checkbox3 *{
+    cursor: pointer;
+}
+.input-radio1 label,.input-radio2 label,.input-radio3 label,.input-checkbox1 label,.input-checkbox2 label,.input-checkbox3 label{
+    padding-left: 30px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+.input-radio1 input[type="radio"]+label::before ,.input-checkbox1 input[type="checkbox"]+label::before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.input-radio1 input[type="radio"]:checked+label::before ,.input-checkbox1 input[type="checkbox"]:checked+label::before{
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTI1NDAzMjE1Mzk4IiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjIwNzYiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTYzLjIyMjkyNyA1MTJjMCAwIDIzMS43Njc1OTggMTg5LjU4NDg2OSAyNTQuNzkwOTY0IDM1MC44MjMxMzQgMCAwIDMwMy45MDY1OTEtNDk3LjQ5MTU2NSA2NDEuNTgxMjY0LTU0Mi4wMDMzMzggMCAwLTEwMi44MzcxNTYtNzQuOTQzODc2LTY5LjA3MDA5OC0xOTMuMzk1NjYyIDAgMC0xODcuMjU1ODI1IDE4LjY4NDU0OC01NDAuMjc5MDY3IDU2Ni42MzczODhMMTg0Ljc5Mzc1IDQxMy4yMTIwNjYgNjMuMjIyOTI3IDUxMnoiIHAtaWQ9IjIwNzciIGZpbGw9IiMwMDAwMDAiPjwvcGF0aD48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    border: 1px solid #000;
+}
+
+
+
+.input-radio2 input[type="radio"]+label::before ,.input-checkbox2 input[type="checkbox"]+label::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.input-radio2 input[type="radio"]:checked+label::before ,.input-checkbox2 input[type="checkbox"]:checked+label::before{
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTI1NDAzMjE1Mzk4IiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjIwNzYiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTYzLjIyMjkyNyA1MTJjMCAwIDIzMS43Njc1OTggMTg5LjU4NDg2OSAyNTQuNzkwOTY0IDM1MC44MjMxMzQgMCAwIDMwMy45MDY1OTEtNDk3LjQ5MTU2NSA2NDEuNTgxMjY0LTU0Mi4wMDMzMzggMCAwLTEwMi44MzcxNTYtNzQuOTQzODc2LTY5LjA3MDA5OC0xOTMuMzk1NjYyIDAgMC0xODcuMjU1ODI1IDE4LjY4NDU0OC01NDAuMjc5MDY3IDU2Ni42MzczODhMMTg0Ljc5Mzc1IDQxMy4yMTIwNjYgNjMuMjIyOTI3IDUxMnoiIHAtaWQ9IjIwNzciIGZpbGw9IiMwMDAwMDAiPjwvcGF0aD48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    border: 1px solid #000;
+}
+
+
+
+.input-radio3 input[type="radio"]+label::before,.input-checkbox3 input[type="checkbox"]+label::before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 100%;
+    position: absolute;
+    top: auto;
+    left: 0;
+}
+.input-radio3 input[type="radio"]:checked+label::before,.input-checkbox3 input[type="checkbox"]:checked+label::before{
+    border: 1px solid #000;
+}
+.input-radio3 input[type="radio"]:checked+label::after,.input-checkbox3 input[type="checkbox"]:checked+label::after{
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: #000;
+    position: absolute;
+    top: auto;
+    left: 0;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.input-checkbox2 input[type="checkbox"],.input-checkbox1 input[type="checkbox"],.input-checkbox3 input[type="checkbox"] ,
+.input-radio1 input[type="radio"] ,.input-radio2 input[type="radio"],.input-radio3 input[type="radio"]{
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}
+
+
+.nice-scroll::-webkit-scrollbar { 
+    width: 8px; 
+    height: 5px; 
+    background-color: transparent; 
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+.nice-scroll::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/*定义滑块 内阴影+圆角*/
+.nice-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px; 
+    background-color: rgba(0, 0, 0, 0.3); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3); 
+}
+
+
+

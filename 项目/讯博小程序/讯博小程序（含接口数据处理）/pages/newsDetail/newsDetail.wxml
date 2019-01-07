@@ -1,0 +1,34 @@
+<import src="../../wxParse/wxParse.wxml"/>
+
+<view class='wrap'>
+
+    <view class="newscase-head">
+        <view class='newscase-box'>
+            <image class='newscase-bgpic' src='{{imgUrl}}news-bg.jpg' mode="aspectFill"></image>
+            <view class='newscase-title main-color'>新闻动态</view>
+            <view class='newscase-urls'>
+                <view class='newscase-url {{isNews==1?"active":""}}' bindtap="tabNewsNum" data-num='1'>讯博动态</view>
+                <view class='newscase-url {{isNews==2?"active":""}}' bindtap="tabNewsNum" data-num='2'>全球视野</view>
+                <view class='newscase-url {{isNews==3?"active":""}}' bindtap="tabNewsNum" data-num='3'>讯博人生</view>
+            </view>
+        </view>
+    </view>
+    <view class='newdetail'>
+        <view class='newdetail-title'>{{row.title}}</view>
+        <view class='newdetail-date'>{{row.time}}</view>
+        <view class='newdetail-content wxParseArticle'>
+            <!--{{row.details}}-->
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+        </view>
+        <view class='newdetail-urls'>
+            <navigator class='ellipsis1' url='../newsDetail/newsDetail?id={{pre}}&isNews={{isNews}}&newsWay={{newsWay}}' hover-class='none' open-type="redirect">上一篇：{{pretitle}}</navigator>
+            <navigator class='ellipsis1' url='../newsDetail/newsDetail?id={{next}}&isNews={{isNews}}&newsWay={{newsWay}}' hover-class='none' open-type="redirect">下一篇：{{nexttitle}}</navigator>
+        </view>
+        <view class='newdetail-back text-center'>
+            <view class='newdetail-back-list span' bindtap="tabNewsNum" data-num='{{isNews}}'>返回列表</view>
+        </view>
+    </view>
+
+    <footer-content><!--自定义组件-底部内容信息--></footer-content>
+    <nav-tab><!--自定义组件-底部导航--></nav-tab>
+</view>

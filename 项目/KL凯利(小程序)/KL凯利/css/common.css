@@ -1,0 +1,41 @@
+.main-width {
+  max-width: 10rem;
+  margin: 0 auto;
+}
+
+.main-color {
+  color: #eff4f1;
+}
+
+.main-bg {
+  background-color: #eff4f1;
+}
+.flex-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.no-select {
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.fz24{
+	font-size: 0.24rem;
+}
+.fz26{
+	font-size: 0.26rem;
+}
+
+.fc-666{
+	color: #666;
+}
+.fc-b2{
+	color: #b2b2b2;
+}
+
+.text-center{
+	text-align: center;
+}

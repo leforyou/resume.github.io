@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>会员体制</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/api.css" rel="stylesheet">
+<link href="css/common.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!-- rem布局适配高清方案 -->
+<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);</script>
+<!-- rem布局适配高清方案 -->
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/common.js"></script>
+  <script type="text/javascript" src="js/progressbar.min.js" ></script>
+</head>
+<body>
+	<div class="main-width member-system pad-top-nav pad-btm">
+		<div class="nav-head main-bg">
+			<i class="ico-back"></i>
+			<p class="title">喜芝爱会员体系制度</p>
+		</div>
+		<div class="head" style="background-image: url(img/member-system-bg.jpg);">
+			<p class="current fz20">当前会员等级</p>
+			<div class="middle">
+				<h1>v1</h1>
+				<div id="container"><!--弧线--></div>
+			</div>
+			<div class="desc main-bg">
+				还需<span>1390V</span>值（约消费<span>278</span>）可升级至<span>V2</span>会员
+			</div>
+		</div>
+		<div class="content">
+			<div class="box">
+				<h1 class="padding spot fz26">建立会员体系制度的目的</h1>
+				<p class="padding fz20">喜芝爱提供优质服务和可靠商品的情况下，会员制度会大大增加客户对喜芝爱品牌的忠诚度。有利用会员管理与营销，让会员享受喜芝爱更优惠的价格和更好的服务。</p>
+			</div>
+			<div class="box">
+				<h1 class="padding spot fz26">会员等级（级别）</h1>
+				<p class="padding fz20">会员等级分为V1、V2、V3、V4，系统根据规则自动升级，无需申请，在微商城端注册即可成为V1会员，第一次购物即可享受积分和后续积分的奖励。</p>
+			</div>
+			<div class="box">
+				<h1 class="padding spot fz26">会员资格获取</h1>
+				<table class="member-table">
+					<thead>
+						<tr>
+							<th class="fz20">会员等级</th>
+							<th class="fz20">获取会员资格</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="fz26">V1会员</td>
+							<td  class="fz20">注册或首次在喜之爱商城购买商品，即可成为喜芝爱商城V1会员。第一次购物即可享受积分和后续的积分奖励。</td>
+						</tr>
+						<tr>
+							<td class="fz26">V2会员</td>
+							<td  class="fz20">
+								1、累计积分达到1000；<br />
+								2、单笔充值500元；<br />
+								3、其他特别促销活动；<br />
+								以上三种方式即可成为V2会员。<br />
+							</td>
+						</tr>
+						<tr>
+							<td class="fz26">V3会员</td>
+							<td  class="fz20">
+								1、累计积分达到10000；<br />
+								2、单笔充值5000元；<br />
+								3、其他特别促销活动；<br />
+								以上三种方式即可成为V3会员。<br />
+							</td>
+						</tr>
+						<tr>
+							<td class="fz26">V4会员</td>
+							<td  class="fz20">
+								1、累计积分达到20000；<br />
+								2、单笔充值10000元；<br />
+								3、其他特别促销活动；<br />
+								以上三种方式即可成为V4会员。<br />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="box" style="margin-top: 0.35rem;margin-bottom:0.24rem;"><i class="bar-x"></i></div>
+			<div class="box">
+				<h1 class="padding spot fz26">会员权益</h1>
+				<p class="padding fz20 quanyi">不同级会员购买不同属性产品将获得不同优惠，拥有相应的积分权益。</p>
+				<table class="member-table">
+					<thead>
+						<tr>
+							<th class="fz20">会员等级</th>
+							<th class="fz20">获取会员资格</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="fz26">V1会员</td>
+							<td  class="fz20">
+								1、享受喜芝爱微商城各类促销活动，商城购物积分奖励；<br />
+								2、享受线下门店消费积分奖励；<br />
+								3、享受积分抵现（只限于微商城消费使用）；<br />
+								4、享受获赠优惠券或现金券。<br />
+							</td>
+						</tr>
+						<tr>
+							<td class="fz26">V2会员</td>
+							<td  class="fz20">
+								V2会员可以享受V1会员的所有权益。除此之外，V2会员还可享受以下优惠:<br />
+								1、线上（礼包、促销商品除外），线下（酒类、套餐、促销商品等除外）均可享受95折优惠；<br />
+								2、定期享受商家优惠礼品赠送。<br />
+							</td>
+						</tr>
+						<tr>
+							<td class="fz26">V3会员</td>
+							<td  class="fz20">
+								V3会员可以享受V1会员的所有权益。除此之外，V3会员还可享受以下优惠:<br />
+								1、线上（礼包、促销商品除外），线下（酒类、套餐、促销商品等除外）均可享受9折优惠；<br />
+								2、定期享受商家优惠礼品赠送；<br />
+								3、会员本人生日获赠2磅生日蛋糕（赠送蛋糕款式由商家确定）。<br />
+							</td>
+						</tr>
+						<tr>
+							<td class="fz26">V4会员</td>
+							<td  class="fz20">
+								V4会员可以享受V1会员的所有权益。除此之外，V4会员还可享受以下优惠:<br />
+								1、线上（礼包、促销商品除外），线下（酒类、套餐、促销商品等除外）均可享受88折优惠；<br />
+								2、定期享受商家优惠礼品赠送；<br />
+								3、会员本人及配偶、子女生日，获赠2磅生日蛋糕（蛋糕款式由商家确定）。<br />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<div class="box">
+				<p class="fz20">
+					备注：<br />
+					1、充值不计积分，消费后可累计积分；<br />
+					2、按V2会员/V3会员/V4会员实际折扣价计算合计后，才能享受相应的减、免、赠促销优惠；<br />
+					3、立减促销、多买多折等促销活动中，参加活动商品可以享受V2会员/V3会员/V4会员折扣，已优惠商品不再享受V2会员/V3会员/V4会员折扣；<br />
+					4、礼包、特价商品（以产品页面标示为准，包括：抢购、积分换购、指定商品等）不享受V2会员/V3会员/V4会员折扣；<br />
+				</p>
+			</div>
+			<div class="box" style="margin-top: 0.24rem;"><i class="bar-x"></i></div>
+			<div class="box">
+				<h1 class="padding spot fz26">积分说明</h1>
+				<div class="padding fz20">
+					每消费1元可以获得1积分（赠送券消费除外）<br />
+					1、积分奖励获取<br />
+					奖励积分：手机号注册奖励50积分，被推荐人绑定手机号后推荐人奖励50积分。<br />
+					特定奖励：<br />
+					A、根据会员提交出生日期，会员生日奖励30积分；<br />
+					B、完善个人全部信息奖励30积分，完成具体项奖励相应积分；<br />
+					C、评价获取5积分；<br />
+					<b class="fz26">D、晒单分享获取10积分；</b>
+					<b class="fz26">E、积分倍增计划：周年庆或特定的营销活动，积分倍增。</b>
+					2、积分消耗<br />
+					积分抵现：100积分抵现1元<br />
+					积分玩游戏：如大转盘抽奖，每抽奖一次消耗100积分，24小时只能抽3次。<br />
+					积分换购：积分换购礼品<br />
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+
+
+  <script>
+     
+	$(function(){
+		// progressbar.js@1.0.0 version is used
+		// Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
+		//弧线
+		var bar = new ProgressBar.SemiCircle(container, {
+		  strokeWidth: 3,
+		  easing: 'easeInOut',
+		  duration: 1400,
+		  color: '#77c6e4',
+		  trailColor: '#c9c9c9',
+		  trailWidth: 1,
+		  svgStyle: null
+		});
+		
+		bar.animate(0.2);  // Number from 0.0 to 1.0
+	});
+		
+  </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<import src='../template/cardList/cardList.wxml' />
+<import src='../template/newsList/newsList.wxml' />
+<swiper indicator-dots="true" autoplay="true" circular="true" interval="4000" duration="500" class="panel-scroll" indicator-color="rgba(255, 255, 255, .3)" indicator-active-color="#fff">
+    <block wx:for="{{bannerList}}" wx:key="{{index}}">
+        <swiper-item>
+            <image src="{{url+item.imgdemo}}" mode="aspectFill" class="img"></image>
+        </swiper-item>
+    </block>
+</swiper>
+<view class='p200'>
+    <view class="i-box01 blue">
+        <view class="i-title txc  mb20" id="t01">
+            互联网思维、整合营销的实现者！
+        </view>
+        <view class=" hui s-title txc mb20">用网站收集数据，用数据创造价值。</view>
+        <view class="pingjun clearfix">
+            <view class="icon">
+                <image src='{{imgUrl}}p03.svg'></image>
+                <view class="fz14 title">极致定制</view>
+                <view class="fz12 five">以客户需求为中心，极致定制。</view>
+            </view>
+            <view class="icon">
+                <image src='{{imgUrl}}p04.svg'></image>
+                <view class="fz14 title">数据同步</view>
+                <view class="fz12 five">PC、手机、微信、线下数据同步。</view>
+            </view>
+            <view class="icon">
+                <image src='{{imgUrl}}p05.svg'></image>
+                <view class="fz14 title">响应式</view>
+                <view class="fz12 five">自动适合各种终端显示，包括PC、手机、微信。</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="i-box02">
+    <view class='boxx02'>
+        <image src='{{imgUrl}}can-do.jpg' mode="aspectFill" class="img"> </image>
+        <view class='main'>
+            <view class="i-title txc fff mt20 mb20" id="t01">我们能做什么？</view>
+            <view class=" fff s-title  mb20 mb10">只要你想得到，我们就能帮你实现！</view>
+            <view class="sort-box  clearfix">
+                <view>定制开发</view>
+                <view>官网建设</view>
+                <view>品牌网站</view>
+                <view>外贸网站</view>
+                <view>H5 营销页面</view>
+                <view>商城建设</view>
+                <view>供求网站</view>
+                <view>视频网站</view>
+                <view>在线课堂</view>
+                <view>社区网站</view>
+                <view>门户网站</view>
+                <view>众筹网站</view>
+                <view>云购网站</view>
+                <view>会员系统</view>
+                <view>积分系统</view>
+                <view>订单系统</view>
+                <view>分销系统</view>
+                <view>现金券系统</view>
+                <view>签到系统</view>
+                <view>投票系统</view>
+                <view>考试系统</view>
+                <view>OA 系统</view>
+                <view>进销存系统</view>
+                <view>域名服务</view>
+                <view>空间服务</view>
+                <view>云服务器</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="i-box03 p200">
+    <view class="i-title txc blue  mb20" id="t01">我们怎么做？</view>
+    <view class="s-title hui txc">专业规范，用心服务。</view>
+    <view class='boss'>
+        <image class='img' src="{{imgUrl}}develop-flow.png" mode="aspectFit"></image>
+    </view>
+</view>
+
+<view class="newscase-head">
+    <view class='newscase-box'>
+        <image class='newscase-bgpic' src='{{imgUrl}}news-bg.jpg' mode="aspectFill"></image>
+        <view class='newscase-title main-color'>项目案例</view>
+        <view class='newscase-urls'>
+            <view class='newscase-url {{isCard==1?"active":""}}' bindtap="tabCardNum" data-num='1'>品牌官网</view>
+            <view class='newscase-url {{isCard==2?"active":""}}' bindtap="tabCardNum" data-num='2'>商城官网</view>
+            <view class='newscase-url {{isCard==3?"active":""}}' bindtap="tabCardNum" data-num='3'>平台系统</view>
+        </view>
+    </view>
+    <template is="cardList" data="{{cardList,url,isCard,cardWay,opzq}}" />
+</view>
+
+<view class="newscase-head">
+    <view class='newscase-box'>
+        <image class='newscase-bgpic' src='{{imgUrl}}news-bg.jpg' mode="aspectFill"></image>
+        <view class='newscase-title main-color'>新闻动态</view>
+        <view class='newscase-urls'>
+            <view class='newscase-url {{isNews==1?"active":""}}' bindtap="tabNewsNum" data-num='1'>讯博动态</view>
+            <view class='newscase-url {{isNews==2?"active":""}}' bindtap="tabNewsNum" data-num='2'>全球视野</view>
+            <view class='newscase-url {{isNews==3?"active":""}}' bindtap="tabNewsNum" data-num='3'>讯博人生</view>
+        </view>
+    </view>
+    <template is="newsList" data="{{newsList,isNews,newsWay}}"/>
+</view>
+
+<footer-content><!--自定义组件-底部内容信息--></footer-content>
+<nav-tab><!--自定义组件-底部导航--></nav-tab>

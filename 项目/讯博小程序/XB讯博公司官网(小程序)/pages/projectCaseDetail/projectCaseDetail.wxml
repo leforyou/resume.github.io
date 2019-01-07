@@ -1,0 +1,34 @@
+<import src='../template/footer/footer.wxml' />
+<import src='../template/head/head.wxml' />
+
+<view class='wrap'>
+    <template is="head" data="{{app}}" />
+
+    <view class="newscase-head">
+    <view class='newscase-box'>
+        <image class='newscase-bgpic' src='../../static/news-bg.jpg' mode="aspectFill"></image>
+        <view class='newscase-title main-color'>项目案例</view>
+        <view class='newscase-urls'>
+            <navigator url='' class='newscase-url' hover-class='none'>品牌官网</navigator>
+            <navigator url='' class='newscase-url' hover-class='none'>商城官网</navigator>
+            <navigator url='' class='newscase-url' hover-class='none'>平台系统</navigator>
+        </view>
+    </view>
+</view>
+
+    <view class='newdetail'>
+        <view class='newdetail-title'>广州讯博网络科技有限公司成立</view>
+        <view class='newdetail-date'>2016-03-10</view>
+        <view class='newdetail-content'>9月12日下午，讯博同事前往广州白云国际物流有限公司做项目方案的沟通交流！这次主要内容是跟客户介绍整个项目方案的情况以及相关疑问的解答。为再次合作奠定坚实的基础。会议持续了两个小时，双方彼此交流意见，并将下一步的工作做了铺垫。
+广州白云国际物流有限公司至今与我们讯博建立了长达3年的合作关系，很感谢公司有关负责人于科长对我们的大力支持与鼓励，希望双方共同协商把合作一直延续下去！！</view>
+        <view class='newdetail-urls'>
+            <navigator class='ellipsis1' url='' hover-class='none'>上一篇：广州讯博网络</navigator>
+            <navigator class='ellipsis1' url='' hover-class='none'>下一篇：广州讯博网络</navigator>
+        </view>
+        <view class='newdetail-back text-center'>
+            <view class='newdetail-back-list span'>返回列表</view>
+        </view>
+    </view>
+
+    <template is="footer" data="{{app}}" />
+</view>

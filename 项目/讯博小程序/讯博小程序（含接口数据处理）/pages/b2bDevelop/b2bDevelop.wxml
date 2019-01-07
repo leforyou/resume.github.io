@@ -1,0 +1,26 @@
+
+<view class='wrap'>
+    <view class="web-build">
+        <image class="bg" src='{{imgUrl}}GX_bg04.png' mode="aspectFill"></image>
+        <image class="title" src='{{imgUrl}}GX_m_a01.png' mode="aspectFill"></image>
+        <image class="desc" src='{{imgUrl}}GX_m_a02.png' mode="aspectFill"></image>
+    </view>
+    <view class="what-web">
+        <image class="bg" src='{{imgUrl}}GX_bg05.png' mode="aspectFill"></image>
+        <image class="title" src='{{imgUrl}}GX_m_a03.png' mode="aspectFill"></image>
+        <image class="desc1" src='{{imgUrl}}GX_m_a04.png' mode="aspectFill"></image>
+        <image class="desc2" src='{{imgUrl}}GX_m_a05.png' mode="aspectFill"></image>
+        <image class="desc3" src='{{imgUrl}}GX_m_a06.png' mode="aspectFill"></image>
+        <image class="desc4" src='{{imgUrl}}GX_m_a07.png' mode="aspectFill"></image>
+    </view>
+    <view class="how-long">
+        <image class="bg" src='{{imgUrl}}GX_bg06.png' mode="aspectFill"></image>
+        <image class="title" src='{{imgUrl}}GX_m_a08.png' mode="aspectFill"></image>
+        <image class="desc1" src='{{imgUrl}}GX_m_a09.png' mode="aspectFill"></image>
+        <image class="desc2" src='{{imgUrl}}GX_m_a10.png' mode="aspectFill"></image>
+        <image class="desc3" src='{{imgUrl}}GX_m_a11.png' mode="aspectFill"></image>
+    </view>
+    
+    <footer-content><!--自定义组件-底部内容信息--></footer-content>
+    <nav-tab><!--自定义组件-底部导航--></nav-tab>
+</view>

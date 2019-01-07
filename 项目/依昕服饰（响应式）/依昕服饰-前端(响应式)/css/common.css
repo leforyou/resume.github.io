@@ -1,0 +1,428 @@
+@charset "UTF-8";
+/*调用css样式*/
+@import url("swiper.min.css");
+/*调用scss样式、函数、变量*/
+/*
+* @Author: cs5
+* @Date:   2018-04-12 13:30:23
+* @Last Modified by:   cs5
+* @Last Modified time: 2018-04-12 16:30:11
+*/
+/*
+ * scss变量设置
+ */
+/*  */
+/*主色*/
+/*导航高度*/
+/* 产品图片高:宽  652/440 首页的产品展示*/
+/* 字体 */
+/* 最大宽度 */
+/* 导航高度*/
+/*
+* @Author: cs5
+* @Date:   2018-04-12 13:30:23
+* @Last Modified by:   cs5
+* @Last Modified time: 2018-04-12 16:30:11
+*/
+/*
+ * scss函数设置
+ */
+/*  */
+/*高度与行高设置*/
+/*宽度与高度设置*/
+/*字体设置*/
+/*背景图片设置*/
+html, body {
+  height: 100%;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.main-width {
+  max-width: 0;
+  margin: 0 auto;
+}
+
+.main-color {
+  color: #77c6e4 !important;
+}
+
+.sub-color {
+  color: #ff7ca4 !important;
+}
+
+.main-bg {
+  background-color: #77c6e4 !important;
+}
+
+.pad-top-nav {
+  padding-top: 0;
+}
+
+.pad-btm {
+  padding-bottom: 0.8rem;
+}
+
+.no-select, .btn {
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+/**10像素到40像素的字体,用法:fz20 **/
+.fz10 {
+  font-size: 10px;
+}
+
+.fz11 {
+  font-size: 11px;
+}
+
+.fz12 {
+  font-size: 12px;
+}
+
+.fz13 {
+  font-size: 13px;
+}
+
+.fz14 {
+  font-size: 14px;
+}
+
+.fz15 {
+  font-size: 15px;
+}
+
+.fz16 {
+  font-size: 16px;
+}
+
+.fz17 {
+  font-size: 17px;
+}
+
+.fz18 {
+  font-size: 18px;
+}
+
+.fz19 {
+  font-size: 19px;
+}
+
+.fz20 {
+  font-size: 20px;
+}
+
+.fz21 {
+  font-size: 21px;
+}
+
+.fz22 {
+  font-size: 22px;
+}
+
+.fz23 {
+  font-size: 23px;
+}
+
+.fz24 {
+  font-size: 24px;
+}
+
+.fz25 {
+  font-size: 25px;
+}
+
+.fz26 {
+  font-size: 26px;
+}
+
+.fz27 {
+  font-size: 27px;
+}
+
+.fz28 {
+  font-size: 28px;
+}
+
+.fz29 {
+  font-size: 29px;
+}
+
+.fz30 {
+  font-size: 30px;
+}
+
+.fz31 {
+  font-size: 31px;
+}
+
+.fz32 {
+  font-size: 32px;
+}
+
+.fz33 {
+  font-size: 33px;
+}
+
+.fz34 {
+  font-size: 34px;
+}
+
+.fz35 {
+  font-size: 35px;
+}
+
+.fz36 {
+  font-size: 36px;
+}
+
+.fz37 {
+  font-size: 37px;
+}
+
+.fz38 {
+  font-size: 38px;
+}
+
+.fz39 {
+  font-size: 39px;
+}
+
+.fz40 {
+  font-size: 40px;
+}
+
+.no-weight {
+  font-weight: normal;
+}
+
+.ellipsis1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ellipsis2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.ellipsis3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.ellipsis4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.input-radio1, .input-radio2, .input-radio3, .input-checkbox1, .input-checkbox2, .input-checkbox3 {
+  display: inline-block;
+}
+
+.input-radio1 *, .input-radio2 *, .input-radio3 *, .input-checkbox1 *, .input-checkbox2 *, .input-checkbox3 * {
+  cursor: pointer;
+}
+
+.input-radio1 label, .input-radio2 label, .input-radio3 label, .input-checkbox1 label, .input-checkbox2 label, .input-checkbox3 label {
+  padding-left: 30px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.input-radio1 input[type="radio"] + label::before, .input-checkbox1 input[type="checkbox"] + label::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.input-radio1 input[type="radio"]:checked + label::before, .input-checkbox1 input[type="checkbox"]:checked + label::before {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTI1NDAzMjE1Mzk4IiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjIwNzYiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTYzLjIyMjkyNyA1MTJjMCAwIDIzMS43Njc1OTggMTg5LjU4NDg2OSAyNTQuNzkwOTY0IDM1MC44MjMxMzQgMCAwIDMwMy45MDY1OTEtNDk3LjQ5MTU2NSA2NDEuNTgxMjY0LTU0Mi4wMDMzMzggMCAwLTEwMi44MzcxNTYtNzQuOTQzODc2LTY5LjA3MDA5OC0xOTMuMzk1NjYyIDAgMC0xODcuMjU1ODI1IDE4LjY4NDU0OC01NDAuMjc5MDY3IDU2Ni42MzczODhMMTg0Ljc5Mzc1IDQxMy4yMTIwNjYgNjMuMjIyOTI3IDUxMnoiIHAtaWQ9IjIwNzciIGZpbGw9IiMwMDAwMDAiPjwvcGF0aD48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  border: 1px solid #000;
+}
+
+.input-radio2 input[type="radio"] + label::before, .input-checkbox2 input[type="checkbox"] + label::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.input-radio2 input[type="radio"]:checked + label::before, .input-checkbox2 input[type="checkbox"]:checked + label::before {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTI1NDAzMjE1Mzk4IiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjIwNzYiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTYzLjIyMjkyNyA1MTJjMCAwIDIzMS43Njc1OTggMTg5LjU4NDg2OSAyNTQuNzkwOTY0IDM1MC44MjMxMzQgMCAwIDMwMy45MDY1OTEtNDk3LjQ5MTU2NSA2NDEuNTgxMjY0LTU0Mi4wMDMzMzggMCAwLTEwMi44MzcxNTYtNzQuOTQzODc2LTY5LjA3MDA5OC0xOTMuMzk1NjYyIDAgMC0xODcuMjU1ODI1IDE4LjY4NDU0OC01NDAuMjc5MDY3IDU2Ni42MzczODhMMTg0Ljc5Mzc1IDQxMy4yMTIwNjYgNjMuMjIyOTI3IDUxMnoiIHAtaWQ9IjIwNzciIGZpbGw9IiMwMDAwMDAiPjwvcGF0aD48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  border: 1px solid #000;
+}
+
+.input-radio3 input[type="radio"] + label::before, .input-checkbox3 input[type="checkbox"] + label::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 100%;
+  position: absolute;
+  top: auto;
+  left: 0;
+}
+
+.input-radio3 input[type="radio"]:checked + label::before, .input-checkbox3 input[type="checkbox"]:checked + label::before {
+  border: 1px solid #000;
+}
+
+.input-radio3 input[type="radio"]:checked + label::after, .input-checkbox3 input[type="checkbox"]:checked + label::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: #000;
+  position: absolute;
+  top: auto;
+  left: 0;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+.input-checkbox2 input[type="checkbox"], .input-checkbox1 input[type="checkbox"], .input-checkbox3 input[type="checkbox"],
+.input-radio1 input[type="radio"], .input-radio2 input[type="radio"], .input-radio3 input[type="radio"] {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+.nice-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+  background-color: transparent;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+.nice-scroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+/*定义滑块 内阴影+圆角*/
+.nice-scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.price-section {
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  padding-top: 8px;
+}
+
+.price-section .price-bar {
+  margin: 0px 7px;
+  position: relative;
+  -webkit-touch-callout: none;
+}
+
+.price-section .price-bar-left, .price-section .price-bar-right {
+  width: 14px;
+  height: 14px;
+  display: block;
+  border-radius: 100%;
+  background-color: #000000;
+  position: absolute;
+  top: 50%;
+  margin-top: -7px;
+  cursor: pointer;
+}
+
+.price-section .price-bar-left {
+  left: 0;
+  margin-left: -7px;
+}
+
+.price-section .price-bar-right {
+  right: 0;
+  margin-right: -7px;
+}
+
+.price-section .price-bar-line {
+  display: block;
+  height: 1px;
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.price-section .price-num {
+  padding: 10px 0px 10px;
+}
+
+.price-section .price-num:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.price-section .price-num-min, .price-section .price-num-max {
+  float: left;
+  width: 50%;
+  font-size: 12px;
+}
+
+.price-section .price-num-min {
+  text-align: left;
+}
+
+.price-section .price-num-max {
+  text-align: right;
+}

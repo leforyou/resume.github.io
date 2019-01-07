@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>核对订单信息</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/api.css" rel="stylesheet">
+<link href="css/common.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!-- rem布局适配高清方案 -->
+<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);</script>
+<!-- rem布局适配高清方案 -->
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/common.js"></script>
+</head>
+<body>
+	<div class="main-width check-order-info pad-top-nav padding-nav-btm">
+		<div class="nav-head main-bg">
+			<i class="ico-back"></i>
+			<p class="title">核对订单信息</p>
+		</div>
+		
+		<div class="product-head padding-lr50">
+			<p class="fz26 fisrt">已选产品</p>
+			<div class="box">
+				<div class="img-box">
+					<img src="img/product-cake.jpg"/>
+				</div>
+				<div class="info">
+					<p class="fz26 title">
+						<span>提拉米苏</span>&nbsp;
+						<span>Tiramisu</span>
+					</p>
+					<p class="fz20 size">
+						<span>规格 ：</span>&nbsp;
+						<span>1磅  X1 </span>
+					</p>
+					<p class="fz20 tableware">
+						<img src="img/ico-tableware.png"/>
+						<span>5套餐具</span>
+					</p>
+					<b class="fz26 price main-color">￥198.00</b>
+				</div>
+			</div>
+			<div class="birthday-card">
+				<span class="fz20">生日牌：</span>
+				<input class="fz20" type="text" placeholder="填写生日祝福" />
+			</div>
+		</div>
+		
+		<div class="parts padding-lr50">
+			<p class="fz26">配件选择</p>
+			<div class="box">
+				<div class="img-box">
+					<img src="img/tableware-parts.jpg"/>
+				</div>
+				<div class="right">
+					<p class="fz20">餐具套装</p>
+					<b class="fz26 main-color">¥ <b class="main-color">5</b> /个</b>
+					<div class="number-add-reduce no-select">
+						<span class="nar-reduce fz26">-</span>
+						<span class="nar-number fz26">9</span>
+						<span class="nar-add fz26">+</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="receive-address">
+			<div class="head padding-lr50">
+				<span class="fz26">收货地址</span>
+				<ul>
+					<li>
+						<a href="javascript:">
+							<img src="img/ico-order-location.png"/>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<img src="img/ico-order-edit.png"/>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<img src="img/ico-order-edd.png"/>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="info padding-lr26">
+				<ul>
+					<li>
+						<span class="fz20">收货人</span>
+						<span class="fz20">陈先生</span>
+					</li>
+					<li>
+						<span class="fz20">手机号</span>
+						<span class="fz20">13800138000</span>
+					</li>
+					<li>
+						<span class="fz20">详细地址</span>
+						<span class="fz20">广州市海珠区珠江新城保利中达广场2号楼101             广州市海珠区珠江新城保利中达广场2号楼101</span>
+					</li>
+				</ul>
+			</div>
+			<div class="way padding-lr50">
+				<p class="fz26">配送方式</p>
+				<div class="btn fz26">
+					<div class="list active">送货上门</div>
+					<div class="list">自提</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="send-time padding-lr50">
+			<span class="left fz26">配送时间</span>
+			<div class="right">
+				<span class="fz20 date">2018-03-07</span>
+				<span class="fz20 time">09:00-11:30</span>
+				<img src="img/ico-recharge-arrow.png"/>
+			</div>
+		</div>
+		
+		<div class="discount padding-lr50">
+			<div class="head">
+				<p class="fz26">优惠方式</p>
+				<span class="fz20">优惠方式只能选择一种；优惠券与乐享券可组合使用多张</span>
+			</div>
+			<ul>
+				<li>
+					<div class="left">
+						<img src="img/ico-check-order-discount.png"/>
+						<span class="fz20">优惠券</span>
+					</div>
+					<div class="right">
+						<img src="img/ico-recharge-arrow.png"/>
+					</div>
+				</li>
+				<li>
+					<div class="left">
+						<img src="img/ico-check-order-discount.png"/>
+						<span class="fz20">乐享券</span>
+					</div>
+					<div class="right">
+						<span class="fz20">无可用</span>
+						<img src="img/ico-recharge-arrow.png"/>
+					</div>
+				</li>
+				<li>
+					<div class="left">
+						<img src="img/ico-check-order-rebpack.png"/>
+						<span class="fz20">使用红包</span>
+						<span class="fz20">红包：10.00元</span>
+					</div>
+					<div class="right">
+						<span class="input-radio1">
+						  <input type="radio" id="radio1" name="radios" checked="checked">
+						  <label for="radio1"></label>
+						</span>
+					</div>
+				</li>
+				<li>
+					<div class="left">
+						<img src="img/ico-check-order-zhifen.png"/>
+						<span class="fz20">使用积分</span>
+						<span class="fz20">积分：50分，可抵扣0.50元</span>
+					</div>
+					<div class="right">
+						<span class="input-radio1">
+						  <input type="radio" id="radio2" name="radios">
+						  <label for="radio2"></label>
+						</span>
+					</div>
+				</li>
+				<li id="menberList">
+					<div class="left">
+						<img src="img/ico-check-order-menber.png"/>
+						<span class="fz20">会员优惠</span>
+					</div>
+					<div class="right">
+						<img src="img/ico-recharge-arrow.png"/>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="money padding-lr50">
+			<div class="head fz26">金额明细</div>
+			<ul>
+				<li>
+					<span class="fz20">商品金额</span>
+					<b class="fz26 main-color">¥198</b>
+				</li>
+				<li>
+					<span class="fz20">运费</span>
+					<b class="fz26 main-color">免运费</b>
+				</li>
+				<li>
+					<span class="fz20">配件</span>
+					<b class="fz26 main-color">¥0.00</b>
+				</li>
+				<li>
+					<span class="fz20">支付金额</span>
+					<b class="fz26 main-color">¥198</b>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="btn padding-lr50">
+			<p class="btn-sure">提交订单</p>
+		</div>
+		
+		<div class="menber-layer">
+			<div class="main-width">
+				<div class="head main-bg fz26">会员优惠</div>
+				<ul>
+					<li>
+						<p class="fz26">优惠折扣：0.00折</p>
+						<span class="input-radio2">
+						  <input type="radio" id="menber1" name="radio-menber">
+						  <label for="menber1"></label>
+						</span>
+					</li>
+					<li>
+						<p class="fz26">优惠金额：¥ 0.00</p>
+						<span class="input-radio2">
+						  <input type="radio" id="menber2" name="radio-menber">
+						  <label for="menber2"></label>
+						</span>
+					</li>
+					<li>
+						<p class="fz26">优惠礼品</p>
+						<span class="input-radio2">
+						  <input type="radio" id="menber3" name="radio-menber">
+						  <label for="menber3"></label>
+						</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		<div class="nav-btm main-bg">
+			<ul class="nav-box">
+				<li>
+					<a href="首页.html">
+						<img src="img/ico-nav-home.png"/>
+						<p class="fz20">首页</p>
+					</a>
+				</li>
+				<li>
+					<a href="分类（总）.html">
+						<img src="img/ico-nav-sort.png"/>
+						<p class="fz20">分类</p>
+					</a>
+				</li>
+				<li>
+					<a href="积分专区.html">
+						<img src="img/ico-nav-integal.png"/>
+						<p class="fz20">积分专区</p>
+					</a>
+				</li>
+				<li>
+					<a href="个人中心.html">
+						<img src="img/ico-nav-person.png"/>
+						<p class="fz20">个人中心</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+	
+  <script>
+     $(function(){
+     	//会员优惠弹窗
+     	$("#menberList").click(function(){
+     		$(".menber-layer").addClass('active');
+     	});
+     	$(".menber-layer").click(function(e){
+     		$(this).removeClass('active');
+     	});
+	    $(".menber-layer>*").click(function(){
+	    	event.stopPropagation();
+	    });
+	    
+     });
+  </script>
+</body>
+</html>

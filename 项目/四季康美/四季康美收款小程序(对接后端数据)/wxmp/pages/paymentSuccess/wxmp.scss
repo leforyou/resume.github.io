@@ -1,0 +1,23 @@
+page{
+    background-color: #efefef;
+}
+.payment{
+    .wrap-ico{
+        padding: 100rpx 0rpx 50rpx;
+        image{
+            width: 200rpx;
+            height: 200rpx;
+        }
+    }
+    .desc{
+        padding:50rpx 45rpx 90rpx;
+        line-height: 1.7;
+    }
+    .wrap-btn{
+        padding-bottom: 90rpx;
+        .btn{
+            line-height: 90rpx;
+            background-color: #4bb200;
+        }
+    }
+}

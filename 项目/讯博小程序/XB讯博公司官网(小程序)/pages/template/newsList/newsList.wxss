@@ -1,0 +1,27 @@
+.news-url {
+    padding: 30rpx;
+}
+
+.news-list {
+    line-height: 1.6;
+    border-bottom: 1rpx solid #e8e8e8;
+    padding-bottom: 42rpx;
+}
+.news-url:nth-last-child(1) .news-list{
+    border-bottom: none;
+}
+.news-date {
+    font-size: 50rpx;
+    color: #aaa;
+}
+
+.news-title {
+    font-size: 38rpx;
+    color: #333;
+    padding: 5px 0;
+}
+
+.news-content {
+    font-size: 32rpx;
+    color: #666;
+}

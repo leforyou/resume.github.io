@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>首页</title>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/api.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<!-- rem布局适配高清方案 -->
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(true,100, 1);</script>
+		<script src="js/layzr.min.js">//图片懒加载插件</script>
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.home{
+				background-color: #fff;
+			}
+			.main-paddding-lr{
+				padding-left: 0.25rem;
+				padding-right: 0.25rem;
+			}
+			.HM-head{
+				height: 1.2rem;
+			}
+			.HM-head img{
+				height: 100%;
+			}
+			.HM-banner .box{
+				padding-top: 74.66%;
+				overflow: hidden;
+				margin-bottom: 0.6rem;
+				position: relative;
+			}
+			.HM-banner .box img{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
+			.HM-video{
+				background-color: #000;
+				padding-top: 56%;
+				position: relative;
+				overflow: hidden;
+			}
+			.HM-video.active img{
+				display: none;
+			}
+			.HM-video .box{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				cursor: pointer;
+			}
+			.HM-video .video-bg{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
+			.HM-video .video-button{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				-webkit-transform: translate(-50%,-50%);
+				width: 1.4rem;
+				height: 1.4rem;
+			}
+			.HM-video .video{
+				width: 100%;
+			}
+			.HM-head-img{
+				padding-top: 1rem;
+			}
+			img.MH-H-title{
+				width: 4.5rem;
+				height: 1.3rem;
+			}
+			.HM-strong-quality .content{
+				border: 0.03rem solid #eff4f1;
+				padding: 0.07rem;
+				line-height: 2.2;
+				border-radius: 0.2rem;
+				margin-top: 0.35rem;
+			}
+			.HM-strong-quality .content ul{
+				border-radius: 0.13rem;
+				padding-top: 0.6rem;
+				padding-left: 0.78rem;
+				padding-right: 0.6rem;
+				padding-bottom: 0.6rem;
+				background-image: url(img/logo-bg.png);
+				background-repeat: no-repeat;
+				background-size: 1.8rem;
+				background-position: 100% 100%;
+			}
+			.HM-strong-quality .content li{
+				margin-bottom: 0.2rem;
+				position: relative;
+			}
+			.HM-strong-quality .content li:nth-last-child(1){
+				margin-bottom: 0;
+			}
+			.HM-strong-quality .content li:before{
+				content: '';
+				position: absolute;
+				top: 0.25rem;
+				left: -0.25rem;
+				background-color: #333;
+				width: 0.08rem;
+				height: 0.08rem;
+				border-radius: 100%;
+			}
+			
+			.HM-certificate{
+				margin-top: 0.7rem;
+				margin-bottom: 0.4rem;
+			}
+			.HM-certificate .box img{
+				width: 100%;
+			}
+			
+			.HM-good-product .content{
+				margin-top: 0.45rem;
+				overflow: hidden;
+			}
+			.HM-good-product .tea-head{
+				display: flex;
+				position: relative;
+			}
+			.HM-good-product .tea-head:before{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 1.4rem;
+				left: 0;
+				right: 0;
+				background-color: #c7d2ca;
+				height: 0.01rem;
+			}
+			.HM-good-product .tea-head .list{
+				width: 50%;
+				flex-direction: column;
+				position: relative;
+			}
+			.HM-good-product .tea-head .list.active .img-box,.HM-good-drink .promise ul li.active .img-box{
+				background: url(img/texture-bg.png) no-repeat center;
+				background-size: 3rem;
+				border: 0.01rem solid transparent;
+			}
+			.HM-good-product .tea-head .list .img-box{
+				width: 2.8rem;
+				height: 2.8rem;
+				border-radius: 100%;
+				overflow: hidden;
+				border: 0.01rem solid #b5c6ba;
+			}
+			.HM-good-product .tea-head .list .img-box img{
+				width: 2.5rem;
+				height: 2.5rem;
+				border-radius: 100%;
+			}
+			.HM-good-product .tea-head .list.active span{
+				color: #333;
+			}
+			.HM-good-product .tea-head .list span{
+				margin: 0.3rem 0rem 0.5rem;
+				position: relative;
+				padding: 0 0.4rem;
+				color: #999;
+			}
+			
+			.HM-good-product .tea-head .list.active span:before,.HM-good-product .tea-head .list.active span:after{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				-webkit-transform: translateY(-50%);
+				width: 0.08rem;
+				height: 0.08rem;
+				background-color: #b5c6ba;
+				border-radius: 100%;
+				overflow: hidden;
+			}
+			.HM-good-product .tea-head .list.active span:before{
+				left: 0;
+			}
+			.HM-good-product .tea-head .list.active span:after{
+				right: 0;
+			}
+			
+			.HM-good-product .content .desc{
+				line-height: 2.2;
+				border: 0.01rem solid #b5c6ba;
+				padding: 0.7rem 0.4rem;
+				border-radius: 0.2rem;
+				margin-bottom: 1rem;
+			}
+			.HM-good-product .content .desc .list{
+				display: none;
+			}
+			.HM-good-product .content .desc .list.active{
+				display: block;
+			}
+			
+			.HM-good-drink .promise{
+				margin: 0.9rem 0rem 0.7rem;
+			}
+			.HM-good-drink .promise ul{
+				position: relative;
+				display: flex;
+				justify-content: center;
+			}
+			.HM-good-drink .promise ul:before{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0.84rem;
+				left: 0;
+				right: 0;
+				background-color: #c7d2ca;
+				height: 0.01rem;
+			}
+			.HM-good-drink .promise ul li{
+				width: 33.33%;
+				flex-direction: column;
+				position: relative;
+			}
+			.HM-good-drink .promise ul li .img-box{
+				width: 1.68rem;
+				height: 1.68rem;
+				border-radius: 100%;
+				overflow: hidden;
+				border: 0.01rem solid #b5c6ba;
+				margin-bottom: 0.4rem;
+			}
+			.HM-good-drink .promise ul li .img-box p{
+				width: 1.44rem;
+				height: 1.44rem;
+				border-radius: 100%;
+			}
+			.HM-good-drink .promise ul li .img-box p img{
+				width: 1.44rem;
+				height: 1.44rem;
+			}
+			.HM-good-drink .promise ul li>span{
+				color: #999;
+				line-height: 2;
+				position: relative;
+				padding: 0rem 0.4rem;
+			}
+			.HM-good-drink .promise ul li.active>span{
+				color: #333;
+			}
+			.HM-good-drink .promise ul li.active>span:before,.HM-good-drink .promise ul li.active>span:after{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				-webkit-transform: translateY(-50%);
+				width: 0.08rem;
+				height: 0.08rem;
+				background-color: #b5c6ba;
+				border-radius: 100%;
+				overflow: hidden;
+			}
+			.HM-good-drink .promise ul li.active>span:before{
+				left: 0;
+			}
+			.HM-good-drink .promise ul li.active>span:after{
+				right: 0;
+			}
+			
+			
+			
+			.HM-good-drink .content .box{
+				line-height: 2.2;
+				padding: 0.7rem 0.4rem;
+				border: 0.01rem solid #b5c6ba;
+				border-radius: 0.2rem;
+			}
+			.HM-good-drink .content .box img{
+				width: 100%;
+				line-height: 0;
+				font-size: 0;
+				margin-top: 0.2rem;
+				display: block;
+			}
+			.HM-orange-fragrance{
+				overflow: hidden;
+			}
+			.HM-orange-fragrance .poems{
+				margin: 0.6rem 0rem;
+			}
+			.HM-orange-fragrance .poems img{
+				width: 2.5rem;
+				height: 3.5rem;
+			}
+			.HM-orange-fragrance .content{
+				line-height: 2.2;
+				margin-bottom: 1rem;
+			}
+			.HM-foot{
+				min-height: 2.6rem;
+				background-color: #333;
+				padding-top: 0.5rem;
+				overflow: hidden;
+			}
+			.HM-foot .box{
+				position: relative;
+				padding-left: 1.8rem;
+			}
+			.HM-foot .f-logo{
+				position: absolute;
+				top: -0.1rem;
+				left: 0;
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+			.HM-foot .list{
+				display: flex;
+				margin-bottom: 0.2rem;
+			}
+			.HM-foot .list img{
+				min-width: 0.3rem;
+				width: 0.3rem;
+				height: 0.3rem;
+				margin-right: 0.2rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--    <img src="" data-layzr="">    -->
+		<div class="wrap home main-width">
+			<div class="HM-head flex-center">
+				<img src="" data-layzr="img/logo.jpg"/>
+			</div>
+			<div class="HM-banner">
+				<div class="box">
+					<img src="" data-layzr="img/banner1.jpg">
+				</div>
+			</div>
+			<div class="HM-video no-select">
+				<div class="box flex-center">
+					<video class="video" id="video" controls="true">
+						<source src="media/make-tea.mp4" type="video/mp4"></source>
+					</video>
+					<img class="video-bg" src="img/video-bg.jpg">
+					<img class="video-button" src="" data-layzr="img/video-button.png">
+				</div>
+			</div>
+			<div class="HM-strong-quality main-paddding-lr">
+				<div class="box">
+					<div class="head HM-head-img text-center">
+						<img class="MH-H-title" src="" data-layzr="img/strong-quality-title.png"/>
+					</div>
+					<div class="content">
+						<ul class="fz26 main-bg">
+							<li>
+								<h3>广东省农业科学院茶叶研究所</h3>
+								<p class="fc-666">一个在茶树良种选育、茶叶高产栽培及茶叶加工技术、茶叶病虫害防治和茶叶深加工研究处于国内领先水平的专业院所，以严谨的科学态度研制国内首创并具2项发明专利的生态果茶——橘红普洱茶 。</p>
+							</li>
+							<li>
+								<h3>广东凯利生物科技有限公司</h3>
+								<p class="fc-666">一个致力于生物科技研发和技术推广的高科技企业，已获多项国家发明专利和省科学技术奖，以执着的工匠精神生产国内首创并具2项发明专利的生态果茶——橘红普洱茶 。</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="HM-certificate main-paddding-lr">
+				<div class="box">
+					<img src="" data-layzr="img/certificate.jpg"/>
+				</div>
+			</div>
+			
+			<div class="HM-good-product main-bg">
+				<div class="box">
+					<div class="head HM-head-img text-center">
+						<img class="MH-H-title" src="" data-layzr="img/good-product-title.png"/>
+					</div>
+					<div class="content">
+						<div class="tea-head main-paddding-lr">
+							<div class="list text-center flex-center active">
+								<div class="img-box flex-center">
+									<img src="" data-layzr="img/good-product1.jpg"/>
+								</div>
+								<span class="fz24">橘红</span>
+							</div>
+							<div class="list text-center flex-center">
+								<div class="img-box flex-center">
+									<img src="" data-layzr="img/good-product2.jpg"/>
+								</div>
+								<span class="fz24">普洱</span>
+							</div>
+						</div>
+						<div class="main-paddding-lr">
+							<div class="desc fz26">
+								<div class="list active">《本经逢原》和《药品化义》记载：橘红，其性味辛、苦，性温，具有理气宽中、燥湿化痰的功效，多用于治疗咳嗽痰多、食积伤酒、呕恶痞闷。</div>
+								<div class="list">普洱茶具有降低血脂、减肥、抑菌助消化、暖胃、生津、止渴、醒酒解毒等多种功效。可清胃生津、消食化痰、解酒解毒、利尿散寒，止咳化痰、降低血脂胆固醇。</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="HM-good-drink">
+				<div class="box">
+					<div class="head HM-head-img text-center">
+						<img class="MH-H-title" src="" data-layzr="img/good-drink-title.png"/>
+					</div>
+					<div class="promise">
+						<ul class="main-paddding-lr">
+							<li class="flex-center active">
+								<div class="img-box flex-center">
+									<p class="flex-center main-bg"><img src="" data-layzr="img/good-drink-xl.png"/></p>
+								</div>
+								<span class="fz24">纯天然</span>
+								<span class="fz24">无公害</span>
+								<span class="fz24">大树茶</span>
+							</li>
+							<li class="flex-center">
+								<div class="img-box flex-center">
+									<p class="flex-center main-bg"><img src="" data-layzr="img/good-drink-gy.png"/></p>
+								</div>
+								<span class="fz24">纯手工</span>
+								<span class="fz24">慢火焙</span>
+								<span class="fz24">特造型</span>
+							</li>
+							<li class="flex-center">
+								<div class="img-box flex-center">
+									<p class="flex-center main-bg"><img src="" data-layzr="img/good-drink-pz.png"/></p>
+								</div>
+								<span class="fz24">香气浓</span>
+								<span class="fz24">味甘醇</span>
+								<span class="fz24">汤色亮</span>
+							</li>
+						</ul>
+					</div>
+					<div class="content main-paddding-lr">
+						<div class="box main-bg">
+							<p class="fz26">瀛橘天香牌橘红普洱茶所使用的熟茶均来自“彩云之南， ”云南古茶山、大企业制作的宫廷级大树茶，地理产品、质量保证。</p>
+							<p class="fz26">瀛橘天香牌橘红普洱茶所使用的橘红均来自“海上绿洲”汕头南澳岛的有机光青橘红，纯天然、无公害、好品质。</p>
+							<img src="" data-layzr="img/good-drink-scenery.jpg"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="HM-orange-fragrance main-bg main-paddding-lr">
+				<div class="box">
+					<div class="head HM-head-img text-center">
+						<img class="MH-H-title" src="" data-layzr="img/orange-fragrance-title.png"/>
+					</div>
+					<div class="poems flex-center">
+						<img class="MH-H-title" src="" data-layzr="img/orange-fragrance-poems.png"/>
+					</div>
+					<div class="content fz26">
+						灜橘天香牌橘红普洱茶自上市以来品质得到了众多消费者、专家和社会各界的肯定，产品已涉足北京、浙江、云南、海南、湖南、广西、福建、湖北、香港、美国等省市，更有法国友人作为珍品款待贵客，大众对品质的认可是凯利制茶人莫大的欣慰和鼓舞，我们承诺：坚守优良品质，做良心企业，制放心茶。
+					</div>
+				</div>
+			</div>
+			<div class="HM-foot main-paddding-lr">
+				<div class="box">
+					<img class="f-logo" src="" data-layzr="img/foot-logo.jpg"/>
+					<p class="list fz24">
+						<img src="" data-layzr="img/ico-phone.png"/>
+						<a class="fc-b2" href="tel:020-38458798">020-38458798</a>
+					</p>
+					<p class="list fz24">
+						<img src="" data-layzr="img/ico-email.png"/>
+						<span class="fc-b2">gdkili@sina.com</span>
+					</p>
+					<p class="list fz24">
+						<img src="" data-layzr="img/ico-address.png"/>
+						<span class="fc-b2">广州市天河区东莞庄一横路116生广东生产力大厦507室</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			//图片懒加载插件
+			var layzr = new Layzr({
+		        selector: '[data-layzr]',
+		        attr: 'data-layzr',
+		        retinaAttr: 'data-layzr-retina',
+		        threshold: 10,
+		        callback: function () {
+		            console.log(this);
+		            //this.classList.add('border');
+		        }
+		    });
+		    document.querySelector('.HM-video').onclick = function(){
+		    	this.classList.add('active');
+		    	document.getElementById('video').play();
+		    	//document.getElementById("video").controls=true;
+		    }
+		    $(".HM-good-product .tea-head .list").click(function(){
+		    	var index = $(this).index();
+		    	$(".HM-good-product .tea-head .list").removeClass('active');
+		    	$(this).addClass('active');
+		    	$(".HM-good-product .desc .list").removeClass('active');
+		    	$(".HM-good-product .desc .list").eq(index).addClass('active');
+		    });
+		    $(".HM-good-drink .promise li").click(function(){
+		    	$(".HM-good-drink .promise li").removeClass('active');
+		    	$(this).addClass('active');
+		    });
+		</script>
+	</body>
+
+</html>

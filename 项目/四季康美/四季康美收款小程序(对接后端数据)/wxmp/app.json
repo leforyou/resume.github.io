@@ -1,0 +1,17 @@
+{
+    "pages": [
+        "pages/index/wxmp",
+        "pages/paymentSuccess/wxmp"
+    ],
+    "window": {
+        "backgroundTextStyle": "black",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "四季康美",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#f4f4f4"
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    }
+}

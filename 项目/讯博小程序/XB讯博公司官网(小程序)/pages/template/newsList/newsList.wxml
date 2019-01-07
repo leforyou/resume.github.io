@@ -1,0 +1,25 @@
+<template name="newsList">
+    <navigator url='../newsDetail/newsDetail' class='news-url' hover-class='none'>
+        <view class='news-list'>
+            <view class='news-date ellipsis1'>2016-06-08</view>
+            <view class='news-title ellipsis1'>广州千越网络科技有限公司再次与讯博广州千越网络科技有限公司再次与讯博</view>
+            <view class='news-content ellipsis3'>广州千越网络科技有限公司与讯博网络从2010年开始，风风雨雨一起走过了6年，期间多次项目深度合作，主要集中在部队或政府项目。在长期的合作中，相互建立了深厚的友谊。</view>
+        </view>
+    </navigator>
+
+    <navigator url='../newsDetail/newsDetail' class='news-url' hover-class='none'>
+        <view class='news-list'>
+            <view class='news-date ellipsis1'>2016-06-08</view>
+            <view class='news-title ellipsis1'>广州千越网络科技有限公司再次与讯博广州千越网络科技有限公司再次与讯博</view>
+            <view class='news-content ellipsis3'>广州千越网络科技有限公司与讯博网络从2010年开始，风风雨雨一起走过了6年，期间多次项目深度合作，主要集中在部队或政府项目。在长期的合作中，相互建立了深厚的友谊。</view>
+        </view>
+    </navigator>
+
+    <navigator url='../newsDetail/newsDetail' class='news-url' hover-class='none'>
+        <view class='news-list'>
+            <view class='news-date ellipsis1'>2016-06-08</view>
+            <view class='news-title ellipsis1'>广州千越网络科技有限公司再次与讯博广州千越网络科技有限公司再次与讯博</view>
+            <view class='news-content ellipsis3'>广州千越网络科技有限公司与讯博网络从2010年开始，风风雨雨一起走过了6年，期间多次项目深度合作，主要集中在部队或政府项目。在长期的合作中，相互建立了深厚的友谊。</view>
+        </view>
+    </navigator>
+</template>

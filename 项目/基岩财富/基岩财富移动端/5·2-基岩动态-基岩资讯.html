@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="css/api.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<!-- rem布局适配高清方案 -->
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(true,100, 1);</script>
+		<!-- rem布局适配高清方案 -->
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/bscroll.min.js"></script>
+	</head>
+
+	<body>
+		<div class="dynamic-information main-width">
+
+			<div class="header">
+				<div class="wrap-nav main-width">
+					<div class="nav-box">
+						<div class="nav-head">
+							<div class="nahe-box main-width">
+								<div class="ico-menu"></div>
+								<div class="ico-logo"></div>
+								<div class="ico-people"></div>
+							</div>
+						</div>
+						<div class="menu main-width">
+							<div class="menu-box">
+								<ul class="fz36">
+									<li>
+										<a class="big-title ico-more" href="javascript:">关于基岩</a>
+										<div class="second-level">
+											<a class="sub-title" href="javascript:">关于基岩</a>
+											<a class="sub-title" href="javascript:">成功案例</a>
+										</div>
+									</li>
+									<li>
+										<a class="big-title" href="javascript:">财富管理</a>
+									</li>
+									<li>
+										<a class="big-title ico-more" href="javascript:">基岩学院</a>
+										<div class="second-level">
+											<a class="sub-title" href="javascript:">视频专题</a>
+											<a class="sub-title" href="javascript:">基岩观点</a>
+											<a class="sub-title" href="javascript:">基岩研究</a>
+										</div>
+									</li>
+									<li>
+										<a class="big-title ico-more" href="javascript:">会员尊享</a>
+										<div class="second-level">
+											<a class="sub-title" href="javascript:">会员手册</a>
+											<a class="sub-title" href="javascript:">活动资讯</a>
+										</div>
+									</li>
+									<li>
+										<a class="big-title ico-more" href="javascript:">基岩动态</a>
+										<div class="second-level">
+											<a class="sub-title" href="javascript:">媒体报道</a>
+											<a class="sub-title" href="javascript:">基岩咨询</a>
+											<a class="sub-title" href="javascript:">基岩公告</a>
+										</div>
+									</li>
+									<li>
+										<a class="big-title" href="javascript:">联系我们</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="wrap-banner">
+				<div class="banner-box">
+					<img src="img/video-topic-banner.jpg"/>
+				</div>
+			</div>
+			
+			<div class="college-common">
+				<div class="box padding-lr50">
+					<p class="big-title fz50 font-weight text-center">基岩资讯</p>
+				</div>
+			</div>
+			
+			
+			<div class="wrap-news padding-lr50">
+				<ul>
+					<li>
+						<a href="javascript:">
+							<div class="img-box" style="background-image:url(img/news-list1.jpg);"></div>
+							<div class="info">
+								<p class="sub-title fz34 fc-333 ellipsis2">10支付宝变身App Store，美团点评</p>
+								<p class="time fz26 fc-999">2018-07-20</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="img-box" style="background-image:url(img/news-list2.jpg);"></div>
+							<div class="info">
+								<p class="sub-title fz34 fc-333 ellipsis2">基岩大咖说/美联储加息，美股未来走势持续高涨</p>
+								<p class="time fz26 fc-999">2018-07-20</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="img-box" style="background-image:url(img/news-list1.jpg);"></div>
+							<div class="info">
+								<p class="sub-title fz34 fc-333 ellipsis2">10支付宝变身App Store，美团点评</p>
+								<p class="time fz26 fc-999">2018-07-20</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="img-box" style="background-image:url(img/news-list2.jpg);"></div>
+							<div class="info">
+								<p class="sub-title fz34 fc-333 ellipsis2">基岩大咖说/美联储加息，美股未来走势持续高涨</p>
+								<p class="time fz26 fc-999">2018-07-20</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="img-box" style="background-image:url(img/news-list1.jpg);"></div>
+							<div class="info">
+								<p class="sub-title fz34 fc-333 ellipsis2">10支付宝变身App Store，美团点评</p>
+								<p class="time fz26 fc-999">2018-07-20</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="img-box" style="background-image:url(img/news-list2.jpg);"></div>
+							<div class="info">
+								<p class="sub-title fz34 fc-333 ellipsis2">基岩大咖说/美联储加息，美股未来走势持续高涨</p>
+								<p class="time fz26 fc-999">2018-07-20</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="wrap-page" style="padding: 0.5rem 0.2rem;">
+				<div class="page-box">
+					<ul>
+						<li class="page-prev"><!--上一页--><a href="javascrpt:"></a></li>
+						<li class="page-list active"><a href="javascrpt:"><span>1</span></a></li>
+						<li class="page-list"><a href="javascrpt:"><span>2</span></a></li>
+						<li class="page-list"><a href="javascrpt:"><span>3</span></a></li>
+						<li class="page-list"><a href="javascrpt:"><span>4</span></a></li>
+						<li class="page-list"><a href="javascrpt:"><span>5</span></a></li>
+						<li class="page-more"><!--更多--></li>
+						<li class="page-list"><a href="javascrpt:"><span>999</span></a></li>
+						<li class="page-next"><!--下一页--><a href="javascrpt:"></a></li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			<div class="footer">
+				<div class="footer-box main-width">
+					<div class="contact">
+						<div class="left">
+							<img src="img/footer-weixin-code.jpg"/>
+							<p class="cn fz20 fc-ccc">微信公众号</p>
+						</div>
+						<div class="right">
+							<p class="tel-head fz22 fc-ccc">财富热线</p>
+							<a class="tel-num fz22 fc-ccc" href="tel:400-0000-000">400-0000-000</a>
+							<p class="time fz20 fc-ccc">咨询时间：周一~周五 <br/>上午09：00~下午18：00</p>
+						</div>
+					</div>
+					<div class="f-info fz22 padding-lr">
+						<ul>  
+							<li>
+								<a class="fc-ccc" href="javascript:">联系我们</a>
+							</li>
+							<li>
+								<a class="fc-ccc" href="javascript:">风险提示</a>
+							</li>
+							<li>
+								<a class="fc-ccc" href="javascript:">免责声明</a>
+							</li>
+							<li>
+								<a class="fc-ccc" href="javascript:">隐私保护</a>
+							</li>
+							<li>
+								<a class="fc-ccc" href="javascript:">版权声明</a>
+							</li>
+						</ul>
+						<p class="fc-ccc text-center">© 2018 广州基岩资产管理有限公司 All rights reserved</p>
+						<p class="fc-ccc text-center">粤ICP备88888999号-1</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<script>
+			$(function() {
+				//导航滑动
+				var bscroll = document.getElementById('bscroll');
+				var scroll = new BScroll(bscroll, {
+					startX: 0,
+					startY: 0,
+					scrollX:true,
+					preventDefault:false,
+					click: true
+				});
+				
+				$("#bscroll li").click(function(){
+					$("#bscroll li").removeClass('active');
+					$(this).addClass('active');
+				});
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>美丽新视觉</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="css/api.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<!-- rem布局适配高清方案 -->
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(true,100, 1);</script>
+		<!-- rem布局适配高清方案 -->
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/common.js"></script>
+	</head>
+
+	<body>
+		<div class="recommendation main-width main-bgimg">
+			
+			<div class="content padding-lr">
+				<div class="box">
+					<div class="info">
+						<ul>
+							<li>
+								<p class="name fz28 fc-fff">店名 *</p>
+								<input class="fz34 fc-fff" type="text" />
+							</li>
+							<li>
+								<p class="name fz28 fc-fff">姓名 *</p>
+								<input class="fz34 fc-fff" type="text" />
+							</li>
+							<li>
+								<p class="name fz28 fc-fff">手机号 *</p>
+								<input class="fz34 fc-fff" type="text" />
+							</li>
+						</ul>
+					</div>
+					<div class="photo">
+						<div class="head fz28 fc-fff">照片</div>
+						<ul>
+							<li class="addto">
+								<a href="javascript:">
+									<input type="file" />
+								</a>
+							</li>
+							<li class="list">
+								<a href="javascript:">
+									<div class="img-box" style="background-image: url(img/home-player4.jpg);"></div>
+								</a>
+							</li>
+							<li class="list">
+								<a href="javascript:">
+									<div class="img-box" style="background-image: url(img/home-player4.jpg);"></div>
+								</a>
+							</li>
+							<li class="list">
+								<a href="javascript:">
+									<div class="img-box" style="background-image: url(img/home-player4.jpg);"></div>
+								</a>
+							</li>
+							<li class="list">
+								<a href="javascript:">
+									<div class="img-box" style="background-image: url(img/home-player4.jpg);"></div>
+								</a>
+							</li>
+							<li class="list">
+								<a href="javascript:">
+									<div class="img-box" style="background-image: url(img/home-player4.jpg);"></div>
+								</a>
+							</li>
+							<li class="list">
+								<a href="javascript:">
+									<div class="img-box" style="background-image: url(img/home-player4.jpg);"></div>
+								</a>
+							</li>
+							<li class="list">
+								<a href="javascript:">
+									<div class="img-box" style="background-image: url(img/home-player4.jpg);"></div>
+								</a>
+							</li>
+						</ul>
+						<div class="wrap-btn">
+							<p class="btn fz34 main-color text-center">推 荐</p>
+						</div>
+					</div>
+				</div>
+				<div class="foot-tip fz24">
+					<div class="main-width">
+						<div class="t-box">
+							<p class="fc-fff">注释：</p>
+							<div class="alls">
+								<p class="fc-fff">1、照片上传仅限参赛者与产品合照。</p>
+								<p class="fc-fff">2、资料完善度有利于年度总冠军竞选。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			
+			<div class="footer">
+				<div class="box">
+					<ul class="fz24 main-width">
+						<li class="active">
+							<a href="javascript:">
+								<img class="img1" src="img/nav-home1.1.png" />
+								<img class="img2" src="img/nav-home1.2.png" />
+								<p>首页</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<img class="img1" src="img/nav-player1.1.png" />
+								<img class="img2" src="img/nav-player1.2.png" />
+								<p>选手</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<img class="img1" src="img/nav-recommend1.1.png" />
+								<img class="img2" src="img/nav-recommend1.2.png" />
+								<p>推荐</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<img class="img1" src="img/nav-ranking1.1.png" />
+								<img class="img2" src="img/nav-ranking1.2.png" />
+								<p>排名</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		<script>
+			$(function() {
+				
+			});
+		</script>
+	</body>
+
+</html>

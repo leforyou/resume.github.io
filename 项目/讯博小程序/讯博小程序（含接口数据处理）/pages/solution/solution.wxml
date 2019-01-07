@@ -1,0 +1,53 @@
+<view class='wrap'>
+  <view class='develop-head'>
+    <image src='{{imgUrl}}system-develop.jpg' mode='widthFix'></image>
+    <view class="box">
+      <view class="title main-color">展示型网站建设</view>
+      <view class="points">采用不同的技术，适应于各种终端！</view>
+      <text class="desc">全方位、友好展示企业形像，做一个网站，达到做N个网站的效果！</text>
+    </view>
+  </view>
+  <view class="solu-box other_web">
+    <view class="b-title">展示型网站建设</view>
+    <image src="{{imgUrl}}show_web.png" mode="widthFix"></image>
+    <navigator class="btn-more mt40" url="../solution_show/solution_show">查看详情</navigator>
+  </view>
+  <view class="solu-box mall_web" style="background:url('{{imgUrl}}bg98.png')">
+    <view class="b-title white">商城建设</view>
+    <image src="{{imgUrl}}mall_web.png" mode="widthFix"></image>
+    <navigator class="btn-more mt40" url="../solution_mall/solution_mall">查看详情</navigator>
+  </view>
+  <view class="solu-box B2B_web">
+    <view class="b-title">B2B平台开发</view>
+    <image src="{{imgUrl}}B2B_web.png" mode="widthFix"></image>
+    <navigator class="btn-more mt40" url="../b2bDevelop/b2bDevelop">查看详情</navigator>
+  </view>
+  <view class="solu-box edu_web">
+    <view class="b-title">
+    在线教育平台开发</view>
+    <text class="tips mb40">这是一个将传统培训行业中课程的售、讲、学、考、评\n通过互联网方式来实现的网站，\n通过这个网站，平台、讲师、学生可以突破空间、时间、介质的局限，\n达到比传统培训更好的效果。</text>
+    <view class="tips mb40">{{edu_tips}}</view>
+    <image src="{{imgUrl}}edu_web.png" mode="widthFix"></image>
+    <navigator class="btn-more mt40" url="../education/education">查看详情</navigator>
+  </view>
+  <view class="solu-box oa_web">
+    <view class="b-title">内部系统开发</view>
+    <image src="{{imgUrl}}oa_web.png" mode="widthFix"></image>
+  </view>
+  <view class="solu-box other_web" style="background:url('{{imgUrl}}bg99.png')">
+    <view class="b-title white">其它定制开发</view>
+    <text class="tips mb40 cfff">根据客户的具体需求，我们提供以下定制服务</text>
+    <view class="tips mb40 cfff">{{other_tips}}</view>
+    <image src="{{imgUrl}}other_web.png" mode="widthFix"></image>
+  </view>
+  <view class="solu-box addServer">
+    <view class="b-title">增值服务</view>
+    <image src="{{imgUrl}}addServer.png" mode="widthFix"></image>
+  </view>
+  <footer-content>
+    <!-- 自定义组件-底部内容信息 -->
+  </footer-content>
+  <nav-tab>
+    <!-- 自定义组件-底部导航 -->
+  </nav-tab>
+</view>

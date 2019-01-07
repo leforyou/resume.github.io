@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/api.css" rel="stylesheet">
+<link href="css/common.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!-- rem布局适配高清方案 -->
+<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);</script>
+<!-- rem布局适配高清方案 -->
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/common.js"></script>
+</head>
+<body>
+	<div class="main-width person-center pad-top-nav pad-btm">
+		<div class="menu-bar main-bg">
+			<div class="menu-left">
+				<i class="ico-menu"></i>
+				<div class="menu-box hide">
+					<div class="list">
+						<a href="首页.html">
+							<img src="img/ico-menu-home.png"/>
+							<span class="fz20 main-color">首页</span>
+						</a>
+					</div>
+					<div class="list">
+						<a href="分类（总）.html">
+							<img src="img/ico-menu-sort.png"/>
+							<span class="fz20 main-color">分类</span>
+						</a>
+					</div>
+					<div class="list">
+						<a href="积分专区.html">
+							<img src="img/ico-menu-integal.png"/>
+							<span class="fz20 main-color">积分专区</span>
+						</a>
+					</div>
+					<div class="list">
+						<a href="个人中心.html">
+							<img src="img/ico-menu-person.png"/>
+							<span class="fz20 main-color">个人中心</span>
+						</a>
+					</div>
+					<div class="list">
+						<a href="企业试吃(字体调整).html">
+							<img src="img/ico-menu-person.png"/>
+							<span class="fz20 main-color">企业试吃</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="menu-ceter"><i class="ico-logo"></i></div>
+			<div class="menu-right"></div>
+		</div>
+		
+		<div class="head">
+			<div class="left">
+				<div class="pic-box">
+					<img src="img/person-center-pic.png"/>
+				</div>
+				<div class="info fz20">
+					<p>昵称：<span>喜芝爱</span></p>
+					<p>账号：<span>15646336</span></p>
+					<a class="genren" href="个人信息.html">
+						<b>v1</b>
+						<span>个人信息</span>
+					</a>
+				</div>
+			</div>
+			<div class="right">
+				<div class="code">
+					<img src="img/person-center-qrcode.jpg"/>
+				</div>
+				<a class="fz20" href="">修改密码</a>
+			</div>
+			<div class="bottom">
+				<ul class="fz20">
+					<li>
+						<a href="javascript:">
+							<div class="wrap-ico">
+								<img src="img/person-center-me.png"/>
+							</div>
+							<p>个人信息(<span id="myInfo">0</span>)</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="wrap-ico">
+								<img src="img/person-center-collect.png"/>
+							</div>
+							<p>我的收藏(<span id="myColl">2</span>)</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="wrap-ico">
+								<img src="img/person-center-cart.png"/>
+							</div>
+							<p>购物车(<span id="	myCar">3</span>)</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="content">
+			<div class="over">
+				<div class="my-order">
+					<b class="fz26">我的订单</b>
+					<a class="fz20" href="javascript:">全部订单 &gt;</a>
+				</div>
+				<ul class="fz20">
+					<li>
+						<a href="javascript:">
+							<span>0</span>
+							<p>待付款</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<span>0</span>
+							<p>待发货</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<span>0</span>
+							<p>待收货</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<span>0</span>
+							<p>待评价</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="below">
+				<ul>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-money.png"/>
+							</div>
+							<p class="fz20">我的资产</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-recharge.png"/>
+							</div>
+							<p class="fz20">我的充值</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-log.png"/>
+							</div>
+							<p class="fz20">资金日志</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-yongjin.png"/>
+							</div>
+							<p class="fz20">我的佣金</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-youhui.png"/>
+							</div>
+							<p class="fz20">我的优惠</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-zhifun.png"/>
+							</div>
+							<p class="fz20">我的积分</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-idyouhuijian.png"/>
+							</div>
+							<p class="fz20">我的优惠券</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-hongbao.png"/>
+							</div>
+							<p class="fz20">我的红包</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-address.png"/>
+							</div>
+							<p class="fz20">收货地址</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-pinjia.png"/>
+							</div>
+							<p class="fz20">我的评价</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-yijian.png"/>
+							</div>
+							<p class="fz20">意见反馈</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-help.png"/>
+							</div>
+							<p class="fz20">帮助中心</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-dazhaupan.png"/>
+							</div>
+							<p class="fz20">大转盘</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-zhifuduihua.png"/>
+							</div>
+							<p class="fz20">积分兑换</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-wdtguan.png"/>
+							</div>
+							<p class="fz20">我的推广</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="ico-box">
+								<img src="img/person-center-wdjiesu.png"/>
+							</div>
+							<p class="fz20">我的结算</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+  <script>
+     
+  </script>
+</body>
+</html>

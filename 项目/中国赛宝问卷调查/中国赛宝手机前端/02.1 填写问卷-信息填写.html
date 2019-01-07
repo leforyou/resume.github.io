@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="css/api.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<!-- rem布局适配高清方案 -->
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(true,100, 1);</script>
+		<!-- rem布局适配高清方案 -->
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/common.js"></script>
+	</head>
+
+	<body>
+		<div class="info-filling main-width">
+			
+			<div class="sure padding-lr">
+				<div class="box">
+					<div class="big-title fz30">信息确认</div>
+					<div class="info">
+						<ul>
+							<li>
+								<div class="sub-title fz24 fc-999">编号</div>
+								<div class="desc fz30">2135498765</div>
+							</li>
+							<li>
+								<div class="sub-title fz24 fc-999">所名</div>
+								<div class="desc fz30">实验研究</div>
+							</li>
+							<li>
+								<div class="sub-title fz24 fc-999">试验任务号/产品名称</div>
+								<div class="desc fz30">654213546</div>
+							</li>
+							<li>
+								<div class="sub-title fz24 fc-999">单位名称</div>
+								<div class="desc fz30">广州讯博网络科技有限公司</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="write padding-lr">
+				<div class="box">
+					<div class="big-title fz30">信息填写</div>
+					<div class="info">
+						<ul>
+							<li>
+								<div class="sub-title fz24 fc-999">联系人</div>
+								<input class="fz30" type="text" placeholder="请填写" />
+							</li>
+							<li>
+								<div class="sub-title fz24 fc-999">联系方式</div>
+								<input class="fz30" type="text" placeholder="请填写" />
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="submit">
+				<div class="contain">
+					<div class="box main-width fz34 text-center">
+						<div class="error list">信息有误</div>
+						<div class="right list">确认信息</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(function() {
+				
+			});
+		</script>
+	</body>
+
+</html>
