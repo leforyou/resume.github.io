@@ -1,0 +1,1153 @@
+@charset "UTF-8";
+/*
+* @Author: cs5
+* @Date:   2018-04-12 13:30:23
+* @Last Modified by:   cs5
+* @Last Modified time: 2018-04-12 16:30:11
+*/
+/*
+ * scss变量设置
+ */
+/*  */
+/*主色*/
+/* 字体 */
+/* 最大宽度 */
+/*
+* @Author: cs5
+* @Date:   2018-04-12 13:30:23
+* @Last Modified by:   cs5
+* @Last Modified time: 2018-04-12 16:30:11
+*/
+/*
+ * scss函数设置
+ */
+/*  */
+/*高度与行高设置*/
+/*宽度与高度设置*/
+/**10像素到200像素的字体,用法:fz20 **/
+.fz10 {
+  font-size: 10px;
+}
+
+.fz11 {
+  font-size: 11px;
+}
+
+.fz12 {
+  font-size: 12px;
+}
+
+.fz13 {
+  font-size: 13px;
+}
+
+.fz14 {
+  font-size: 14px;
+}
+
+.fz15 {
+  font-size: 15px;
+}
+
+.fz16 {
+  font-size: 16px;
+}
+
+.fz17 {
+  font-size: 17px;
+}
+
+.fz18 {
+  font-size: 18px;
+}
+
+.fz19 {
+  font-size: 19px;
+}
+
+.fz20 {
+  font-size: 20px;
+}
+
+.fz21 {
+  font-size: 21px;
+}
+
+.fz22 {
+  font-size: 22px;
+}
+
+.fz23 {
+  font-size: 23px;
+}
+
+.fz24 {
+  font-size: 24px;
+}
+
+.fz25 {
+  font-size: 25px;
+}
+
+.fz26 {
+  font-size: 26px;
+}
+
+.fz27 {
+  font-size: 27px;
+}
+
+.fz28 {
+  font-size: 28px;
+}
+
+.fz29 {
+  font-size: 29px;
+}
+
+.fz30 {
+  font-size: 30px;
+}
+
+.fz31 {
+  font-size: 31px;
+}
+
+.fz32 {
+  font-size: 32px;
+}
+
+.fz33 {
+  font-size: 33px;
+}
+
+.fz34 {
+  font-size: 34px;
+}
+
+.fz35 {
+  font-size: 35px;
+}
+
+.fz36 {
+  font-size: 36px;
+}
+
+.fz37 {
+  font-size: 37px;
+}
+
+.fz38 {
+  font-size: 38px;
+}
+
+.fz39 {
+  font-size: 39px;
+}
+
+.fz40 {
+  font-size: 40px;
+}
+
+.fz41 {
+  font-size: 41px;
+}
+
+.fz42 {
+  font-size: 42px;
+}
+
+.fz43 {
+  font-size: 43px;
+}
+
+.fz44 {
+  font-size: 44px;
+}
+
+.fz45 {
+  font-size: 45px;
+}
+
+.fz46 {
+  font-size: 46px;
+}
+
+.fz47 {
+  font-size: 47px;
+}
+
+.fz48 {
+  font-size: 48px;
+}
+
+.fz49 {
+  font-size: 49px;
+}
+
+.fz50 {
+  font-size: 50px;
+}
+
+.fz51 {
+  font-size: 51px;
+}
+
+.fz52 {
+  font-size: 52px;
+}
+
+.fz53 {
+  font-size: 53px;
+}
+
+.fz54 {
+  font-size: 54px;
+}
+
+.fz55 {
+  font-size: 55px;
+}
+
+.fz56 {
+  font-size: 56px;
+}
+
+.fz57 {
+  font-size: 57px;
+}
+
+.fz58 {
+  font-size: 58px;
+}
+
+.fz59 {
+  font-size: 59px;
+}
+
+.fz60 {
+  font-size: 60px;
+}
+
+.fz61 {
+  font-size: 61px;
+}
+
+.fz62 {
+  font-size: 62px;
+}
+
+.fz63 {
+  font-size: 63px;
+}
+
+.fz64 {
+  font-size: 64px;
+}
+
+.fz65 {
+  font-size: 65px;
+}
+
+.fz66 {
+  font-size: 66px;
+}
+
+.fz67 {
+  font-size: 67px;
+}
+
+.fz68 {
+  font-size: 68px;
+}
+
+.fz69 {
+  font-size: 69px;
+}
+
+.fz70 {
+  font-size: 70px;
+}
+
+.fz71 {
+  font-size: 71px;
+}
+
+.fz72 {
+  font-size: 72px;
+}
+
+.fz73 {
+  font-size: 73px;
+}
+
+.fz74 {
+  font-size: 74px;
+}
+
+.fz75 {
+  font-size: 75px;
+}
+
+.fz76 {
+  font-size: 76px;
+}
+
+.fz77 {
+  font-size: 77px;
+}
+
+.fz78 {
+  font-size: 78px;
+}
+
+.fz79 {
+  font-size: 79px;
+}
+
+.fz80 {
+  font-size: 80px;
+}
+
+.fz81 {
+  font-size: 81px;
+}
+
+.fz82 {
+  font-size: 82px;
+}
+
+.fz83 {
+  font-size: 83px;
+}
+
+.fz84 {
+  font-size: 84px;
+}
+
+.fz85 {
+  font-size: 85px;
+}
+
+.fz86 {
+  font-size: 86px;
+}
+
+.fz87 {
+  font-size: 87px;
+}
+
+.fz88 {
+  font-size: 88px;
+}
+
+.fz89 {
+  font-size: 89px;
+}
+
+.fz90 {
+  font-size: 90px;
+}
+
+.fz91 {
+  font-size: 91px;
+}
+
+.fz92 {
+  font-size: 92px;
+}
+
+.fz93 {
+  font-size: 93px;
+}
+
+.fz94 {
+  font-size: 94px;
+}
+
+.fz95 {
+  font-size: 95px;
+}
+
+.fz96 {
+  font-size: 96px;
+}
+
+.fz97 {
+  font-size: 97px;
+}
+
+.fz98 {
+  font-size: 98px;
+}
+
+.fz99 {
+  font-size: 99px;
+}
+
+.fz100 {
+  font-size: 100px;
+}
+
+.fz101 {
+  font-size: 101px;
+}
+
+.fz102 {
+  font-size: 102px;
+}
+
+.fz103 {
+  font-size: 103px;
+}
+
+.fz104 {
+  font-size: 104px;
+}
+
+.fz105 {
+  font-size: 105px;
+}
+
+.fz106 {
+  font-size: 106px;
+}
+
+.fz107 {
+  font-size: 107px;
+}
+
+.fz108 {
+  font-size: 108px;
+}
+
+.fz109 {
+  font-size: 109px;
+}
+
+.fz110 {
+  font-size: 110px;
+}
+
+.fz111 {
+  font-size: 111px;
+}
+
+.fz112 {
+  font-size: 112px;
+}
+
+.fz113 {
+  font-size: 113px;
+}
+
+.fz114 {
+  font-size: 114px;
+}
+
+.fz115 {
+  font-size: 115px;
+}
+
+.fz116 {
+  font-size: 116px;
+}
+
+.fz117 {
+  font-size: 117px;
+}
+
+.fz118 {
+  font-size: 118px;
+}
+
+.fz119 {
+  font-size: 119px;
+}
+
+.fz120 {
+  font-size: 120px;
+}
+
+.fz121 {
+  font-size: 121px;
+}
+
+.fz122 {
+  font-size: 122px;
+}
+
+.fz123 {
+  font-size: 123px;
+}
+
+.fz124 {
+  font-size: 124px;
+}
+
+.fz125 {
+  font-size: 125px;
+}
+
+.fz126 {
+  font-size: 126px;
+}
+
+.fz127 {
+  font-size: 127px;
+}
+
+.fz128 {
+  font-size: 128px;
+}
+
+.fz129 {
+  font-size: 129px;
+}
+
+.fz130 {
+  font-size: 130px;
+}
+
+.fz131 {
+  font-size: 131px;
+}
+
+.fz132 {
+  font-size: 132px;
+}
+
+.fz133 {
+  font-size: 133px;
+}
+
+.fz134 {
+  font-size: 134px;
+}
+
+.fz135 {
+  font-size: 135px;
+}
+
+.fz136 {
+  font-size: 136px;
+}
+
+.fz137 {
+  font-size: 137px;
+}
+
+.fz138 {
+  font-size: 138px;
+}
+
+.fz139 {
+  font-size: 139px;
+}
+
+.fz140 {
+  font-size: 140px;
+}
+
+.fz141 {
+  font-size: 141px;
+}
+
+.fz142 {
+  font-size: 142px;
+}
+
+.fz143 {
+  font-size: 143px;
+}
+
+.fz144 {
+  font-size: 144px;
+}
+
+.fz145 {
+  font-size: 145px;
+}
+
+.fz146 {
+  font-size: 146px;
+}
+
+.fz147 {
+  font-size: 147px;
+}
+
+.fz148 {
+  font-size: 148px;
+}
+
+.fz149 {
+  font-size: 149px;
+}
+
+.fz150 {
+  font-size: 150px;
+}
+
+.fz151 {
+  font-size: 151px;
+}
+
+.fz152 {
+  font-size: 152px;
+}
+
+.fz153 {
+  font-size: 153px;
+}
+
+.fz154 {
+  font-size: 154px;
+}
+
+.fz155 {
+  font-size: 155px;
+}
+
+.fz156 {
+  font-size: 156px;
+}
+
+.fz157 {
+  font-size: 157px;
+}
+
+.fz158 {
+  font-size: 158px;
+}
+
+.fz159 {
+  font-size: 159px;
+}
+
+.fz160 {
+  font-size: 160px;
+}
+
+.fz161 {
+  font-size: 161px;
+}
+
+.fz162 {
+  font-size: 162px;
+}
+
+.fz163 {
+  font-size: 163px;
+}
+
+.fz164 {
+  font-size: 164px;
+}
+
+.fz165 {
+  font-size: 165px;
+}
+
+.fz166 {
+  font-size: 166px;
+}
+
+.fz167 {
+  font-size: 167px;
+}
+
+.fz168 {
+  font-size: 168px;
+}
+
+.fz169 {
+  font-size: 169px;
+}
+
+.fz170 {
+  font-size: 170px;
+}
+
+.fz171 {
+  font-size: 171px;
+}
+
+.fz172 {
+  font-size: 172px;
+}
+
+.fz173 {
+  font-size: 173px;
+}
+
+.fz174 {
+  font-size: 174px;
+}
+
+.fz175 {
+  font-size: 175px;
+}
+
+.fz176 {
+  font-size: 176px;
+}
+
+.fz177 {
+  font-size: 177px;
+}
+
+.fz178 {
+  font-size: 178px;
+}
+
+.fz179 {
+  font-size: 179px;
+}
+
+.fz180 {
+  font-size: 180px;
+}
+
+.fz181 {
+  font-size: 181px;
+}
+
+.fz182 {
+  font-size: 182px;
+}
+
+.fz183 {
+  font-size: 183px;
+}
+
+.fz184 {
+  font-size: 184px;
+}
+
+.fz185 {
+  font-size: 185px;
+}
+
+.fz186 {
+  font-size: 186px;
+}
+
+.fz187 {
+  font-size: 187px;
+}
+
+.fz188 {
+  font-size: 188px;
+}
+
+.fz189 {
+  font-size: 189px;
+}
+
+.fz190 {
+  font-size: 190px;
+}
+
+.fz191 {
+  font-size: 191px;
+}
+
+.fz192 {
+  font-size: 192px;
+}
+
+.fz193 {
+  font-size: 193px;
+}
+
+.fz194 {
+  font-size: 194px;
+}
+
+.fz195 {
+  font-size: 195px;
+}
+
+.fz196 {
+  font-size: 196px;
+}
+
+.fz197 {
+  font-size: 197px;
+}
+
+.fz198 {
+  font-size: 198px;
+}
+
+.fz199 {
+  font-size: 199px;
+}
+
+.fz200 {
+  font-size: 200px;
+}
+
+/*背景图片设置*/
+/*注意： @import url('common.css');这种是写是属于css的，在scss中编译过程将找不到文件*/
+body {
+  background-color: #fff;
+  line-height: 1.5;
+  /** 全局行高-有继承属性,只继承最近父级的行高（不叠加），禁止对line-height:设置为1，原因有的浏览器会隐藏文字内容，输入框可以设置行高为1 **/
+}
+
+.article {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.article span {
+  display: inline;
+}
+
+.article img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+}
+
+.article p {
+  text-indent: 20px;
+  text-indent: 2em;
+}
+
+.swiper-button-disabled {
+  /*禁止swiper点穿透*/
+  pointer-events: auto !important;
+}
+
+/** start**/
+.header {
+  height: 50px;
+}
+
+.header .contain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  height: 50px;
+}
+
+.header .contain .box {
+  height: 100%;
+}
+
+.header .contain .box ul {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0px -20px;
+}
+
+.header .contain .box ul li {
+  height: 100%;
+}
+
+.header .contain .box ul li.active a {
+  color: #256fb8;
+  font-weight: bold;
+}
+
+.header .contain .box ul li a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+}
+
+/** end**/
+/** start**/
+/** end**/
+/** start**/
+.resume-page {
+  min-height: 100%;
+}
+
+.resume-page .wrap-content .resume {
+  background-color: #d8d8d8;
+  padding: 20px 0px;
+}
+
+.resume-page .wrap-content .resume .resume-box {
+  box-shadow: 0px 0px 38px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  display: flex;
+}
+
+.resume-page .wrap-content .resume .resume-box .left {
+  width: 100%;
+  max-width: 300px;
+  border-left: 25px solid #266eb6;
+  background-color: #f2f2f2;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .top {
+  background-color: #e7e7e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 15px;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .top .img-box {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  border: 12px solid #c7c7c7;
+  overflow: hidden;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .top .img-box p {
+  padding-top: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .top .info-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .top .info-box .online {
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .top .info-box .intention {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .information {
+  padding: 30px 15px;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .information ul {
+  font-size: 14px;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .information ul li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .information ul li .img-box {
+  margin-right: 10px;
+  background-color: #266eb6;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .information ul li .img-box img {
+  width: 14px;
+  height: 14px;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .information ul li .desc {
+  color: #666;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .evaluate {
+  padding: 0px 15px 120px;
+  line-height: 2;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .evaluate .evaluate-head {
+  padding: 35px 0px 20px;
+  border-top: 2px solid #dedede;
+}
+
+.list-head {
+  display: flex;
+  align-items: center;
+}
+
+.list-head .img-box {
+  width: 46px;
+  height: 46px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #266eb6;
+  border-radius: 100%;
+  border: 3px solid #fff;
+  position: relative;
+}
+
+.list-head .img-box:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  z-index: 10;
+  border-radius: 100%;
+  border: 3px solid #c3c3c3;
+}
+
+.list-head .img-box img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+
+.list-head .sub-title {
+  font-size: 20px;
+  color: #266eb6;
+}
+
+.resume-page .wrap-content .resume .resume-box .left .left-box .evaluate .evaluate-box {
+  font-size: 13px;
+}
+
+.resume-page .wrap-content .resume .resume-box .right {
+  width: 100%;
+  padding: 50px 38px;
+}
+
+.resume-page .wrap-content .resume .resume-box .right .right-box .skill .head {
+  margin-bottom: 20px;
+}
+
+.resume-page .wrap-content .resume .resume-box .right .right-box .skill .skill-content .sc-box {
+  margin-bottom: 30px;
+}
+
+.resume-page .wrap-content .resume .resume-box .right .right-box .skill .skill-content .sc-box .sub-title {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.resume-page .wrap-content .resume .resume-box .right .right-box .skill .skill-content .sc-box .desc {
+  font-size: 14px;
+  line-height: 2;
+}
+
+.resume-page .wrap-content .resume .resume-box .right .right-box .project {
+  margin-top: 50px;
+}
+
+.resume-page .wrap-content .resume .resume-box .right .right-box .project .prc-box {
+  padding: 30px 0px;
+  border-bottom: 1px solid #dedede;
+}
+
+.resume-page .wrap-content .resume .resume-box .right .right-box .project .prc-box:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.resume-page .wrap-content .resume .resume-box .right .right-box .project .prc-box ul {
+  font-size: 14px;
+}
+
+.resume-page .wrap-content .resume .resume-box .right .right-box .project .prc-box ul li {
+  display: flex;
+  line-height: 2;
+  margin-bottom: 15px;
+}
+
+.resume-page .wrap-content .resume .resume-box .right .right-box .project .prc-box ul li .sub-title {
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+/** end**/
+/** start**/
+/** end**/
+/** start**/
+/** end**/
+/** start**/
+/** end**/
+/** start**/
+/** end**/
+/** start**/
+/** end**/
+@media screen and (min-width: 640px) and (max-width: 1199px) {
+  .resume-page .wrap-content .resume {
+    padding: 0px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1100px) {
+  .resume-page .header .contain .box ul {
+    margin: 0px;
+  }
+  .resume-page .wrap-content .resume {
+    padding: 0px;
+  }
+  .resume-page .wrap-content .resume .resume-box .left {
+    border-left: none;
+    max-width: 260px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .article {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 640px) {
+  .resume-page .wrap-content .resume .resume-box {
+    flex-wrap: wrap;
+  }
+  .resume-page .wrap-content .resume .resume-box .left {
+    border-left: none;
+    max-width: 100%;
+  }
+  .resume-page .wrap-content .resume .resume-box .left .left-box .top {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 20px 15px 0px;
+    background-color: transparent;
+  }
+  .resume-page .wrap-content .resume .resume-box .left .left-box .top .img-box {
+    border: 3px solid #e7e7e7;
+    border-radius: 6px;
+    width: 100px;
+    height: 100px;
+  }
+  .resume-page .wrap-content .resume .resume-box .left .left-box .top .info-box {
+    align-items: flex-start;
+    padding-left: 15px;
+  }
+  .resume-page .wrap-content .resume .resume-box .left .left-box .evaluate {
+    padding: 0px 15px 30px;
+  }
+  .resume-page .wrap-content .resume .resume-box .left .left-box .evaluate .evaluate-head {
+    border-top: 1px solid #dedede;
+  }
+  .resume-page .wrap-content .resume .resume-box .right {
+    padding: 30px 15px;
+  }
+  .resume-page .wrap-content .resume .resume-box .right .right-box .project .project-content .prc-box ul li {
+    flex-direction: column;
+  }
+  .resume-page .wrap-content .resume .resume-box .right .right-box .project .project-content .prc-box ul li .desc {
+    color: #555;
+  }
+}

@@ -1,0 +1,440 @@
+@charset "utf-8";
+@import 'variable.scss';
+@import 'mixin.scss';
+/*注意： @import url('common.css');这种是写是属于css的，在scss中编译过程将找不到文件*/
+
+
+body{
+    background-color: #fff;
+    line-height: 1.5; /** 全局行高-有继承属性,只继承最近父级的行高（不叠加），禁止对line-height:设置为1，原因有的浏览器会隐藏文字内容，输入框可以设置行高为1 **/
+}
+
+
+
+.article{
+    font-size: 16px;
+    line-height: 1.8;
+    span{
+        display: inline;
+    }
+    img{
+        width: auto !important;
+        height: auto !important;
+        max-width: 100%;
+    }
+    p{
+        text-indent: 20px;
+        text-indent: 2em;
+    }
+}
+
+.swiper-button-disabled{
+    /*禁止swiper点穿透*/
+    pointer-events: auto !important;
+}
+
+
+/** start**/
+.header{
+    $h:50px;
+    height: 50px;
+    .contain{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0,0,0,.3);
+        height: $h;
+        .box{
+            height: 100%;
+            ul{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                margin:0px -20px;
+                li{
+                    height: 100%;
+                    &.active{
+                        a{
+                            color: #256fb8;
+                            font-weight: bold;
+                        }
+                    }
+                    a{
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0px 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+/** end**/
+
+
+
+/** start**/
+
+/** end**/
+
+
+
+/** start**/
+.resume-page{
+    min-height: 100%;
+    
+    .wrap-content{
+        .resume{
+            background-color: #d8d8d8;
+            padding: 20px 0px;
+            .resume-box{
+                $width:300px;
+                box-shadow: 0px 0px 38px rgba(0,0,0,.3);
+                background-color: #fff;
+                display: flex;
+                .left{
+                    width: 100%;
+                    max-width: $width;
+                    border-left: 25px solid $mainColor;
+                    background-color: #f2f2f2;
+                    .left-box{
+                        .top{
+                            background-color: #e7e7e7;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            padding: 50px 15px;
+                            .img-box{
+                                @include wh(150px);
+                                border-radius: 100%;
+                                border: 12px solid #c7c7c7;
+                                overflow: hidden;
+                                p{
+                                    padding-top: 100%;
+                                    @include bgCover();
+                                }
+                            }
+                            .info-box{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                .online{
+                                    margin-top: 20px;
+                                    font-size: 28px;
+                                }
+                                .intention{
+                                    margin-top: 10px;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                        .information{
+                            padding: 30px 15px;
+                            ul{
+                                font-size: 14px;
+                                li{
+                                    margin-bottom: 12px;
+                                    display: flex;
+                                    align-items: center;
+                                    .img-box{
+                                        margin-right: 10px;
+                                        background-color: $mainColor;
+                                        border-radius: 4px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        @include wh(24px);
+                                        img{
+                                            @include wh(14px);
+                                        }
+                                    }
+                                    .desc{
+                                        color: #666;
+                                    }
+                                }
+                            }
+                        }
+                        .evaluate{
+                            padding: 0px 15px 120px;
+                            line-height: 2;
+                            .evaluate-head{
+                                padding: 35px 0px 20px;
+                                border-top: 2px solid #dedede;
+                            }
+                            @at-root.list-head{
+                                display: flex;
+                                align-items: center;
+                                .img-box{
+                                    @include wh(46px);
+                                    margin-right: 15px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background-color: $mainColor;
+                                    border-radius: 100%;
+                                    border: 3px solid #fff;
+                                    position: relative;
+                                    &:after{
+                                        $val:-6px;
+                                        content: '';
+                                        display: block;
+                                        position: absolute;
+                                        top: $val;
+                                        left: $val;
+                                        right: $val;
+                                        bottom: $val;
+                                        z-index: 10;
+                                        border-radius: 100%;
+                                        border: 3px solid #c3c3c3;
+                                    }
+                                    img{
+                                        @include wh(30px);
+                                        border-radius: 100%;
+                                    }
+                                }
+                                .sub-title{
+                                    font-size: 20px;
+                                    color: $mainColor;
+                                }
+                            }
+                            .evaluate-box{
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+                .right{
+                    width: 100%;
+                    padding:50px 38px;
+                    .right-box{
+                        .skill{
+                            .head{
+                                margin-bottom: 20px;
+                            }
+                            .skill-content{
+                                .sc-box{
+                                    margin-bottom: 30px;
+                                    .sub-title{
+                                        font-size: 15px;
+                                        margin-bottom: 5px;
+                                    }
+                                    .desc{
+                                        font-size: 14px;
+                                        line-height: 2;
+                                    }
+                                }
+                            }
+                        }
+                        .project{
+                            margin-top: 50px;
+                            .prc-box{
+                                padding: 30px 0px;
+                                border-bottom: 1px solid #dedede;
+                                &:nth-last-child(1){
+                                    border-bottom: none;
+                                }
+                                ul{
+                                    font-size: 14px;
+                                    li{
+                                        display: flex;
+                                        line-height: 2;
+                                        margin-bottom: 15px;
+                                        .sub-title{
+                                            white-space: nowrap;
+                                            font-weight: bold;;
+                                        }
+                                        .desc{
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/** end**/
+
+
+
+/** start**/
+
+/** end**/
+
+
+
+
+
+/** start**/
+
+/** end**/
+
+
+
+
+
+/** start**/
+
+/** end**/
+
+
+
+
+
+/** start**/
+
+/** end**/
+
+
+
+
+
+/** start**/
+
+/** end**/
+
+
+
+
+@media (min-width:0px) {
+    
+}
+@media (min-width:768px) {
+    
+}
+@media (min-width:992px) {
+    
+}
+@media (min-width:1200px) {
+    
+}
+@media (min-width:1440px) {
+    
+}
+
+
+
+
+@media screen and (min-width:991px) and (max-width:1199px){
+    
+}
+
+@media screen and (min-width:640px) and (max-width:1199px) {
+    .resume-page{
+        .wrap-content{
+            .resume{
+                padding: 0px;
+            }
+        }
+    }
+}
+@media screen and (min-width:0px) and (max-width:1100px) {
+    .resume-page{
+        .header{
+            .contain{
+                .box{
+                    ul{
+                        margin: 0px;
+                    }
+                }
+            }
+        }
+        .wrap-content{
+            .resume{
+                padding: 0px;
+                .resume-box{
+                    .left{
+                        border-left:none;
+                        max-width: 260px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:0px) and (max-width:1199px) {
+    
+    
+}
+
+
+@media screen and (min-width:0px) and (max-width:991px){
+    
+}
+
+@media screen and (min-width:0px) and (max-width:767px){
+    .article{
+        font-size: 14px;
+    }
+    
+}
+
+@media screen and (min-width:0px) and (max-width:640px){
+    .resume-page{
+        .wrap-content{
+            .resume{
+                .resume-box{
+                    flex-wrap: wrap;
+                    .left{
+                        border-left:none;
+                        max-width: 100%;
+                        .left-box{
+                            .top{
+                                flex-direction: row;
+                                justify-content: flex-start;
+                                align-items: flex-end;
+                                padding: 20px 15px 0px;
+                                background-color: transparent;
+                                .img-box{
+                                    border: 3px solid #e7e7e7;
+                                    border-radius: 6px;
+                                    @include wh(100px);
+                                }
+                                .info-box{
+                                    align-items: flex-start;
+                                    padding-left: 15px;
+                                }
+                            }
+                            .evaluate{
+                                padding: 0px 15px 30px;
+                                .evaluate-head{
+                                    border-top: 1px solid #dedede;
+                                }
+                            }
+                        }
+                    }
+                    .right{
+                        padding:30px 15px;
+                        .right-box{
+                            .project{
+                                .project-content{
+                                    .prc-box{
+                                        ul{
+                                            li{
+                                                flex-direction: column;
+                                                .desc{
+                                                    color: #555;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
