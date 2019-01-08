@@ -1020,7 +1020,7 @@ body {
 }
 
 .resume-page .wrap-content .resume .resume-box .left .left-box .evaluate .evaluate-box {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .resume-page .wrap-content .resume .resume-box .right {
@@ -1134,6 +1134,12 @@ body {
   .resume-page .wrap-content .resume .resume-box .left .left-box .top .info-box {
     align-items: flex-start;
     padding-left: 15px;
+  }
+  .resume-page .wrap-content .resume .resume-box .left .left-box .top .info-box .online {
+    font-size: 20px;
+  }
+  .resume-page .wrap-content .resume .resume-box .left .left-box .top .info-box .intention {
+    font-size: 14px;
   }
   .resume-page .wrap-content .resume .resume-box .left .left-box .evaluate {
     padding: 0px 15px 30px;

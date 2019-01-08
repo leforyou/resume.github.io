@@ -205,7 +205,7 @@ body{
                                 }
                             }
                             .evaluate-box{
-                                font-size: 13px;
+                                font-size: 14px;
                             }
                         }
                     }
@@ -404,6 +404,12 @@ body{
                                 .info-box{
                                     align-items: flex-start;
                                     padding-left: 15px;
+                                    .online{
+                                        font-size: 20px;
+                                    }
+                                    .intention{
+                                        font-size: 14px;
+                                    }
                                 }
                             }
                             .evaluate{
