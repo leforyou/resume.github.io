@@ -1111,12 +1111,16 @@ body {
 }
 
 @media screen and (min-width: 0px) and (max-width: 640px) {
+  .resume-page {
+    background-color: #fff;
+  }
   .resume-page .wrap-content .resume .resume-box {
     flex-wrap: wrap;
   }
   .resume-page .wrap-content .resume .resume-box .left {
     border-left: none;
     max-width: 100%;
+    background-color: #fff;
   }
   .resume-page .wrap-content .resume .resume-box .left .left-box .top {
     flex-direction: row;
@@ -1148,7 +1152,7 @@ body {
     border-top: 1px solid #dedede;
   }
   .resume-page .wrap-content .resume .resume-box .right {
-    padding: 30px 15px;
+    padding: 20px 15px 30px;
   }
   .resume-page .wrap-content .resume .resume-box .right .right-box .project .project-content .prc-box ul li {
     flex-direction: column;

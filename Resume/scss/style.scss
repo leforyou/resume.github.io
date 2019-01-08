@@ -87,7 +87,6 @@ body{
 /** start**/
 .resume-page{
     min-height: 100%;
-    
     .wrap-content{
         .resume{
             background-color: #d8d8d8;
@@ -382,6 +381,7 @@ body{
 
 @media screen and (min-width:0px) and (max-width:640px){
     .resume-page{
+        background-color: #fff;
         .wrap-content{
             .resume{
                 .resume-box{
@@ -389,6 +389,7 @@ body{
                     .left{
                         border-left:none;
                         max-width: 100%;
+                        background-color: #fff;
                         .left-box{
                             .top{
                                 flex-direction: row;
@@ -421,7 +422,7 @@ body{
                         }
                     }
                     .right{
-                        padding:30px 15px;
+                        padding:20px 15px 30px;
                         .right-box{
                             .project{
                                 .project-content{
