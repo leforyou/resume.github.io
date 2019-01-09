@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>手机轮播图</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/api.css" />
+
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.max-width{
+				width: 1050px;
+				margin:0 auto;
+			}
+			.news-slider{
+				height: 360px;
+				overflow: hidden;
+				position: relative;
+			}
+			.news-slider-group{
+				height: 100%;
+				width: 99900%;
+				
+			}
+			.news-slider-group:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.news-slider-item{
+				height: 100%;
+				float: left;
+			}
+			.news-slider-item a{
+				height: 100%;
+				line-height: 100%;
+				display: block;
+				position: relative;
+				text-align: center;
+			}
+			.news-slider-item a img{
+				width: 100%;
+				vertical-align: middle;
+			}
+			.news-slider-item a p{
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				position: absolute;
+				bottom: 0px;
+				left: 0;
+				right: 0;
+				line-height: 44px;
+				background-color: rgba(0,0,0,0.4);
+				color: #fff;
+				text-align: left;
+				padding: 0 15px;
+				font-size: 16px;
+			}
+			
+			.ico-news-pre{
+				left: 0;
+				background: rgba(0,0,0,.2) url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNDk1NDU1NjAzMTYzIiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9Ijk2MCIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48L3N0eWxlPjwvZGVmcz48cGF0aCBkPSJNNTMyLjUyNjQ5OSA5MDQuODE3NTc0TDEzOS41MDYzMTEgNTExLjc5NzM4NSA1MzIuNTI2NDk5IDExOC43NzcxOTdjMTIuMjU4MTg1LTEyLjI1ODE4NSAxMi40MzIxNDctMzIuODkyMTMxLTAuMTg3MjY1LTQ1LjUxMDUyLTEyLjcwNzQxNi0xMi43MDc0MTYtMzIuOTk1NDg1LTEyLjcwMzMyMy00NS41MTE1NDMtMC4xODcyNjVMNzUuMTY2OTU3IDQ4NC43MzkxMjNjLTcuMTIwMTY1IDcuMTIwMTY1LTEwLjE2MzQ3NyAxNy4wNjU2NzctOC45OTA3NjggMjYuNjI0MzgxLTEuNTAwMTY3IDkuNzU1MTc4IDEuNTEwNCAyMC4wMTA3NTMgOC45OTA3NjggMjcuNDkxMTIxbDQxMS42NjA3MzQgNDExLjY2MDczNGMxMi4yNTgxODUgMTIuMjU4MTg1IDMyLjg5MjEzMSAxMi40MzIxNDcgNDUuNTExNTQzLTAuMTg3MjY1IDEyLjcwNzQxNi0xMi43MDc0MTYgMTIuNzAyMy0zMi45OTU0ODUgMC4xODcyNjUtNDUuNTEwNTJ6IiBwLWlkPSI5NjEiIGZpbGw9IiNmZmZmZmYiPjwvcGF0aD48L3N2Zz4=) no-repeat center;
+				
+			}
+			.ico-news-next{
+				right: 0;
+				background: rgba(0,0,0,.2) url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNDk1NDU1NjE2MTkyIiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjEyMzMiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTQ5Mi42NzU4ODYgOTA0LjgxNzU3NEw4ODUuNjk2MDc0IDUxMS43OTczODUgNDkyLjY3NTg4NiAxMTguNzc3MTk3Yy0xMi4yNTgxODUtMTIuMjU4MTg1LTEyLjQzMjE0Ny0zMi44OTIxMzEgMC4xODcyNjUtNDUuNTEwNTIgMTIuNzA3NDE2LTEyLjcwNzQxNiAzMi45OTU0ODUtMTIuNzAzMzIzIDQ1LjUxMTU0My0wLjE4NzI2NWw0MTEuNjYwNzM0IDQxMS42NjA3MzRjNy4xMjAxNjUgNy4xMjAxNjUgMTAuMTYzNDc3IDE3LjA2NTY3NyA4Ljk5MDc2OCAyNi42MjQzODEgMS41MDAxNjcgOS43NTUxNzgtMS41MTA0IDIwLjAxMDc1My04Ljk5MDc2OCAyNy40OTExMjFMNTM4LjM3NDY5NCA5NTAuNTE1MzU5Yy0xMi4yNTgxODUgMTIuMjU4MTg1LTMyLjg5MjEzMSAxMi40MzIxNDctNDUuNTExNTQzLTAuMTg3MjY1LTEyLjcwNzQxNi0xMi43MDc0MTYtMTIuNzAzMzIzLTMyLjk5NTQ4NS0wLjE4NzI2NS00NS41MTA1MnoiIHAtaWQ9IjEyMzQiIGZpbGw9IiNmZmZmZmYiPjwvcGF0aD48L3N2Zz4=) no-repeat center;
+				
+			}
+			.ico-news-pre:hover,.ico-news-next:hover{
+				background-color: rgba(0,0,0,.5);
+			}
+			.ico-news-pre,.ico-news-next{
+				display: block;
+				width: 32px;
+				height: 60px;
+				position: absolute;
+				top: 50%;
+				margin-top: -30px;
+				cursor: pointer;
+				background-size: 20px;
+			}
+			
+			.news-slider-dot{
+				position: absolute;
+			    right: 30px;
+			    bottom: 13px;
+			    font-size: 0;
+			    padding: 4px 10px;
+			    border-radius: 12px;
+			    background-color: hsla(0,0%,100%,.3);
+			}
+			.news-slider-dot i{
+				display: inline-block;
+			    margin: 0px 5px;
+			    width: 12px;
+			    height: 12px;
+			    border-radius: 100%;
+			    background-color: #fff;
+			    cursor: pointer;
+			}
+			.news-slider-dot i.newsDotActive{
+				background-color: #e20500 !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="max-width">
+			
+			<div class="news-slider" id="wqi-news-slider">
+				<ul class="news-slider-group">
+					<li class="news-slider-item">
+						<a href="http://www.baidu.com/">
+							<img src="img/new-slider1.png" />
+							<p>关于落实“三证合一”登记制度改革的通知</p>
+						</a>
+					</li>
+					<li class="news-slider-item">
+						<a href="http://www.baidu.com/">
+							<img src="img/new-slider2.png" />
+							<p>“十三五”是否征收房产税需统筹考虑</p>
+						</a>
+					</li>
+					<li class="news-slider-item">
+						<a href="http://www.baidu.com/">
+							<img src="img/new-slider3.png" />
+							<p>税务总局召开“互联网+税务”推进研讨会</p>
+						</a>
+					</li>
+				</ul>
+				<!--<i class="ico-news-pre"></i>
+				<i class="ico-news-next"></i>
+				<div class="news-slider-dot">
+					<i class="newsDotActive"></i>
+					<i></i>
+					<i></i>
+				</div>-->
+			</div>
+			
+		</div>
+		
+		
+		
+		
+		
+		<!--<script type="text/javascript" src="js/wqi-slider.min.js" ></script>-->
+		<script type="text/javascript" src="js/wqi-slider.js" ></script>
+		<script>
+			new newsSlider({
+				'id': '#wqi-news-slider',
+				'time': '6000',
+				'dot':true
+			});
+			/*new slider({
+				'id': '#wqi-news-slider',
+				'time': '3000',
+				'ratio':'1:1',
+				'isNumShow':true
+			});*/
+		</script>
+	</body>
+</html>

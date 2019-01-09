@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>手机轮播图</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/api.css" />
+
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				height: 999px;
+			}
+			/*body{
+				-webkit-overflow-scrolling: touch;
+			}*/
+			.wrap-slider{
+				overflow: hidden;
+				width: 100%;
+				position: relative;
+				/*touch-action: none;这个区域内不允许上下拖动，慎用*/
+			}
+			.slider-group{
+				width: 10000%;/*总共100张，每张设置1%*/
+				height: 100%;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			.slider-group:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.slider-item{
+				width: 1%;
+				height: 100%;
+				float: left;
+			}
+			.slider-item a{
+				display: block;
+				height: 100%;
+				overflow: hidden;
+			}
+			.slider-item img{
+				width: 100%;
+				display: inline-block;
+			}
+			
+			
+			.silder-dots{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				padding:5px;
+				text-align: center;
+			}
+			.silder-dots i{
+				display:inline-block;
+				width:6px;
+				height:6px;
+				background-color:rgba(255,255,255,0.5);
+				box-shadow:0 0 3px rgba(0,0,0,0.2);
+				margin:0 2px;
+				border-radius:9px;
+			}
+			.active-dots{
+				background-color:rgba(255,255,255,1) !important;
+				background-color:rgba(255,0,0,1) !important;
+			}
+			.silder-nums {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				padding: 5px;
+				text-align: center;
+			}
+			.silder-nums span{
+				background-color: rgba(0,0,0,.3);
+				color: #fff;
+				font-size: 11px;
+				line-height: 11px;
+				border-radius: 5px;
+				display: inline-block;
+				padding: 3px 6px;
+				letter-spacing: 1px;
+			}
+			
+			/*#slider{
+				padding-top: 100%;
+				图片轮播区域用padding-top作为响应式高度的设置,由宽高比1:1得出，不建议使用js设置的原因，浏览器渲染时，js设置是有时间延迟
+				 padding在css设置宽高比，防止js没加载渲染页面时，图片区域没固定
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id="slider" class="wrap-slider" style="padding-top:100%;">
+			<ul class="slider-group">
+				<li class="slider-item">
+					<a href="javascript:void(0)"><!--http://www.baidu.com/-->
+						<img src="img/slider1.jpg"/>
+					</a>
+				</li>
+				<li class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider2.jpg"/>
+					</a>
+				</li>
+				<li class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider3.jpg"/>
+					</a>
+				</li>
+				<li class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider4.jpg"/>
+					</a>
+				</li>
+				<li class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider5.jpg"/>
+					</a>
+				</li>
+				<li class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider6.jpg"/>
+					</a>
+				</li>
+				<li class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider7.jpg"/>
+					</a>
+				</li>
+			</ul>
+			<!--<div class="silder-dots">
+				<i class="dots-active"></i>
+				<i></i>
+				<i></i>
+			</div>-->
+		</div>
+		
+		
+		
+		<!--<script type="text/javascript" src="js/sliderMobile.min.js" ></script>-->
+		<script type="text/javascript" src="js/sliderMobile.js" ></script>
+		<script>
+			new sliderMobile({
+				'id': '#slider',
+				'time': 2000,
+				'ratio':'1:1',//宽高比
+				'isNumShow':false
+			});
+		</script>
+		
+		<br/>
+		<p>经验总结：transition与margin-left的使用，在手机端用的流畅度低。而transition与translate3d(x,y,z)在手机端流畅度较高，原因两者都是CSS3属性结合，启用GPU硬件加速，而marginLeft则会触发浏览器重绘、重排，极度消耗性能。aui/sui/mui都是使用这种方式制作轮播图的(谷歌浏览器的调试工具可查看)，这是借鉴别人的经验。</p>
+		<p>
+			transform: translate3d(0%,120%, 0%) translateZ(0%);单位不能全为%百分比，谷歌浏览器提示不是有效的单位，
+			正确的写法是transform: translate3d(0px,120%, 0px) translateZ(0px);
+			或transform: translate3d(0px,120px, 0px) translateZ(0px);(单位要么全为px，或只能有一个%百分比单位)。
+		</p>
+		<br/>
+		<p>注意:轮播图片的宽高比是1:0.58(H = W * 0.58),虽然不是这个比例的图片也能正常轮播，但是超出这个比例的部分会被fitImage(objDiv, objImg)函数隐藏掉。所以轮播图片最好按照这个比例，不过允许图片比例有少少的偏差，造成的影响不大。</p>
+	</body>
+</html>

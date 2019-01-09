@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>手机轮播图</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/api.css" />
+		<script type="text/javascript" src="js/cardview.js" ></script>
+		<style type="text/css">
+			
+			.card-viewer{
+				position: relative;
+			}
+			.card-box{
+				-ms-user-select: none;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+				overflow: hidden;
+			}
+			.card-group{
+				display: flex;
+				padding: 20px 0px;
+			}
+			.card-item{
+				box-sizing: border-box;
+				flex-shrink: 0;
+				box-sizing: border-box;
+			}
+			.card-item a{
+				transition: all 0.38s;
+				transform: scale(0.8);
+				background: rgba(255,255,255,.3);
+				display: block;
+				box-shadow:0px 0px 20px rgba(0,0,0,0.1);
+			}
+			.card-item-active a{
+				transform: scale(1) !important;
+			}
+			
+			
+			
+			
+			.card-num{
+				position: absolute;
+				bottom: -33px;
+				width: 100%;
+				text-align: center;
+				padding: 6px;
+				z-index: 6666;
+			}
+			.card-num *{
+				background-color: rgba(255,255,255,.3);
+				color: #000;
+				font-size: 11px;
+				line-height: 11px;
+				border-radius: 5px;
+				display: inline-block;
+				padding: 3px 6px;
+				letter-spacing: 1px;
+				z-index: 6666;
+			}
+			
+			.card-spot{
+				position: absolute;
+				bottom: -33px;
+				left: 0;
+				right: 0;
+				padding:6px;
+				text-align: center;
+			}
+			.card-spot i{
+				display:inline-block;
+				width:6px;
+				height:6px;
+				background-color:rgba(255,255,255,0.5);
+				box-shadow:0 0 3px rgba(0,0,0,0.2);
+				margin:0 2px;
+				border-radius:9px;
+			}
+			.card-spot .active-card-spot{
+				background-color:rgba(255,255,255,1) !important;
+				background-color:rgba(255,0,0,1) !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="cardViewer" class="card-viewer">
+			<div class="card-box">
+				<div class="card-group">
+					<div class="card-item">
+						<a href="http://www.baidu.com/">
+							<img src="img/slider1.jpg"  width="100%"/>
+							<p style="text-align: center;padding: 10px 0px;">1111111</p>
+						</a>
+					</div>
+					<div class="card-item">
+						<a href="http://www.baidu.com/">
+							<img src="img/slider2.jpg"  width="100%"/>
+							<p style="text-align: center;padding: 10px 0px;">2222222</p>
+						</a>
+					</div>
+					<div class="card-item">
+						<a href="http://www.baidu.com/">
+							<img src="img/slider3.jpg"  width="100%"/>
+							<p style="text-align: center;padding: 10px 0px;">3333333</p>
+						</a>
+					</div>
+					<div class="card-item">
+						<a href="http://www.baidu.com/">
+							<img src="img/slider4.jpg"  width="100%"/>
+							<p style="text-align: center;padding: 10px 0px;">4444444</p>
+						</a>
+					</div>
+					<div class="card-item">
+						<a href="http://www.baidu.com/">
+							<img src="img/slider5.jpg"  width="100%"/>
+							<p style="text-align: center;padding: 10px 0px;">5555555</p>
+						</a>
+					</div>
+					<div class="card-item">
+						<a href="http://www.baidu.com/">
+							<img src="img/slider6.jpg"  width="100%"/>
+							<p style="text-align: center;padding: 10px 0px;">66666</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			
+				
+				<!--<div class="card-num" style="display: none;">
+					<span>1/7</span>
+				</div>
+				<div class="card-spot">
+					<i></i>
+					<i></i>
+					<i class="active-card-spot"></i>
+					<i></i>
+				</div>-->
+				
+			
+		</div>
+		<div id="" style="height: 800px;">
+			
+		</div>
+		<script>
+			//先用js控制card-group的宽度，设置card-item的宽高，用fixtimage函数修改图片的位置
+			//左右切换，判断正负方向。滑动时间少于200ms滑动过，大于200ms且滑动过半，大于200ms且不过半
+			
+			window.addEventListener('DOMContentLoaded',function(){
+				cardViewFn({
+					el:"#cardViewer",
+					width:'60%',//百分比或像素
+					isNumShow:true
+				});
+			});
+		</script>
+	</body>
+</html>

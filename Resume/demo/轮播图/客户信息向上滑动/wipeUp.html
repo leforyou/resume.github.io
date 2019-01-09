@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<title></title>
+		<style type='text/css'>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background-color: #e76066;
+			}
+			li{
+				list-style: none;
+			}
+			
+			.wrap-wipe-up{
+				width: 760px;
+				margin: 35px auto;
+				height: 90px; /*只显示三行，每行的行高是30px*/
+				overflow: hidden;
+			}
+			.wrap-wipe-up ul{
+				position: relative;
+				top: 0px;
+			}
+			.wipe-up-item{
+				line-height: 30px;/*行高30px*/
+				color: #f7b7ba;
+				white-space:nowrap;
+				overflow:hidden;
+				text-overflow: ellipsis;
+				transition: all 0.4s;
+				-webkit-transition: all 0.4s;
+				opacity: 1;
+			}
+			.wipeActive{
+				transition: all 0.6s;
+				-webkit-transition: all 0.6s;
+			}
+			.wipeActive .wipe-up-item:nth-of-type(1){
+				opacity: 0;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="wrap-wipe-up">
+			<ul id="wipeUp">
+				<!--<li class="wipe-up-item">最近查询：客户杨** 查询了”佛山市尚美***设计有限公司 “</li>
+				<li class="wipe-up-item">最近查询：客户李** 查询了”佛山市恒***房地产有限公司 “</li>
+				<li class="wipe-up-item">最近查询：客户陈** 查询了”广州市新***服装有限公司 “</li>
+				<li class="wipe-up-item">最近查询：客户李** 查询了”佛山市*汇**投资管理有限公司 “</li>
+				<li class="wipe-up-item">最近查询：客户梁** 查询了”广州市**华*科技有限公司 “</li>
+				<li class="wipe-up-item">最近查询：客户刘付** 查询了”佛山市*邦**食品有限公司 “</li>
+				<li class="wipe-up-item">最近查询：客户钱** 查询了”佛山市*拉斯***陶瓷有限公司 “</li>
+				<li class="wipe-up-item">最近查询：客户丁** 查询了”广州市天顺**家电生产有限公司 “</li>
+				<li class="wipe-up-item">最近查询：客户贺** 查询了”广州市健***生物科技有限公司 “</li>
+				<li class="wipe-up-item">最近查询：客户苏** 查询了”佛山市*优**教育有限公司 “</li>
+				<li class="wipe-up-item">最近查询：客户欧阳** 查询了”佛山市*通**咨询有限公司 “</li>-->
+			</ul>
+		</div>
+		<script>
+			window.addEventListener('DOMContentLoaded',function(){
+				var arr = [
+					{
+						"text":"最近查询：客户杨** 查询了”佛山市尚美***设计有限公司 “"
+					},
+					{
+						"text":"最近查询：客户李** 查询了”佛山市恒***房地产有限公司 “"
+					},
+					{
+						"text":"最近查询：客户陈** 查询了”广州市新***服装有限公司 “"
+					},
+					{
+						"text":"最近查询：客户李** 查询了”佛山市*汇**投资管理有限公司 “"
+					},
+					{
+						"text":"最近查询：客户梁** 查询了”广州市**华*科技有限公司 “"
+					},
+					{
+						"text":"最近查询：客户刘付** 查询了”佛山市*邦**食品有限公司 “"
+					},
+					{
+						"text":"最近查询：客户钱** 查询了”佛山市*拉斯***陶瓷有限公司 “"
+					},
+					{
+						"text":"最近查询：客户丁** 查询了”广州市天顺**家电生产有限公司 “"
+					},
+					{
+						"text":"最近查询：客户贺** 查询了”广州市健***生物科技有限公司 “"
+					},
+					{
+						"text":"最近查询：客户苏** 查询了”佛山市*优**教育有限公司 “"
+					},
+					{
+						"text":"最近查询：客户欧阳** 查询了”佛山市*通**咨询有限公司 “"
+					},
+					{
+						"text":"最近查询：客户林** 查询了”佛山市**医药*有限公司 “"
+					},
+					{
+						"text":"最近查询：客户张** 查询了”佛山市***空调有限公司 “"
+					}
+				];
+				
+				new wipeUpfn({
+					'id':'#wipeUp',
+					'txtArr':arr,
+					'time':1500
+				});
+				
+			},false);
+			
+			function wipeUpfn(obj){
+				var idTag = document.querySelector(obj.id);
+				var arr = obj.txtArr;
+				var liStr1 = '<li class="wipe-up-item">';
+				var liStr2 = '</li>';
+				var str = '';
+				for (var i = 0 ; i < arr.length ; i ++) {
+					str += liStr1 + arr[i].text + liStr2;
+				}
+				idTag.innerHTML = str;
+				idTag.setAttribute('data-wipe-num',0);//用于标记，将要删除的信息
+				var wipeItem = idTag.getElementsByClassName('wipe-up-item');
+				var itemH = wipeItem[0].offsetHeight;
+				
+				var timeIval = obj.time || 1000, timeTime = 600;
+				timeIval = Math.max(timeIval,1000);
+				var setIval = setInterval(function(){
+					idTag.classList.add('wipeActive');
+					idTag.style.top = - itemH + 'px';
+					handle();
+				},timeIval);
+				
+				function handle(){
+					var setTime1 = setTimeout(function(){
+						idTag.classList.remove('wipeActive');
+						clearTimeout(setTime1);
+					},timeTime);
+					
+					var setTime2 = setTimeout(function(){
+						idTag.removeChild(wipeItem[0]);//删除
+						idTag.style.top = '0px';
+						
+						var dataWipeNum = idTag.getAttribute('data-wipe-num');
+						dataWipeNum = parseInt(dataWipeNum);
+						str = liStr1 + arr[dataWipeNum].text + liStr2;
+						idTag.innerHTML += str;//删除一条信息，然后向后添加一个用户信息
+						
+						dataWipeNum++;
+						if(dataWipeNum == arr.length){
+							dataWipeNum = 0;
+						}
+						idTag.setAttribute('data-wipe-num',dataWipeNum);//用于标记，将要删除的信息
+						
+						clearTimeout(setTime2);
+					},timeTime + 5);
+				}
+			}
+		</script>
+		
+	</body>
+
+</html>

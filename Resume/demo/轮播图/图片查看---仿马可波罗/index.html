@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>手机轮播图</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/api.css" />
+		
+		<style type="text/css">
+			body{
+				height: 1200px;
+			}
+			.contentWidth {
+				min-width: 1200px;
+				width: 1200px;
+				margin: auto;
+			}
+			/*图片查看*/
+			/*图片四列显示的样式*/
+			
+			.imgview-wrap{
+				-ms-user-select: none;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+			}
+			.imgview-group:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.imgview-item{
+				width: 300px;
+				height: 300px;
+				padding: 1px;
+				float: left;
+				
+			}
+			.imgview-item a{
+				width: 100%;
+				height: 100%;
+				display: block;
+				overflow: hidden;
+				position: relative;
+			}
+			.imgview-item a:before{
+				content: '';
+				display: block;
+				width: 38px;
+				height: 38px;
+				border-radius: 3px;
+				background: #fff url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNDkwOTI3NDgyMjAyIiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjUyNzEiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTc5MS40NTcxNjQgNDgyLjAwOTQyMiA1NDIuMzYxNTUzIDQ4Mi4wMDk0MjIgNTQyLjM2MTU1MyAyMzIuOTEzODExYzAtMTcuMTkwMTIyLTEzLjk0OTg3LTMxLjEzOTk5Mi0zMS4xMzk5OTItMzEuMTM5OTkyLTE3LjE5MDEyMiAwLTMxLjEzOTk5MiAxMy45NDk4Ny0zMS4xMzk5OTIgMzEuMTM5OTkybDAgMjQ5LjA5NTYxMUwyMzAuOTg1OTU4IDQ4Mi4wMDk0MjJDMjEzLjc5NTgzNiA0ODIuMDA5NDIyIDE5OS44NDU5NjYgNDk1Ljk1OTI5MiAxOTkuODQ1OTY2IDUxMy4xNDk0MTRjMCAxNy4xOTAxMjIgMTMuOTQ5ODcgMzEuMTM5OTkyIDMxLjEzOTk5MiAzMS4xMzk5OTJsMjQ5LjA5NTYxMSAwIDAgMjQ5LjA5NTYxMWMwIDE3LjIyNDE3OSAxMy45NDk4NyAzMS4xMzk5OTIgMzEuMTM5OTkyIDMxLjEzOTk5MiAxNy4xOTAxMjIgMCAzMS4xMzk5OTItMTMuOTE1ODEzIDMxLjEzOTk5Mi0zMS4xMzk5OTJMNTQyLjM2MTU1MyA1NDQuMjg5NDA2bDI0OS4wOTU2MTEgMGMxNy4yMjQxNzkgMCAzMS4xMzk5OTItMTMuOTQ5ODcgMzEuMTM5OTkyLTMxLjEzOTk5MkM4MjIuNTk3MTU2IDQ5NS45NTkyOTIgODA4LjY4MTM0MyA0ODIuMDA5NDIyIDc5MS40NTcxNjQgNDgyLjAwOTQyMkw3OTEuNDU3MTY0IDQ4Mi4wMDk0MjJ6TTc5MS40NTcxNjQgNDgyLjAwOTQyMiIgcC1pZD0iNTI3MiIgZmlsbD0iI2U0MTAwMiI+PC9wYXRoPjwvc3ZnPg==) no-repeat center;
+				background-size: 28px 28px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -16px;
+				margin-left: -16px;
+				transition: all 380ms;
+				-ms-transition: all 380ms;
+				-moz-transition: all 380ms;
+				-webkit-transition: all 380ms;
+				z-index: -1;
+			    opacity: 0;
+			    filter: alpha(opacity=0);
+			}
+			.imgview-item a:hover:before{
+				z-index: 8;
+				opacity: 1;
+			    filter: alpha(opacity=100);
+			}
+			/*图片查看*/
+			.wrap-check-imgs{
+				/*display: none;*/
+				overflow: hidden;
+				position: fixed;
+				top: 100%;
+				bottom: 0px;
+				left: 0px;
+				right: 0px;
+				height: 100%;
+				width: 100%;
+				background: #fff;
+				z-index: 999999;
+				/*opacity: 0;
+				filter: alpha(opacity=0);*/
+				
+				transition: all .52s ease-in-out;
+				-ms-transition: all .52s ease-in-out;
+				-moz-transition: all .52s ease-in-out;
+				-webkit-transition: all .52s ease-in-out;
+				
+			}
+			
+			.check-imgs{
+				height: 100%;
+				width: 100%;
+				overflow: hidden;
+				
+			}
+			.check-imgs-box{
+				height: 100%;
+				width: 99900%;
+			}
+			.check-imgs-box:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.check-imgs-item{
+				height: 100%;
+				float: left;
+				text-align: center;
+				overflow: hidden;
+				position: relative;
+				padding: 80px;
+			}
+			.check-imgs-title{
+				position: absolute;
+				top: 0px;
+				left: 40px;
+				right: 40px;
+				font-size: 18px;
+				color: #666;
+				text-align: center;
+				height: 40px;
+				line-height: 40px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.check-imgs-item a{
+				display: block;
+				height: 100%;
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			.left-btn ,.right-btn{
+				position: absolute;
+				top: 80px;
+				bottom: 80px;
+				display: block;
+				width: 80px;
+    			cursor: pointer;
+    			z-index: 999;
+			}
+			.left-btn{
+				left: 0px;
+			}
+			.right-btn{
+				right:0px;
+			}
+			.left-btn:before,.right-btn:before{
+				content: '';
+				position: absolute;
+				top: 0px;
+				bottom: 0px;
+				display: block;
+				width: 80px;
+				transition: all 180ms;
+				-ms-transition: all 180ms;
+				-moz-transition: all 180ms;
+				-webkit-transition: all 180ms;
+			}
+			.left-btn:before{
+				background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNDkwOTU3NzU3ODM0IiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjE2MDIiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTUzMi41MjY0OTkgOTA0LjgxNzU3NEwxMzkuNTA2MzExIDUxMS43OTczODUgNTMyLjUyNjQ5OSAxMTguNzc3MTk3YzEyLjI1ODE4NS0xMi4yNTgxODUgMTIuNDMyMTQ3LTMyLjg5MjEzMS0wLjE4NzI2NS00NS41MTA1Mi0xMi43MDc0MTYtMTIuNzA3NDE2LTMyLjk5NTQ4NS0xMi43MDMzMjMtNDUuNTExNTQzLTAuMTg3MjY1TDc1LjE2Njk1NyA0ODQuNzM5MTIzYy03LjEyMDE2NSA3LjEyMDE2NS0xMC4xNjM0NzcgMTcuMDY1Njc3LTguOTkwNzY4IDI2LjYyNDM4MS0xLjUwMDE2NyA5Ljc1NTE3OCAxLjUxMDQgMjAuMDEwNzUzIDguOTkwNzY4IDI3LjQ5MTEyMWw0MTEuNjYwNzM0IDQxMS42NjA3MzRjMTIuMjU4MTg1IDEyLjI1ODE4NSAzMi44OTIxMzEgMTIuNDMyMTQ3IDQ1LjUxMTU0My0wLjE4NzI2NSAxMi43MDc0MTYtMTIuNzA3NDE2IDEyLjcwMjMtMzIuOTk1NDg1IDAuMTg3MjY1LTQ1LjUxMDUyeiIgcC1pZD0iMTYwMyIgZmlsbD0iI2RmMDUwNSI+PC9wYXRoPjwvc3ZnPg==) no-repeat center;
+				background-size: 30px;
+				left: 12px;
+			}
+			
+			.right-btn:before{
+				background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNDkwOTU3MjQyODE5IiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjExODUiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTQ5Mi42NzU4ODYgOTA0LjgxNzU3NEw4ODUuNjk2MDc0IDUxMS43OTczODUgNDkyLjY3NTg4NiAxMTguNzc3MTk3Yy0xMi4yNTgxODUtMTIuMjU4MTg1LTEyLjQzMjE0Ny0zMi44OTIxMzEgMC4xODcyNjUtNDUuNTEwNTIgMTIuNzA3NDE2LTEyLjcwNzQxNiAzMi45OTU0ODUtMTIuNzAzMzIzIDQ1LjUxMTU0My0wLjE4NzI2NWw0MTEuNjYwNzM0IDQxMS42NjA3MzRjNy4xMjAxNjUgNy4xMjAxNjUgMTAuMTYzNDc3IDE3LjA2NTY3NyA4Ljk5MDc2OCAyNi42MjQzODEgMS41MDAxNjcgOS43NTUxNzgtMS41MTA0IDIwLjAxMDc1My04Ljk5MDc2OCAyNy40OTExMjFMNTM4LjM3NDY5NCA5NTAuNTE1MzU5Yy0xMi4yNTgxODUgMTIuMjU4MTg1LTMyLjg5MjEzMSAxMi40MzIxNDctNDUuNTExNTQzLTAuMTg3MjY1LTEyLjcwNzQxNi0xMi43MDc0MTYtMTIuNzAzMzIzLTMyLjk5NTQ4NS0wLjE4NzI2NS00NS41MTA1MnoiIHAtaWQ9IjExODYiIGZpbGw9IiNkZjA1MDUiPjwvcGF0aD48L3N2Zz4=) no-repeat center;
+				background-size: 30px;
+				right: 12px;
+			}
+			
+			.left-btn:hover:before{
+				left: 6px;
+			}
+			
+			.right-btn:hover:before{
+				right: 6px;
+			}
+			
+			.close-btn{
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				display: block;
+				height: 40px;
+				width: 40px;
+				background: #d80808;
+				text-align: center;
+				cursor: pointer;
+				z-index: 999;
+			}
+			.close-btn:before{
+				content: '';
+				display: block;
+				height: 40px;
+				width: 40px;
+				background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNDkwOTQ3NTQ1NjA2IiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjY3NjciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTU2OS40ODM3MTQgNTEwLjUzODcxOWwzNzUuNTY2Njc4LTM3NS41NzQ4NjRjMTYuMjcyNjE1LTE2LjI3MzYzOCAxNi4yNzI2MTUtNDIuNjU5NTg5IDAtNTguOTMzMjI3LTE2LjMwMTI2OC0xNi4yODY5NDEtNDIuNjg3MjE4LTE2LjI4Njk0MS01OC45NTk4MzMgMEw1MTAuNTMyMDY3IDQ1MS41ODgwOTUgMTM0Ljk3NDU5OSA3Ni4wMzA2MjdjLTE2LjI3MzYzOC0xNi4yODY5NDEtNDIuNjU5NTg5LTE2LjI4Njk0MS01OC45MzMyMjcgMC0xNi4yNzM2MzggMTYuMjczNjM4LTE2LjI3MzYzOCA0Mi42NTk1ODkgMCA1OC45MzMyMjdsMzc1LjU1MzM3NSAzNzUuNTYxNTYxLTM3NS41NTMzNzUgMzc1LjU1NDM5OGMtMTYuMjczNjM4IDE2LjI3NDY2Mi0xNi4yNzM2MzggNDIuNjc1OTYyIDAgNTguOTQ4NTc3IDE2LjI3MjYxNSAxNi4yNzI2MTUgNDIuNjg3MjE4IDE2LjI3MjYxNSA1OC45NTk4MzMgMGwzNzUuNTQzMTQyLTM3NS41NTIzNTIgMzc1LjU0NDE2NSAzNzUuNTUyMzUyYzE2LjI3MjYxNSAxNi4yNzI2MTUgNDIuNjU5NTg5IDE2LjI3MjYxNSA1OC45MzQyNTEgMCAxNi4yNzI2MTUtMTYuMjcyNjE1IDE2LjI3MjYxNS00Mi42NzM5MTUgMC01OC45NDg1NzdMNTY5LjQ4MzcxNCA1MTAuNTM4NzE5eiIgcC1pZD0iNjc2OCIgZmlsbD0iI2ZmZmZmZiI+PC9wYXRoPjwvc3ZnPg==) no-repeat center;
+				background-size: 16px;
+				transition: all 180ms;
+				-ms-transition: all 180ms;
+				-moz-transition: all 180ms;
+				-webkit-transition: all 180ms;
+			}
+			.close-btn:hover:before{
+				transform: rotate(180deg);
+				-ms-transform: rotate(180deg);
+				-moz-transform: rotate(180deg);
+				-webkit-transform: rotate(180deg);
+			}
+			.view-img-dot{
+				position: absolute;
+			    left: 50%;
+			    bottom: 20px;
+			    font-size: 0;
+			    padding: 4px 10px;
+			    z-index: 999;
+			}
+			.view-img-dot i {
+			    display: inline-block;
+			    margin: 0px 5px;
+			    width: 12px;
+			    height: 12px;
+			    border-radius: 100%;
+			    background-color: #fff;
+			    border: 1px solid #aaa;
+			    cursor: pointer;
+			}
+			.view-img-dot i:hover{
+				background-color: #aaa !important;
+				border: 1px solid #aaa !important;
+			}
+			.view-img-dot i.viewDotActive{
+				background-color: #aaa !important;
+				border: 1px solid #aaa !important;
+				cursor: auto;
+			}
+			.view-num{
+				position: absolute;
+				left: 0px;
+				right: 0px;
+			    bottom: 20px;
+			    border-radius: 12px;
+			    text-align: center;
+			    display: none;
+			    z-index: 999;
+			}
+			.view-num span{
+				color: #666;
+				padding: 4px 10px;
+				background-color: #fff;
+				border-radius: 5px;
+				letter-spacing: 2px;
+			}
+			/*响应式---适应手机*/
+			@media only screen and (max-width:1024px) {
+				.contentWidth{
+					min-width: 100%;
+					width: 100%;
+					padding: 10px;
+				}
+				.imgview-item{
+					width: 25%;
+					height: 260px;
+				}
+			}
+			@media only screen and (max-width:768px){
+				.imgview-item{
+					width: 33.33%;
+					height: 250px;
+				}
+				.check-imgs-item{
+					padding: 60px 10px;
+				}
+				.left-btn ,.right-btn{/*隐藏左右点击按钮*/
+					display: none;
+				}
+				.view-img-dot{/*隐藏导航圆点*/
+					display: none;
+				}
+				.view-num{/*显示导航数字*/
+					display: block;
+				}
+			}
+			@media only screen and (max-width:648px){
+				.imgview-item{
+					width: 50%;
+					height: 260px;
+				}
+				.view-img-dot i{
+					width: 8px;
+    				height: 8px;
+				}
+			}
+			
+			@media only screen and (max-width:480px) {
+				.imgview-item{
+					width: 50%;
+					height: 180px;
+				}
+			}
+				
+			@media only screen and (max-width:320px){
+				.imgview-item{
+					width: 50%;
+					height: 160px;
+				}
+			}
+			/*图片查看end*/
+			
+		</style>
+	</head>
+	<body>
+		<h3 style="text-align: center;padding: 30px;">IE9不兼容CSS3动画</h3>
+		<div class="contentWidth">
+			<div id="imgViewer" class="imgview-wrap">
+				<!--<ul class="imgview-group">
+					<li class="imgview-item">
+						<a href="javascript:void(0)"><img src="img/view1.jpg" onload="fitImgWrap(this.parentNode,this)" /></a>
+					</li>
+					<li class="imgview-item">
+						<a href="javascript:void(0)"><img src="img/view2.jpg" /></a>
+					</li>
+					<li class="imgview-item">
+						<a href="javascript:void(0)"><img src="img/view3.jpg" /></a>
+					</li>
+					<li class="imgview-item">
+						<a href="javascript:void(0)"><img src="img/view4.jpg" /></a>
+					</li>
+					<li class="imgview-item">
+						<a href="javascript:void(0)"><img src="img/view5.jpg" /></a>
+					</li>
+				</ul>-->
+				<!--<div class="wrap-check-imgs">
+					<i class="left-btn"></i>
+					<i class="right-btn"></i>
+					<i class="close-btn"></i>
+					<div class="view-img-dot">
+						<i class="viewDotActive"></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+					<div class="view-num"><span>1/6</span></div>
+					<div class="check-imgs">
+						<ul class="check-imgs-box">
+							<li class="check-imgs-item"><div class="check-imgs-title">艺术墙室内效果图1</div><a href="javascript:void(0)"><img src="img/view5.jpg" /></a></li>
+							<li class="check-imgs-item"><div class="check-imgs-title">艺术墙室内效果图1</div><a href="javascript:void(0)"><img src="img/view5.jpg" /></a></li>
+						</ul>
+					</div>
+				</div>-->
+			</div>
+		</div>
+		<script type="text/javascript" src="js/imagesView.js" ></script>
+		<!--<script type="text/javascript" src="js/imagesView.min.js"></script>-->
+		<script>
+			var imgArray = [
+				{'img':'img/view1.jpg','title':'艺术墙室内效果图1'},
+				{'img':'img/view2.jpg'},
+				{'img':'img/view3.jpg','title':'艺术墙室内效果图3'},
+				{'img':'img/view4.jpg','title':'艺术墙室内效果图4'},
+				{'img':'img/view5.jpg','title':'艺术墙室内效果图5'}
+			];
+			new ImageViewer({
+				id:"#imgViewer",
+				images:imgArray,
+				lctnNum:0,//默认值0
+				showNum:false //默认值false,响应式小于768，将显示数字
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>手机轮播图</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/api.css" />
+
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul li{
+				list-style: none;
+			}
+			body{
+				background: #333;
+			}
+			.wrap-full-page{
+				display: none;
+				overflow: hidden;
+				touch-action: none;/*禁止安卓浏览器的下拉刷新/左右滑动*/
+				cursor: pointer;
+			}
+			.wrap-full-page .page-group{
+				position: relative;
+			}
+			.wrap-full-page .page-group:after{
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+			/*每屏(页面)的背景色*/
+			.wrap-full-page .page-group .page-item:nth-of-type(4n+2){
+				background: rgb(27, 188, 155);
+			}
+			.wrap-full-page .page-group .page-item:nth-of-type(4n+3){
+				background: #4BBFC3;
+			}
+			.wrap-full-page .page-group .page-item:nth-of-type(4n+4){
+				background: #7BAABE;
+			}
+			.wrap-full-page .page-group .page-item:nth-of-type(4n+5){
+				background: #f90;
+			}
+			.wrap-full-page .page-group .page-item:nth-of-type(1){
+				background: #4BBFC3;
+			}
+			.wrap-full-page .page-group .page-item:nth-last-of-type(1){
+				background: rgb(27, 188, 155);
+			}
+			/*每屏(页面)的背景色end*/
+			.wrap-full-page .page-progress{
+				position: fixed;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 3px;
+				background: rgba(0,0,0,.2);
+			}
+			.wrap-full-page .page-progress i{
+				display: block;
+				width: 0%;
+				height: 3px;
+				background: rgba(8, 161, 239, 0.8);/*#08A1EF*/
+				transition: width .8s cubic-bezier(.26,.86,.44,.985);
+				-webkit-transition: width .8s cubic-bezier(.26,.86,.44,.985);
+			}
+			.wrap-full-page .page-progress p{
+				color: #fff;
+				position: absolute;
+				top: -14px;
+				right: 2px;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="fullPage" class="wrap-full-page">
+			<div class="page-group">
+				<div class="page-item pageActive">
+					第一屏
+					<ul>
+						<li>10086</li>
+					</ul>
+				</div>
+				<div class="page-item">
+					第二屏
+				</div>
+				<div class="page-item">
+					第三屏
+				</div>
+				<div class="page-item">
+					第四屏
+				</div>
+				<div class="page-item">
+					第五屏
+				</div>
+				<div class="page-item">
+					第六屏
+				</div>
+			</div>
+			<div class="page-progress">
+				<i></i>
+				<p>1/86</p>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="js/fullScreenScroll.js" ></script>
+		<script>
+			
+			var imgSlider = new fullScreenScroll({
+				'id': '#fullPage'
+				/*,
+				'bgColor': ['rgb(27, 188, 155)','#4BBFC3', '#7BAABE', '#f90']*/
+			});
+			
+		</script>
+		
+	</body>
+</html>

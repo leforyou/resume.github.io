@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>手机轮播图</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/api.css" />
+		<script type="text/javascript" src="js/imgview.js" ></script>
+		<style type="text/css">
+			
+			.imgage-viewer{
+				position: relative;
+			}
+			.imgview-group{
+				width: 999900%;
+			}
+			.imgview-item{
+				display: table-cell;
+				background: rgba(255,255,255,.3);
+				/*border: 1px solid red;*/
+				box-sizing: border-box;
+				display: inline-block;
+				float: left;
+			}
+			.imgview-num{
+				position: absolute;
+				bottom: 0px;
+				width: 100%;
+				text-align: center;
+				padding: 6px;
+				z-index: 6666;
+			}
+			.imgview-num *{
+				background-color: rgba(255,255,255,.3);
+				color: #fff;
+				font-size: 11px;
+				line-height: 11px;
+				border-radius: 5px;
+				display: inline-block;
+				padding: 3px 6px;
+				letter-spacing: 1px;
+				z-index: 6666;
+			}
+			
+			.imgview-spot{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				padding:6px;
+				text-align: center;
+			}
+			.imgview-spot i{
+				display:inline-block;
+				width:6px;
+				height:6px;
+				background-color:rgba(255,255,255,0.5);
+				box-shadow:0 0 3px rgba(0,0,0,0.2);
+				margin:0 2px;
+				border-radius:9px;
+			}
+			.imgview-spot .active-imgview-spot{
+				background-color:rgba(255,255,255,1) !important;
+				background-color:rgba(255,0,0,1) !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ImageViewer" class="imgage-viewer">
+			
+			<!--<div class="imgview-group">
+				<div class="imgview-item">
+					<img src="img/slider1.jpg" />
+				</div>
+				<div class="imgview-item">
+					<img src="img/slider2.jpg" />
+				</div>
+				<div class="imgview-item">
+					<img src="img/slider3.jpg" />
+				</div>
+				<div class="imgview-item">
+					<img src="img/slider4.jpg" />
+				</div>
+				<div class="imgview-item">
+					<img src="img/slider5.jpg" />
+				</div>
+				<div class="imgview-item">
+					<img src="img/slider6.jpg" />
+				</div>
+			</div>
+			<div class="imgview-num">
+				<span>1/7</span>
+			</div>
+			<div class="imgview-spot">
+				<i></i>
+				<i></i>
+				<i class="active-imgview-spot"></i>
+				<i></i>
+			</div>-->
+		</div>
+		<script>
+			//先用js控制imgview-group的宽度，设置imgview-item的宽高，用fixtimage函数修改图片的位置
+			//左右切换，判断正负方向。滑动时间少于200ms滑动过，大于200ms且滑动过半，大于200ms且不过半
+			var imgsArr = ['img/slider1.jpg','img/slider2.jpg','img/slider3.jpg','img/slider4.jpg','img/slider5.jpg','img/slider6.jpg','img/slider7.jpg'];
+			ImageViewer({
+				el:"#ImageViewer",
+				images:imgsArr,
+				lctnNum:3,
+				isNumShow:false
+			});
+		</script>
+	</body>
+</html>

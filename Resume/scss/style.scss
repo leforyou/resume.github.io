@@ -330,6 +330,24 @@ body{
             }
         }
     }
+    .source-code{
+        margin-bottom: 50px;
+        .box{
+            .big-title{
+                padding: 15px 0px;
+            }
+            .code{
+                .list{
+                    a{
+                        color: #65aaef;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
     .project{
         margin-bottom: 50px;
         .box{
@@ -363,22 +381,13 @@ body{
             }
         }
     }
-    .source-code{
+    .personal-demo{
         margin-bottom: 50px;
         .box{
             .big-title{
                 padding: 15px 0px;
             }
-            .code{
-                .list{
-                    a{
-                        color: #65aaef;
-                        &:hover{
-                            text-decoration: underline;
-                        }
-                    }
-                }
-            }
+            
         }
     }
 }

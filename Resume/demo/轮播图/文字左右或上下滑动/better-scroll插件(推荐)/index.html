@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>文字左右滑动</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/api.css" />
+
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+			}
+			ul li{
+				list-style: none;
+			}
+			.clearfix:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			/*文字区域左右滑动*/
+			.wrap{
+				padding: 10px;
+				max-width: 500px;
+				margin: auto;
+				border: 1px solid #eee;
+			}
+			.wrap>div{
+				overflow: hidden;
+				border: 1px solid #eee;
+			}
+			.wrap>div>ul{
+				padding: 12px 20px;
+				cursor: pointer;
+				width: auto;
+				display: inline-block;/*关键属性*/
+			   white-space: nowrap;
+			}
+			.wrap>div>ul>li{
+				display: inline-block;
+			    padding: 0px 7px;
+			    line-height: 24px;
+			    background: #F6F6F6;
+			    border-radius: 25px;
+			    border: 1px solid #e9e9e9;
+			    font-size: 14px;
+			    margin-right: 6px;
+			}
+			/*图片左右滑动*/
+			.box{
+				padding: 10px;
+				max-width: 500px;
+				margin: auto;
+				overflow: hidden;
+				border: 1px solid #eee;
+				height:200px;
+			}
+			.box>ul{
+				display: inline-block;
+				padding: 12px 20px;
+				cursor: pointer;
+				
+			}
+			.box>ul>li{
+			    padding: 6px;
+			    border: 1px solid #e9e9e9;
+			    margin-right: 6px;
+			    text-align: center;
+			   	cursor: pointer;
+			}
+			.box>ul>li img{
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<h3 style="text-align: center;">文字左右滑动或图片左右滑动,bscroll.min.js插件简单易用，大小25KB左右。</h3>
+		
+		<!--三级结构，类roll-box是js获取dom的对象-->
+		
+		
+		
+		
+		<br/><br/><br/>
+		
+		<!--二级结构，类roll-box是js获取dom的对象-->
+		<div class="box"><!--第一级，类roll-box父级块元素需要设置overflow:hidden;-->
+			<ul><!--第二级-->
+				<li>
+					<img src="1.png"/>
+					<p>我是图片</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片</p>
+				</li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript" src="js/bscroll.min.js"></script>
+		<script>
+			
+			//class .box
+			var box = document.getElementsByClassName('box')[0];
+			var scroll = new BScroll(box, {
+				startX: 0,
+				startY: 0,
+				scrollY:true,
+				preventDefault:false
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>文字左右滑动</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/api.css" />
+
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				min-height: 1680px;
+				padding-top: 999px;
+			}
+			ul li{
+				list-style: none;
+			}
+			.clearfix:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			/*文字区域左右滑动*/
+			.wrap{
+				padding: 10px;
+				max-width: 500px;
+				margin: auto;
+				border: 1px solid #eee;
+			}
+			.wrap>div{
+				overflow: hidden;
+				border: 1px solid #eee;
+			}
+			.wrap>div>ul.roll-box-x{
+				padding: 12px 20px;
+				cursor: pointer;
+				width: auto;
+			}
+			.wrap>div>ul.roll-box-x>li{
+				display: inline-block;
+			    padding: 0px 7px;
+			    line-height: 24px;
+			    background: #F6F6F6;
+			    border-radius: 25px;
+			    border: 1px solid #e9e9e9;
+			    font-size: 14px;
+			    margin-right: 6px;
+			}
+			/*图片左右滑动*/
+			.box{
+				padding: 10px;
+				max-width: 500px;
+				margin: auto;
+				overflow: hidden;
+				border: 1px solid #eee;
+			}
+			.box>ul.roll-box-x{
+				display: inline-block;
+				padding: 12px 20px;
+				cursor: pointer;
+			}
+			.box>ul.roll-box-x>li{
+				display: inline-block;
+			    padding: 6px;
+			    border: 1px solid #e9e9e9;
+			    margin-right: 6px;
+			    text-align: center;
+			}
+			.box>ul.roll-box-x>li img{
+				width: 100px;
+				height: 100px;
+			}
+			
+			/*滑动的区域，类roll-box-x是js获取dom的对象*/
+			.roll-box-x{
+				
+				-webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+			    -moz-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+			    -ms-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+			    -o-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+			    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+			    
+			    -webkit-transition-property: transform;
+			    -moz-transition-property: transform;
+			    -ms-transition-property: transform;
+			    -o-transition-property: transform;
+			    transition-property: transform;
+			    
+			    -webkit-transition-duration: 1000ms;
+			    -moz-transition-duration: 1000ms;
+			    -ms-transition-duration: 1000ms;
+			    -o-transition-duration: 1000ms;
+			    transition-duration: 1000ms;
+			    
+			    -webkit-transform:translate3d(0px,0px, 0px) translateZ(0px);
+			    -moz-transform:translate3d(0px,0px, 0px) translateZ(0px);
+			    -ms-transform:translate3d(0px,0px, 0px) translateZ(0px);
+			    -o-transform:translate3d(0px,0px, 0px) translateZ(0px);
+			    transform:translate3d(0px,0px, 0px) translateZ(0px);
+			    
+			    /*width: 99000%;*/
+			   display: inline-block;
+			   white-space: nowrap;/*这个属性上面display属性都很关键,因为js在设置宽度它起间接的作用*/
+			}
+			.roll-box-x>*{
+				display: inline-block !important;
+				float: none !important;/*禁止使用浮动，否则white-space属性失效*/
+			}
+		</style>
+	</head>
+	<body>
+		<h3 style="text-align: center;">文字左右滑动或图片左右滑动</h3>
+		
+		
+		
+		<!--三级结构，类roll-box-x是js获取dom的对象-->
+		<div class="wrap"><!--第一级-->
+			<div><!--第二级，类roll-box-x父级块元素需要设置overflow:hidden;-->
+				<ul class="roll-box-x"><!--第三级-->
+					<li>1热门</li>
+					<li>2美妆护肤</li>
+					<li>3食品保健</li>
+					<li>4箱包手袋</li>
+					<li>5鞋靴</li>
+					<li>6手表配饰</li>
+					<li>7母婴玩具</li>
+					<li>8个人护理</li>
+					<li>9女装</li>
+					<li>10男装</li>
+					<li>11户外运动</li>
+					<li>12营业所</li>
+					<li>13美妆护肤</li>
+					<li>14食品保健</li>
+					<li>15箱包手袋</li>
+					<li>16鞋靴</li>
+					<li>17手表配饰</li>
+					<li>18母婴玩具</li>
+					<li>19个人护理</li>
+					<li>20女装</li>
+					<li>21男装</li>
+					<li>22户外运动</li>
+					<li>23家居生活</li>
+					
+					
+					<li>24美妆护肤</li>
+					<li>25食品保健</li>
+					<li>26箱包手袋</li>
+					<li>27鞋靴</li>
+					<li>28手表配饰</li>
+					<li>29母婴玩具</li>
+					<li>30个人护理</li>
+					<li>31女装</li>
+					<li>32男装</li>
+					<li>33户外运动</li>
+					<li>34塔顶无可奈何</li>
+					<li>35美妆护肤</li>
+					<li>36食品保健</li>
+					<li>37箱包手袋</li>
+					<li>38鞋靴</li>
+					<li>39手表配饰</li>
+					<li>40母婴玩具</li>
+					<li>41个人护理</li>
+					<li>42女装</li>
+					<li>43男装</li>
+					<li>44户外运动</li>
+					<li>45家居生活</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		<br/><br/><br/>
+		
+		<!--二级结构，类roll-box-x是js获取dom的对象-->
+		<div class="box"><!--第一级，类roll-box-x父级块元素需要设置overflow:hidden;-->
+			<ul class="roll-box-x"><!--第二级-->
+				<li>
+					<img src="1.png"/>
+					<p>我是图片1</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片2</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片3</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片4</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片5</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片6</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片7</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片8</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片9</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片10</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片11</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片12</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片13</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片14</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片15</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片16</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片17</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片18</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片19</p>
+				</li>
+				<li>
+					<img src="1.png"/>
+					<p>我是图片20</p>
+				</li>
+			</ul>
+		</div>
+		<p id="num" style="position: fixed;bottom: 0px; background:pink;">111</p>
+		<script type="text/javascript" src="js/rollBoxX.js"></script>
+		<!--<script type="text/javascript" src="js/rollBoxX.min.js"></script>-->
+		<script>
+			/*var liTag = document.querySelectorAll('li');
+			Array.from(liTag).forEach(function(item,index){
+				//测试点击事件
+				this.onclick = function(){
+					console.log(index)
+				}
+			});*/
+			window.addEventListener('DOMContentLoaded',function(){
+				var rollBoxX = document.getElementsByClassName('roll-box-x');
+				for (var i = 0 ; i < rollBoxX.length ; i ++) {
+					new forEachRollBoxX(rollBoxX[i]);
+				}
+			},false);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>陶瓷</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/reset.css" />
+		<style>
+			.minWidth {
+				min-width: 1200px;
+			}
+			
+			.wrap-sider{
+				margin: auto;
+				height: 520px;
+				overflow: hidden;
+				position:relative;
+				-ms-user-select: none;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+			}
+			.wrap-sider>*{
+				z-index: 2;
+			}
+			.wrap-sider:hover .pre-ico,.wrap-sider:hover .next-ico{
+				display: block;
+			}
+			.wrap-sider ul,li.slider-item,li.slider-item a{
+			    overflow: hidden;
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    display: block;
+			}
+			li.slider-item{
+				background-color: #fff;
+				transition: all 500ms;
+				-webkit-transition: all 500ms;
+				opacity: 0;
+			}
+			
+			li.slider-item a img{
+				display: block;
+			    width: 100%;
+    			height: 100%;
+			    border: 0;
+    			vertical-align: middle;
+    			transition: opacity 500ms;
+    			-ms-transition: opacity 500ms;
+    			-moz-transition: opacity 500ms;
+    			-webkit-transition: opacity 500ms;
+    			opacity: 0;
+			}
+			li.itemActive {
+				z-index: 1 !important;
+				opacity: 1 !important;
+			}
+			li.itemActive a img{
+				opacity: 1 !important;
+			}
+			.pre-ico,.next-ico{
+				width: 32px;
+				height: 60px;
+				position: absolute;
+				top: 50%;
+				margin-top: -30px;
+				cursor: pointer;
+				display: none;
+			}
+			.pre-ico{
+				left: 10%;
+				background: rgba(0,0,0,.2) url(img/slider-ico.png) no-repeat 10px center;
+				background-size: 100px 25px;
+			}
+			.next-ico{
+				right: 10%;
+				background: rgba(0,0,0,.2) url(img/slider-ico.png) no-repeat -80px center;
+				background-size: 100px 25px;
+			}
+			.pre-ico:hover,.next-ico:hover{
+				background-color: rgba(0,0,0,.5);
+			}
+			.slider-dot{
+				position: absolute;
+			    left: 50%;
+			    bottom: 20px;
+			    font-size: 0;
+			    padding: 4px 10px;
+			    border-radius: 12px;
+			    background-color: hsla(0,0%,100%,.3);
+			}
+			.slider-dot:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.slider-dot i{
+				display: inline-block;
+			    margin: 0px 5px;
+			    width: 12px;
+			    height: 12px;
+			    border-radius: 100%;
+			    background-color: #fff;
+				cursor: pointer;
+				float: left;
+			}
+			.slider-dot i.dotActive{
+				background-color: #e20500 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<p>轮播图使用前</p>
+			<ol>
+				<li>1.引用入css,修改类.wrap-sider的高度，修改.pre-ico和.next-ico背景图片的链接，类.minWidth与div标签可要可不要。</li>
+				<li>2.引入图片slider-ico.png</li>
+				<li>3.引入sliderImgMuluo.js或sliderImgMuluo.min.js(推荐使用)</li>
+				<li>4.用new声明slderImg()函数，实例在下面</li>
+				<li>5.该轮播图使用，懒加载的方式，先加载第一张图片，后加载其它图片，data-src就是懒加载图片的链接。</li>
+			</ol>
+		</div>
+		<div class="minWidth">
+			<div class="wrap-sider" id="wrap-sider">
+				<ul>
+					<li class="slider-item">
+						<a href="javascript:void(0)">
+							<img src="img/111.png" />
+						</a>
+					</li>
+					<li class="slider-item">
+						<a href="javascript:void(0)">
+							<img data-src="img/slider1.jpg" />
+						</a>
+					</li>
+					<li class="slider-item">
+						<a href="javascript:void(0)">
+							<img data-src="img/slider3.jpg" />
+						</a>
+					</li>
+					<li class="slider-item">
+						<a href="javascript:void(0)">
+							<img data-src="img/slider4.jpg" />
+						</a>
+					</li>
+					<li class="slider-item">
+						<a href="javascript:void(0)">
+							<img data-src="img/slider5.jpg" />
+						</a>
+					</li>
+					<li class="slider-item">
+						<a href="javascript:void(0)">
+							<img data-src="img/slider6.jpg" />
+						</a>
+					</li>
+					<li class="slider-item">
+						<a href="javascript:void(0)">
+							<img data-src="img/111.png" />
+						</a>
+					</li>
+				</ul>
+				<div class="slider-dot"></div>
+				<div class="pre-ico"></div>
+				<div class="next-ico"></div>
+			</div>
+		</div>
+		<!--<script src="js/sliderImgMuluo.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/sliderImgMuluo.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			new slderImg({
+				"id":"#wrap-sider",
+				"width":"100%",
+				"height":"520px",
+				"time":3988
+			});
+		</script>
+	</body>
+
+</html>

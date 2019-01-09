@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>文字左右滑动</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/api.css" />
+
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+			}
+			ul li{
+				list-style: none;
+			}
+			.app{
+				height: 100%;
+				overflow: hidden;
+				padding-left: 120px;
+				position: relative;
+			}
+			
+			.wrap-roll-left{
+				width: 120px;
+				position: absolute;
+				top: 0px;
+				bottom: 0px;
+				left: 0px;
+				overflow: hidden;
+			}
+			.roll-box-y{
+				background-color: #f3f3f3;
+			}
+			.roll-box-y li {
+			    padding: 12px 5px;
+			    font-size: 12px;
+			    line-height: 20px;
+			    background: #f6f6f6;
+			    cursor: pointer;
+			    position: relative;
+			}
+			.roll-box-y li:after {
+			    content: '';
+			    position: absolute;
+			    bottom: 0;
+			    left: 0;
+			    right: 0;
+			    height: 1px;
+			    background-color: #eee;
+			    transform: scaleY(.5);
+			    -webkit-transform: scaleY(.5);
+			    -moz-transform: scaleY(.5);
+			    -ms-transform: scaleY(.5);
+			}
+			
+			
+			.wrap-roll-right{
+				height: 100%;
+				overflow: hidden;
+			}
+			.wrap-roll-right li{
+				background-color: #fff;
+			}
+			.wrap-roll-right img{
+				height: 60px;
+			}
+			
+			/*滑动的区域，类roll-box-y是js获取dom的对象*/
+			.roll-box-y{
+				-webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+			    -moz-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+			    -ms-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+			    -o-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+			    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+			    
+			    -webkit-transition-property: transform;
+			    -moz-transition-property: transform;
+			    -ms-transition-property: transform;
+			    -o-transition-property: transform;
+			    transition-property: transform;
+			    
+			    -webkit-transition-duration: 1000ms;
+			    -moz-transition-duration: 1000ms;
+			    -ms-transition-duration: 1000ms;
+			    -o-transition-duration: 1000ms;
+			    transition-duration: 1000ms;
+			    
+			    -webkit-transform:translate3d(0px,0px, 0px) translateZ(0px);
+			    -moz-transform:translate3d(0px,0px, 0px) translateZ(0px);
+			    -ms-transform:translate3d(0px,0px, 0px) translateZ(0px);
+			    -o-transform:translate3d(0px,0px, 0px) translateZ(0px);
+			    transform:translate3d(0px,0px, 0px) translateZ(0px);
+			}
+			.leftActive{
+				color: #f00;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="app">
+			<!--二级结构，类roll-box-y是js获取dom的对象-->
+			<div class="wrap-roll-left"><!--第一级父级块元素需要设置overflow:hidden;-->
+				<ul class="roll-box-y"><!--第二级-->
+					<li class="leftActive">1热门</li>
+					<li>2美妆护肤</li>
+					<li>3食品保健</li>
+					<li>4箱包手袋</li>
+					<li>5鞋靴</li>
+					<li>6手表配饰</li>
+					<li>7母婴玩具</li>
+					<li>8个人护理</li>
+					<li>9女装</li>
+					<li>10男装</li>
+					<li>11户外运动</li>
+					<li>12营业所</li>
+					<li>13美妆护肤</li>
+					<li>14食品保健</li>
+					<li>15箱包手袋</li>
+					<li>16鞋靴</li>
+					<li>17手表配饰</li>
+					<li>18母婴玩具</li>
+					<li>19个人护理</li>
+					<li>20女装</li>
+					<li>21男装</li>
+					<li>22户外运动</li>
+					<li>23家居生活</li>
+					
+					
+					<li>24美妆护肤</li>
+					<li>25食品保健</li>
+					<li>26箱包手袋</li>
+					<li>27鞋靴</li>
+					<li>28手表配饰</li>
+					<li>29母婴玩具</li>
+					<li>30个人护理</li>
+					<li>31女装</li>
+					<li>32男装</li>
+					<li>33户外运动</li>
+					<li>34塔顶无可奈何</li>
+					<li>35美妆护肤</li>
+					<li>36食品保健</li>
+					<li>37箱包手袋</li>
+					<li>38鞋靴</li>
+					<li>39手表配饰</li>
+					<li>40母婴玩具</li>
+					<li>41个人护理</li>
+					<li>42女装</li>
+					<li>43男装</li>
+					<li>44户外运动</li>
+					<li>45家居生活</li>
+				</ul>
+			</div>
+			
+			
+			<!--二级结构，类roll-box-y是js获取dom的对象-->
+			<div class="wrap-roll-right"><!--第一级，类roll-box-y父级块元素需要设置overflow:hidden;-->
+				<ul class="roll-box-y"><!--第二级-->
+					<li>
+						<img src="1.png"/>
+						<p>我是图片1</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片2</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片3</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片4</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片5</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片6</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片7</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片8</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片9</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片10</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片11</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片12</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片13</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片14</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片15</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片16</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片17</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片18</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片19</p>
+					</li>
+					<li>
+						<img src="1.png"/>
+						<p>我是图片20</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/rollBoxY.js"></script>
+		<!--<script type="text/javascript" src="js/rollBoxY.min.js"></script>-->
+		<script>
+			/*var liTag = document.querySelectorAll('li');
+			Array.from(liTag).forEach(function(item,index){
+				//测试点击事件
+				this.onclick = function(){
+					console.log(index)
+				}
+			});*/
+			
+			//js事件委托原理的应用--选项卡的实现,替换for循环，提升性能
+			var ulTag = document.querySelector('.wrap-roll-left>ul');
+			ulTag.addEventListener('click',function(e){
+				if(e.target && e.target.nodeName == 'LI'){//IE9不支持
+					var liTag = e.target.parentNode.querySelectorAll('li');
+					for (var i = 0 ; i < liTag.length ; i ++) {
+						liTag[i].classList.remove('leftActive');
+					}
+					e.target.classList.add('leftActive');
+				}
+			},false);
+			
+			
+			
+			//滑动
+			window.addEventListener('DOMContentLoaded',function(){
+				var rollBoxY = document.getElementsByClassName('roll-box-y');
+				for (var i = 0 ; i < rollBoxY.length ; i ++) {
+					new forEachRollBoxY(rollBoxY[i]);
+				}
+			},false);
+		</script>
+	</body>
+</html>

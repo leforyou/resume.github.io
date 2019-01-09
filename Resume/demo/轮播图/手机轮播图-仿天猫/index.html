@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>手机轮播图</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/api.css" />
+
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			/*body{
+				-webkit-overflow-scrolling: touch;
+			}*/
+			.wrap-slider{
+				overflow: hidden;
+				width: 100%;
+				height: 200px;
+				position: relative;
+				/*touch-action: none;这个区域内不允许上下拖动，慎用*/
+			}
+			.slider-group{
+				width: 99900%;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			.slider-group:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.slider-item{
+				float: left;
+			}
+			.slider-item a{
+				overflow: hidden;
+				display:inline-block;
+			}
+			.silder-dots{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				padding:5px;
+				text-align: center;
+			}
+			.silder-dots i{
+				display:inline-block;
+				width:6px;
+				height:6px;
+				background:rgba(255,255,255,0.5);
+				box-shadow:0 0 3px rgba(0,0,0,0.2);
+				margin:0 2px;
+				border-radius:9px;
+			}
+			.active-dots{
+				background:rgba(255,255,255,1) !important;
+				background:rgba(255,0,0,1) !important;
+			}
+			.silder-nums {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				padding: 5px;
+				text-align: center;
+			}
+			.silder-nums span{
+				background-color: rgba(0,0,0,.3);
+				color: #fff;
+				font-size: 11px;
+				line-height: 11px;
+				border-radius: 5px;
+				display: inline-block;
+				padding: 3px 6px;
+				letter-spacing: 1px;
+			}
+			
+			#slider{
+				padding-top: 100%;/*图片轮播区域用padding-top作为响应式高度的设置*/
+			}
+			#slider111{
+				padding-top: 58%;/*图片轮播区域用padding-top作为响应式高度的设置*/
+			}
+		</style>
+	</head>
+	<body style="max-width: 500px;margin: auto;">
+		<div id="slider" class="wrap-slider">
+			<div class="slider-group">
+				<div class="slider-item">
+					<a href="javascript:void(0)"><!--http://www.baidu.com/-->
+						<img src="img/slider1.jpg"/>
+					</a>
+				</div>
+				<div class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider2.jpg"/>
+					</a>
+				</div>
+				<div class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider3.jpg"/>
+					</a>
+				</div>
+				<div class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider4.jpg"/>
+					</a>
+				</div>
+				<div class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider5.jpg"/>
+					</a>
+				</div>
+				<div class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider6.jpg"/>
+					</a>
+				</div>
+				<div class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider7.jpg"/>
+					</a>
+				</div>
+			</div>
+			<!--<div class="silder-dots">
+				<i class="dots-active"></i>
+				<i></i>
+				<i></i>
+			</div>-->
+		</div>
+		
+		<div id="test"><!--测试num--></div>
+		
+		<div id="slider111" class="wrap-slider" style="margin-top: 60px;">
+			<ul class="slider-group">
+				<li class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider5.jpg"/>
+					</a>
+				</li>
+				<li class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider6.jpg"/>
+					</a>
+				</li>
+				<li class="slider-item">
+					<a href="javascript:void(0)">
+						<img src="img/slider7.jpg"/>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript" src="js/slider.min.js" ></script>
+		<script type="text/javascript" src="js/slider.js" ></script>
+		<script>
+			new slider({
+				'id': '#slider',
+				'time': '3000',
+				'ratio':'1:1',//宽高比
+				'isNumShow':true
+			});
+			new slider({
+				'id': '#slider111',
+				'time': '5000',
+				'ratio':'1:0.58',//宽高比
+				'isNumShow':false
+			});
+		
+		
+		
+		
+			/*//使用方式一：time使用的时间是ms毫秒，1000ms毫秒等于1s秒
+			var imgSlider = new slider({
+				'id': '#slider',
+				'time': '3000'
+			});
+			//使用方式二：new前面不要变量也可以
+			new slider({
+				'id': '#slider111',
+				'time': '10000'//默认最小1200毫秒
+			});*/
+		</script>
+		
+		<br/>
+		<p>经验总结：transition与margin-left的使用，在手机端用的流畅度低。而transition与translate3d(x,y,z)在手机端流畅度较高，原因两者都是CSS3属性结合，启用GPU硬件加速，而marginLeft则会触发浏览器重绘、重排，极度消耗性能。aui/sui/mui都是使用这种方式制作轮播图的(谷歌浏览器的调试工具可查看)，这是借鉴别人的经验。</p>
+		<br/>
+		<p>注意:轮播图片的宽高比是1:0.58(H = W * 0.58),虽然不是这个比例的图片也能正常轮播，但是超出这个比例的部分会被fitImage(objDiv, objImg)函数隐藏掉。所以轮播图片最好按照这个比例，不过允许图片比例有少少的偏差，造成的影响不大。</p>
+	</body>
+</html>

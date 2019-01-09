@@ -1146,6 +1146,22 @@ body {
   color: #666;
 }
 
+.project-page .source-code {
+  margin-bottom: 50px;
+}
+
+.project-page .source-code .box .big-title {
+  padding: 15px 0px;
+}
+
+.project-page .source-code .box .code .list a {
+  color: #65aaef;
+}
+
+.project-page .source-code .box .code .list a:hover {
+  text-decoration: underline;
+}
+
 .project-page .project {
   margin-bottom: 50px;
 }
@@ -1181,20 +1197,12 @@ body {
   line-height: 1.8;
 }
 
-.project-page .source-code {
+.project-page .personal-demo {
   margin-bottom: 50px;
 }
 
-.project-page .source-code .box .big-title {
+.project-page .personal-demo .box .big-title {
   padding: 15px 0px;
-}
-
-.project-page .source-code .box .code .list a {
-  color: #65aaef;
-}
-
-.project-page .source-code .box .code .list a:hover {
-  text-decoration: underline;
 }
 
 /**项目 end**/
