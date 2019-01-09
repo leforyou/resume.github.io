@@ -268,6 +268,13 @@ body{
 
 /**项目 start**/
 .project-page{
+    a{
+        font-size: 14px;
+        color: #65aaef;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
     padding: 50px 0px;
     .obvious{
         font-size: 20px;
@@ -339,10 +346,7 @@ body{
             .code{
                 .list{
                     a{
-                        color: #65aaef;
-                        &:hover{
-                            text-decoration: underline;
-                        }
+                        margin-bottom: 1px;
                     }
                 }
             }
@@ -365,11 +369,7 @@ body{
                                 font-weight: bold;
                             }
                             a{
-                                display: block;
-                                color: #65aaef;
-                                &:hover{
-                                    text-decoration: underline;
-                                }
+                                margin-bottom: 1px;
                             }
                         }
                     }
@@ -387,7 +387,18 @@ body{
             .big-title{
                 padding: 15px 0px;
             }
-            
+            .application{
+                .list{
+                    margin-bottom: 30px;
+                    .sub-title{
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    a{
+                        padding: 5px 0px;
+                    }
+                }
+            }
         }
     }
 }

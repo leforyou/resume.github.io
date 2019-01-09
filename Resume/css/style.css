@@ -1079,6 +1079,15 @@ body {
   padding: 50px 0px;
 }
 
+.project-page a {
+  font-size: 14px;
+  color: #65aaef;
+}
+
+.project-page a:hover {
+  text-decoration: underline;
+}
+
 .project-page .obvious {
   font-size: 20px;
   color: #266eb6;
@@ -1155,11 +1164,7 @@ body {
 }
 
 .project-page .source-code .box .code .list a {
-  color: #65aaef;
-}
-
-.project-page .source-code .box .code .list a:hover {
-  text-decoration: underline;
+  margin-bottom: 1px;
 }
 
 .project-page .project {
@@ -1184,12 +1189,7 @@ body {
 }
 
 .project-page .project .box table tbody tr td a {
-  display: block;
-  color: #65aaef;
-}
-
-.project-page .project .box table tbody tr td a:hover {
-  text-decoration: underline;
+  margin-bottom: 1px;
 }
 
 .project-page .project .box .tip {
@@ -1203,6 +1203,19 @@ body {
 
 .project-page .personal-demo .box .big-title {
   padding: 15px 0px;
+}
+
+.project-page .personal-demo .box .application .list {
+  margin-bottom: 30px;
+}
+
+.project-page .personal-demo .box .application .list .sub-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.project-page .personal-demo .box .application .list a {
+  padding: 5px 0px;
 }
 
 /**项目 end**/
