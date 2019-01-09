@@ -1130,6 +1130,10 @@ body {
   padding: 15px 0px;
 }
 
+.project-page .small-program .box .sp-code {
+  margin-bottom: 20px;
+}
+
 .project-page .small-program .box ul {
   font-size: 14px;
   display: flex;
