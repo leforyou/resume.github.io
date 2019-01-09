@@ -110,7 +110,7 @@ body{
                             flex-direction: column;
                             padding: 50px 15px;
                             .img-box{
-                                @include wh(150px);
+                                width: 150px;
                                 border-radius: 100%;
                                 border: 12px solid #c7c7c7;
                                 overflow: hidden;
@@ -400,7 +400,7 @@ body{
                                 .img-box{
                                     border: 3px solid #e7e7e7;
                                     border-radius: 6px;
-                                    @include wh(100px);
+                                    width: 80px;
                                 }
                                 .info-box{
                                     align-items: flex-start;
