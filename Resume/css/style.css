@@ -1079,8 +1079,70 @@ body {
   padding: 50px 0px;
 }
 
-.project-page .project .box .big-title {
+.project-page .obvious {
   font-size: 20px;
+  color: #266eb6;
+  padding-left: 10px !important;
+  position: relative;
+}
+
+.project-page .obvious:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background-color: #266eb6;
+}
+
+.project-page .small-program {
+  margin-bottom: 50px;
+}
+
+.project-page .small-program .box .big-title {
+  padding: 15px 0px;
+}
+
+.project-page .small-program .box ul {
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -10px;
+}
+
+.project-page .small-program .box ul li {
+  width: 20%;
+  padding: 10px;
+}
+
+.project-page .small-program .box ul li .img-box:hover img {
+  transform: scale(1.5);
+  z-index: 999;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-page .small-program .box ul li .img-box img {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.project-page .small-program .box ul li .desc {
+  margin-top: 10px;
+  text-align: center;
+  color: #666;
+}
+
+.project-page .project {
+  margin-bottom: 50px;
+}
+
+.project-page .project .box .big-title {
   padding: 15px 0px;
 }
 
@@ -1099,7 +1161,16 @@ body {
 
 .project-page .project .box table tbody tr td a {
   display: block;
-  color: #005AA8;
+  color: #65aaef;
+}
+
+.project-page .project .box table tbody tr td a:hover {
+  text-decoration: underline;
+}
+
+.project-page .project .box .tip {
+  padding: 5px 0px;
+  line-height: 1.8;
 }
 
 /**项目 end**/
