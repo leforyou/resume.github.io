@@ -1080,6 +1080,7 @@ body {
 }
 
 .project-page a {
+  word-break: break-all;
   display: block;
   font-size: 14px;
   color: #65aaef;
@@ -1251,11 +1252,25 @@ body {
     border-left: none;
     max-width: 260px;
   }
+  .project-page {
+    padding: 0px 15px;
+  }
 }
 
 @media screen and (min-width: 0px) and (max-width: 767px) {
-  .article {
-    font-size: 14px;
+  .project-page .small-program .box ul li {
+    width: 50%;
+  }
+  .project-page .small-program .box ul li .img-box:hover img {
+    transform: scale(1);
+  }
+  .project-page .project .box table tbody tr {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-page .project .box table tbody tr td {
+    width: 100%;
+    border-right: none;
   }
 }
 

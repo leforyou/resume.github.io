@@ -269,6 +269,7 @@ body{
 /**项目 start**/
 .project-page{
     a{
+        word-break: break-all;
         display: block;
         font-size: 14px;
         color: #65aaef;
@@ -500,6 +501,9 @@ body{
             }
         }
     }
+    .project-page{
+        padding: 0px 15px;
+    }
 }
 
 @media screen and (min-width:0px) and (max-width:1199px) {
@@ -513,10 +517,40 @@ body{
 }
 
 @media screen and (min-width:0px) and (max-width:767px){
-    .article{
-        font-size: 14px;
+    .project-page{
+        .small-program{
+            .box{
+                ul{
+                    li{
+                        width: 50%;
+                        .img-box{
+                            &:hover{
+                                img{
+                                    transform: scale(1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .project{
+            .box{
+                table{
+                    tbody{
+                        tr{
+                            display: flex;
+                            flex-direction: column;
+                            td{
+                                width: 100%;
+                                border-right: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
-    
 }
 
 @media screen and (min-width:0px) and (max-width:640px){
