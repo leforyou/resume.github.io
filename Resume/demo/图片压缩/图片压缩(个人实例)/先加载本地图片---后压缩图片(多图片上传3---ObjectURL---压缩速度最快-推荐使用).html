@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>图片利用HTML5画布压缩</title>
+    <style type="text/css">
+        /*按钮样式*/
+        
+        .uploadBtn,
+        .zip {
+            display: inline-block;
+            background: #d1eeff;
+            border: 1px solid #96d2f6;
+            border-radius: 6px;
+            padding: 6px 10px;
+            color: #1581bc;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .uploadBtn:hover,
+        .zip:hover {
+            background: #80cfff;
+            border: 1px solid #78c5f3;
+            color: #fff;
+        }
+        
+        #wrapImg {
+            padding: 5px;
+        }
+        
+        #wrapImg img {
+            height: 200px;
+            margin-right: 10px;
+            display: inline-block;
+            border: 1px solid #80cfff;
+        }
+        
+        .avtive-img {
+            width: auto !important;
+            height: auto !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h4>
+        input type="file"添加multiple属性，所以每次能选择多张图片上传。 使用window.URL.createObjectURL();方法加载本地图片的链接，然后直接利用画布压缩，压缩过程有点慢，base64格式的图片能解决移动端的花屏、闪屏。 ObjectURL先加载本地图片链接再压缩，这种方式比readAsDataURL快了不少，压缩速度最快，推荐使用。在PC端快一倍，在移动端也快50%。 原因一：是图片使用onload事件，图片不再是按顺序压缩了，而是图片加载时就会触发onload函数，它们在同时执行压缩函数，所以压缩速度加快。
+        原因二：reader.readAsDataURL()方法比window.URL.createObjectURL()慢得多，前者通过reader.readAsDataURL()方法将图片转成base64再进行压缩，而后者是通过window.URL.createObjectURL()方法获取到本地图片链接就开始压缩，所以速度快了不少。 这个压缩必须在http网络协议下使用，在file本地文件协议下，画布导出base64时出错。 谷歌浏览器报错提示-- Uncaught: SecurityError:
+        Failed to execute 'toDataURL' on 'HTMLCanvasElement': Tainted canvases may not be exported.(捕获到安全错误：不能执行html画布的toDataURL方法：损坏的画布可能不被输入)
+    </h4>
+    <div id="upload" class="uploadBtn">
+        <span>加载本地图片链接</span>
+        <input type="file" accept="image/*" id="imgFiles" multiple style="display:none;" capture="camera" />
+    </div>
+
+    <div id="wrapImg">
+        <!--<img src=""/>-->
+    </div>
+
+    <script>
+        //上传图片
+        var uploadBtn = document.getElementById("upload"); //input的父类div
+        var imgFiles = document.getElementById("imgFiles"); //input
+        var wrapImg = document.getElementById('wrapImg'); //存放img图片的块元素
+        window.URL = window.URL || window.webkitURL;
+        uploadBtn.onclick = function() {
+            imgFiles.click();
+        }
+        imgFiles.addEventListener("change", function() {
+            getImg(this.files); //this.files是一个数组
+        }, false);
+
+        //这个函数由上面侦听事件change来触发，getImg(files)函数只是加载本地图片的链接，所以加载的速度好快。
+        function getImg(files) {
+            if (files.length > 20) {
+                alert("上传的图片不能超过20张");
+                return;
+            }
+            var dFrg = document.createDocumentFragment();
+            for (var i = 0; i < files.length; i++) {
+                var img = document.createElement('img');
+                img.src = window.URL.createObjectURL(files[i]); //读取文件，然后将它转成文件的一个临时路径，与普通的url无异。
+
+                //console.log(files[i].name + " --- " + files[i].type +  " --- " + files[i].size);//可以获取图片的名称、类型、大小
+                img.height = 189;
+                img.onload = function() {
+                    window.URL.revokeObjectURL(this.src); //前面创建URL，要释放它，不让它再用据内存和消耗浏览的性能。它与定时器的生成、清除的原理一样。释放url后图片的src将变成唯一的，只能用一个img元素标签指向这个链接。
+                    //注意有的情况过早释放，图片将无法压缩。释放之前创建的URL，图片的src变成唯一的了。如果要将img的src赋值到另一个img的src，请不要释放它，必须等它复制完毕后，再释放。
+
+                }
+                dFrg.appendChild(img);
+            }
+            wrapImg.appendChild(dFrg);
+        }
+
+        //压缩图片的函数---画布压缩
+        function zipImg(img) {
+            var canvas = document.createElement('canvas'); //创建压缩图片的画布
+            var ctx = canvas.getContext('2d');
+
+            img.className = "avtive-img";
+            if (img.width > 1500 || img.height > 1500) { //当图片的宽或高没有达到1500px,画布宽度高度等于图片实际宽度高度，这样避免小分辨率的图片被放大。
+                var px = 1000 * 1000; //总像素是一百万，图片的 长度*宽度 = 总像素，将图片压缩到一百万像素,临时画布的长*宽等于一百万即可
+                var ratio = img.width / img.height;
+                //定义压缩图片的高度  canvasW/canvasH = ratio , canvasW * canvasH = px ,Math.sqrt()开平方
+                var canvasH = Math.sqrt(px / ratio);
+                canvasH = Math.floor(canvasH); //向下取整
+                //画面的宽高比必须等于被压缩图片的宽高比
+                var canvasW = canvasH * ratio;
+                canvasW = Math.floor(canvasW);
+            } else {
+                var canvasW = img.width;
+                var canvasH = img.height;
+            }
+
+            canvas.width = canvasW; //设置画布的宽度
+            canvas.height = canvasH; //设置画布的高度
+            console.log(111111111)
+            ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvasW, canvasH);
+            img.className = img.className.replace(/(avtive-img)/g, "");
+            img.src = canvas.toDataURL("image/jpeg", 0.92); //图片质量：取值范围为0到1。如果指定图片格式为 image/jpeg 或 image/webp。如果【超出取值范围】 或 【不设置质量参数】，将会使用默认值0.92。其他参数会被忽略。toDataURL函数将画布内的图片转成base64格式图片，这里可以将jpeg图片设置为png等格式
+            img.onload = null; //压缩成功，将onload事件函数清除，否则与上面形成递归函数。因为每次压缩图片再赋值src时，就会触发onload事件。
+        }
+    </script>
+</body>
+
+</html>

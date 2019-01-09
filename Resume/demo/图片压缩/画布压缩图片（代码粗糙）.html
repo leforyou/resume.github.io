@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>图片利用HTML5画布压缩</title>
+		<style type="text/css">
+			/*选择图片上传按钮的样式*/
+			div{
+				display: inline-block;
+				background: #d1eeff;
+				border: 1px solid #96d2f6;
+				border-radius: 6px;
+				padding: 6px 10px;
+				color: #1581bc;
+				cursor:pointer;
+			}
+			div input{
+				display: none;
+			}
+			/*图片相关的样式*/
+			ul{
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				margin-top: 10px;
+				list-style: none;
+			}
+			ul:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			ul li{
+				width: 100px;
+				height: 120px;
+				border: 2px solid #65bbed;
+				float: left;
+				margin: 3px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="active_input">
+			选择图片
+			<input id="viewFiles" type="file" multiple="multiple" />
+		</div>
+		<script type="text/javascript">
+			(function() {
+				var active_input = document.getElementById("active_input");//input的父类div
+				var viewFiles = document.getElementById("viewFiles");//input
+				active_input.addEventListener("click",function(){//侦听div有没被点击
+					viewFiles.click();//隐藏的input按钮触发onclick点击事件
+				},false);
+				
+				viewFiles.addEventListener("change", function() {//绑定事件侦听，如果input默认onchange被触发便执行函数
+					//通过 this.files 取到 FileList数组 ，这里文件可以多选，但是只对第一张图片输入页面
+					//alert(this.files);//调用this是什么东西用的,this相当于viewFiles
+					viewFile(this.files);					
+				}, false);
+				
+				//这个函数由上面侦听事件change来触发
+				function viewFile(file) {					
+					if(document.getElementById("wrap") == null){//如果没ul id=wrap的标签就插入该标签，因为考虑用户要两次选择图片，如果不这样处理就会，再会重复生成这个标签
+						var ul = "<ul id='wrap'></ul>";
+						active_input.insertAdjacentHTML("afterEnd",ul);//在div后插入ul标签
+					}				
+						
+					for(var i = 0; i < file.length; i++){//遍历FileList的数组，还有一种遍历数组的新方法forEach()在这也适用
+						var reader = new FileReader();//调用HTML5中FileReader的API
+						reader.readAsDataURL(file[i]);
+						reader.onload = function(evt) {							
+							var src_img_base64 = evt.target.result;								
+							var li = ' <li><img id="beginIMG" src=" '  +  src_img_base64  +  ' " onload="" /></li> ';
+							document.getElementById("wrap").insertAdjacentHTML("beforeEnd",li);
+						}	
+				
+					}				
+				}
+				
+			})();//这个是调用函数的方法之一
+			
+		</script>
+		
+		
+		
+		<br /><br />
+		<!--下面利用画面压缩图片的分辨率，从而达到压缩容量的大小，压缩后的画布可以转换成base64格式图片-->
+		<button onclick="small()">利用画布压缩图片</button> <br />
+		<canvas id="myCanvas" width="250" height="300" style="border:1px solid #d3d3d3;">您的浏览器不支持 HTML5 canvas 标签。</canvas>	<br />	
+		<img id="afterIMG" src="" width="220" height="277"/>
+		
+		
+		<script>
+			function small(){
+				var canvasObj = document.getElementById("myCanvas");
+				var ctx = canvasObj.getContext("2d");
+				var img = document.getElementById("beginIMG");
+				ctx.drawImage(img,0,0,500,500, 0, 0,250,250);//画布的压缩原理:是将分辨率大的图片，转换成分辨率小的图片。画布与压缩后图片的宽高要根据导入图片的实际大小来设置才行。
+				var strDataURI = canvasObj.toDataURL("image/jpeg");//将画布的图片转成base64格式图片，jpeg格式可以修改成png等格式
+				document.getElementById('afterIMG').src = strDataURI;
+			}
+			
+			//注:1300万像素的手机拍出来图片分辨是3100*4200，容量大小2-4M左右，单反相机照片分辨率是5184×3456，容量大小6M-8M左右
+		</script>
+
+	</body>
+
+</html>

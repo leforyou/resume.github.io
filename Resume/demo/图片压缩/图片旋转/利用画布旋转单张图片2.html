@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>利用画布旋转图片</title>
+		<style type="text/css">
+			/*选择图片上传按钮的样式*/
+			
+			.uploadBtn {
+				display: inline-block;
+				background: #d1eeff;
+				border: 1px solid #96d2f6;
+				border-radius: 6px;
+				padding: 6px 10px;
+				color: #1581bc;
+				cursor: pointer;
+				outline: none;
+			}
+			
+			.uploadBtn:hover {
+				background: #80cfff;
+				border: 1px solid #78c5f3;
+				color: #fff;
+			}
+			
+			#wrapImg {
+				padding: 5px;
+			}
+			
+			#wrapImg img {
+				height: auto;
+				max-height: 500px;
+				display: inline-block;
+				border: 1px solid #80cfff;
+				cursor: pointer;
+				display: none;
+			}
+			
+			.mask {
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: rgba(0, 0, 0, .3);
+				z-index: 9999;
+				display: none;
+			}
+			
+			.mask img {
+				position: fixed;
+				top: -25px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				border: 3px solid #fff;
+			}
+			
+			.rotate-left,
+			.rotate-right {
+				position: fixed;
+				bottom: 0px;
+				left: 50%;
+				padding: 24px;
+				cursor: pointer;
+				display: block;
+			}
+			
+			.rotate-left {
+				background: url(RotateLeft.png) center no-repeat;
+				background-size: 26px;
+				margin-left: -58px;
+			}
+			
+			.rotate-right {
+				background: url(RotateRight.png) center no-repeat;
+				background-size: 26px;
+				margin-right: -58px;
+			}
+			
+			.close {
+				position: fixed;
+				top: 20px;
+				right: 20px;
+				background: url(Close.png) no-repeat center;
+				background-size: 38px;
+				padding: 26px;
+				cursor: pointer;
+				z-index: 99991;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<h4>
+			这个实例二在【利用画布旋转图片1】基础上进行改进。只有点击关闭按钮(交叉图片)，才能读取图片旋转后的数据，即在原来图片上进行一次更改。还有另一种方法是：利用CSS3的transform: rotate(90deg);方法旋转图片，最后只有在提交数据时才利用画布对图片进行旋转一次，这种方法是最低限度保证图片的质量，实例3有介绍。
+		</h4>
+		<div id="upload" class="uploadBtn">
+			<span>压缩上传图片</span>
+			<input type="file" accept="image/*" id="imgFiles" style="display:none;" />
+		</div>
+		<div id="wrapImg">
+			<img src="" />
+		</div>
+		<div class="mask">
+			<img src="" />
+			<span class="rotate-left"><!--向左旋转--></span>
+			<span class="rotate-right"><!--向右旋转--></span>
+			<span class="close"><!--关闭按钮--></span>
+		</div>
+		<script>
+			//上传图片
+			var uploadBtn = document.getElementById("upload"); //input的父类div
+			var imgFiles = document.getElementById("imgFiles"); //input
+			uploadBtn.onclick = function() {
+				imgFiles.click();
+			}
+			imgFiles.addEventListener("change", function() {
+				getImg(this.files); //this.files是一个数组
+			}, false);
+
+			//这个函数由上面侦听事件change来触发
+			function getImg(files) {
+				var reader = new FileReader();
+
+				reader.readAsDataURL(files[0]);
+				reader.onload = function(event) {
+					var img = document.getElementById('wrapImg').getElementsByTagName('img')[0];
+					img.style.display = 'block';
+
+					var base64Img = event.target.result; //方法一
+					//var base64Img = this.result;//方法二
+					if(files[0].size > 1024 * 1024 * 2 / 10.24) { //大于200kb的图片进行压缩
+						var tempIMG = document.createElement('img'); //创建临时img
+						var tempCanvas = document.createElement('canvas'); //创建临时画布	
+						tempIMG.src = base64Img;
+
+						tempIMG.onload = function() {
+							if(tempIMG.width > 1500 || tempIMG.height > 1500) { //当图片的宽或高没有达到1500px,画布宽度高度等于图片实际宽度高度，这样避免小分辨率的图片被放大。
+								var px = 1000 * 1000; //总像素是一百万，图片的 长度*宽度 = 总像素，将图片压缩到一百万像素,临时画布的长*宽等于一百万即可
+								var ratio = tempIMG.width / tempIMG.height;
+								//定义压缩图片的高度  canvasW/canvasH = ratio , canvasW * canvasH = px ,Math.sqrt()开平方
+								var canvasH = Math.sqrt(px / ratio);
+								canvasH = Math.floor(canvasH); //向下取整
+								//画面的宽高比必须等于被压缩图片的宽高比
+								var canvasW = canvasH * ratio;
+								canvasW = Math.floor(canvasW);
+							} else {
+								var canvasW = tempIMG.width;
+								var canvasH = tempIMG.height;
+							}
+
+							tempCanvas.width = canvasW; //设置画布的宽度
+							tempCanvas.height = canvasH; //设置画布的高度
+
+							var ctx = tempCanvas.getContext("2d");
+							ctx.drawImage(tempIMG, 0, 0, tempIMG.width, tempIMG.height, 0, 0, canvasW, canvasH);
+
+							img.src = tempCanvas.toDataURL("image/jpeg", 0.92); ////图片质量：取值范围为0到1。如果指定图片格式为 image/jpeg 或 image/webp。如果【超出取值范围】 或 【不设置质量参数】，将会使用默认值0.92。其他参数会被忽略。toDataURL函数将画布内的图片转成base64格式图片，这里可以将jpeg图片设置为png等格式
+
+						}
+					} else { //小于0.1Mb的图片不进行压缩
+						img.src = base64Img;
+					}
+				}
+			}
+		</script>
+
+		<script>
+			//图片旋转
+			var peoplePic = document.getElementById('wrapImg').getElementsByTagName('img')[0]; //本地加载的图片
+			var mask = document.getElementsByClassName('mask')[0];
+			var maskImg = mask.getElementsByTagName('img')[0]; //遮罩层的图片
+			peoplePic.onclick = function() {
+				mask.style.display = 'block';
+				maskImg.src = this.src;
+				center();
+			}
+
+			function center() {
+				var imgH = maskImg.height;
+				var imgW = maskImg.width;
+				var clientH = document.documentElement.clientHeight;
+				var clientW = document.documentElement.clientWidth;
+				var imgRatio = imgH / imgW;
+				var clientRatio = clientH / clientW;
+				var space = 80;
+				if(imgRatio >= clientRatio) {
+					maskImg.style.height = (clientH - space) + 'px';
+					maskImg.style.width = 'auto';
+				} else if(imgRatio < clientRatio) {
+					maskImg.style.width = (clientH - space) + 'px';
+					maskImg.style.height = 'auto';
+				}
+			}
+			document.getElementsByClassName('rotate-left')[0].onclick = function() { //图片向左旋转
+				rotate('left');
+			}
+			document.getElementsByClassName('rotate-right')[0].onclick = function() { //图片向右旋转
+				rotate('right');
+			}
+
+			document.getElementsByClassName('close')[0].onclick = function() {
+				peoplePic.src = maskImg.src;
+				roundNum = 90; //当关闭预览图时，必须让旋转度复位(一切从头开始)，否则rotate(arg)函数旋转就不准确了。
+				mask.style.display = 'none';
+			}
+			var roundNum = 90; //全局变量用来保存图片旋转了多少度
+			function rotate(arg) {
+				var img = document.createElement('img');
+				img.src = peoplePic.src;
+
+				var canvas = document.createElement('canvas'); //创建画布
+				canvas.width = img.height;
+				canvas.height = img.width;
+				var ctx = canvas.getContext('2d');
+
+				if(arg === 'left') {
+					if(roundNum > 0) {
+						roundNum = -roundNum;
+					}
+					if(roundNum === -90) {
+						ctx.translate(0, canvas.height);
+						ctx.rotate(roundNum * Math.PI / 180);
+						ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.height, canvas.width);
+						maskImg.src = canvas.toDataURL("image/jpeg", 1);
+						roundNum = roundNum - 90;
+					} else if(roundNum === -180) {
+						canvas.width = img.width;
+						canvas.height = img.height;
+						ctx.translate(canvas.width, canvas.height);
+						ctx.rotate(roundNum * Math.PI / 180);
+						ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
+						maskImg.src = canvas.toDataURL("image/jpeg", 1);
+						roundNum = roundNum - 90;
+					} else if(roundNum === -270) {
+						ctx.translate(canvas.width, 0);
+						ctx.rotate(roundNum * Math.PI / 180);
+						ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.height, canvas.width);
+						maskImg.src = canvas.toDataURL("image/jpeg", 1);
+						roundNum = roundNum - 90;
+					} else if(roundNum === -360) {
+						maskImg.src = peoplePic.src;
+						roundNum = 90;
+					}
+				} else if(arg === 'right') {
+					if(roundNum < 0) {
+						roundNum = -roundNum;
+					}
+					if(roundNum === 90) { //实际头正向上
+						ctx.translate(canvas.width, 0);
+						ctx.rotate(-270 * Math.PI / 180); //头向右
+						ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.height, canvas.width);
+						maskImg.src = canvas.toDataURL("image/jpeg", 1);
+						roundNum = -360;
+					} else if(roundNum === 180) { //实际头向左
+						maskImg.src = peoplePic.src; //头正向上
+						roundNum = 90;
+					} else if(roundNum === 360) { //实际头向右
+						canvas.width = img.width;
+						canvas.height = img.height;
+						ctx.translate(canvas.width, canvas.height);
+						ctx.rotate(-180 * Math.PI / 180); //头向下
+						ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
+						maskImg.src = canvas.toDataURL("image/jpeg", 1);
+						roundNum = -270;
+					} else if(roundNum === 270) { //实际头向下
+						ctx.translate(0, canvas.height);
+						ctx.rotate(-90 * Math.PI / 180); //头向左
+						ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.height, canvas.width);
+						maskImg.src = canvas.toDataURL("image/jpeg", 1);
+						roundNum = -180;
+					}
+				}
+				center();
+			}
+		</script>
+	</body>
+
+</html>

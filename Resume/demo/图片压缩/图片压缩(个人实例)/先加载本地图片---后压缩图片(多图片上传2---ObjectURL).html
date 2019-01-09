@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>图片利用HTML5画布压缩</title>
+		<style type="text/css">
+			/*按钮样式*/
+			
+			.uploadBtn,.zip{
+				display: inline-block;
+				background: #d1eeff;
+				border: 1px solid #96d2f6;
+				border-radius: 6px;
+				padding: 6px 10px;
+				color: #1581bc;
+				cursor: pointer;
+				outline: none;
+			}
+			
+			.uploadBtn:hover ,.zip:hover{
+				background: #80cfff;
+				border: 1px solid #78c5f3;
+				color: #fff;
+			}
+			
+			#wrapImg {
+				padding: 5px;
+			}
+			
+			#wrapImg img {
+				height: 200px;
+				margin-right: 10px;
+				display: inline-block;
+				border: 1px solid #80cfff;
+			}
+			.avtive-img{
+				width: auto !important;
+				height: auto !important;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<h4>
+			input type="file"添加multiple属性，所以每次能选择多张图片上传。使用window.URL.createObjectURL();方法加载本地图片的链接，并没压缩，所以它能很快在浏览器显示出来。
+			只有在提交图片数据时，才用画布对它进行压缩。虽然提交数据的进程显得有点长(加载极快，提交时间偏长)，但是比边加载边压缩的体验要好(加载慢，提交时间短)。
+			每次加载图片张数不宜过多，最好定义在10-20张。曾加载50单反相机拍照的图片(每张3-4MB)，笔记本的谷歌浏览器崩溃一次，爆内存。
+			window.URL.createObjectURL();方法加载本地图片的链接，这种方式在移动端是有问题的，在QQ浏览器显示时会花屏、闪屏。在PC端是没问题的。
+		</h4>
+		<div id="upload" class="uploadBtn">
+			<span>加载本地图片链接</span>
+			<input type="file" accept="image/*" id="imgFiles" multiple="multiple" style="display:none;" />
+		</div>
+		<div id="zipImg" class="zip">
+			压缩图片
+		</div>
+		<div id="secuess" style="color:#07d807;font-weight:bold;font-size:20px;display:none;">压缩成功</div>
+		<div id="wrapImg">
+			<!--<img src=""/>-->
+		</div>
+		
+		<script>
+			//上传图片
+			var uploadBtn = document.getElementById("upload"); //input的父类div
+			var imgFiles = document.getElementById("imgFiles"); //input
+			var wrapImg = document.getElementById('wrapImg');//存放img图片的块元素
+			window.URL = window.URL || window.webkitURL;
+			uploadBtn.onclick = function() {
+				imgFiles.click();
+			}
+			imgFiles.addEventListener("change", function() {
+				getImg(this.files); //this.files是一个数组
+			}, false);
+
+			//这个函数由上面侦听事件change来触发，getImg(files)函数只是加载本地图片的链接，所以加载的速度好快。
+			function getImg(files) {
+				if(files.length > 20){
+					alert("上传的图片不能超过20张");
+					return;
+				}
+				var dFrg = document.createDocumentFragment();
+				for(var i = 0 ; i < files.length ; i ++){
+					var img = document.createElement('img');
+					img.height = 189;
+					img.src = window.URL.createObjectURL(files[i]);//读取文件，然后将它转成文件的一个临时路径，与普通的url无异。
+					img.onload = function(){
+						//window.URL.revokeObjectURL(this.src);//前面创建URL，现在要释放它，不让它再用据内存和消耗浏览的性能。它与定时器的生成、清除的原理一样。清除后图片的src将变成唯一的，只能用一个img元素标签指向这个链接
+					}
+					dFrg.appendChild(img);
+				}
+				wrapImg.appendChild(dFrg);
+			}
+			
+			//压缩图片的函数---画布压缩
+			document.getElementById('zipImg').onclick = function(){
+				var imgs = wrapImg.getElementsByTagName('img');
+				if(imgs.length === 0){
+					alert("先加载本地图片！");
+					return;
+				}
+				var canvas = document.createElement('canvas');//创建压缩图片的画布
+				var ctx = canvas.getContext('2d');
+				for(var i = 0 ; i < imgs.length ; i++){
+					var imgZip = imgs[i];
+					imgZip.className = "avtive-img";
+					if(imgZip.width > 1500 || imgZip.height > 1500) { //当图片的宽或高没有达到1500px,画布宽度高度等于图片实际宽度高度，这样避免小分辨率的图片被放大。
+						var px = 1000 * 1000; //总像素是一百万，图片的 长度*宽度 = 总像素，将图片压缩到一百万像素,临时画布的长*宽等于一百万即可
+						var ratio = imgZip.width / imgZip.height;
+						//定义压缩图片的高度  canvasW/canvasH = ratio , canvasW * canvasH = px ,Math.sqrt()开平方
+						var canvasH = Math.sqrt(px / ratio);
+						canvasH = Math.floor(canvasH); //向下取整
+						//画面的宽高比必须等于被压缩图片的宽高比
+						var canvasW = canvasH * ratio;
+						canvasW = Math.floor(canvasW);
+					} else {
+						var canvasW = imgZip.width;
+						var canvasH = imgZip.height;
+					}
+					
+					canvas.width = canvasW; //设置画布的宽度
+					canvas.height = canvasH; //设置画布的高度
+					
+					ctx.drawImage(imgZip, 0, 0, imgZip.width, imgZip.height, 0, 0, canvasW, canvasH);
+					imgZip.src = canvas.toDataURL("image/jpeg", 0.92); ////图片质量：取值范围为0到1。如果指定图片格式为 image/jpeg 或 image/webp。如果【超出取值范围】 或 【不设置质量参数】，将会使用默认值0.92。其他参数会被忽略。toDataURL函数将画布内的图片转成base64格式图片，这里可以将jpeg图片设置为png等格式
+					imgZip.className = imgZip.className.replace(/(avtive-img)/g,"");
+					//window.URL.revokeObjectURL(imgZip.src);//释放之前创建的URL,过早清除图片不能进行压缩了。清除src后，图片的src变成唯一的了。
+				}
+				document.getElementById('secuess').style.display = "block";
+			}
+		</script>
+	</body>
+
+</html>

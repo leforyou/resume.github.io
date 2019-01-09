@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>图片利用HTML5画布压缩</title>
+		<style type="text/css">
+			/*选择图片上传按钮的样式*/
+			.uploadBtn{
+				display: inline-block;
+				background: #d1eeff;
+				border: 1px solid #96d2f6;
+				border-radius: 6px;
+				padding: 6px 10px;
+				color: #1581bc;
+				cursor:pointer;
+				outline: none;
+			}
+			.uploadBtn:hover{
+				background: #80cfff;
+				border: 1px solid #78c5f3;
+				color: #fff;
+			}
+			#wrapImg{
+				padding: 5px;
+			}
+			#wrapImg img{
+				width: 100%;
+				display: inline-block;
+				border:1px solid #80cfff;
+			}
+			.mask{
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: rgba(0,0,0,.3);
+				display: none;
+			}
+			.tip{
+				width: 260px;
+				height: 100px;
+				background: #FFFFFF;
+				margin:98px auto;
+				padding: 0;
+				text-align: center;
+				border-radius: 5px;
+				overflow: hidden;
+				box-shadow: 0 0 8px #000;
+			}
+			.tip p{
+				margin: 0;
+				line-height: 50px;
+				border-bottom: 1px solid #CCCCCC;
+			}
+			.tip p:nth-of-type(2){
+				border-bottom:none;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="num" style="color: #3cdc0a;"></div>
+		<h4>
+			本例支持多张图片上传，成功将手机拍照的3Mb图片压缩到98Kb！在电脑只支持上传图片，在魅族note2安卓手机、ipad平板能拍照和上传图片!在浏览器下，鼠标右键将图片保存到本地，然后查看图片属性即可！
+			base64数据源保存在图片的src中，到时上传base64数据到服务器即可！大容量的图片转换成base64的过程会有点慢，很消耗性能，高配置的手机、高配置的电脑会相对快好多！
+			上传的图片分辨率不宜过大，宽高最好不要超过1万*1万，曾试过上传2万*2万分辨率的图片导致电脑浏览器崩溃。 注：在ipad平板拍摄中，如果平板横竖的方法不对，拍出的照片是上下左右颠倒的。
+			注:1300万像素的手机拍出来图片分辨是3100*4200，容量大小2-4M左右，单反相机照片分辨率是5184×3456，容量大小6M-8M左右	。这个实例先用reader.readAsDataURL()方法将图片读取成base64数据，再用画布压缩。
+		</h4>
+		<div id="upload" class="uploadBtn">
+			<span>压缩上传图片</span>
+			<input type="file" accept="image/*" id="imgFiles" style="display:none;" multiple="multiple" />
+		</div>
+		<div id="wrapImg">
+			<!--<img src=""/>-->
+		</div>
+		<div class="mask">
+			<!--遮罩层-->
+			<div class="tip">
+				<p>每次只能加载压缩10张图片</p>
+				<p>好</p>
+			</div>
+		</div>
+		<script>
+			//上传图片
+			var uploadBtn = document.getElementById("upload"); //input的父类div
+			var imgFiles = document.getElementById("imgFiles"); //input
+			uploadBtn.onclick = function(){
+				imgFiles.click();
+			}
+			imgFiles.addEventListener("change", function() {
+				getImg(this.files);//this.files是一个数组
+			}, false);
+
+			//这个函数由上面侦听事件change来触发
+			function getImg(files) {
+				if(files.length > 10){
+					document.getElementsByClassName('mask')[0].style.display = "block";
+					return; //在此可以限制每次压缩10张
+				}
+				var reader = new FileReader();
+				var i = 0;
+				forAll();
+				function forAll(){
+				//for(var i = 0 ; i < files.length ; i ++){//用函数来替代for循环，原因是for速度过快，第一张图片没读取完，第二张便开始了，导致报错。所以用递归函数来取代for循环
+					document.getElementById('num').innerHTML = '正在压缩第' + (i+1) + '张图片';
+					reader.readAsDataURL(files[i]);//这个方法比window.URL.createObjectURL()方法慢好多。
+					reader.onload = function(event) {
+						var wrapImg = document.getElementById('wrapImg');
+						var img = document.createElement('img');
+						wrapImg.appendChild(img);
+						
+						var base64Img = event.target.result;//方法一，event.target对象就是this，多个项目中使用谷歌浏览器控制台输入event观察得出的经验
+						//var base64Img = this.result;//方法二
+						if(files[i].size > 1024 * 1024 * 3 / 10.24) { //大于300kb的图片进行压缩
+							var tempIMG = document.createElement('img'); //创建临时img
+							var tempCanvas = document.createElement('canvas'); //创建临时画布	
+							tempIMG.src = base64Img;
+							tempIMG.onload = function(){
+								if(tempIMG.width > 1500 || tempIMG.height > 1500){//当图片的宽或高没有达到1500px,画布宽度高度等于图片实际宽度高度，这样避免小分辨率的图片被放大。
+									var px = 1000*1000;//总像素是一百万，图片的 长度*宽度 = 总像素，将图片压缩到一百万像素,临时画布的长*宽等于一百万即可
+									var ratio = tempIMG.width/tempIMG.height;
+									//定义压缩图片的高度  canvasW/canvasH = ratio , canvasW * canvasH = px ,Math.sqrt()开平方
+									var canvasH = Math.sqrt(px/ratio);
+									canvasH = Math.floor(canvasH);//向下取整
+									//画面的宽高比必须等于被压缩图片的宽高比
+									var canvasW = canvasH * ratio; 
+									canvasW = Math.floor(canvasW);
+								}else{
+									var canvasW = tempIMG.width;
+									var canvasH = tempIMG.height;
+								}
+								
+								
+								tempCanvas.width = canvasW; //设置画布的宽度
+								tempCanvas.height = canvasH; //设置画布的高度
+
+								var ctx = tempCanvas.getContext("2d");
+								ctx.drawImage(tempIMG, 0, 0, tempIMG.width, tempIMG.height, 0, 0, canvasW, canvasH);
+
+								img.src = tempCanvas.toDataURL("image/jpeg",0.92); ////图片质量：取值范围为0到1。如果指定图片格式为 image/jpeg 或 image/webp。如果【超出取值范围】 或 【不设置质量参数】，将会使用默认值0.92。其他参数会被忽略。toDataURL函数将画布内的图片转成base64格式图片，这里可以将jpeg图片设置为png等格式	
+							}
+						} else { //小于0.1Mb的图片不进行压缩
+							img.src = base64Img;
+						}
+						
+						i++;
+						if(i === files.length){
+							document.getElementById('num').innerHTML = '压缩完成';
+							return;
+						}
+						forAll();
+					}
+				}	
+			}
+			document.getElementsByClassName('tip')[0].getElementsByTagName('p')[1].onclick = function(){
+				document.getElementsByClassName('mask')[0].style.display = 'none';//隐藏遮罩层
+			}
+		</script>
+	</body>
+</html>

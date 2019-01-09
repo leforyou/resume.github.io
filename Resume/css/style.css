@@ -1219,6 +1219,12 @@ body {
   padding: 5px 0px;
 }
 
+.project-page .personal-demo .box .application .list .tip {
+  line-height: 1.8;
+  color: #666;
+  font-size: 14px;
+}
+
 /**项目 end**/
 /** start**/
 /** end**/

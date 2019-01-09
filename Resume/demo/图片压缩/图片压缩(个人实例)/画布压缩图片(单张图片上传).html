@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>图片利用HTML5画布压缩</title>
+		<style type="text/css">
+			/*选择图片上传按钮的样式*/
+			div{
+				display: inline-block;
+				background: #d1eeff;
+				border: 1px solid #96d2f6;
+				border-radius: 6px;
+				padding: 6px 10px;
+				color: #1581bc;
+				cursor:pointer;
+				outline: none;
+			}
+			div:hover{
+				background: #80cfff;
+				border: 1px solid #78c5f3;
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<h4>本例只支持单张图片上传，成功将手机拍照的3Mb图片压缩到98Kb！在电脑只支持上传图片，在魅族note2安卓手机、ipad平板能拍照和上传图片!在浏览器下，鼠标右键将图片保存到本地，然后查看图片属性即可！base64数据源保存在图片的src中，到时上传base64数据到服务器即可！大容量的图片转换成base64的过程会有点慢，很消耗性能，高配置的手机、高配置的电脑会相对快好多！
+			该方法在压缩算法是电脑和安卓手机是没问题的，但在ipad平板是有问题的，原因是有点过大的图片在objIMG.src = base64Img;赋值的过程时间有点长，还没赋值成功下面的代码就直接执行了，所以图片没有压缩也没有输入，解决的办法在相应的代码加个定时器。上传的图片分辨率不宜过大，宽高最好不要超过1万*1万，曾试过上传2万*2万分辨率的图片导致电脑浏览器崩溃。 注：在ipad平板拍摄中，如果平板横竖的方法不对，拍出的照片是上下左右颠倒的。
+		</h4>
+		
+		<div id="active_input">
+			选择图片
+			<input type="file" accept="image/*" id="viewFiles" style="display:none;" multiple=""/>
+		</div>	<br/><br/>
+		
+		<img id="peoplePic" src="" alt="上传头像"/>
+		
+		<script type="text/javascript">
+			(function() {//第三次修改
+				var active_input = document.getElementById("active_input");//input的父类div
+				var viewFiles = document.getElementById("viewFiles");//input
+				active_input.addEventListener("click",function(){//侦听div有没被点击
+					viewFiles.click();//隐藏的input按钮触发onclick点击事件，实现间接点击
+				},false);
+				
+				viewFiles.addEventListener("change", function() {//绑定事件侦听，如果input默认onchange被触发便执行函数
+					//通过 this.files 取到 FileList数组 ，这里文件可以多选，但是只对第一张图片输入页面
+					//alert(this.files);//调用this是什么东西用的,this相当于viewFiles
+					viewFile(this.files);					
+				}, false);
+				
+				//这个函数由上面侦听事件change来触发
+				function viewFile(file) {					
+					
+					var reader = new FileReader();//调用HTML5中FileReader的API
+					reader.readAsDataURL(file[0]);
+					reader.onload = function(event) {							
+						var base64Img = event.target.result;//方法一，event.target对象就是this，多个项目中使用谷歌浏览器控制台输入event观察得出的经验
+						//var base64Img = this.result;//方法二
+						
+						if(file[0].size > 1024*1024/102.4){//超过0.1Mb的图片进行压缩。size的单位是字节，1024字节 = 1Kb ，1024Kb = 1Mb .
+							//下面利用画布压缩图片的分辨率，从而达到压缩容量的大小，压缩后的画布可以转换成base64格式图片
+							
+							var objIMG = new Image();//图片也可以使用new声明图片对象
+							
+							var tempCanvas = document.createElement('canvas');//创建临时画布，用于压缩图片，这些标签不用插入到HTML内，它在内存里面，只需将最后的结果输入即可。
+						
+							objIMG.src = base64Img;
+							
+							var setIval = setInterval(function(){
+								if(objIMG.width>0 && objIMG.height > 0){//定时器解决苹果ipad平板的问题
+									var canvasH = 668;//定义压缩图片的高度
+									var canvasW = canvasH * (objIMG.width / objIMG.height);//画面的宽高比必须等于被压缩图片的宽高比
+									tempCanvas.width = canvasW;//设置画布的宽度
+									tempCanvas.height = canvasH;//设置画布的高度
+									var ctx = tempCanvas.getContext("2d");
+									ctx.drawImage(objIMG,0,0,objIMG.width,objIMG.height,0,0,canvasW,canvasH);
+									//画布的压缩原理:是将分辨率大的图片，转换成分辨率小的图片。画布与压缩后图片的宽高要根据导入图片的实际大小来设置才行。
+							
+									document.getElementById('peoplePic').src = tempCanvas.toDataURL("image/jpeg",0.92);////图片质量：取值范围为0到1。如果指定图片格式为 image/jpeg 或 image/webp。如果【超出取值范围】 或 【不设置质量参数】，将会使用默认值0.92。其他参数会被忽略。toDataURL函数将画布内的图片转成base64格式图片，这里可以将jpeg图片设置为png等格式
+									document.getElementById('peoplePic').height = 140 ;
+									clearInterval(setIval);//清除定时器
+								}
+							},100);				
+						}else{//小于0.1Mb的图片不进行压缩
+							document.getElementById('peoplePic').src = base64Img;
+							document.getElementById('peoplePic').height = 140 ;
+						}								
+					}	
+						
+				}
+				
+			})();//这个是调用函数的方法之一(自己我调用函数)
+			//注:1300万像素的手机拍出来图片分辨是3100*4200，容量大小2-4M左右，单反相机照片分辨率是5184×3456，容量大小6M-8M左右			
+		</script>
+		
+		<!--<script type="text/javascript">
+			(function() {//第二次修改
+				var active_input = document.getElementById("active_input");//input的父类div
+				var viewFiles = document.getElementById("viewFiles");//input
+				active_input.addEventListener("click",function(){//侦听div有没被点击
+					viewFiles.click();//隐藏的input按钮触发onclick点击事件，实现间接点击
+				},false);
+				
+				viewFiles.addEventListener("change", function() {//绑定事件侦听，如果input默认onchange被触发便执行函数
+					//通过 this.files 取到 FileList数组 ，这里文件可以多选，但是只对第一张图片输入页面
+					//alert(this.files);//调用this是什么东西用的,this相当于viewFiles
+					viewFile(this.files);					
+				}, false);
+				
+				//这个函数由上面侦听事件change来触发
+				function viewFile(file) {					
+					
+					var reader = new FileReader();//调用HTML5中FileReader的API
+					reader.readAsDataURL(file[0]);
+					reader.onload = function(event) {							
+						var base64Img = event.target.result;								
+						
+						if(file[0].size > 1024*1024/2){//超过0.5Mb的图片进行压缩。size的单位是字节，1024字节 = 1Kb ，1024Kb = 1Mb .
+							//下面利用画布压缩图片的分辨率，从而达到压缩容量的大小，压缩后的画布可以转换成base64格式图片
+							
+							var objIMG = new Image();//图片也可以使用new声明图片对象
+							
+							var tempCanvas = document.createElement('canvas');//创建临时画布，用于压缩图片，这些标签不用插入到HTML内，它在内存里面，只需将最后的结果输入即可。
+							
+							
+							objIMG.src = base64Img;
+							var canvasH = 668;//定义压缩图片的高度
+							var canvasW = canvasH * (objIMG.width / objIMG.height);//画面的宽高比必须等于被压缩图片的宽高比
+							tempCanvas.width = canvasW;//设置画布的宽度
+							tempCanvas.height = canvasH;//设置画布的高度
+							var ctx = tempCanvas.getContext("2d");
+							ctx.drawImage(objIMG,0,0,objIMG.width,objIMG.height,0,0,canvasW,canvasH);
+							//画布的压缩原理:是将分辨率大的图片，转换成分辨率小的图片。画布与压缩后图片的宽高要根据导入图片的实际大小来设置才行。
+							
+							document.getElementById('peoplePic').src = tempCanvas.toDataURL("image/jpeg");//toDataURL函数将画布内的图片转成base64格式图片，这里可以将jpeg图片设置为png等格式
+							document.getElementById('peoplePic').height = 140 ;
+						
+						}else{//小于0.5Mb的图片不进行压缩
+							document.getElementById('peoplePic').src = base64Img;
+							document.getElementById('peoplePic').height = 140 ;
+						}		
+						//var updata = document.getElementById('peoplePic').src.substring(23);//字符串的截取，上传给服务器的数据
+						//console.log(updata);
+						//引用jq文件后再能执行下面的ajax
+						//var urlP = URL + ? "p="+ updata;//问号后面的是接口传参。
+						//http://taomei.in/weixin/count/nearsearch?id=0&start=0&count=10//淘美项目的接口
+						/*$.ajax({
+							type:"post",
+							url:"urlP",//接口
+							async:true,//异步请求
+							success:function(results){//回调函数
+								
+							}
+						});*/
+					}	
+						
+				}
+				
+			})();//这个是调用函数的方法之一(自己我调用函数)
+			//注:1300万像素的手机拍出来图片分辨是3100*4200，容量大小2-4M左右，单反相机照片分辨率是5184×3456，容量大小6M-8M左右			
+		</script>-->
+		
+		
+		
+		
+		
+		
+		<!--<script type="text/javascript">//上面是相对精简的方法，推荐使用上面的方法
+			(function() {//第一次写的代码
+				var active_input = document.getElementById("active_input");//input的父类div
+				var viewFiles = document.getElementById("viewFiles");//input
+				active_input.addEventListener("click",function(){//侦听div有没被点击
+					viewFiles.click();//隐藏的input按钮触发onclick点击事件，实现间接点击
+				},false);
+				
+				viewFiles.addEventListener("change", function() {//绑定事件侦听，如果input默认onchange被触发便执行函数
+					//通过 this.files 取到 FileList数组 ，这里文件可以多选，但是只对第一张图片输入页面
+					//alert(this.files);//调用this是什么东西用的,this相当于viewFiles
+					viewFile(this.files);					
+				}, false);
+				
+				//这个函数由上面侦听事件change来触发
+				function viewFile(file) {					
+					
+					var reader = new FileReader();//调用HTML5中FileReader的API
+					reader.readAsDataURL(file[0]);
+					reader.onload = function(event) {							
+						var base64Img = event.target.result;								
+						
+						if(file[0].size > 1024*1024/2){//超过0.5Mb的图片进行压缩。size的单位是字节，1024字节 = 1Kb ，1024Kb = 1Mb .
+							//下面利用画布压缩图片的分辨率，从而达到压缩容量的大小，压缩后的画布可以转换成base64格式图片
+							
+							//var img = new Image();//图片也可以使用new声明图片对象，相当于下面的健，比下面会少更多代码
+							var tempIMG = document.createElement('img');//创建临时img，用于保存未被压缩的图片，压缩成功后，下面会删除img标签
+							var tempCanvas = document.createElement('canvas');//创建临时画布，用于压缩图片，压缩成功后，下面会删除画布
+							document.querySelector('body').appendChild(tempIMG);//js原生DOM操作，向body插入新建的标签
+							document.querySelector('body').appendChild(tempCanvas);
+							tempIMG.style.display = 'none';//临时的标签内容，用于辅助压缩，并不该显示，所以将它隐藏
+							tempCanvas.style.display = 'none';
+							
+							tempIMG.src = base64Img;
+							var canvasH = 668;//定义压缩图片的高度
+							var canvasW = canvasH * (tempIMG.width / tempIMG.height);//画面的宽高比必须等于被压缩图片的宽高比
+							tempCanvas.width = canvasW;//设置画布的宽度
+							tempCanvas.height = canvasH;//设置画布的高度
+							var ctx = tempCanvas.getContext("2d");
+							ctx.drawImage(tempIMG,0,0,tempIMG.width,tempIMG.height,0,0,canvasW,canvasH);
+							//画布的压缩原理:是将分辨率大的图片，转换成分辨率小的图片。画布与压缩后图片的宽高要根据导入图片的实际大小来设置才行。
+							
+							document.getElementById('peoplePic').src = tempCanvas.toDataURL("image/jpeg");//toDataURL函数将画布内的图片转成base64格式图片，这里可以将jpeg图片设置为png等格式
+							document.getElementById('peoplePic').height = 140 ;
+							
+							tempIMG.parentNode.removeChild(tempIMG);//压缩完成后删除图片标签
+							tempCanvas.parentNode.removeChild(tempCanvas);//压缩完成后删除画布标签
+							
+						}else{//小于0.5Mb的图片不进行压缩
+							document.getElementById('peoplePic').src = base64Img;
+							document.getElementById('peoplePic').height = 140 ;
+						}		
+					}	
+						
+				}
+				
+			})();//这个是调用函数的方法之一(自己我调用函数)
+			//注:1300万像素的手机拍出来图片分辨是3100*4200，容量大小2-4M左右，单反相机照片分辨率是5184×3456，容量大小6M-8M左右
+			
+		</script>-->
+		
+
+	</body>
+</html>

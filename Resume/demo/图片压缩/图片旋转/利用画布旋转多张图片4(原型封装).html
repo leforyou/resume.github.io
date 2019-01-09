@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>利用CSS3和画布旋转图片</title>
+		<style type="text/css">
+			/*选择图片上传按钮的样式*/
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				padding: 15px;
+			}
+			.uploadBtn {
+				display: inline-block;
+				background: #d1eeff;
+				border: 1px solid #96d2f6;
+				border-radius: 6px;
+				padding: 6px 10px;
+				color: #1581bc;
+				cursor: pointer;
+				outline: none;
+			}
+			
+			.uploadBtn:hover {
+				background: #80cfff;
+				border: 1px solid #78c5f3;
+				color: #fff;
+			}
+			
+			.wrap-imgs {
+				padding: 5px;
+			}
+			.wrap-imgs ul:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.wrap-imgs ul li{
+				list-style: none;
+				display: inline-block;
+				float: left;
+				border: 1px solid #80cfff;
+				width: 150px;
+				height: 180px;
+				overflow: hidden;
+				margin: 2px;
+			}
+			
+			.wrap-imgs ul li img {
+				height: 200px;
+				display: inline-block;
+				cursor: pointer;
+			}
+			
+			.active-img {
+				width: auto !important;
+				height: auto !important;
+			}
+			/*遮罩层*/
+			.mask {
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: rgba(0, 0, 0, .3);
+				z-index: 9999;
+				display: none;
+			}
+			
+			.mask img {
+				position: fixed;
+				top: -25px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				border: 3px solid #fff;
+			}
+			
+			.rotate-left,
+			.rotate-right {
+				position: fixed;
+				bottom: 0px;
+				left: 50%;
+				padding: 24px;
+				cursor: pointer;
+				display: block;
+			}
+			
+			.rotate-left {
+				background: url(RotateLeft.png) center no-repeat;
+				background-size: 26px;
+				margin-left: -58px;
+			}
+			
+			.rotate-right {
+				background: url(RotateRight.png) center no-repeat;
+				background-size: 26px;
+				margin-right: -58px;
+			}
+			
+			.close {
+				position: fixed;
+				top: 20px;
+				right: 20px;
+				background: url(Close.png) no-repeat center;
+				background-size: 38px;
+				padding: 26px;
+				cursor: pointer;
+				z-index: 99991;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h4>
+			CSS3的transform: rotate(90deg);方法旋转图片的速度比画布旋转的速度快得多，画布旋转消耗性能大。IE9浏览器不支持显示base64格式的图片(坑！万恶的IE)。
+			没有经过画布旋转，所以不管图片旋转多少次，都不会(变大、偏洋红色、增加噪点)。
+			CSS3旋转不会改变图片的本质，实际上是浏览器渲染临时的效果。
+			要真正获取想要旋转效果，还是需要利用画布进行旋转，利用zipCanvas()函数返回值，即可得到base64数据的图片。
+		</h4>
+		<div id="upload" class="uploadBtn">
+			<span>压缩上传图片</span>
+			<input type="file" accept="image/*" id="imgFiles" multiple="multiple" style="display:none;" />
+		</div>
+		<div id="wrapImg" class="wrap-imgs">
+			<!--<ul>
+				<li><img src="" /></li>
+			</ul>-->
+		</div>
+		
+		<script>
+			window.addEventListener('resize',function(){
+				console.log(111);
+			},false);
+			var loadImg = new imgFlies();
+			function imgFlies(){
+				this.peoplePic = null;
+				var ul = document.createElement('ul');
+				document.getElementById('wrapImg').appendChild(ul);
+				window.URL = window.URL || window.webkitURL;
+			}
+			imgFlies.prototype.init=(function(){
+				var htm = '<div id="maskLayer" class="mask"><img src=""/><span class="rotate-left"></span><span class="rotate-right"></span><span class="close"></span></div>';
+				document.body.insertAdjacentHTML('beforeEnd',htm);
+				var uploadBtn = document.getElementById("upload"); //input的父类div
+				var imgFiles = document.getElementById("imgFiles"); //input
+				uploadBtn.onclick = function() {
+					imgFiles.click();
+				}
+				imgFiles.addEventListener("change", function() {
+					loadImg.getImg(this.files); //this.files是一个数组
+				}, false);
+				document.getElementsByClassName('rotate-left')[0].onclick = function() { //图片向左旋转
+					loadImg.rotate('left');
+				}
+				document.getElementsByClassName('rotate-right')[0].onclick = function() { //图片向右旋转
+					loadImg.rotate('right');
+				}
+				document.getElementsByClassName('close')[0].onclick = function() { //关闭预览
+					var mask = document.getElementById('maskLayer');
+					var maskImg = document.getElementById('maskLayer').getElementsByTagName('img')[0];
+					mask.style.display = 'none';
+					maskImg.src = "";
+					var setTime = setTimeout(function(){
+						loadImg.CanvasBase64();//关闭遮罩层后，图片获取画布旋转后的base64数据
+						clearTimeout(setTime);
+					},30);
+				}
+
+			})();
+			imgFlies.prototype.getImg = function(files){
+				if(files.length > 20) {
+					alert("上传的图片不能超过20张");
+					return;
+				}
+				var dFrag = document.createDocumentFragment();
+				for(var i = 0; i < files.length; i++) {
+					var li = document.createElement('li');
+					var img = document.createElement('img');
+					img.setAttribute("rotate-num","0");
+					li.appendChild(img);
+					img.src = window.URL.createObjectURL(files[i]); //读取文件，然后将它转成文件的一个临时路径，与普通的url无异。
+
+					//console.log(files[i].name + " --- " + files[i].type +  " --- " + files[i].size);//可以获取图片的名称、类型、大小
+					
+					img.onload = function() {
+						var canvas = document.createElement('canvas'); //创建压缩图片的画布
+						var ctx = canvas.getContext('2d');
+
+						this.className = "active-img";
+						if(this.width > 1500 || this.height > 1500) { //当图片的宽或高没有达到1500px,画布宽度高度等于图片实际宽度高度，这样避免小分辨率的图片被放大。
+							var px = 1000 * 1000; //总像素是一百万，图片的 长度*宽度 = 总像素，将图片压缩到一百万像素,临时画布的长*宽等于一百万即可
+							var ratio = this.width / this.height;
+							//定义压缩图片的高度  canvasW/canvasH = ratio , canvasW * canvasH = px ,Math.sqrt()开平方
+							var canvasH = Math.sqrt(px / ratio);
+							canvasH = Math.floor(canvasH); //向下取整
+							//画面的宽高比必须等于被压缩图片的宽高比
+							var canvasW = canvasH * ratio;
+							canvasW = Math.floor(canvasW);
+						} else {
+							var canvasW = this.width;
+							var canvasH = this.height;
+						}
+
+						canvas.width = canvasW; //设置画布的宽度
+						canvas.height = canvasH; //设置画布的高度
+
+						ctx.drawImage(this, 0, 0, this.width, this.height, 0, 0, canvasW, canvasH);
+						this.className = this.className.replace(/(active-img)/g, "");
+						this.src = canvas.toDataURL("image/jpeg", 0.92); //图片质量：取值范围为0到1。如果指定图片格式为 image/jpeg 或 image/webp。如果【超出取值范围】 或 【不设置质量参数】，将会使用默认值0.92。其他参数会被忽略。toDataURL函数将画布内的图片转成base64格式图片，这里可以将jpeg图片设置为png等格式
+						this.onload = null; //压缩成功，将onload事件函数清除，否则与上面形成递归函数。因为每次压缩图片再赋值src时，就会触发onload事件。
+						
+						loadImg.fitImage(this.parentNode,this);
+						window.URL.revokeObjectURL(this.src); //前面创建URL，要释放它，不让它再用据内存和消耗浏览的性能。它与定时器的生成、清除的原理一样。释放url后图片的src将变成唯一的，只能用一个img元素标签指向这个链接。
+						//注意有的情况过早释放，图片将无法压缩。释放之前创建的URL，图片的src变成唯一的了。如果要将img的src赋值到另一个img的src，请不要释放它，必须等它复制完毕后，再释放。
+
+					}
+					dFrag.appendChild(li);
+				}
+				var wrapImg = document.getElementById('wrapImg');
+				wrapImg.getElementsByTagName('ul')[0].appendChild(dFrag);
+				this.onClickImg();//每次触发onchange事件都会让图片点击函数重新遍历
+			}
+			imgFlies.prototype.onClickImg = function(){//所以图片都绑定点击事件
+				var wrapImg = document.getElementById('wrapImg');
+				var imgs = wrapImg.getElementsByTagName('img'); 
+				for(var i = 0 ; i < imgs.length ; i ++){
+					imgs[i].onclick = function(){
+						var mask = document.getElementById('maskLayer');
+						var maskImg = mask.getElementsByTagName('img')[0];
+						loadImg.peoplePic = this;
+						mask.style.display = 'block';//点击上传的图片，显示预览图
+						maskImg.src = this.src;
+						loadImg.centerImg();
+					}
+				}
+			}
+			imgFlies.prototype.rotate = function(arg) { //CSS3旋转图片
+				var roundNum = this.peoplePic.getAttribute("rotate-num");
+				var maskImg = document.getElementById('maskLayer').getElementsByTagName('img')[0];
+				roundNum = parseInt(roundNum);
+				if(arg === 'left') {
+					roundNum = roundNum - 90;
+					maskImg.style.transform = "rotate(" + roundNum + "deg)";
+					maskImg.style.msTransform = "rotate(" + roundNum + "deg)";
+					maskImg.style.webkitTransform = "rotate(" + roundNum + "deg)";
+					if(roundNum === -360) {
+						roundNum = 0;
+					}
+				} else if(arg === 'right') {
+					roundNum = roundNum + 90;
+					maskImg.style.transform = "rotate(" + roundNum + "deg)";
+					maskImg.style.msTransform = "rotate(" + roundNum + "deg)";
+					maskImg.style.webkitTransform = "rotate(" + roundNum + "deg)";
+					if(roundNum === 360) {
+						roundNum = 0;
+					}
+				}
+				this.peoplePic.setAttribute("rotate-num",roundNum);
+				this.centerImg();
+			}
+			imgFlies.prototype.centerImg = function() { //遮罩层中的预览图在可视区域内居中显示
+				var maskImg = document.getElementById('maskLayer').getElementsByTagName('img')[0];
+				maskImg.style.width = "auto";
+				maskImg.style.height = "auto";
+				var imgH = maskImg.height;
+				var imgW = maskImg.width;
+				var clientH = document.documentElement.clientHeight;
+				var clientW = document.documentElement.clientWidth;
+				var imgRatio = imgH / imgW;
+				var clientRatio = clientH / clientW;
+				var space = 80;
+				var  roundNum = this.peoplePic.getAttribute("rotate-num");
+				roundNum = parseInt(roundNum);
+				if(Math.abs(roundNum) === 90 || Math.abs(roundNum) === 270) {
+					if(imgRatio >= clientRatio) {
+						maskImg.style.height = (clientH - space) + 'px';
+						maskImg.style.width = 'auto';
+					} else if(imgRatio < clientRatio) {
+						maskImg.style.width = (clientH - space) + 'px';
+						maskImg.style.height = 'auto';
+					}
+				} else if(Math.abs(roundNum) === 180 || roundNum === 0) {
+					if(imgRatio >= clientRatio) {
+						maskImg.style.height = (clientH - space) + 'px';
+						maskImg.style.width = 'auto';
+					} else if(imgRatio < clientRatio) {
+						maskImg.style.width = (clientW - space) + 'px';
+						maskImg.style.height = 'auto';
+					}
+				}
+			}
+			imgFlies.prototype.CanvasBase64 = function () { //画布旋转图片：调用该方法将返回图片旋转后的base64数据。
+
+				var  roundNum = this.peoplePic.getAttribute("rotate-num");
+				roundNum = parseInt(roundNum);
+				var base64;
+				var img = document.createElement('img');
+				img.src = this.peoplePic.src;
+				var canvas = document.createElement('canvas'); //创建画布
+				canvas.width = img.height;
+				canvas.height = img.width;
+				var ctx = canvas.getContext('2d');
+
+				if(roundNum === -90 || roundNum === 270) {
+					ctx.translate(0, canvas.height);
+					ctx.rotate(-90 * Math.PI / 180);
+					ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.height, canvas.width);
+					base64 = canvas.toDataURL("image/jpeg", 1);
+				} else if(roundNum === 90 || roundNum === -270) {
+					ctx.translate(canvas.width, 0);
+					ctx.rotate(90 * Math.PI / 180);
+					ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.height, canvas.width);
+					base64 = canvas.toDataURL("image/jpeg", 1);
+				} else if(roundNum === 180 || roundNum === -180) {
+					canvas.width = img.width;
+					canvas.height = img.height;
+					ctx.translate(canvas.width, canvas.height);
+					ctx.rotate(180 * Math.PI / 180);
+					ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
+					base64 = canvas.toDataURL("image/jpeg", 1);
+				} else if(roundNum === 0) {
+					base64 = img.src;
+				}
+				this.peoplePic.src = base64;
+				this.peoplePic.style.transform = "rotate(0deg)";
+				this.peoplePic.style.msTransform = "rotate(0deg)";
+				this.peoplePic.style.webkitTransform = "rotate(0deg)";
+				loadImg.fitImage(this.peoplePic.parentNode,this.peoplePic);//图片在li区域居中显示
+				
+				var maskImg = document.getElementById('maskLayer').getElementsByTagName('img')[0];
+				this.peoplePic.setAttribute("rotate-num",0);
+				maskImg.style.transform = "rotate(0deg)";
+				maskImg.style.msTransform = "rotate(0deg)";
+				maskImg.style.webkitTransform = "rotate(0deg)";
+			}
+			
+			imgFlies.prototype.fitImage = function (objLi, objImg) {
+				objImg.style.width = "auto";//恢复图片默认的宽度，objImg.width;才能获取图片真正的宽度
+				objImg.style.height = "auto";
+				var liWidth = objLi.offsetWidth; //容器li的宽
+				var liHeight = objLi.offsetHeight; //容器li的高			
+				var imgWidth = objImg.width; //图片的宽
+				var imgHeight = objImg.height; //图片的高
+				var imgScale = ''; //图片缩放倍数
+
+				var liRatio = (liWidth / liHeight); //容器宽高比
+				var imgRatio = (imgWidth / imgHeight); //图片宽高比
+
+				if (liRatio >= imgRatio) {
+					imgScale = liWidth / imgWidth;
+				} else {
+					imgScale = liHeight / imgHeight;
+				}
+
+				objImg.style.width = (imgWidth * imgScale) + 'px';
+				objImg.style.height = (imgHeight * imgScale) + 'px';
+
+				objImg.style.marginLeft = (liWidth - objImg.width) / 2 + 'px';
+				objImg.style.marginTop = (liHeight - objImg.height) / 2 + 'px';
+			}
+			
+			
+		</script>
+	</body>
+
+</html>
