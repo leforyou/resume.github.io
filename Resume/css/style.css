@@ -1281,6 +1281,9 @@ body {
     display: flex;
     flex-direction: column;
   }
+  .project-page .project .box table tbody tr:nth-last-child(1) td:nth-last-child(1) {
+    border-bottom: none;
+  }
   .project-page .project .box table tbody tr td {
     width: 100%;
     border-right: none;

@@ -563,6 +563,13 @@ body{
                         tr{
                             display: flex;
                             flex-direction: column;
+                            &:nth-last-child(1){
+                                td{
+                                    &:nth-last-child(1){
+                                        border-bottom: none;
+                                    }
+                                }
+                            }
                             td{
                                 width: 100%;
                                 border-right: none;
