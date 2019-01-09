@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="css/api.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/swiper.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<!-- rem布局适配高清方案 -->
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(true,100, 1);</script>
+		<!-- rem布局适配高清方案 -->
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/common.js"></script>
+		
+		<script type="application/javascript">
+			(function(){
+				var flag = navigator.userAgent.indexOf('iPhone') > -1;
+				if(flag){
+					var num = 1.3;//苹果手机字体放大的倍数
+					var tagHTML = document.getElementsByTagName('html')[0];
+					var fontSize = tagHTML.style.fontSize.replace(/[^0-9|\.]/g,""); // 100px;
+					fontSize = parseInt(fontSize) * num;
+					tagHTML.style.fontSize = fontSize + 'px';
+					
+					$(function(){
+						$(".header .wrap-menu ul").css({'fontSize':'0.27rem','paddingTop':'0.92rem'});
+						$(".header .wrap-menu .box .left ul li .second").css({'fontSize':'0.24rem'});
+						$(".header .wrap-menu .box .left ul li .first .en").css({'height':'0.84rem'});
+						$(".header .wrap-menu .box .left ul li .second a").css({'height':'0.5rem'});
+					});
+				}
+			}());
+		</script>
+	</head>
+
+	<body>
+		
+		<div class="home main-width">
+			
+			<div class="header">
+				<div class="container">
+					<div class="box main-width">
+						<div class="section">
+							<a class="logo" href="javascript:"></a>
+							<div class="ico-menu"></div>
+						</div>
+					</div>
+				</div>
+				<div class="wrap-menu">
+					<div class="box main-width">
+						<div class="left">
+							<ul>
+								<li>
+									<div class="first">
+										<a class="en" href="javascript:">首页</a>
+									</div>
+								</li>
+								<li>
+									<div class="first">
+										<a class="en" href="javascript:">关于讯博</a>
+										<i class="ico"></i>
+									</div>
+									<div class="second">
+										<a href="javascirpt:">简介</a>
+										<a href="javascirpt:">文化</a>
+										<a href="javascirpt:">资质</a>
+									</div>
+								</li>
+								<li>
+									<div class="first">
+										<a class="en" href="javascript:">服务项目</a>
+										<i class="ico"></i>
+									</div>
+									<div class="second">
+										<a href="javascirpt:">IT运维</a>
+										<a href="javascirpt:">网络工程</a>
+										<a href="javascirpt:">监控安防</a>
+									</div>
+								</li>
+								<li>
+									<div class="first">
+										<a class="en" href="javascript:">产品中心</a>
+										<i class="ico"></i>
+									</a>
+									<div class="second">
+										<a href="javascirpt:">网络工程</a>
+										<a href="javascirpt:">二级菜单2</a>
+										<a href="javascirpt:">二级菜单3</a>
+									</div>
+								</li>
+								<li>
+									<div class="first">
+										<a class="en" href="javascript:">解决方案</a>
+										<i class="ico"></i>
+									</div>
+									<div class="second">
+										<a href="javascirpt:">办公酒店</a>
+										<a href="javascirpt:">服务器</a>
+										<a href="javascirpt:">文件存储</a>
+										<a href="javascirpt:">安防监控</a>
+									</div>
+								</li>
+								<li>
+									<div class="first">
+										<a class="en" href="javascript:">工程案例</a>
+										<i class="ico"></i>
+									</div>
+									<div class="second">
+										<a href="javascirpt:">二级菜单1</a>
+										<a href="javascirpt:">二级菜单2</a>
+										<a href="javascirpt:">二级菜单3</a>
+									</div>
+								</li>
+								<li>
+									<div class="first">
+										<a  class="en" href="javascript:">新闻中心</a>
+										<i class="ico"></i>
+									</div>
+									<div class="second">
+										<a href="javascirpt:">企业动态</a>
+										<a href="javascirpt:">行业动态</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="right">
+							<i class="ico-close"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="wrap-banner">
+				<div class="box">
+					<img src="img/banner.jpg"/>
+				</div>
+			</div>
+			
+			
+			<div class="operation">
+				<div class="box padding-lr">
+					<ul>
+						<li>
+							<a href="javascript:">
+								<div class="left">
+									<img src="img/home-operation1.png"/>
+								</div>
+								<div class="right">
+									<div class="sub-title fz30 ellipsis1">IT运维</div>
+									<div class="desc fz26 fc-666 ellipsis1">致力帮助中小企业降低IT成本，提升...</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="left">
+									<img src="img/home-operation2.png"/>
+								</div>
+								<div class="right">
+									<div class="sub-title fz30 ellipsis1">网络工程</div>
+									<div class="desc fz26 fc-666 ellipsis1">机房建设(恒温、防静电、UPS不...</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="left">
+									<img src="img/home-operation3.png"/>
+								</div>
+								<div class="right">
+									<div class="sub-title fz30 ellipsis1">监控安防</div>
+									<div class="desc fz26 fc-666 ellipsis1">数字智能化监控系统、红外安防系统...</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			<hr class="line-bar" />
+			
+			<div class="solution">
+				<div class="box padding-lr">
+					<div class="big-title">
+						<div class="cn fz34">解决方案</div>
+						<div class="en fz28">&nbsp;/&nbsp;SOLUTION</div>
+					</div>
+					<ul>
+						<li>
+							<a href="javascript:">
+								<div class="num fz24 fc-fff">1</div>
+								<div class="desc fz26">安防监控解决方案</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="num fz24 fc-fff">2</div>
+								<div class="desc fz26">安防监控解决方案</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="num fz24 fc-fff">3</div>
+								<div class="desc fz26 ">服务器虚拟化解决方案</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="num fz24 fc-fff">4</div>
+								<div class="desc fz26">办公、酒店无线方案</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<hr class="line-bar" />
+			
+			
+			<div class="project">
+				<div class="box padding-lr">
+					<div class="big-title">
+						<div class="cn fz34">工程案例</div>
+						<div class="en fz28">&nbsp;/&nbsp;CASE</div>
+					</div>
+					<ul>
+						<li>
+							<a href="javascript:">
+								<div class="img-box" style="background-image: url(img/home-project-case1.jpg);"></div>
+								<div class="info">
+									<div class="sub-title fz30 ellipsis1">广州动物园</div>
+									<div class="desc fz24 fc-999 ellipsis2">广州动物园（GuangZhou Zoo）位于广州市越秀区，东邻十九路军陵园，南接环市东路，西边云鹤路，北衔先烈中路北衔先烈中路北衔先烈中路</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="img-box" style="background-image: url(img/home-project-case2.jpg);"></div>
+								<div class="info">
+									<div class="sub-title fz30 ellipsis1">悦目化妆品</div>
+									<div class="desc fz24 fc-999 ellipsis2">东悦肌化妆品有限公司于2015年11月23日在广州市黄埔区工商行政管理局登记成立。法定代表人黄晓东西边云鹤路，北衔先烈中路北衔先烈中路北衔先烈中路</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="img-box" style="background-image: url(img/home-project-case1.jpg);"></div>
+								<div class="info">
+									<div class="sub-title fz30 ellipsis1">广州动物园</div>
+									<div class="desc fz24 fc-999 ellipsis2">广州动物园（GuangZhou Zoo）位于广州市越秀区，东邻十九路军陵园，南接环市东路，西边云鹤路，北衔先烈中路北衔先烈中路北衔先烈中路</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="img-box" style="background-image: url(img/home-project-case2.jpg);"></div>
+								<div class="info">
+									<div class="sub-title fz30 ellipsis1">悦目化妆品</div>
+									<div class="desc fz24 fc-999 ellipsis2">东悦肌化妆品有限公司于2015年11月23日在广州市黄埔区工商行政管理局登记成立。法定代表人黄晓东西边云鹤路，北衔先烈中路北衔先烈中路北衔先烈中路</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			<div class="footer">
+				<div class="container">
+					<div class="box main-width fz22">
+						<div class="info padding-lr">
+							<div class="logo">
+								<img src="img/header-logo.png"/>
+							</div>
+							<ul>
+								<li>地址：广州市天河区龙口西路77号天信大厦16楼</li>
+								<li>
+									电话：
+									<a href="tel:020-61004412">020-61004412</a> &nbsp;&nbsp; 
+									<a href="tel:87569708">87569708</a> &nbsp;&nbsp; 
+									<a href="tel:400-6633-949">400-6633-949</a>
+								</li>
+								<li>邮箱：bairuo@cenbel.com</li>
+								<li>网址：http://www.cenbeltech.com/</li>
+							</ul>
+						</div>
+						<div class="copyright">
+							Copyright © 2018 广州讯博网络科技有限公司 版权所有
+							<br/>粤ICP备05047029号
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<script>
+			$(function() {
+				
+			});
+		</script>
+	</body>
+
+</html>

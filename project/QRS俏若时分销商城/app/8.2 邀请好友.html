@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="css/api.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<!-- rem布局适配高清方案 -->
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(true,100, 1);</script>
+		<!-- rem布局适配高清方案 -->
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/common.js"></script>
+	</head>
+
+	<body>
+		<div class="inviting-friends main-width">
+			<div class="common-header">
+				<div class="contain">
+					<div class="box main-width padding-lr">
+						<a class="back" href="javascript:"><!--返回--></a>
+						<div class="sub-title">修改密码</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="share-info">
+				<div class="box">
+					<div class="head">
+						<div class="img-box" style="background-image: url(img/personal-image.png);"></div>
+						<div class="middle">
+							<p class="name fz32">**易的二维码</p>
+							<p class="desc fz24 fc-999">告诉好友我在这里</p>
+						</div>
+						<div class="share">
+							<img src="img/share1.png"/>
+							<p class="fz24 fc-999 text-center">分享</p>
+						</div>
+					</div>
+					<div class="code">
+						<img src="img/friend-code.png"/>
+					</div>
+				</div>
+			</div>
+			
+			<div class="more-share fz28 fc-999 text-center">
+				更多分享方法
+			</div>
+			
+			<div class="copy">
+				<div class="box">
+					<ul>
+						<li>
+							<div class="info">
+								<span class="fz28 fc-999">邀请码：</span>
+								<span class="fz28">54hj5k</span>
+							</div>
+							<span class="btn fz24">复制</span>
+						</li>
+						<li>
+							<div class="info">
+								<span class="fz28 fc-999">链接：</span>
+								<span class="fz28">http://www.cenbel.com/</span>
+							</div>
+							<span class="btn fz24">复制</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		<script>
+			$(function() {
+				
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="css/api.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<!-- rem布局适配高清方案 -->
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(true,100, 1);</script>
+		<!-- rem布局适配高清方案 -->
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/common.js"></script>
+	</head>
+
+	<body>
+		<div class="order-details main-width">
+			<div class="common-header">
+				<div class="contain">
+					<div class="box main-width padding-lr">
+						<a class="back" href="javascript:"><!--返回--></a>
+						<div class="sub-title">订单详情</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="order-address padding-lr">
+				<div class="contain">
+					<i class="ico-left"></i>
+					<i class="ico-right"></i>
+					<a class="box fz24" href="javascript:">
+						<div class="head">
+							<p class="name">收货人：李三</p>
+							<p class="phone">18026532540</p>
+						</div>
+						<div class="desc">
+							<span class="desc-name">收货地址：</span>
+							<span>
+								广东省广州市天河区龙口西天信大厦1603
+							</span>
+						</div>
+					</a>
+				</div>
+			</div>
+			
+			<div class="product">
+				<ul class="product-section">
+					<li>
+						<a href="javascript:">
+							<div class="img-box" style="background-image: url(img/product-details1.jpg);"></div>
+							<div class="info">
+								<div class="sub-title fz24">修护套装</div>
+								<div class="foot">
+									<p class="num fz24 fc-999">数量：1套</p>
+									<p class="integral fz30 sub-color">21800积分</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:">
+							<div class="img-box" style="background-image: url(img/product-details1.jpg);"></div>
+							<div class="info">
+								<div class="sub-title fz24">修护套装</div>
+								<div class="foot">
+									<p class="num fz24 fc-999">数量：1套</p>
+									<p class="integral fz30 sub-color">21800积分</p>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="order-total">
+				<ul class="fz24 padding-lr">
+					<li>
+						<div class="left fc-666">商品小计</div>
+						<div class="right fc-666">51800积分</div>
+					</li>
+					<li>
+						<div class="left fc-666">实付合计</div>
+						<div class="right sub-color">51800积分</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="order-more">
+				<ul class="box fz24 padding-lr">
+					<li>
+						<div class="left fc-666">订单编号：</div>
+						<div class="right fc-666">2154687864545</div>
+					</li>
+					<li>
+						<div class="left fc-666">快递编号：</div>
+						<div class="right fc-666">邮政快递( 5464 5456 545)</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="order-footer">
+				<div class="contain bg-fff">
+					<div class="box main-width fc-666">
+						等待卖家发货
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(function() {
+				//
+			});
+		</script>
+	</body>
+
+</html>
