@@ -1,5 +1,6 @@
 ﻿永好健康化妆品（响应式）
 http://cenbel.3322.org:1006/
+http://www.yunghao.com/
 
 依昕服饰（响应式）
 项目一：http://cenbel.3322.org:1005/
@@ -36,9 +37,7 @@ pc端：http://woroda.com/
 http://wswjdc.cenbel.com
 
 
-永好健康化妆品 （响应式）
-http://cenbel.3322.org:1006/
-http://www.yunghao.com/
+
 
 
 俏若时分销商城

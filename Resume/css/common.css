@@ -843,7 +843,7 @@ table {
 }
 
 table * {
-  text-align: center;
+  /*text-align: center;*/
 }
 
 table thead tr th,

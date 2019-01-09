@@ -869,7 +869,7 @@ body {
 /** end**/
 /** start**/
 /** end**/
-/** start**/
+/**个人在线简历 start**/
 .resume-page {
   min-height: 100%;
 }
@@ -1073,9 +1073,36 @@ body {
   font-weight: bold;
 }
 
-/** end**/
-/** start**/
-/** end**/
+/**个人在线简历 end**/
+/**项目 start**/
+.project-page {
+  padding: 50px 0px;
+}
+
+.project-page .project .box .big-title {
+  font-size: 20px;
+  padding: 15px 0px;
+}
+
+.project-page .project .box table {
+  font-size: 14px;
+}
+
+.project-page .project .box table tbody tr td {
+  width: 50%;
+}
+
+.project-page .project .box table tbody tr td p {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.project-page .project .box table tbody tr td a {
+  display: block;
+  color: #005AA8;
+}
+
+/**项目 end**/
 /** start**/
 /** end**/
 /** start**/
