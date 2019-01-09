@@ -268,6 +268,7 @@ body{
 
 /**项目 start**/
 .project-page{
+    padding: 50px 0px;
     a{
         word-break: break-all;
         display: block;
@@ -277,7 +278,28 @@ body{
             text-decoration: underline;
         }
     }
-    padding: 50px 0px;
+    .header{
+        .contain{
+            .box{
+                ul{
+                    li{
+                        &.active{
+                            a{
+                                color: $mainColor;
+                            }
+                        }
+                        a{
+                            color: #333;
+                            font-size: 16px;
+                            &:hover{
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .obvious{
         font-size: 20px;
         color: $mainColor;

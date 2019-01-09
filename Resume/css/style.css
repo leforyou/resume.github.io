@@ -1090,6 +1090,19 @@ body {
   text-decoration: underline;
 }
 
+.project-page .header .contain .box ul li.active a {
+  color: #266eb6;
+}
+
+.project-page .header .contain .box ul li a {
+  color: #333;
+  font-size: 16px;
+}
+
+.project-page .header .contain .box ul li a:hover {
+  text-decoration: none;
+}
+
 .project-page .obvious {
   font-size: 20px;
   color: #266eb6;
