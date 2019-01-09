@@ -1080,6 +1080,7 @@ body {
 }
 
 .project-page a {
+  display: block;
   font-size: 14px;
   color: #65aaef;
 }
