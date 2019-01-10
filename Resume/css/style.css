@@ -1132,6 +1132,8 @@ body {
 
 .project-page .small-program .box .sp-code {
   margin-bottom: 20px;
+  display: flex;
+  font-size: 14px;
 }
 
 .project-page .small-program .box ul {
@@ -1174,24 +1176,21 @@ body {
   color: #666;
 }
 
-.project-page .source-code {
-  margin-bottom: 50px;
-}
-
-.project-page .source-code .box .big-title {
-  padding: 15px 0px;
-}
-
-.project-page .source-code .box .code .list a {
-  margin-bottom: 1px;
-}
-
 .project-page .project {
   margin-bottom: 50px;
 }
 
 .project-page .project .box .big-title {
   padding: 15px 0px;
+}
+
+.project-page .project .box .source-code {
+  margin-bottom: 10px;
+}
+
+.project-page .project .box .source-code .list {
+  display: flex;
+  font-size: 14px;
 }
 
 .project-page .project .box table {
@@ -1241,6 +1240,18 @@ body {
   line-height: 1.8;
   color: #666;
   font-size: 14px;
+}
+
+.project-page .study {
+  margin-bottom: 50px;
+}
+
+.project-page .study .box .img-box {
+  margin-top: 15px;
+}
+
+.project-page .study .box .img-box img {
+  max-width: 100%;
 }
 
 /**项目 end**/

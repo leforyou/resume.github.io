@@ -325,6 +325,8 @@ body{
             }
             .sp-code{
                 margin-bottom: 20px;
+                display: flex;
+                font-size: 14px;
             }
             ul{
                 font-size: 14px;
@@ -364,26 +366,18 @@ body{
             }
         }
     }
-    .source-code{
-        margin-bottom: 50px;
-        .box{
-            .big-title{
-                padding: 15px 0px;
-            }
-            .code{
-                .list{
-                    a{
-                        margin-bottom: 1px;
-                    }
-                }
-            }
-        }
-    }
     .project{
         margin-bottom: 50px;
         .box{
             .big-title{
                 padding: 15px 0px;
+            }
+            .source-code{
+                margin-bottom: 10px;
+                .list{
+                    display: flex;
+                    font-size: 14px;
+                }
             }
             table{
                 font-size: 14px;
@@ -429,6 +423,17 @@ body{
                         color: #666;
                         font-size: 14px;
                     }
+                }
+            }
+        }
+    }
+    .study{
+        margin-bottom: 50px;
+        .box{
+            .img-box{
+                margin-top: 15px;
+                img{
+                    max-width: 100%;
                 }
             }
         }
