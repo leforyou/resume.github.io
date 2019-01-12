@@ -35,12 +35,25 @@
 			}
 			
 			.btn-group{
-				margin-bottom: 15px;
-			    border: 1px solid #96d2f6;
-			    border-radius: 5px;
+			    position: fixed;
+			    bottom: 0;
+			    left: 0;
+			    right: 0;
+			}
+			@media only screen and (min-width: 800px) {
+				.btn-group{
+					margin-bottom: 15px;
+			        position: static;
+			    }
+			}
+			.btn-box{
+				border: 1px solid #96d2f6;
+			    border-radius: 0px;
 				background: #d1eeff;
 				display: table;
 				width: 100%;
+				max-width: 800px;
+				margin: auto;
 			}
 			.btn-group .btn-list{
 				display: block;
@@ -98,10 +111,12 @@
 		<div class="container">
 			
 			<div class="btn-group no-select">
-				<div class="btn-list" onclick="takingPhotos()">拍照</div>
-				<div class="btn-list" onclick="frontCamera()">前置摄像头</div>
-				<div class="btn-list" onclick="rearCamera()">后置摄像头</div>
-				<div class="btn-list" onclick="showOrHide()">显示或隐藏Video</div>
+				<div class="btn-box">
+					<div class="btn-list" onclick="takingPhotos()">拍照</div>
+					<div class="btn-list" onclick="frontCamera()">前置摄像头</div>
+					<div class="btn-list" onclick="rearCamera()">后置摄像头</div>
+					<div class="btn-list" onclick="showOrHide()">显示或隐藏Video</div>
+				</div>
 			</div>
 			
 			<div class="wrap-video active">
@@ -125,6 +140,7 @@
 				
 				
 			</div>
+			<div style="height: 50px;"></div>
 		</div>
 			
 		
@@ -133,7 +149,6 @@
 			function takingPhotos() {
 				//拍照
 				var video = document.querySelector('#video');
-				//video.muted = true;//关闭video声音
 				var vW = video.offsetWidth;
 				var vH = video.offsetHeight;
 				var canvas = document.createElement('canvas');
