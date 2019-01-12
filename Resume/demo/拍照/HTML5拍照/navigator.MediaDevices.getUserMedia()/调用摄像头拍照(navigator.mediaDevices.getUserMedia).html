@@ -132,6 +132,7 @@
 			function takingPhotos() {
 				//拍照
 				var video = document.querySelector('#video');
+				video.muted = true;//关闭video声音
 				var vW = video.offsetWidth;
 				var vH = video.offsetHeight;
 				var canvas = document.createElement('canvas');
@@ -158,7 +159,7 @@
 				startUpMediaDevices(obj);
 			}
 			
-			startUpMediaDevices({ audio: true, video: { facingMode: { exact: "environment" } } });//启动摄像头
+			startUpMediaDevices();//启动摄像头
 			function startUpMediaDevices(obj){
 				//向后兼容性处理start   调用摄像头的代码全部来源MDN
 				// Older browsers might not implement mediaDevices at all, so we set an empty object first
