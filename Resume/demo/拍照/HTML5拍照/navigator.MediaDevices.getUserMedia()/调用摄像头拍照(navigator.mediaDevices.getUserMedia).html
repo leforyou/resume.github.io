@@ -70,6 +70,7 @@
 				margin-bottom: 15px;
 			}
 			.wrap-video video{
+				max-width: 100%;
 				width: auto;
 				height: auto;
 			}
@@ -156,7 +157,7 @@
 				startUpMediaDevices(obj);
 			}
 			
-			startUpMediaDevices();//启动摄像头
+			startUpMediaDevices({ audio: true, video: { facingMode: { exact: "environment" } } });//启动摄像头
 			function startUpMediaDevices(obj){
 				//向后兼容性处理start   调用摄像头的代码全部来源MDN
 				// Older browsers might not implement mediaDevices at all, so we set an empty object first
