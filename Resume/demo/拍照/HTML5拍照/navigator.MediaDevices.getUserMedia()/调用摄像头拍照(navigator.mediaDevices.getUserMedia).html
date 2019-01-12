@@ -70,8 +70,9 @@
 			    cursor: pointer;
 			    outline: none;
 			    border-right: 1px solid #96d2f6;
+			    border-radius: 0px;
 			    display: table-cell;
-			     width: 25%;
+			    width: 25%;
 			}
 			.btn-group .btn-list:nth-last-child(1){
 				border-right: none;
@@ -173,7 +174,7 @@
 			}
 			function frontRearCamera(){
 				//前置摄像头&后置摄像头 切换
-				front != front;
+				front = !front;
 			}
 			
 			startUpMediaDevices(constraints);//启动摄像头
