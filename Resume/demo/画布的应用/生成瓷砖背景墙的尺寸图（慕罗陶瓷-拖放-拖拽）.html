@@ -1,0 +1,635 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>背景墙尺寸图</title>
+
+	<style>
+		*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body{
+				padding: 15px;
+				width: 100%;
+				max-width: 1230px;
+				margin:0px auto;
+			}
+			a{
+				text-decoration: none;
+			}
+			.btn-group{
+				margin-bottom: 20px;
+			}
+			.btn{
+				display: inline-block;
+			    background: #d1eeff;
+			    border: 1px solid #96d2f6;
+			    border-radius: 6px;
+			    padding: 6px 10px;
+			    color: #1581bc;
+			    cursor: pointer;
+			    outline: none;
+			}
+			.btn:hover{
+				background: #86d2ff;
+				border: 1px solid #2bb0ff;
+			}
+			.no-select{
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+			}
+			.wrap-form>*{
+				float: left;
+			}
+			.wrap-form:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.form-list{
+				outline: none;
+				border: 1px solid #c6c6c6;
+			    font-size: 14px;
+			    color: #333;
+			    padding: 6px 10px;
+			    margin-right:5px;
+			}
+			.form-list:focus{
+			    border-color: #66afe9;
+			    outline: 0;
+			    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+			    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+			}
+			.note{
+				color: #666;
+				line-height: 1.8;
+				font-size: 14px;
+				padding: 20px 0px;
+			}
+			
+			.pictrue-group{
+				display: flex;
+				flex-wrap: wrap;
+				margin-right: -10px;
+			}
+			.pictrue-group .list{
+				margin-right: 10px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.pictrue-group .list .img-box{
+				border: 1px solid #aaa;
+				width: 220px;
+				height: 220px;
+				background-color: #fff;
+				overflow: hidden;
+			}
+			.pictrue-group .list .img-box img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				vertical-align: middle;
+				transition: all 1s;
+			}
+			.pictrue-group .list .img-box img:hover{
+				transform: scale(1.2);
+			}
+			.check-original{
+				cursor: url(img/zoom_in.png),url(img/zoom_in.cur),auto;
+			}
+			.pictrue-group .list span{
+				display: block;
+				text-align: center;
+				color: #666;
+				font-size: 14px;
+				padding: 10px 0px;
+			}
+			
+			.wrap-canvas{
+				margin-top: 20px;
+				box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+				display: inline-block;
+			}
+			.wrap-canvas canvas{
+				/*max-width: 100%;*/
+			}
+			
+			
+			.wrap-layer{
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 999999;
+				background-color: rgba(0,0,0,0.9);
+				cursor: url(img/zoom_out.png),url(img/zoom_out.cur),auto;
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.38s;
+			}
+			.wrap-layer.active{
+				opacity: 1;
+				visibility: visible;
+			}
+			.wrap-layer.active .box img{
+				transform: scale(1) translateZ(0);
+				opacity: 1;
+			}
+			.wrap-layer .box{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 30px;
+			}
+			.wrap-layer .box img{
+				visibility: top;
+				max-width: 100%;
+				max-height: 100%;
+				transform: scale(0) translateZ(0);
+				opacity: 0;
+				transition: all 0.3s;
+				background-color: #fff;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1 style="margin-bottom: 15px;">专业定制背景艺术墙，手机(微信同号)：18128707372，诚招全国加盟代理。</h1>
+		<div class="list-parameter">
+			
+			<div class="btn-group">
+				<span class="btn no-select" id="btnUpload">上传图片</span>
+				<span class="btn no-select" id="btnCreate">生成尺寸图</span>
+				<a class="btn no-select" id="btnLoad" href="javascript:alert('请生成尺寸图后，再进行操作！')">下载图片</a>
+			</div>
+			
+			<div class="wrap-form">
+				<input class="form-list" type="text" id="artWallWidth" placeholder="背景墙的宽度" maxlength="5" />
+				<input class="form-list" type="text" id="artWallHeight" placeholder="背景墙的高度" maxlength="5" />
+				<input class="form-list" type="text" id="artWallSize" placeholder="瓷砖方格大小" value="200" />
+	
+				<select class="form-list" id="length">
+					<option>800</option>
+					<option>600</option>
+				</select>
+				<select class="form-list" id="location">
+					<option value="底部">底部</option>
+					<option value="顶部">顶部</option>
+				</select>
+				<select class="form-list" id="color">
+					<option value="#000000">黑色</option>
+					<option value="#ffffff">白色</option>
+					<option value="#6a6a6a">灰色</option>
+					<option value="#ff0700">红色</option>
+					<option value="#ff9100">橙色</option>
+					<option value="#ffca00">黄色</option>
+					<option value="#80ff00">绿色</option>
+					<option value="#0068ff">蓝色</option>
+					<option value="#7155a0">紫色</option>
+				</select>
+			</div>
+	
+			<p class="note">注：背景墙的宽度、高度的单位是米(必填)，最多有三位小数，精确到毫米。瓷砖方格大小的默认值200像素(选填)。参数800/600是瓷砖的大小0.8米/0.6米。线条默认是黑色。支持拖动(拖拽)上传图片。在使用过程中，如有问题，请联系管理员。</p>
+		</div>
+	
+		<input type="file" id="uploadBtn" accept="image/*" title="上传图片" style="display:none;" />
+	
+		
+		<div class="pictrue-group">
+			<div class="list">
+				<div class="img-box">
+					<img id="artImg" alt="背景墙图片"/>
+				</div>
+				<span>请上传图片</span>
+			</div>
+			<div class="list">
+				<div class="img-box">
+					<img class="check-original" src="img/taoci-artwork1.jpg"/>
+				</div>
+				<span>示例：背景墙图片</span>
+			</div>
+			<div class="list">
+				<div class="img-box">
+					<img class="check-original" src="img/taoci-drawing.png"/>
+				</div>
+				<span>示例：尺寸图</span>
+			</div>
+			<div class="list">
+				<div class="img-box">
+					<img class="check-original" src="img/taoci-effect.jpg"/>
+				</div>
+				<span>室内场景图<br/>(宽3.6米*高2.4米&瓷砖大小600毫米)</span>
+			</div>
+		</div>
+	
+		<div class="wrap-canvas">
+			<canvas id="canvas" style="display:none;"></canvas>
+		</div>
+		
+		<div class="wrap-layer">
+			<div class="box">
+				<img src="img/taoci-artwork1.jpg"/>
+			</div>
+		</div>
+	
+	
+		<script type="text/javascript">
+			//画布生成尺寸图
+			var artImg = document.getElementById('artImg');
+			var uploadBtn = document.getElementById('uploadBtn');
+	
+			document.getElementById('btnUpload').onclick = function () {
+				uploadBtn.click();
+			}
+			uploadBtn.addEventListener('change', function () {
+				getImg(this.files);
+			}, false);
+	
+			function getImg(files) {
+				artImg.src = window.URL.createObjectURL(files[0]);
+			}
+	
+			document.getElementById('btnCreate').onclick = function () {
+				if(document.getElementById('artImg').src === ''){
+					alert('请上传背景墙图片！');
+					return;
+				}
+				new createImg();
+			}
+			document.addEventListener('keyup', function () {
+				var e = event || window.event; //兼容性写法，不同的浏览的语法有所不同
+				var code = e.keyCode || e.which || e.charCode; //兼容性写法，不同的浏览的语法有所不同
+				if (code == 13) {
+					new createImg();
+				}
+			}, false);
+	
+			function createImg() {
+				var artWallWidth = document.getElementById('artWallWidth');
+				var artWallHeight = document.getElementById('artWallHeight');
+				var artWallSize = document.getElementById('artWallSize');
+				var lengthDom = document.getElementById('length');
+				var locationDom = document.getElementById('location');
+				var colorDom = document.getElementById('color');
+	
+				var width = artWallWidth.value;
+				var height = artWallHeight.value;
+				var size = artWallSize.value;
+				var length = lengthDom.options[lengthDom.selectedIndex].value;
+				var lctn = locationDom.options[locationDom.selectedIndex].value;
+				var color = colorDom.options[colorDom.selectedIndex].value;
+	
+				this.width = this.toInt(width); //背景墙的宽度 
+				this.height = this.toInt(height); //背景墙的高度
+				this.size = parseInt(size) || 200; //瓷砖方格大小
+				this.length = parseInt(length) || 800; //瓷砖长度
+				this.lctn = lctn || '底部'; //上面或下面的位置
+				this.color = color || '#000000'; //线条颜色
+				//console.log(this.width,this.height)
+	
+				this.xx = 80; //画布起始位置，X轴
+				this.yy = 80; //画布起始位置，Y轴
+	
+				//console.log(this.width)
+				if (isNaN(this.width) || this.width === 0) {
+					alert('请输入正确的背景墙宽度！');
+					return;
+				}
+				if (isNaN(this.height) || this.height === 0) {
+					alert('请输入正确的背景墙高度！');
+					return;
+				}
+	
+				//console.log(this.width,this.height,this.size,this.length,this.lctn,this.color);
+	
+				this.ratio(); //计算图片的宽度比例
+				this.draw(); //图片写入画布
+				this.lineX(); //画坚线
+				this.lineY(); //画横线
+	
+				this.topText(); //头部数字
+				this.bottomText(); //底部数字
+				this.leftText(); //左边数字
+				this.rightText(); //右边数字
+	
+				//利用a标签下载base64图片
+				var base64 = this.canvas.toDataURL();
+				var btnLoad = document.getElementById('btnLoad');
+				btnLoad.setAttribute('href', base64);
+				btnLoad.setAttribute('download', '背景墙');
+			}
+	
+			createImg.prototype = {
+				toInt: function (num) {
+					//三位之内的小数转整数(乘以1000)，无损转换
+					var val = 1000;
+					if (num.indexOf('.') > -1) {
+						var a = num.split('.')[0]; //整数部分
+						var b = num.split('.')[1]; //小数部分
+						a = parseInt(a) * val;
+						var arr = b.split('');
+						for (var i = 0; i < arr.length; i++) {
+							val = val / 10;
+							a = a + parseInt(arr[i]) * val;
+						}
+					} else {
+						var a = num * val;
+					}
+					return a;
+				},
+				ratio: function () {
+					this.img = new Image();
+					this.img.src = artImg.src;
+	
+					//ratio是每个厘米占多少个像素 --- 160除以800
+					var ratio = this.size / this.length;
+					this.ratioW = parseInt(this.width * ratio); //图片在画布上的宽度
+					this.ratioH = parseInt(this.height * ratio); //图片在画布上的高度
+	
+				},
+				draw: function () {
+					var canvas = document.getElementById('canvas');
+					this.canvas = canvas;
+					this.canvas.style.display = 'block';
+					this.canvas.width = this.ratioW + this.xx * 2;
+					this.canvas.height = this.ratioH + this.yy * 2;
+	
+					this.ctx = canvas.getContext('2d');
+					this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height); //清空画布上的内容
+	
+					this.ctx.drawImage(artImg, 0, 0, this.img.width, this.img.height, this.xx, this.yy, this.ratioW, this.ratioH);
+	
+					this.ctx.strokeStyle = this.color; //设置或返回用于笔触的颜色、渐变或模式,默认值#000000。
+					this.ctx.lineWidth = 1;
+					this.lineWidth = 0.5; //在canvas中，你如果需要绘制一条1px的线段，那么坐标后面要加上0.5
+	
+					this.ctx.strokeRect(this.xx + 0.5, this.yy + 0.5, this.ratioW, this.ratioH);
+	
+	
+				},
+				lineX: function () {
+					var num = this.ratioH / this.size;
+					if (this.height % this.length === 0) {
+						num--;
+					} else {
+						num = Math.floor(num);
+					}
+					if (this.lctn === '底部') {
+						for (var i = 0; i < num; i++) {
+							var h = this.yy + this.size * (i + 1);
+							if (h % 1 == 0) {
+								h += this.lineWidth;
+							}
+							this.ctx.beginPath();
+							this.ctx.moveTo(0, h);
+							this.ctx.lineTo(this.canvas.width, h);
+							this.ctx.stroke();
+						}
+					} else if (this.lctn === '顶部') {
+						for (var i = num; i > 0; i--) {
+							var h = this.yy + this.ratioH - (this.size * i);
+							if (h % 1 == 0) {
+								h += this.lineWidth;
+							}
+							this.ctx.beginPath();
+							this.ctx.moveTo(0, h);
+							this.ctx.lineTo(this.canvas.width, h);
+							this.ctx.stroke();
+						}
+					}
+				},
+				lineY: function () {
+					var num = this.ratioW / this.size;
+					if (this.width % this.length === 0) { //横向满足整数块
+						num--;
+						for (var i = 0; i < num; i++) {
+							var w = this.xx + this.size * (i + 1);
+							if (w % 1 == 0) {
+								w += this.lineWidth;
+							}
+							this.ctx.beginPath();
+							this.ctx.moveTo(w, 0);
+							this.ctx.lineTo(w, this.canvas.height);
+							this.ctx.stroke();
+						}
+					} else {
+	
+						num = Math.floor(num) - 1; //取一整块瓷砖与多余部分相加除以2，组成左右对称
+						var sideW = (this.ratioW - this.size * num) / 2;
+						for (var i = 0; i < num + 1; i++) {
+							var w = this.xx + sideW + this.size * i;
+							if (w % 1 == 0) {
+								w += this.lineWidth;
+							}
+							this.ctx.beginPath();
+							this.ctx.moveTo(w, 0);
+							this.ctx.lineTo(w, this.canvas.height);
+							this.ctx.stroke();
+						}
+					}
+	
+				},
+				topText: function () {
+					this.ctx.font = "28px 微软雅黑";
+					this.ctx.fillStyle = '#000000'; //设置字体颜色
+					this.topH = this.yy - 10; //顶部、左边的数字与背景墙图片的距离
+	
+					var num = this.ratioW / this.size;
+					if (this.width % this.length === 0) {
+						for (var i = 0; i < num; i++) {
+							var w = this.xx + this.size * (i + 1) - (this.size / 2) - this.ctx.measureText(this.length).width / 2;
+							this.ctx.fillText(this.length, w, this.topH);
+						}
+					} else {
+						num = Math.floor(num) - 1;
+						var sideW = (this.ratioW - this.size * num) / 2;
+						for (var i = 0; i < num; i++) {
+							var w = this.xx + sideW + this.size * i + this.lineWidth + (this.size / 2) - this.ctx.measureText(this.length).width /
+								2;
+							this.ctx.fillText(this.length, w, this.topH);
+						}
+						var sideTrueW = ((this.width - this.length * num) * 10 / 2) / 10;
+						w = this.xx + (sideW / 2) - this.ctx.measureText(sideTrueW).width / 2;
+						this.ctx.fillText(sideTrueW, w, this.topH); //第一数字
+						w = this.xx + this.ratioW - (sideW / 2) - this.ctx.measureText(this.length).width / 2;
+						this.ctx.fillText(sideTrueW, w, this.topH); //最后一个数字
+					}
+				},
+				bottomText: function () {
+					var txt = this.width + '×' + this.height;
+					var num = this.width / this.length;
+					if ((this.width % this.length === 0 && num % 2 === 1) || (num > Math.floor(num) && Math.floor(num) % 2 === 0)) {
+						var x = this.xx + (this.ratioW / 2) - this.ctx.measureText(txt).width / 2;
+					} else {
+						var x = this.xx + this.ratioW / 2 - (this.size / 2) - this.ctx.measureText(txt).width / 2;
+					}
+					var y = this.yy + this.ratioH + 30;
+					this.ctx.fillText(txt, x, y);
+				},
+				leftText: function () {
+					this.ctx.save(); //保存当前环境的状态。
+	
+					var tempCanvas = document.createElement('canvas'); //创建临时画布，生成数字后，利用画布的旋转再将它与this.canvas画布合成左边的数字
+					var tempCxt = tempCanvas.getContext('2d');
+	
+					tempCanvas.width = this.canvas.height;
+					tempCanvas.height = this.canvas.width;
+					tempCxt.font = this.ctx.font;
+					tempCxt.fillStyle = this.ctx.fillStyle; //设置字体颜色
+	
+	
+					var leftW = 40;
+					var num = this.ratioH / this.size;
+					if (this.height % this.length === 0) {
+						for (var i = 0; i < num; i++) {
+							var w = tempCanvas.width - (this.yy + this.size * i + (this.size / 2) + this.ctx.measureText(this.length).width /
+								2);
+							tempCxt.fillText(this.length, w, this.topH);
+						}
+						this.ctx.translate(0, this.canvas.height);
+						this.ctx.rotate(-90 * Math.PI / 180); //顺时针旋转90度
+						this.ctx.drawImage(tempCanvas, 0, 0, tempCanvas.width, tempCanvas.height, 0, 0, this.canvas.height, this.canvas.width);
+					} else {
+						num = Math.floor(num);
+						var sideTrueW = this.height - this.length * num;
+						if (this.lctn === '底部') {
+							for (var i = 0; i < num; i++) {
+								var w = tempCanvas.width - (this.yy + this.size * i + (this.size / 2) + this.ctx.measureText(this.length).width /
+									2);
+								tempCxt.fillText(this.length, w, this.topH);
+							}
+							var smallBlockW = this.ratioH - this.size * num;
+							w = tempCanvas.width - (this.yy + this.size * num + (smallBlockW / 2) + this.ctx.measureText(smallBlockW).width /
+								2 + 5);
+							tempCxt.fillText(sideTrueW, w, this.topH);
+							this.ctx.translate(0, this.canvas.height);
+							this.ctx.rotate(-90 * Math.PI / 180); //顺时针旋转90度
+							this.ctx.drawImage(tempCanvas, 0, 0, tempCanvas.width, tempCanvas.height, 0, 0, this.canvas.height, this.canvas
+								.width);
+						} else if (this.lctn === '顶部') {
+							var smallBlockW = this.ratioH - this.size * num;
+							var w = tempCanvas.width - (this.yy + (smallBlockW / 2) + this.ctx.measureText(smallBlockW).width / 2);
+							tempCxt.fillText(sideTrueW, w, this.topH);
+							for (var i = 0; i < num; i++) {
+								w = tempCanvas.width - (this.yy + smallBlockW + this.size * i + (this.size / 2) + this.ctx.measureText(this.length)
+									.width / 2);
+								tempCxt.fillText(this.length, w, this.topH);
+							}
+							this.ctx.translate(0, this.canvas.height);
+							this.ctx.rotate(-90 * Math.PI / 180); //顺时针旋转90度
+							this.ctx.drawImage(tempCanvas, 0, 0, tempCanvas.width, tempCanvas.height, 0, 0, this.canvas.height, this.canvas
+								.width);
+						}
+					}
+					this.ctx.restore(); //返回之前保存过的路径状态和属性。
+				},
+				rightText: function () {
+					var txt = '效果图仅供参考，出货以实物为主';
+					var arr = txt.split('');
+	
+					/*for (var i = arr.length - 1 ; i >=0 ; i --) {//从底部写起
+						var x = this.xx + this.ratioW + 26;
+						var y = this.yy + this.ratioW - (this.ctx.measureText(this.length).width - 15) * i - 30;
+						this.ctx.fillText(arr[arr.length - 1 - i],x,y);
+					}*/
+					for (var i = 0; i < arr.length; i++) { //从顶部写起
+						var x = this.xx + this.ratioW + 10;
+						var y = this.yy + 40 + (this.ctx.measureText(this.length).width - 15) * i;
+						var fontSize = this.height / 100 + 3;
+						if (fontSize < 25) {
+							fontSize = 25;
+						} else if (fontSize > 50) {
+							fontSize = 50;
+						}
+						this.ctx.font = fontSize + "px 微软雅黑 small-caps normal";
+						this.ctx.fillText(arr[i], x, y);
+					}
+				}
+	
+			}
+			
+		</script>
+		<script type="text/javascript">
+			function drag() {
+				//拖动上传
+				//注意：1.如果浏览器打开了拖拽的文件，页面就跳走了，我们希望得到拖拽的文件，而不是让页面跳走。上面说到浏览器会打开拖拽的文件是浏览器的【默认行为event.preventDefault();】，我们需要阻止这个默认行为，就需要再上述的事件中进行阻止。要控制的事件有dragenter、dragover、drop。
+				//注意：2.为了防止某些浏览器可能有的兼容性问题，把拖拽周期中的所有的事件都阻止默认行为并且阻止了【事件冒泡event.stopPropagation();】。要控制的事件有dragenter、dragover、drop。
+				//全部事件分别是：ondrag、ondragend、ondragenter、ondragleave、ondragover、ondragstart、ondrop
+				var dropbox = document.createElement('div');
+				document.addEventListener("dragenter", function (e) {
+					document.body.appendChild(dropbox);
+					dropbox.style.position = 'fixed';
+					dropbox.style.top = '0';
+					dropbox.style.bottom = '0';
+					dropbox.style.left = '0';
+					dropbox.style.right = '0';
+					dropbox.style.paddingTop = '18%';
+					dropbox.style.fontSize = '50px';
+					dropbox.style.color = '#FFFFFF';
+					dropbox.style.backgroundColor = 'rgba(0,0,0,0.5)';
+					dropbox.style.textAlign = 'center';
+	
+					dropbox.innerHTML = '释放鼠标';
+	
+				}, false);
+	
+				dropbox.addEventListener("click", function (e) {
+					document.body.removeChild(dropbox);
+				}, false);
+				dropbox.addEventListener("dragenter", function (e) {
+					e.stopPropagation();
+					e.preventDefault();
+				}, false);
+				dropbox.addEventListener("dragover", function (e) {
+					e.stopPropagation();
+					e.preventDefault();
+				}, false);
+				dropbox.addEventListener("drop", function (e) {
+					e.stopPropagation();
+					e.preventDefault();
+					handleFiles(e.dataTransfer.files);
+					document.body.removeChild(dropbox);
+				}, false);
+	
+				handleFiles = function (files) {
+					var str = '';
+					//配合FormData()对象方法就可以上传文件了
+					for (var i = 0; i < files.length; i++) {
+						var file = files[i];
+						if (file.type.match(/image*/)) {
+							artImg.src = window.URL.createObjectURL(file);
+						}
+					}
+				}
+			}
+			drag();
+		</script>
+		<script type="text/javascript">
+			//查看图片--遮罩层
+			var originalImg = document.querySelectorAll('.check-original');
+			var wrapLayer = document.querySelector('.wrap-layer');
+			for (var i = 0 ; i < originalImg.length ; i ++) {
+				originalImg[i].onclick = function(){
+					wrapLayer.querySelector('img').src = this.src;
+					wrapLayer.classList.add('active');
+				}
+			}
+			wrapLayer.onclick = function(){
+				this.classList.remove('active');
+			}
+		</script>
+	</body>
+
+</html>
