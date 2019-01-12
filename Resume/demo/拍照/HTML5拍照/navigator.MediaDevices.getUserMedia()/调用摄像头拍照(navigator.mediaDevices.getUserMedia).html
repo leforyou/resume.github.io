@@ -152,7 +152,7 @@
 		
 		<script>
 			document.querySelector('#video').muted = true; //关闭video声音
-			var front = true;
+			var front = true;//前置摄像头
 			var constraints = { video: { facingMode: (front? "user" : { exact: "environment" }) } };// mediaDevices.getUserMedia 的API参数
 			function takingPhotos() {
 				//拍照
