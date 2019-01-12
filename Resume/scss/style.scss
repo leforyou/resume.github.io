@@ -326,6 +326,9 @@ body{
                 margin-bottom: 20px;
                 display: flex;
                 font-size: 14px;
+                span{
+                    white-space: nowrap;
+                }
             }
             ul{
                 font-size: 14px;
@@ -376,6 +379,9 @@ body{
                 .list{
                     display: flex;
                     font-size: 14px;
+                    span{
+                        white-space: nowrap;
+                    }
                 }
             }
             table{

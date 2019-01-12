@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>调用摄像头拍照(navigator.mediaDevices.getUserMedia)</title>
+		<meta name="renderer" content="webkit" /> 
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			.container{
+				width: 100%;
+				max-width: 800px;
+				margin:0 auto;
+				padding: 15px;
+			}
+			
+			.btn-group{
+				margin-bottom: 15px;
+			}
+			.btn-group .btn-list{
+				display: block;
+				background: #d1eeff;
+			    border: 1px solid #96d2f6;
+			    border-radius: 5px;
+			    text-align: center;
+			    padding: 6px 10px;
+			    line-height: none;
+			    color: #1581bc;
+			    cursor: pointer;
+			    outline: none;
+			}
+			
+			.photo{
+				border: 1px solid #ccc;
+			}
+			.photo img{
+				max-width: 100%;
+				vertical-align: middle;
+			}
+			
+			.wrap-video video{
+				width: 100%;
+			}
+			
+			.tip{
+				font-size: 14px;
+				color: #666;
+				line-height: 1.8;
+				padding: 15px 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			
+			<div class="btn-group">
+				<div class="btn-list" onclick="takingPhotos()">拍照</div>
+			</div>
+			
+			<div class="wrap-video">
+				<video id="video" autoplay></video>
+			</div>
+			
+			<div class="photo">
+				<img src=""/>
+			</div>
+			
+			<canvas id="canvas" width="300" height="200"></canvas>
+			
+			<div class="tip">
+				注意：如果电脑没摄像头，是不能拍照的，请使用手机测试。
+			</div>
+		</div>
+			
+		
+		<script>
+			//这段代 主要是获取摄像头的视频流并显示在Video 签中
+			// Older browsers might not implement mediaDevices at all, so we set an empty object first
+			if (navigator.mediaDevices === undefined) {
+			  navigator.mediaDevices = {};
+			}
+			
+			// Some browsers partially implement mediaDevices. We can't just assign an object
+			// with getUserMedia as it would overwrite existing properties.
+			// Here, we will just add the getUserMedia property if it's missing.
+			if (navigator.mediaDevices.getUserMedia === undefined) {
+			  navigator.mediaDevices.getUserMedia = function(constraints) {
+			
+			    // First get ahold of the legacy getUserMedia, if present
+			    var getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+			
+			    // Some browsers just don't implement it - return a rejected promise with an error
+			    // to keep a consistent interface
+			    if (!getUserMedia) {
+			      return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
+			    }
+			
+			    // Otherwise, wrap the call to the old navigator.getUserMedia with a Promise
+			    return new Promise(function(resolve, reject) {
+			      getUserMedia.call(navigator, constraints, resolve, reject);
+			    });
+			  }
+			}
+			
+			var parameters = { audio: true, video: true };//该参数在MDN有详细介绍
+			navigator.mediaDevices.getUserMedia(parameters)
+			.then(function(stream) {
+			  var video = document.querySelector('video');
+			  // Older browsers may not have srcObject
+			  if ("srcObject" in video) {
+			    video.srcObject = stream;
+			  } else {
+			    // Avoid using this in new browsers, as it is going away.
+			    video.src = window.URL.createObjectURL(stream);
+			  }
+			  video.onloadedmetadata = function(e) {
+			    video.play();
+			  };
+			})
+			.catch(function(err) {
+			  console.log(err.name + ": " + err.message);
+			});
+			
+			function takingPhotos() {
+				//拍照
+				var video = document.querySelector('#video');
+				var canvans = document.getElementById("canvas");
+				var context = canvas.getContext("2d");
+				context.drawImage(video, 0, 0, 300, 200);
+				var imgData = canvans.toDataURL();
+				document.querySelector("img").src = imgData;
+			}
+			
+			/*
+			window.onload = function() {
+				navigator.getMedia = (navigator.getUserMedia ||
+					navigator.webkitGetUserMedia ||
+					navigator.mozGetUserMedia ||
+					navigator.msGetUserMedia);
+
+				navigator.mediaDevices.getUserMedia({
+					audio: true,
+					video: {
+						width: 300,
+						height: 200
+					}
+				}).then(function(mediaStream) {//.then().catch()是ECMAScript6（js第六个版本）标准方法，这个方法比较新，较老的浏览器可能不支持
+					var video = document.querySelector('#video');
+					video.src = window.URL.createObjectURL(mediaStream);
+				}).catch(function(error) {
+					console.log("The following error occured: " + error);
+				});
+			}
+
+			function takingPhotos() {
+				var video = document.querySelector('#video');
+				var canvans = document.getElementById("canvas");
+				var context = canvas.getContext("2d");
+				context.drawImage(video, 0, 0, 300, 200);
+				var imgData = canvans.toDataURL();
+				document.querySelector("img").src = imgData;
+			}*/
+			/*
+			function upLoad() {
+				//将图片数据以流的形式上传至服务器
+				var canvans = document.getElementById("canvas");//获取浏览器页面的画布对象
+				var imgData = canvans.toDataURL();//获取画布内的base64数据
+				var splitBase64 = imgData.substr(22);//将base64数据截取,截取22位之后的字符串作为上传图像的数据
+				//下面是jq封装好的ajax，需要引入jq
+				$.ajax({
+				    type: "POST",
+				    url: "some.php",
+				    data: "img=" + splitBase64,
+				    success: function(msg){
+				        alert( "Data Saved: " + msg );
+				   }
+				});
+			}*/
+		</script>
+	</body>
+
+</html>

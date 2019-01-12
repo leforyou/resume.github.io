@@ -1136,6 +1136,10 @@ body {
   font-size: 14px;
 }
 
+.project-page .small-program .box .sp-code span {
+  white-space: nowrap;
+}
+
 .project-page .small-program .box ul {
   font-size: 14px;
   display: flex;
@@ -1191,6 +1195,10 @@ body {
 .project-page .project .box .source-code .list {
   display: flex;
   font-size: 14px;
+}
+
+.project-page .project .box .source-code .list span {
+  white-space: nowrap;
 }
 
 .project-page .project .box table {
