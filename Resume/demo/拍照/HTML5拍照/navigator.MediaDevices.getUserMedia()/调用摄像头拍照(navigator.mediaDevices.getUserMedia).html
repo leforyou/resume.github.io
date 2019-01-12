@@ -26,6 +26,11 @@
 			    -moz-user-select: none;
 			    -webkit-user-select: none;
 			}
+			.ellipsis1{
+			    white-space:nowrap;
+			    overflow:hidden;
+			    text-overflow: ellipsis;
+			}
 
 			.container{
 				width: 100%;
@@ -58,7 +63,7 @@
 			.btn-group .btn-list{
 				display: block;
 			    text-align: center;
-			    padding: 6px 6px;
+			    padding: 6px 10px;
 			    font-size: 14px;
 			    line-height: none;
 			    color: #1581bc;
@@ -66,6 +71,7 @@
 			    outline: none;
 			    border-right: 1px solid #96d2f6;
 			    display: table-cell;
+			     width: 25%;
 			}
 			.btn-group .btn-list:nth-last-child(1){
 				border-right: none;
@@ -112,10 +118,9 @@
 			
 			<div class="btn-group no-select">
 				<div class="btn-box">
-					<div class="btn-list" onclick="takingPhotos()">拍照</div>
-					<div class="btn-list" onclick="frontCamera()">前置摄像头</div>
-					<div class="btn-list" onclick="rearCamera()">后置摄像头</div>
-					<div class="btn-list" onclick="showOrHide()">显示或隐藏Video</div>
+					<div class="btn-list ellipsis1" onclick="takingPhotos()">拍照</div>
+					<div class="btn-list ellipsis1" onclick="frontRearCamera()">前置/后置摄像头</div>
+					<div class="btn-list ellipsis1" onclick="showOrHide()">显示或隐藏Video</div>
 				</div>
 			</div>
 			
@@ -146,6 +151,8 @@
 		
 		<script>
 			document.querySelector('#video').muted = true; //关闭video声音
+			var front = false;
+			var constraints = { video: { facingMode: (front? "user" : "environment") } };// mediaDevices.getUserMedia 的API参数
 			function takingPhotos() {
 				//拍照
 				var video = document.querySelector('#video');
@@ -164,18 +171,13 @@
 				//显示或隐藏Video
 				document.querySelector('.wrap-video').classList.toggle('active');
 			}
-			function frontCamera(){
-				//前置摄像头
-				var obj = { audio: true, video: { facingMode: "user" } }; // mediaDevices.getUserMedia 的API参数
-				startUpMediaDevices(obj);
-			}
-			function rearCamera(){
-				//后置摄像头
-				var obj = { audio: true, video: { facingMode: { exact: "environment" } } }; // mediaDevices.getUserMedia 的API参数
-				startUpMediaDevices(obj);
+			function frontRearCamera(){
+				//前置摄像头&后置摄像头 切换
+				front != front;
+				startUpMediaDevices(constraints);
 			}
 			
-			startUpMediaDevices();//启动摄像头
+			startUpMediaDevices(constraints);//启动摄像头
 			function startUpMediaDevices(obj){
 				//向后兼容性处理start   调用摄像头的代码全部来源MDN
 				// Older browsers might not implement mediaDevices at all, so we set an empty object first
