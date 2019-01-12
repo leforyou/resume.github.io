@@ -105,7 +105,7 @@
 			</div>
 			
 			<div class="wrap-video active">
-				<video id="video" autoplay muted></video>
+				<video id="video" autoplay muted="muted"></video>
 			</div>
 			
 			<div class="photo">
@@ -129,6 +129,7 @@
 			
 		
 		<script>
+			document.querySelector('#video').muted = true; //关闭video声音
 			function takingPhotos() {
 				//拍照
 				var video = document.querySelector('#video');
