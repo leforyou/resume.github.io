@@ -137,7 +137,8 @@
 			<div class="tip">
 				注意：如果电脑没摄像头，是不能拍照的，请使用手机测试。手机默认是前置摄像头，可以使用后置摄像头。
 				<br/>1.navigator.mediaDevices.getUserMedia在最新谷歌浏览器只能在【本机地址http://localhost】或【线上服务器https://】或【本地文件file://】下调用出摄像头，在192.168局域网IP或http是支持的。
-				<br/>2.navigator.webkitGetUserMedia旧版谷歌浏览必须通过https服务器打开页面，通过http或localhost或files：//打开无效。PS:不利于开发调用。
+				<br/>2.navigator.webkitGetUserMedia旧版谷歌浏览必须通过https服务器打开页面，通过http或localhost或files://打开无效。PS:不利于开发调用。
+				<br/>3.input type="file"调用摄像头拍照
 				<br/><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/getUserMedia">MDN官方文档  navigator.getUserMedia() 旧API</a>
 				<br/><a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia">MDN官方文档  navigator.MediaDevices.getUserMedia() 新API--推荐--使用要作后兼容处理</a>
 				<br/>
@@ -175,10 +176,20 @@
 			function frontRearCamera(){
 				//前置摄像头&后置摄像头 切换
 				front = !front;
-				startUpMediaDevices(constraints);
+				mediaStreamTrack.getTracks()[0].stop(); //关闭摄像头
+				startUpMediaDevices(constraints);//启动摄像头
+			}
+			function isCheckCameraSupport(){
+				//校验浏览器是否支持摄像头及麦克风
+				return 	navigator.getUserMedia ||
+                        navigator.webkitGetUserMedia ||
+                        navigator.mozGetUserMedia ||
+                        navigator.msGetUserMedia ||
+                        navigator.mediaDevices;
 			}
 			
 			startUpMediaDevices(constraints);//启动摄像头
+			var mediaStreamTrack;
 			function startUpMediaDevices(obj){
 				//向后兼容性处理start   调用摄像头的代码全部来源MDN
 				// Older browsers might not implement mediaDevices at all, so we set an empty object first
@@ -213,21 +224,22 @@
 				var parameters = obj || { audio: true, video: true };//该参数在MDN有详细介绍
 				navigator.mediaDevices.getUserMedia(parameters)
 				.then(function(stream) {
-				  var video = document.querySelector('video');
-				  // Older browsers may not have srcObject
-				  if ("srcObject" in video) {
-				    video.srcObject = stream;
-				  } else {
-				    // Avoid using this in new browsers, as it is going away.
-				    video.src = window.URL.createObjectURL(stream);
-				  }
-				  video.onloadedmetadata = function(e) {
-				    video.play();
-				  };
+					mediaStreamTrack = stream;
+				  	var video = document.querySelector('video');
+				  	// Older browsers may not have srcObject
+				  	if ("srcObject" in video) {
+				    	video.srcObject = stream;
+				  	} else {
+				    	// Avoid using this in new browsers, as it is going away.
+				    	video.src = window.URL.createObjectURL(stream);
+				  	}
+				  	video.onloadedmetadata = function(e) {
+				    	video.play();
+				  	};
 				})
 				.catch(function(err) {
-				  console.log(err.name + ": " + err.message);
-				  alert(err.name + ": " + err.message);
+				  	console.log(err.name + ": " + err.message);
+				  	alert(err.name + ": " + err.message);
 				});
 			}
 			
