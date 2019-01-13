@@ -72,7 +72,7 @@
 			    border-right: 1px solid #96d2f6;
 			    border-radius: 0px;
 			    display: table-cell;
-			    width: 25%;
+			    width: 50%;
 			}
 			.btn-group .btn-list:nth-last-child(1){
 				border-right: none;
@@ -120,7 +120,6 @@
 			<div class="btn-group no-select">
 				<div class="btn-box">
 					<div class="btn-list ellipsis1" onclick="takingPhotos()">拍照</div>
-					<div class="btn-list ellipsis1" onclick="frontRearCamera()">前置/后置摄像头</div>
 					<div class="btn-list ellipsis1" onclick="showOrHide()">显示或隐藏Video</div>
 				</div>
 			</div>
@@ -154,15 +153,6 @@
 		<script>
 			document.querySelector('#video').muted = true; //关闭video声音
 			
-			var front = true;//前置摄像头
-			var localStorageFront = localStorage.getItem('front');
-			if(localStorageFront==="false"){
-				front = false;
-			}else{
-				front = true;
-			}
-			var constraints = { video: { facingMode: (front? "user" : { exact: "environment" }) } };// mediaDevices.getUserMedia 的API参数
-			
 			function takingPhotos() {
 				//拍照
 				var video = document.querySelector('#video');
@@ -181,25 +171,18 @@
 				//显示或隐藏Video
 				document.querySelector('.wrap-video').classList.toggle('active');
 			}
-			function frontRearCamera(){
-				//前置摄像头&后置摄像头     尝试其它办法都不行，只能通过刷新页面传参切换,(忌：页面有数据填写，刷新数据丢失)
-				var localStorageFront = localStorage.getItem('front');
-				if(!localStorageFront || localStorageFront === 'true'){
-					localStorage.setItem('front','false');
-				}else{
-					localStorage.setItem('front','true');
-				}
-				location.reload();
-			}
-			function isCheckCameraSupport(){
+			(function isCheckCameraSupport(){
 				//校验浏览器是否支持摄像头及麦克风
-				return 	navigator.getUserMedia ||
+				var flag = navigator.getUserMedia ||
                         navigator.webkitGetUserMedia ||
                         navigator.mozGetUserMedia ||
                         navigator.msGetUserMedia ||
                         navigator.mediaDevices;
-			}
+                if(!flag)alert('你的设备不支持摄像头拍照功能！')
+			})();
 			
+			var front = true;//前置摄像头
+			var constraints = { video: { facingMode: (front? "user" : { exact: "environment" }) } };// mediaDevices.getUserMedia 的API参数
 			startUpMediaDevices(constraints);//启动摄像头
 			function startUpMediaDevices(obj){
 				//向后兼容性处理start   调用摄像头的代码全部来源MDN
