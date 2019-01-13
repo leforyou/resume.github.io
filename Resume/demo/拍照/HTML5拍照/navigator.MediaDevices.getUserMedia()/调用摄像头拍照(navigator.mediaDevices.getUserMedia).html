@@ -153,8 +153,16 @@
 		
 		<script>
 			document.querySelector('#video').muted = true; //关闭video声音
+			
 			var front = true;//前置摄像头
+			var localStorageFront = localStorage.getItem('front');
+			if(localStorageFront==="false"){
+				front = false;
+			}else{
+				front = true;
+			}
 			var constraints = { video: { facingMode: (front? "user" : { exact: "environment" }) } };// mediaDevices.getUserMedia 的API参数
+			
 			function takingPhotos() {
 				//拍照
 				var video = document.querySelector('#video');
@@ -174,10 +182,14 @@
 				document.querySelector('.wrap-video').classList.toggle('active');
 			}
 			function frontRearCamera(){
-				//前置摄像头&后置摄像头 切换
-				front = !front;
-				mediaStreamTrack.getTracks()[0].stop(); //关闭摄像头
-				startUpMediaDevices(constraints);//启动摄像头
+				//前置摄像头&后置摄像头     尝试其它办法都不行，只能通过刷新页面传参切换,(忌：页面有数据填写，刷新数据丢失)
+				var localStorageFront = localStorage.getItem('front');
+				if(!localStorageFront || localStorageFront === 'true'){
+					localStorage.setItem('front','false');
+				}else{
+					localStorage.setItem('front','true');
+				}
+				
 			}
 			function isCheckCameraSupport(){
 				//校验浏览器是否支持摄像头及麦克风
@@ -189,7 +201,6 @@
 			}
 			
 			startUpMediaDevices(constraints);//启动摄像头
-			var mediaStreamTrack;
 			function startUpMediaDevices(obj){
 				//向后兼容性处理start   调用摄像头的代码全部来源MDN
 				// Older browsers might not implement mediaDevices at all, so we set an empty object first
@@ -224,7 +235,6 @@
 				var parameters = obj || { audio: true, video: true };//该参数在MDN有详细介绍
 				navigator.mediaDevices.getUserMedia(parameters)
 				.then(function(stream) {
-					mediaStreamTrack = stream;
 				  	var video = document.querySelector('video');
 				  	// Older browsers may not have srcObject
 				  	if ("srcObject" in video) {
