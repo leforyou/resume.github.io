@@ -111,6 +111,41 @@
 				line-height: 1.8;
 				padding: 15px 0px;
 			}
+			
+			.taking-layer{
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				background-color: transparent;
+				z-index: 99999999;
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.3s;
+			}
+			.taking-layer.active{
+				opacity: 1;
+				visibility: visible;
+			}
+			.taking-layer.active .box{
+				transform: translate(-50%,-50%);
+			}
+			.taking-layer .box{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-80%);
+				transition: all 0.3s;
+				background-color: rgba(0,0,0,0.8);
+				border-radius: 5px;
+			}
+			.taking-layer .box .success{
+				line-height: normal;
+				padding: 10px 20px;
+				font-size: 14px;
+				color: #fff;
+			}
 		</style>
 	</head>
 
@@ -146,6 +181,15 @@
 				
 				
 			</div>
+			
+			
+			
+			<div class="taking-layer">
+				<div class="box">
+					<div class="success">拍照成功!</div>
+				</div>
+			</div>
+			
 			<div style="height: 50px;"></div>
 		</div>
 			
@@ -165,6 +209,13 @@
 				context.drawImage(video, 0, 0, vW, vH);
 				var imgData = canvas.toDataURL();
 				document.querySelector(".personal-photo").src = imgData;
+				
+				//拍照成功提示
+				document.querySelector('.taking-layer').classList.toggle('active');
+				var timer = setTimeout(function(){
+					document.querySelector('.taking-layer').classList.toggle('active');
+					clearTimeout(timer);
+				},1500)
 			}
 			
 			function showOrHide(){
