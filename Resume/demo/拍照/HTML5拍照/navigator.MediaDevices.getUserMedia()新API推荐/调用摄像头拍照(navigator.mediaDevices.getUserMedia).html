@@ -283,6 +283,10 @@
 				})
 				.catch(function(err) {
 				  	console.log(err.name + ": " + err.message);
+				  	if(err.message.indexOf('Requested device not found') > -1){
+				  		alert('你的设备检测不到摄像头！');
+				  		return;
+				  	}
 				  	alert(err.name + ": " + err.message);
 				});
 			}
