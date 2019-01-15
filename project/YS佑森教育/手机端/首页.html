@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="css/api.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/swiper.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<!-- rem布局适配高清方案 -->
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(true,100, 1);</script>
+		<!-- rem布局适配高清方案 -->
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/common.js"></script>
+	</head>
+
+	<body>
+		<div class="home main-width">
+			<div class="header">
+				<div class="contain">
+					<div class="box main-width padding-lr">
+						<a class="logo" href="javascript:">
+							<img src="img/header-logo.png"/>
+						</a>
+						<div class="login-search">
+							<a class="search" href="javascript:"></a>
+							<div class="login-reg">
+								<a href="javascript:">登录</a>
+								<span>/</span>
+								<a href="javascript:">注册</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="wrap-banner padding-lr">
+				<div class="swiper-container banner-container">
+				    <div class="swiper-wrapper">
+					    <div class="swiper-slide">
+					    	<a href="javascript:" style="background-image: url(img/slider1.jpg);"></a>
+					    </div>
+					    <div class="swiper-slide">
+					    	<a href="javascript:" style="background-image: url(img/slider1.jpg);"></a>
+					    </div>
+					    <div class="swiper-slide">
+					    	<a href="javascript:" style="background-image: url(img/slider1.jpg);"></a>
+					    </div>
+					    <div class="swiper-slide">
+					    	<a href="javascript:" style="background-image: url(img/slider1.jpg);"></a>
+					    </div>
+				    </div>
+				    <div class="swiper-pagination banner-pagination"></div>
+				</div>
+			</div>
+			
+			<div class="content-menu">
+				<div class="box padding-lr">
+					<ul>
+						<li>
+							<a href="javascript:">
+								<div class="img-box">
+									<img src="img/content-menu-list1.png"/>
+								</div>
+								<div class="sub-title">一级建造师</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="img-box">
+									<img src="img/content-menu-list2.png"/>
+								</div>
+								<div class="sub-title">一级造价工程师</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="img-box">
+									<img src="img/content-menu-list3.png"/>
+								</div>
+								<div class="sub-title">招生简章</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="img-box">
+									<img src="img/content-menu-list4.png"/>
+								</div>
+								<div class="sub-title">免费听课</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="img-box">
+									<img src="img/content-menu-list5.png"/>
+								</div>
+								<div class="sub-title">考试资讯</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="img-box">
+									<img src="img/content-menu-list6.png"/>
+								</div>
+								<div class="sub-title">在线题库</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="img-box">
+									<img src="img/content-menu-list7.png"/>
+								</div>
+								<div class="sub-title">报考指南</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="img-box">
+									<img src="img/content-menu-more.png"/>
+								</div>
+								<div class="sub-title">更多</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="vip-course">
+				<div class="box">
+					<a href="javascript:">
+						<div class="sub-title fz34">VIP课程免费听课</div>
+						<img src="img/vip-course1.png"/>
+					</a>
+				</div>
+			</div>
+			
+			<div class="hot-activity">
+				<div class="box">
+					<div class="hc-head">
+						<a class="hc-box padding-lr" href="javascript:">
+							<div class="left">
+								<img src="img/hc-activity.png"/>
+								<span class="sub-title">热点活动</span>
+							</div>
+							<div class="right">
+								<img src="img/more-right1.png"/>
+							</div>
+						</a>
+					</div>
+					<div class="content padding-lr">
+						<div class="swiper-container activity-container">
+						    <div class="swiper-wrapper">
+							    <div class="swiper-slide">
+							    	<a href="javascript:" style="background-image: url(img/hot-activity-slider1.jpg);"></a>
+							    </div>
+							    <div class="swiper-slide">
+							    	<a href="javascript:" style="background-image: url(img/hot-activity-slider2.jpg);"></a>
+							    </div>
+							    <div class="swiper-slide">
+							    	<a href="javascript:" style="background-image: url(img/hot-activity-slider1.jpg);"></a>
+							    </div>
+							    <div class="swiper-slide">
+							    	<a href="javascript:" style="background-image: url(img/hot-activity-slider2.jpg);"></a>
+							    </div>
+							    <div class="swiper-slide">
+							    	<a href="javascript:" style="background-image: url(img/hot-activity-slider1.jpg);"></a>
+							    </div>
+							    <div class="swiper-slide">
+							    	<a href="javascript:" style="background-image: url(img/hot-activity-slider2.jpg);"></a>
+							    </div>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="data-center">
+				<div class="box">
+					<div class="hc-head">
+						<a class="hc-box padding-lr" href="javascript:">
+							<div class="left">
+								<img src="img/hc-guide.png"/>
+								<span class="sub-title">资料中心</span>
+							</div>
+							<div class="right">
+								<img src="img/more-right1.png"/>
+							</div>
+						</a>
+					</div>
+					<div class="content">
+						<div class="tab-head">
+							<div class="tab-list active">一级建造师</div>
+							<div class="tab-list">一级造价工程师</div>
+						</div>
+						<div class="wrap-tab-content">
+							<div class="tab-content padding-lr">
+								<ul class="common-news-list">
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2019年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">报名信息</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2019年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">成绩查询</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2019年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">报名信息</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<a class="common-more" href="javascript:">
+									<span class="fz30">查看更多</span>
+									<img src="img/more-bottom1.png"/>
+								</a>
+							</div>
+							<div class="tab-content padding-lr">
+								<ul class="common-news-list">
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2018年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">报名信息</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2018年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">成绩查询</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2018年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">报名信息</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2018年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">报名信息</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<a class="common-more" href="javascript:">
+									<span class="fz30">查看更多</span>
+									<img src="img/more-bottom1.png"/>
+								</a>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="practice">
+				<div class="box">
+					<a href="javascript:">
+						<img src="img/practice-propaganda.jpg"/>
+					</a>
+				</div>
+			</div>
+			
+			<div class="guide-register">
+				<div class="box">
+					<div class="hc-head">
+						<a class="hc-box padding-lr" href="javascript:">
+							<div class="left">
+								<img src="img/hc-data.png"/>
+								<span class="sub-title">报考指南</span>
+							</div>
+							<div class="right">
+								<img src="img/more-right1.png"/>
+							</div>
+						</a>
+					</div>
+					<div class="content padding-lr">
+						<a class="list ellipsis1" href="javascript:">
+							一级建造师报考指南
+						</a>
+						<a class="list ellipsis1" href="javascript:">
+							一级造价工程师报考指南
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="examination-info">
+				<div class="box">
+					<div class="hc-head">
+						<a class="hc-box padding-lr" href="javascript:">
+							<div class="left">
+								<img src="img/hc-examination.png"/>
+								<span class="sub-title">考试资讯</span>
+							</div>
+							<div class="right">
+								<img src="img/more-right1.png"/>
+							</div>
+						</a>
+					</div>
+					<div class="content">
+						<div class="tab-head">
+							<div class="tab-list active">一级建造师</div>
+							<div class="tab-list">一级造价工程师</div>
+						</div>
+						<div class="wrap-tab-content">
+							<div class="tab-content padding-lr">
+								<ul class="common-news-list">
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2019年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">报名信息</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2019年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">成绩查询</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2019年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">报名信息</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<a class="common-more" href="javascript:">
+									<span class="fz30">查看更多</span>
+									<img src="img/more-bottom1.png"/>
+								</a>
+							</div>
+							<div class="tab-content padding-lr">
+								<ul class="common-news-list">
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2018年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">报名信息</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2018年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">成绩查询</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2018年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">报名信息</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="li-box" href="javascript:">
+											<div class="sub-title ellipsis2">2018年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+											<div class="foot">
+												<span class="btn">报名信息</span>
+												<span class="time">上传日期：12.12</span>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<a class="common-more" href="javascript:">
+									<span class="fz30">查看更多</span>
+									<img src="img/more-bottom1.png"/>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="excellent-course">
+				<div class="box">
+					<div class="hc-head">
+						<a class="hc-box padding-lr" href="javascript:">
+							<div class="left">
+								<img src="img/hc-excellent.png"/>
+								<span class="sub-title">精品课程</span>
+							</div>
+							<div class="right">
+								<img src="img/more-right1.png"/>
+							</div>
+						</a>
+					</div>
+					<div class="content">
+						<div class="tab-head">
+							<div class="tab-list active">一级建造师</div>
+							<div class="tab-list">一级造价工程师</div>
+						</div>
+						<div class="wrap-tab-content">
+							<div class="tab-content padding-lr">
+								<div class="t1-content">
+									<ul>
+										<li>
+											<div class="list1 fz28 fc-666">科目</div>
+											<div class="list2 fz24 fc-666">案例分析</div>
+											<div class="list3 fz24 fc-666">造价管理</div>
+											<div class="list4 fz24 fc-666">工程计价</div>
+											<div class="list5 fz24 fc-666">
+												<span class="fz24 fc-666">技术与计量</span>
+												<span class="fz20 fc-666">（土建/安装/交通/水利）</span>
+											</div>
+										</li>
+										<li>
+											<div class="list1 fz28">单科</div>
+											<div class="list2 fz24">
+												<span class="fz24 fc-666">￥1980</span>
+												<span class="fz28 fc-red">￥3000</span>
+											</div>
+											<div class="list3 fz24">
+												<span class="fz24 fc-666">￥1500</span>
+												<span class="fz28 fc-red">￥2500</span>
+											</div>
+											<div class="list4 fz24">
+												<span class="fz24 fc-666">￥1500</span>
+												<span class="fz28 fc-red">￥2500</span>
+											</div>
+											<div class="list5 fz24">
+												<span class="fz24 fc-666">￥1500</span>
+												<span class="fz28 fc-red">￥2500</span>
+											</div>
+										</li>
+										<li>
+											<div class="list1 fz28">全科</div>
+											<div class="all fz24">
+												<span class="fz24 fc-666">￥4980</span>
+												<span class="fz28 fc-red">￥10500</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="check-more">
+									<a class="fz28" href="javascript:">查看详情</a>
+								</div>
+							</div>
+							<div class="tab-content padding-lr">
+								<div class="t1-content">
+									<ul>
+										<li>
+											<div class="list1 fz28 fc-666">科目</div>
+											<div class="list2 fz24 fc-666">案例分析</div>
+											<div class="list3 fz24 fc-666">造价管理</div>
+											<div class="list4 fz24 fc-666">工程计价</div>
+											<div class="list5 fz24 fc-666">
+												<span class="fz24 fc-666">技术与计量</span>
+												<span class="fz20 fc-666">（土建/安装/交通/水利）</span>
+											</div>
+										</li>
+										<li>
+											<div class="list1 fz28">单科</div>
+											<div class="list2 fz24">
+												<span class="fz24 fc-666">￥1980</span>
+												<span class="fz28 fc-red">￥3000</span>
+											</div>
+											<div class="list3 fz24">
+												<span class="fz24 fc-666">￥1500</span>
+												<span class="fz28 fc-red">￥2500</span>
+											</div>
+											<div class="list4 fz24">
+												<span class="fz24 fc-666">￥1500</span>
+												<span class="fz28 fc-red">￥2500</span>
+											</div>
+											<div class="list5 fz24">
+												<span class="fz24 fc-666">￥1500</span>
+												<span class="fz28 fc-red">￥2500</span>
+											</div>
+										</li>
+										<li>
+											<div class="list1 fz28">全科</div>
+											<div class="all fz24">
+												<span class="fz24 fc-666">￥4980</span>
+												<span class="fz28 fc-red">￥10500</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+								
+								<div class="t2-content">
+									<div class="sub-title text-center fz28">独家增项班</div>
+									<ul>
+										<li>
+											<div class="list1 fz28">单科</div>
+											<div class="right fz24">
+												<span class="fz24 fc-666">案例分析+技术与计量</span>
+												<span class="fz20 fc-666">（土建/安装/交通/水利）</span>
+											</div>
+										</li>
+										<li>
+											<div class="list1 fz28">全科</div>
+											<div class="right fz24">
+												<div class="rr-content">
+													<span class="fz24 fc-666">￥3480</span>
+													<span class="fz28 fc-red"> ￥3480 </span>
+													<span class="fz24 fc-666">￥5500</span>
+												</div>
+												<span class="fz28 fc-red"> ￥3000 </span>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="check-more">
+									<a class="fz28" href="javascript:">查看详情</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="sign-up-exam">
+				<div class="box padding-lr">
+					<div class="head">
+						<div class="sub-title">
+							<img src="img/sign-up-ico.png"/>
+							<span class="fz34">2019年一建、造价考试</span>
+						</div>
+						<div class="desc">
+							<span class="fz28">报考条件</span>
+							<span class="fz28 fc-red">自助审核</span>
+						</div>
+					</div>
+					<ul>
+						<li>
+							<span class="fz28">报考省份：</span>
+							<input type="text" value="" placeholder=""/>
+						</li>
+						<li>
+							<span class="fz28">专业：</span>
+							<input type="text" value="" placeholder=""/>
+						</li>
+						<li>
+							<span class="fz28">学历：</span>
+							<input type="text" value="" placeholder=""/>
+						</li>
+						<li>
+							<span class="fz28">手机号码：</span>
+							<input type="text" value="" placeholder=""/>
+						</li>
+					</ul>
+					<div class="submit fz28 text-center">提交信息获取审核结果</div>
+					<div class="tip fz24 text-center">*稍后工作人员将与您取得联系，通知审核结果</div>
+				</div>
+			</div>
+			
+			<div class="clearance-experience">
+				<div class="box">
+					<div class="hc-head">
+						<a class="hc-box padding-lr" href="javascript:">
+							<div class="left">
+								<img src="img/hc-clearance.png"/>
+								<span class="sub-title">通关心得</span>
+							</div>
+							<div class="right">
+								<img src="img/more-right1.png"/>
+							</div>
+						</a>
+					</div>
+					<div class="content padding-lr">
+						<ul class="common-news-list">
+							<li>
+								<a class="li-box" href="javascript:">
+									<div class="sub-title ellipsis2">2019年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+									<div class="foot">
+										<div class="reading">
+											<img src="img/ico-reading.png"/>
+											<span class="num">阅读人数：334</span>
+											<span class="time">上传日期：12.12</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="li-box" href="javascript:">
+									<div class="sub-title ellipsis2">2018年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+									<div class="foot">
+										<div class="reading">
+											<img src="img/ico-reading.png"/>
+											<span class="num">阅读人数：334</span>
+											<span class="time">上传日期：12.12</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="li-box" href="javascript:">
+									<div class="sub-title ellipsis2">2017年一级造价工程师《案例分析》考试真题及答案解析（佑森名师版） </div>
+									<div class="foot">
+										<div class="reading">
+											<img src="img/ico-reading.png"/>
+											<span class="num">阅读人数：334</span>
+											<span class="time">上传日期：11.12</span>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<a class="common-more" href="javascript:">
+							<span class="fz30">查看更多</span>
+							<img src="img/more-bottom1.png"/>
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="ys-teachers">
+				<div class="box">
+					<div class="hc-head">
+						<a class="hc-box padding-lr" href="javascript:">
+							<div class="left">
+								<img src="img/hc-teachers.png"/>
+								<span class="sub-title">佑森师资</span>
+							</div>
+							<div class="right">
+								<img src="img/more-right1.png"/>
+							</div>
+						</a>
+					</div>
+					<div class="content padding-lr">
+						<div class="swiper-container teachers-container">
+						    <div class="swiper-wrapper">
+							    <div class="swiper-slide">
+							    	<a href="javascript:">
+							    		<div class="img-box" style="background-image: url(img/teachers1.png);"></div>
+							    		<div class="info">
+							    			<div class="name fz28">左红军</div>
+							    			<div class="major fz20 fc-666">《建造师专业实务案例解析》《造价工程师案例分析》</div>
+							    		</div>
+							    	</a>
+							    </div>
+							    <div class="swiper-slide">
+							    	<a href="javascript:">
+							    		<div class="img-box" style="background-image: url(img/teachers2.png);"></div>
+							    		<div class="info">
+							    			<div class="name fz28">梁静</div>
+							    			<div class="major fz20 fc-666">《市政工程技术》《造价工程技术与计量土建专业》</div>
+							    		</div>
+							    	</a>
+							    </div>
+							    <div class="swiper-slide">
+							    	<a href="javascript:">
+							    		<div class="img-box" style="background-image: url(img/teachers3.png);"></div>
+							    		<div class="info">
+							    			<div class="name fz28">杨润东</div>
+							    			<div class="major fz20 fc-666">市政工程技术》《造价工程技术与计量土建专业》</div>
+							    		</div>
+							    	</a>
+							    </div>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="enterprise-info">
+				<div class="box padding-lr">
+					<div class="fz22 text-center">咨询热线：4008-751-750</div>
+					<div class="fz22 text-center">版权所有 2015-2018 广州佑森教育科技有限公司</div>
+					<div class="fz22 text-center">粤ICP备15073310号-1</div>
+					<div class="fz22 text-center">免责声明：部分内容来源于网络，若有侵权，请联系删除</div>
+				</div>
+			</div>
+			
+			<div class="footer">
+				<div class="contain">
+					<div class="box main-width">
+						<a class="list" href="javascript:">
+							<img src="img/footer-nav-phone.png"/>
+							<span>电话</span>
+						</a>
+						<a class="list" href="javascript:">
+							<img src="img/footer-nav-listen.png"/>
+							<span>听课</span>
+						</a>
+						<a class="list" href="javascript:">
+							<img src="img/footer-nav-library.png"/>
+							<span>题库</span>
+						</a>
+						<a class="list" href="javascript:">
+							<img src="img/footer-nav-course.png"/>
+							<span>课程</span>
+						</a>
+						<a class="list" href="javascript:">
+							<img src="img/footer-nav-customer.png"/>
+							<span>客服</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			<!--<div class="swiper-container banner-container">
+			    <div class="swiper-wrapper">
+				    <div class="swiper-slide">
+				    	<a href="javascript:" style="background-image: url(img/slider1.jpg);"></a>
+				    </div>
+				    <div class="swiper-slide">
+				    	<a href="javascript:" style="background-image: url(img/slider1.jpg);"></a>
+				    </div>
+				    <div class="swiper-slide">
+				    	<a href="javascript:" style="background-image: url(img/slider1.jpg);"></a>
+				    </div>
+				    <div class="swiper-slide">
+				    	<a href="javascript:" style="background-image: url(img/slider1.jpg);"></a>
+				    </div>
+			    </div>
+			    <div class="swiper-pagination banner-pagination"></div>
+			    <div class="swiper-button-next banner-next"></div>
+			    <div class="swiper-button-prev banner-prev"></div>
+			</div>-->
+				
+		</div>
+		<script>
+			$(function() {
+				//banner轮播图
+				new Swiper('.banner-container', {
+				    loop: true,
+				    pagination: {
+				        el: '.banner-pagination',
+				        clickable: true,
+				    },
+				    autoplay: {
+					    delay: 5000,
+					    stopOnLastSlide: false,
+					    disableOnInteraction: false,
+					},
+			    });
+			    
+			    //热点活动 activity
+			    new Swiper('.activity-container', {
+			    	slidesPerView: 'auto',
+				    spaceBetween: 12,
+			    });
+			    
+			    //佑森师资 
+			    new Swiper('.teachers-container', {
+			    	slidesPerView: 'auto',
+				    spaceBetween: 12,
+			    });
+			    
+			   /* var swiper = new Swiper('.banner-container', {
+				    //slidesPerView: 1,
+				    //spaceBetween: 0,
+				    loop: true,
+				    pagination: {
+				        el: '.banner-pagination',
+				        clickable: true,
+				        //type: 'fraction',//分页器：数字
+				    },
+				    navigation: {
+				        nextEl: '.banner-button-next',
+				        prevEl: '.banner-button-prev',
+				    },
+				    autoplay: {
+					    delay: 5000,
+					    stopOnLastSlide: false,
+					    disableOnInteraction: false,
+					},
+			    });*/
+			   
+			   
+			   
+			   
+			   
+			   //资料中心-tab切换
+			   $(".home .data-center .tab-list").click(function(){
+			   		var index = $(this).index();
+			   		$(".home .data-center .tab-list").removeClass('active');
+			   		$(this).addClass('active');
+			   		$(".home .data-center .tab-content").hide();
+			   		$(".home .data-center .tab-content").eq(index).show();
+			   });
+			   
+			   //考试资讯-tab切换
+			   $(".home .examination-info .tab-list").click(function(){
+			   		var index = $(this).index();
+			   		$(".home .examination-info .tab-list").removeClass('active');
+			   		$(this).addClass('active');
+			   		$(".home .examination-info .tab-content").hide();
+			   		$(".home .examination-info .tab-content").eq(index).show();
+			   });
+			   
+			   //精品课程-tab切换 
+			   $(".home .excellent-course .tab-list").click(function(){
+			   		var index = $(this).index();
+			   		$(".home .excellent-course .tab-list").removeClass('active');
+			   		$(this).addClass('active');
+			   		$(".home .excellent-course .tab-content").hide();
+			   		$(".home .excellent-course .tab-content").eq(index).show();
+			   });
+			   
+			});
+		</script>
+	</body>
+
+</html>

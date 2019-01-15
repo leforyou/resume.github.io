@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="css/api.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
+		<link href="css/swiper.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<!-- rem布局适配高清方案 -->
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(true,100, 1);</script>
+		<!-- rem布局适配高清方案 -->
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/common.js"></script>
+	</head>
+
+	<body>
+		<div class="register-page main-width">
+			<div class="person-head login">
+				<div class="box">
+					<div class="picture">
+						<p class="bg" style="background-image: url(img/person-center-bg.jpg);"></p>
+						<img class="logo" src="img/person-center-logo.png"/>
+					</div>
+					<a class="back" href="javascript:">
+						<img src="img/more-left1.png"/>
+					</a>
+				</div>
+			</div>
+			
+			
+			
+			<div class="content">
+				<div class="box">
+					<div class="lc-box">
+						<ul>
+							<li>
+								<img src="img/login-page-phone.png"/>
+								<input type="text" placeholder="请输入手机号" value="" />
+							</li>
+							<li>
+								<img src="img/login-page-password.png"/>
+								<input type="text" placeholder="请输入验证码" value="" />
+								<span class="get-code fc-red">获取验证码</span>
+							</li>
+						</ul>
+						<div class="submit">注册</div>
+						<div class="have">
+							<a class="block" href="javascript:">
+								<span class="fc-666 fz30">已有账号，</span>
+								<span class="fc-red fz30">立即登录</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<script>
+			$(function() {
+				//选项卡--切换
+				
+			});
+		</script>
+	</body>
+
+</html>
