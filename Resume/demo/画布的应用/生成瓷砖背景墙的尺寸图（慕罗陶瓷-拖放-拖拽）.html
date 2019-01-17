@@ -100,9 +100,6 @@
 			.pictrue-group .list .img-box img:hover{
 				transform: scale(1.2);
 			}
-			.check-original{
-				cursor: url(img/zoom_in.png),url(img/zoom_in.cur),auto;
-			}
 			.pictrue-group .list span{
 				display: block;
 				text-align: center;
@@ -129,10 +126,13 @@
 				bottom: 0;
 				z-index: 999999;
 				background-color: rgba(0,0,0,0.9);
-				cursor: url(img/zoom_out.png),url(img/zoom_out.cur),auto;
 				opacity: 0;
 				visibility: hidden;
 				transition: all 0.38s;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
 			}
 			.wrap-layer.active{
 				opacity: 1;
@@ -161,6 +161,20 @@
 				opacity: 0;
 				transition: all 0.3s;
 				background-color: #fff;
+			}
+			
+			
+			.zoom-in{
+				cursor: url(img/zoom_in.png),url(img/zoom_in.cur),auto;
+				cursor: -moz-zoom-in;
+			    cursor: -webkit-zoom-in;
+			    cursor: zoom-in;
+			}
+			.zoom-out{
+				cursor: url(img/zoom_out.png),url(img/zoom_out.cur),auto;
+				cursor: -moz-zoom-out;
+			    cursor: -webkit-zoom-out;
+			    cursor: zoom-out;
 			}
 		</style>
 	</head>
@@ -216,19 +230,19 @@
 			</div>
 			<div class="list">
 				<div class="img-box">
-					<img class="check-original" src="img/taoci-artwork1.jpg"/>
+					<img class="zoom-in" src="img/taoci-artwork1.jpg"/>
 				</div>
 				<span>示例：背景墙图片</span>
 			</div>
 			<div class="list">
 				<div class="img-box">
-					<img class="check-original" src="img/taoci-drawing.png"/>
+					<img class="zoom-in" src="img/taoci-drawing.png"/>
 				</div>
 				<span>示例：画布生成的尺寸图</span>
 			</div>
 			<div class="list">
 				<div class="img-box">
-					<img class="check-original" src="img/taoci-effect.jpg"/>
+					<img class="zoom-in" src="img/taoci-effect.jpg"/>
 				</div>
 				<span>室内场景图<br/>(宽3.6米*高2.4米&瓷砖大小600毫米)</span>
 			</div>
@@ -618,16 +632,16 @@
 		</script>
 		<script type="text/javascript">
 			//查看图片--遮罩层
-			var originalImg = document.querySelectorAll('.check-original');
+			var originalImg = document.querySelectorAll('.zoom-in');
 			var wrapLayer = document.querySelector('.wrap-layer');
 			for (var i = 0 ; i < originalImg.length ; i ++) {
 				originalImg[i].onclick = function(){
 					wrapLayer.querySelector('img').src = this.src;
-					wrapLayer.classList.add('active');
+					wrapLayer.classList.add('active','zoom-out');
 				}
 			}
 			wrapLayer.onclick = function(){
-				this.classList.remove('active');
+				wrapLayer.classList.remove('active','zoom-out');
 			}
 		</script>
 	</body>
