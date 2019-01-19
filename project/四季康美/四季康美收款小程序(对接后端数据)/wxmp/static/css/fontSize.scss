@@ -1,8 +1,0 @@
-/**10像素到200像素的字体,用法:fz20 。 .iconfont这个类名是阿里图标类名**/
-
-@for $i from 10 through 200 {
-    .fz#{$i},
-    .iconfont.fz#{$i} {
-        font-size: $i+rpx;
-    }
-}

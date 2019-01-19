@@ -1,9 +1,0 @@
-1.先要运行【npm install】
-2.运行【node server.js】启动本地局域网服务器
-3.在MPVUE小程序框架中【src文件夹】根目录下的【main.js】中配置Vue.prototype.$url = 'http://192.168.88.105/'; //静态资源图片、视频的请求链接
-注意：如果80商品被占用，请修改端口。
-
-
-
-图片的访问地址是【http://192.168.88.105/img/slider1.jpg】
-视频的访问地址是【http://192.168.88.105/media/make-tea.mp4】，这个局域网IP仅供参考

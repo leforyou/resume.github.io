@@ -1,5 +1,0 @@
-var tofixed = function (num) {
-    return num.toFixed(2);
-}
-    
-module.exports = {tofixed: tofixed};

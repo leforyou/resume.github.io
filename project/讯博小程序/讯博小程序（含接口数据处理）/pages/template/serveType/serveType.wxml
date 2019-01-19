@@ -1,8 +1,0 @@
-<template name="serveType">
-    <view class='serve-type'>
-        <view class='serve-title main-color'>服务类型</view>
-        <view class='serve-ul'>
-            <view class='serve-list' wx:for='{{serveType}}' wx:key='index' style='width:{{item.width}}'>{{item.txt}}</view>
-        </view>
-    </view>
-</template>
