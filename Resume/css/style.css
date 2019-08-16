@@ -989,6 +989,7 @@ body {
 .list-head {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .list-head .img-box {
@@ -1021,6 +1022,8 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 100%;
+  position: relative;
+  z-index: 38;
 }
 
 .list-head .sub-title {
@@ -1035,10 +1038,6 @@ body {
 .resume-page .wrap-content .resume .resume-box .right {
   width: 100%;
   padding: 50px 38px;
-}
-
-.resume-page .wrap-content .resume .resume-box .right .right-box .skill .head {
-  margin-bottom: 20px;
 }
 
 .resume-page .wrap-content .resume .resume-box .right .right-box .skill .skill-content .sc-box {
@@ -1060,8 +1059,8 @@ body {
 }
 
 .resume-page .wrap-content .resume .resume-box .right .right-box .project .prc-box {
-  padding: 30px 0px;
-  border-bottom: 1px solid #dedede;
+  padding: 5px 0px;
+  border-bottom: 1px solid transparent;
 }
 
 .resume-page .wrap-content .resume .resume-box .right .right-box .project .prc-box:nth-last-child(1) {
@@ -1073,14 +1072,12 @@ body {
 }
 
 .resume-page .wrap-content .resume .resume-box .right .right-box .project .prc-box ul li {
-  display: flex;
   line-height: 2;
   margin-bottom: 15px;
 }
 
 .resume-page .wrap-content .resume .resume-box .right .right-box .project .prc-box ul li .sub-title {
   white-space: nowrap;
-  font-weight: bold;
 }
 
 /**个人在线简历 end**/
