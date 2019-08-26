@@ -272,40 +272,9 @@
 		
 		<!--加载动画--纯CSS3控制 start-->
 		<div class="wrap-loader active" style="display: none;">
-			<div class="loader">
-				<div class="text">Loading...</div>
-				<div class="horizontal">
-				  <div class="circlesup">
-						<div class="circle"></div>
-						<div class="circle"></div>
-						<div class="circle"></div>
-						<div class="circle"></div>
-						<div class="circle"></div>
-				  </div>
-				  <div class="circlesdwn">
-						<div class="circle"></div>
-						<div class="circle"></div>
-						<div class="circle"></div>
-						<div class="circle"></div>
-						<div class="circle"></div>
-				  </div>
-				</div>
-				<div class="vertical">
-				  <div class="circlesup">
-						<div class="circle"></div>
-						<div class="circle"></div>
-						<div class="circle"></div>
-						<div class="circle"></div>
-						<div class="circle"></div>
-				  </div>
-				  <div class="circlesdwn">
-						<div class="circle"></div>
-						<div class="circle"></div>
-						<div class="circle"></div>
-						<div class="circle"></div>
-						<div class="circle"></div>
-				  </div>
-				</div>
+			<div class="la-square-jelly-box la-2x">
+				<div></div>
+				<div></div>
 			</div>
 		</div>
 		<!--加载动画 end-->
@@ -313,7 +282,7 @@
 			window.addEventListener('DOMContentLoaded',function(){
 				var setTime = setTimeout(function(){
 					$(".wrap-loader").show();
-				},2E3)
+				},3E3)
 			});
 			window.addEventListener('load',function(){
 				var timer = setTimeout(function(){
