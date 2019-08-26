@@ -7,7 +7,7 @@
 
 .wrap-loader{
 	position: fixed;
-	top: 0;
+	top: -20%;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -15,9 +15,6 @@
 	z-index: 9999999;
 	opacity: 0;
 	visibility: hidden;
-	-webkit-transition: all 0.6s;
-	-o-transition: all 0.6s;
-	-moz-transition: all 0.6s;
 	transition: all 0.6s;
 }
 .wrap-loader.active{

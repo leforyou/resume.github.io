@@ -272,7 +272,7 @@
 		
 		<!--加载动画--纯CSS3控制 start-->
 		<div class="wrap-loader active" style="display: none;">
-			<div class="la-square-jelly-box la-2x">
+			<div class="la-square-jelly-box">
 				<div></div>
 				<div></div>
 			</div>
@@ -282,7 +282,7 @@
 			window.addEventListener('DOMContentLoaded',function(){
 				var setTime = setTimeout(function(){
 					$(".wrap-loader").show();
-				},3E3)
+				},2E3);
 			});
 			window.addEventListener('load',function(){
 				var timer = setTimeout(function(){
