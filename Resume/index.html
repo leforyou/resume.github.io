@@ -291,7 +291,10 @@
 				},1000);
 			});
 			$(function() {
-				//
+				//关闭加载
+				$(".wrap-loader").click(function(){
+					$(this).removeClass('active');
+				});
 			});
 		</script>
 	</body>
