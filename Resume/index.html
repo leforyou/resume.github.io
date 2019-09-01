@@ -292,9 +292,11 @@
 				wrapLoader.style.display = 'block';
 			}
 			window.addEventListener('load',function(){
-				resumePage.style.opacity = '1';
-				wrapLoader.classList.remove('active');//原生语法
-				//$(".wrap-loader").removeClass('active');//jq写法
+				var setTime = setTimeout(function(){
+					resumePage.style.opacity = '1';
+					wrapLoader.classList.remove('active');//原生语法
+					//$(".wrap-loader").removeClass('active');//jq写法
+				},1E3);
 			});
 			/*
 			window.addEventListener('DOMContentLoaded',function(){
