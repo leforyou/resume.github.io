@@ -21,7 +21,7 @@
 	</head>
 
 	<body>
-		<div class="resume-page bg">
+		<div class="resume-page bg" style="opacity: 0;">
 			
 			<div class="header bg">
 				<div class="contain bg">
@@ -279,6 +279,24 @@
 		</div>
 		<!--加载动画 end-->
 		<script>
+			var resumePage = document.getElementsByClassName('resume-page')[0];
+			var wrapLoader = document.getElementsByClassName('wrap-loader')[0];
+			
+			var loadingState = sessionStorage.getItem('loadingState');//首页打开显示加载动画，缓存生命周期等浏览器窗口
+			if(loadingState){
+				resumePage.style.opacity = '1';
+				wrapLoader.style.display = 'none';
+			}else{
+				sessionStorage.setItem('loadingState',true);
+				resumePage.style.opacity = '0';
+				wrapLoader.style.display = 'block';
+			}
+			window.addEventListener('load',function(){
+				resumePage.style.opacity = '1';
+				wrapLoader.classList.remove('active');//原生语法
+				//$(".wrap-loader").removeClass('active');//jq写法
+			});
+			/*
 			window.addEventListener('DOMContentLoaded',function(){
 				var setTime = setTimeout(function(){
 					$(".wrap-loader").show();
@@ -289,7 +307,7 @@
 					$(".wrap-loader").removeClass('active');
 					clearTimeout(timer);
 				},1000);
-			});
+			});*/
 			$(function() {
 				//关闭加载
 				$(".wrap-loader").click(function(){
